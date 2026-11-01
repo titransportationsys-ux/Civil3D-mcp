@@ -25,7 +25,8 @@ Every device is tagged Mandatory / Recommended / Optional / Conditional with its
 
 - `rulebooks/mutcd_11e/`: the main guide. `code.yaml` status is `extracting` until a T&I engineer signs off, so **all output is DRAFT**:
   the word DRAFT is in every output file name, sheet title, drawing title and report header.
-- `rulebooks/egypt/`: not present. Egyptian values cannot be extracted until the scanned Arabic PDF (Code 104, Part 2) is in the project. Do not write Egyptian or SHC (KSA) rulebooks without that source. Say so and ask.
+- `rulebooks/egypt/` and `rulebooks/shc/`: **scaffolds only** (`code.yaml` status `extracting`; `devices.csv` holds the Egyptian numbers seen on the T&I details sheet with names and clauses EMPTY; the SHC catalog is empty). Egyptian values cannot be read until the scanned Arabic PDF (Code 104, Part 2) is in the project, and SHC needs its source. Do not write names, clauses or rules for them without that source. Say so and ask.
+- **Master sign list** (`signs_master/master_links.csv`, `engine/signs_master.py`): a crosswalk between MUTCD, Egyptian and SHC signs for reuse across projects. Each code keeps its own catalog (names, clauses, sizes from that code only); the link table says which signs are the same device, with `match` (same | check | none) and `approved` (only a T&I engineer approves; seeded from the 28 approved block-map rows, 'for now'). Never match by look-alike; Egyptian numbers taken from T&I block names stay `egypt_code_verified = no` until read from the printed code. `python -m engine.signs_master validate` enforces these rules; `... export --out Master_Signs_DRAFT.xlsx` writes the bilingual workbook (only when the user asks).
 - Provision map: Standard = Mandatory, Guidance = Recommended, Option = Optional, Study = Conditional.
 - Egyptian clauses use Egyptian numbering only (e.g. 5-2-3). Never put a MUTCD number in an Egyptian field, or the reverse. Egyptian sign codes are numeric (302, 403, 456...), marking codes L-series; a MUTCD equivalent goes only in a reference column.
 
@@ -80,7 +81,7 @@ python -m engine.run --input <file> --settings settings.json --overrides overrid
 ## 7. Adding another code
 
 Copy `rulebooks/mutcd_11e/` to `rulebooks/<code>/`; keep file names and columns; replace values and clauses from that code only; set `traffic_side` and `status: extracting`.
-Triggers and placement are shared. Run `python tests/test_engine.py`, `python tests/test_verification.py` and `python tests/test_features.py`.
+Triggers and placement are shared. Run `python tests/test_engine.py`, `python tests/test_verification.py`, `python tests/test_features.py` and `python tests/test_master.py`.
 Rule authoring: `provision_if` first match wins; `companions` as code or `{device, provision, ...}`; new hazard = `hazards.yaml` entry + rule with trigger `HAZ-<TYPE>`; record the source in each `clause`; `verify: false` until T&I confirms.
 
 ## 8. Verification status (28 Oct 2026)
@@ -88,11 +89,11 @@ Rule authoring: `provision_if` first match wins; `companions` as code or `{devic
 - MUTCD 11e checked against the T&I PDF: sign names and sizes (Tables 2B-1, 2C-1, 7B-1), Tables 2C-3 to 2C-6, mounting and offsets (2A.15, 2A.16), 2B.49, 2C.55, 3B.02, 3B.10.
   Open: advisory friction values (FHWA-SA-11-22), delineator spacing (Chapter 3G), 54 unverified rules (`verify: false`).
 - Egyptian code: scaffold only, nothing verified. Status stays `extracting` until a T&I engineer signs off.
-- Tests: `test_engine.py` 6/6, `test_verification.py` 74/74, `test_features.py` 6/6.
+- Tests: `test_engine.py` 6/6, `test_verification.py` 74/74, `test_features.py` 7/7, `test_master.py` 5/5.
 
 ## 9. Open items
 
-1. Egyptian PDF upload, then extraction (Egyptian numbering). 2. Add Egyptian sign numbers (204, 305-307, 324-325, 405) to block labels. 3. Confirm the 13 `check` block-map rows.
+1. Egyptian PDF upload, then extraction (Egyptian numbering). 2. Egyptian sign numbers are now in the master list as unverified labels (204, 305-307, 324-325, 405 and others); read their names from the printed code, then set `egypt_code_verified`. 3. Confirm the 13 `check` block-map rows.
 4. SHC (KSA): re-attach the five snaps; separate rulebook; no look-alike matching. 5. **Chevron/arrow placement (TI-614..619, L13-1..6): not implemented, awaiting the user's rule** (see the handoff notes). 6. Confirm the sign-indicator placement rule for future areas.
 7. Rename `sprrd hump` to `speed hump` in the laptop template and map together. 8. Replace the plain-word traffic-management column with sign codes after the rulebook check.
 9. Wyte AADT (18 links skipped). 10. Wyte roundabout J01 radius (10 m, taken from the ring). 11. Confirm collector run H2F451-1..5 and major link N009-N010. 12. Real building placement (TI - Buildings, layer TI - BM).

@@ -1,0 +1,7 @@
+id: shc
+name: SHC (KSA) sign set
+publisher: ""
+traffic_side: right
+status: extracting          # scaffold: the source manual / snaps are not in the project yet
+verified: false
+source_note: do not match SHC signs to MUTCD or Egyptian codes by look-alike
