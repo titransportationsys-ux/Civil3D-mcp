@@ -419,7 +419,7 @@ class Placer:
                 l = trg.approach.link
                 self.add_marking(trg, res, code, 3.0 * l.width_total(), "m2", None,
                                  key=(code, trg.approach.key.split(">")[1], l.id),
-                                 extra_notes=[f"3.0 m wide across {l.id}"])
+                                 extra_notes=[f"3.0 m wide across {self.net.link_name(l.id)}"])
             else:
                 l = self.net.links[t["link"]]
                 self.add_marking(trg, res, code, 3.0 * l.width_total(), "m2", None,

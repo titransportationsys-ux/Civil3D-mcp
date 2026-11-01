@@ -30,9 +30,17 @@ def load_overrides(path: str | None) -> Dict:
 def apply_overrides(net: Network, ov: Dict, settings: Dict):
     env = settings.get("env") or ["auto"]
     single_env = [e for e in env if e != "auto"]
+    # links may be keyed by engine id or by node-to-node name ("N009-N010")
+    by_link: Dict[str, Dict] = {}
+    for key, vals in (ov.get("links") or {}).items():
+        lid = net.resolve_link(key)
+        if lid is None:
+            net.assumptions.append(f"overrides: link '{key}' not found in the network; ignored")
+        else:
+            by_link.setdefault(lid, {}).update(vals)
     for l in net.links.values():
         layers = [ov.get("all_links", {}), ov.get("by_class", {}).get(str(l.props.get("class")), {}),
-                  ov.get("links", {}).get(l.id, {})]
+                  by_link.get(l.id, {})]
         for layer in layers:
             for k, v in (layer or {}).items():
                 l.props[k] = v
@@ -52,6 +60,9 @@ def apply_overrides(net: Network, ov: Dict, settings: Dict):
     for key, vals in (ov.get("nodes") or {}).items():
         nid = key if key in net.nodes else labels.get(key)
         if nid:
+            vals = dict(vals)
+            if vals.get("stop_approaches"):
+                vals["stop_approaches"] = [net.resolve_link(a) or a for a in vals["stop_approaches"]]
             net.nodes[nid].props.update(vals)
     for pid, vals in (ov.get("pois") or {}).items():
         if pid in net.pois:
@@ -76,7 +87,8 @@ def prescan(net: Network, settings: Dict, has_curves: bool) -> List[Dict]:
     elif has_curves and "warn" in fam:
         need.update(LINK_FOR_CURVES)
     for attr, (topic, text) in need.items():
-        missing = [l.id for l in net.links.values() if l.props.get(attr) in (None, "")]
+        names = net.link_names()
+        missing = [f"{names[l.id]} ({l.id})" for l in net.links.values() if l.props.get(attr) in (None, "")]
         sug = {"oneway": "none are one-way", "lanes": "1"}.get(attr, "")
         ask(attr, topic, text, missing, sug)
     # intersections
@@ -97,7 +109,7 @@ def prescan(net: Network, settings: Dict, has_curves: bool) -> List[Dict]:
         "What is the inscribed circle radius (centre to outer edge of the circulating roadway, m) of each roundabout? "
         "YIELD signs and yield lines go at the entry, on that circle.", rb_)
     ask("stop_approaches", "Minor approaches",
-        "At these STOP/YIELD intersections all roads have the same class. Which approaches (link ids) are stop- or yield-controlled?", amb)
+        "At these STOP/YIELD intersections all roads have the same class. Which approaches (links, as node-to-node names such as N009-N010) are stop- or yield-controlled?", amb)
     # hazard points: attributes the hazard's rules need (rulebooks/<code>/hazards.yaml)
     hz = getattr(net, "hazard_types", {}) or {}
     for typ, spec in hz.items():

@@ -237,7 +237,7 @@ def detect(net: Network, settings: Dict) -> List[Trigger]:
             t = _ctx(net, ap.link.id)
             t.update({"node": label, "degree": n.degree, "hidden": n.props.get("hidden"),
                       "sight_restricted": n.props.get("sight_restricted", t.get("sight_restricted"))})
-            where = f"{label} approach from {ap.link.id}"
+            where = f"{label} approach from {net.link_name(ap.link.id)}"
             if ctl == "stop_all":
                 trig.append(Trigger("INT-STOP-AWAY", t, ap, stop_line_back(net, n.id, ap.link.id), where=where))
             elif ctl in ("stop_minor", "yield"):

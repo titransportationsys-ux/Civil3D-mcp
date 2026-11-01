@@ -57,7 +57,7 @@ python -m engine.run --input <file> --settings settings.json --overrides overrid
     --layers "<centreline>" --edge-layers "<kerb>" [--compare-counts <last layer_counts.json>] [--inventory existing.geojson] [--epsg 22992] [--dxf] [--allow-partial]
 ```
 7. Exit codes: 0 done (read `result.json`); 2 missing data (read `questions.json` and `network_ids.*`, show the questions as a list with their `eng-*` ids, record answers in the Questions sheet, rerun); 3 input problem (ask).
-   Show links as node-to-node names (`N009-N010`) beside the engine id. `--allow-partial` only when the user explicitly skips a question; record each skipped question.
+   **Links are named node-to-node by default** (`N009-N010`); the engine id follows in brackets only for traceability. Questions, the id map (label at the arc-length midpoint), the schedule and every figure or table shown to the user use that form. `overrides.json` accepts either form as a key (`\"links\": {\"N009-N010\": {...}}`, `stop_approaches`), in either direction; a name that matches no link is ignored and logged. Parallel links between the same two nodes get `~<engine id>` appended. `--allow-partial` only when the user explicitly skips a question; record each skipped question.
 8. Report counts, Conditional items, Low-confidence devices, spacing moves, DRAFT status. **Deliver files only when asked** (below).
 9. After a major task, offer `/explain-usage` and ask first. End every chat with a handoff: decisions, current state, next steps.
 

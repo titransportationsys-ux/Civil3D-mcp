@@ -507,9 +507,10 @@ def write_id_map(base: str, net, base_dxf: str | None = None):
     """Label every link and node id so an engineer can answer the data questions."""
     from .geom import point_along, length
     feats = []
+    names = net.link_names()
     for l in net.links.values():
         feats.append({"type": "Feature", "geometry": {"type": "LineString", "coordinates": [list(p) for p in l.coords]},
-                      "properties": {"id": l.id, **{k: v for k, v in l.props.items() if k != "id"}}})
+                      "properties": {"name": names[l.id], "id": l.id, **{k: v for k, v in l.props.items() if k != "id"}}})
     for n in net.nodes.values():
         feats.append({"type": "Feature", "geometry": {"type": "Point", "coordinates": list(n.xy)},
                       "properties": {"id": n.id, "label": net.node_label(n.id), "degree": n.degree,
@@ -526,7 +527,7 @@ def write_id_map(base: str, net, base_dxf: str | None = None):
         th = float(getattr(net, "style", {}).get("text_height", 2.5) or 2.5) * 1.5
         for l in net.links.values():
             p, _ = point_along(l.coords, length(l.coords) / 2)
-            msp.add_text(l.id, dxfattribs={"layer": lay, "height": th}).set_placement(p)
+            msp.add_text(names[l.id], dxfattribs={"layer": lay, "height": th}).set_placement(p)
         for n in net.nodes.values():
             msp.add_circle(n.xy, th, dxfattribs={"layer": lay})
             msp.add_text(net.node_label(n.id), dxfattribs={"layer": lay, "height": th}).set_placement((n.xy[0] + th, n.xy[1] + th))

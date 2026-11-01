@@ -301,6 +301,31 @@ class Network:
         n = self.nodes[nid]
         return str(n.props.get("label") or nid)
 
+    def link_names(self) -> Dict[str, str]:
+        """Default display name of every link: node-to-node, e.g. 'N009-N010'. Parallel links between the same two
+        nodes (and so the same name) get the engine id appended so each name stays unique."""
+        base = {lid: f"{self.node_label(l.a)}-{self.node_label(l.b)}" for lid, l in self.links.items()}
+        count: Dict[str, int] = {}
+        for v in base.values():
+            count[v] = count.get(v, 0) + 1
+        return {lid: (v if count[v] == 1 else f"{v}~{lid}") for lid, v in base.items()}
+
+    def link_name(self, lid: str) -> str:
+        return self.link_names().get(lid, lid)
+
+    def resolve_link(self, key: str) -> Optional[str]:
+        """Engine id from an engine id or a node-to-node name (either direction, case-insensitive)."""
+        if key in self.links:
+            return key
+        k = str(key).strip().upper()
+        names = {lid: n.upper() for lid, n in self.link_names().items()}
+        hit = [lid for lid, n in names.items() if n == k]
+        if not hit:
+            a, _, b = k.partition("-")
+            rev = f"{b}-{a}"
+            hit = [lid for lid, n in names.items() if n == rev]
+        return hit[0] if len(hit) == 1 else None
+
     def other_end(self, lid: str, nid: str) -> str:
         l = self.links[lid]
         return l.b if l.a == nid else l.a

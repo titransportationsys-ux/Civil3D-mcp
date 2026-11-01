@@ -90,6 +90,20 @@ def test_workbook():
     assert set(os.listdir(os.path.join(d, "TL00_Wyte"))) == set(project.SUBDIRS)
 
 
+def test_link_names():
+    from engine import adapters
+    from engine.data import apply_overrides
+    net = adapters.load(os.path.join(HERE, "networks", "urban_grid.geojson"))
+    names = net.link_names()
+    assert all("-" in n for n in names.values()) and len(set(names.values())) == len(names)
+    lid = next(iter(net.links))
+    assert net.resolve_link(names[lid]) == lid and net.resolve_link(lid) == lid
+    a, b = net.links[lid].a, net.links[lid].b
+    assert net.resolve_link(f"{net.node_label(b)}-{net.node_label(a)}".lower()) in (lid, None)
+    apply_overrides(net, {"links": {names[lid]: {"class": "collector"}}}, {})
+    assert net.links[lid].props["class"] == "collector"
+
+
 if __name__ == "__main__":
     for n, f in list(globals().items()):
         if n.startswith("test_"):
