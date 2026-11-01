@@ -1,0 +1,12 @@
+# T&I Consulting Engineers brand kit (TI_Brand_Guidelines.pdf v1.0, July 2026). Used for the sign schedule and report.
+name: Talaat & Imam Consulting Engineers
+font: Arial
+colors:
+  primary_green: "019945"   # headers, titles, key stats, logo
+  light_green: "40B273"     # highlights, chart accents
+  charcoal: "434343"        # secondary headings, footers
+  mid_gray: "6E6E6E"        # captions, metadata
+  black: "000000"           # body text
+  neutral_tint: "F4F6F5"    # table banding, callout boxes
+logo: TI_Logo.png           # always on white; never on Primary Green
+report_template: TI_Report_Template.docx   # cover page, heading styles, header/footer

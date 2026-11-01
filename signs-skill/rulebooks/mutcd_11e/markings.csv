@@ -1,0 +1,15 @@
+# Pavement marking catalog. Widths in inches. Verified against T&I's MUTCD 11th Ed. PDF on 6 Oct 2026:
+# normal line 4-6 in, wide line >= 2x normal, broken 10 ft / 30 ft (3A.06, manual p.538); stop line 12-24 in and
+# yield-line triangles 12-24 in base (3B.19, p.573); lane-drop marking wide dotted white 3 ft / 9 ft (3B.07-07/11, p.553).
+code,name,color,pattern,width_in,unit,clause
+CL-DY,Center line double solid yellow,yellow,double_solid,4,m,3B.02
+CL-BY,Center line broken yellow,yellow,broken_10_30,4,m,3B.02
+LL-BW,Lane line broken white,white,broken_10_30,4,m,3B.06
+EL-SW,Edge line solid white,white,solid,4,m,3B.10
+EL-SY,Left edge line solid yellow,yellow,solid,4,m,3B.10
+SL,Stop line,white,solid,24,m,3B.19-05 (12 to 24 in)
+YL,Yield line (shark teeth),white,triangles,12,m,3B.19-12 (base 12 to 24 in)
+CW,Crosswalk,white,high_visibility,12,m2,3C.02
+LDRP,Lane drop dotted line (wide),white,dotted_3_9,8,m,3B.07-07 and 3B.07-11
+NO-PASSING-STUDY,No-passing zone survey (study item),yellow,study,4,m,3B.02 / Table 3B-1
+RXR,Grade crossing X and RR symbol with transverse lines,white,symbol,24,ea,8C.02

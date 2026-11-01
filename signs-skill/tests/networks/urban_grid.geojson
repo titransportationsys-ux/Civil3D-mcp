@@ -1,0 +1,639 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "EPSG:22992"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      810000.0
+     ],
+     [
+      640250.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "A1",
+    "name": "Main Arterial",
+    "class": "arterial",
+    "speed_kmh": 60,
+    "lanes": 2,
+    "oneway": false,
+    "aadt": 18000,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      810000.0
+     ],
+     [
+      640500.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "A2",
+    "name": "Main Arterial",
+    "class": "arterial",
+    "speed_kmh": 60,
+    "lanes": 2,
+    "oneway": false,
+    "aadt": 18000,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640500.0,
+      810000.0
+     ],
+     [
+      640750.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "A3",
+    "name": "Main Arterial",
+    "class": "arterial",
+    "speed_kmh": 60,
+    "lanes": 2,
+    "oneway": false,
+    "aadt": 18000,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640750.0,
+      810000.0
+     ],
+     [
+      641300.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "A4",
+    "name": "Main Arterial east",
+    "class": "arterial",
+    "speed_kmh": 80,
+    "lanes": 2,
+    "oneway": false,
+    "aadt": 18000,
+    "urban": false,
+    "curb": false
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      639600.0,
+      810000.0
+     ],
+     [
+      640000.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "A0",
+    "name": "Main Arterial west",
+    "class": "arterial",
+    "speed_kmh": 60,
+    "lanes": 2,
+    "oneway": false,
+    "aadt": 18000,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      810250.0
+     ],
+     [
+      640250.0,
+      810250.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "C1",
+    "name": "North Collector",
+    "class": "collector",
+    "speed_kmh": 50,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 6500,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      810250.0
+     ],
+     [
+      640500.0,
+      810250.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "C2",
+    "name": "North Collector",
+    "class": "collector",
+    "speed_kmh": 50,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 6500,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640500.0,
+      810250.0
+     ],
+     [
+      640750.0,
+      810250.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "C3",
+    "name": "North Collector",
+    "class": "collector",
+    "speed_kmh": 50,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 6500,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      809700.0
+     ],
+     [
+      640000.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S1a",
+    "name": "West St",
+    "class": "collector",
+    "speed_kmh": 50,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 6500,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      810000.0
+     ],
+     [
+      640000.0,
+      810250.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S1b",
+    "name": "West St",
+    "class": "collector",
+    "speed_kmh": 50,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 6500,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      809700.0
+     ],
+     [
+      640250.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S2a",
+    "name": "School Rd",
+    "class": "local",
+    "speed_kmh": 40,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 1200,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      810000.0
+     ],
+     [
+      640250.0,
+      810250.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S2b",
+    "name": "School Rd",
+    "class": "local",
+    "speed_kmh": 40,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 1200,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640500.0,
+      810250.0
+     ],
+     [
+      640500.0,
+      810000.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S3b",
+    "name": "One-way St",
+    "class": "local",
+    "speed_kmh": 40,
+    "lanes": 1,
+    "oneway": true,
+    "aadt": 1200,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640750.0,
+      810000.0
+     ],
+     [
+      640750.0,
+      810250.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S4b",
+    "name": "East St",
+    "class": "local",
+    "speed_kmh": 40,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 1200,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      810250.0
+     ],
+     [
+      640000.0,
+      810450.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S1c",
+    "name": "West St",
+    "class": "collector",
+    "speed_kmh": 50,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 6500,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      810250.0
+     ],
+     [
+      640250.0,
+      810450.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S2c",
+    "name": "School Rd",
+    "class": "local",
+    "speed_kmh": 40,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 1200,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640500.0,
+      810450.0
+     ],
+     [
+      640500.0,
+      810250.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S3c",
+    "name": "One-way St",
+    "class": "local",
+    "speed_kmh": 40,
+    "lanes": 1,
+    "oneway": true,
+    "aadt": 1200,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640750.0,
+      810250.0
+     ],
+     [
+      640750.0,
+      810450.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "S4c",
+    "name": "East St",
+    "class": "local",
+    "speed_kmh": 40,
+    "lanes": 1,
+    "oneway": false,
+    "aadt": 1200,
+    "urban": true,
+    "curb": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640000.0,
+     810000.0
+    ]
+   },
+   "properties": {
+    "id": "INT-1",
+    "control": "signal"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640250.0,
+     810000.0
+    ]
+   },
+   "properties": {
+    "id": "INT-2",
+    "control": "stop_minor"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640500.0,
+     810000.0
+    ]
+   },
+   "properties": {
+    "id": "INT-3",
+    "control": "stop_minor"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640750.0,
+     810000.0
+    ]
+   },
+   "properties": {
+    "id": "INT-4",
+    "control": "none"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640000.0,
+     810250.0
+    ]
+   },
+   "properties": {
+    "id": "INT-5",
+    "control": "stop_all"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640250.0,
+     810250.0
+    ]
+   },
+   "properties": {
+    "id": "INT-6",
+    "control": "stop_minor"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640500.0,
+     810250.0
+    ]
+   },
+   "properties": {
+    "id": "INT-7",
+    "control": "yield",
+    "stop_approaches": "S3c"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640750.0,
+     810250.0
+    ]
+   },
+   "properties": {
+    "id": "INT-8",
+    "control": "stop_minor"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640260.0,
+     809850.0
+    ]
+   },
+   "properties": {
+    "type": "school",
+    "id": "SCH-1",
+    "name": "Primary school"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640375.0,
+     810250.0
+    ]
+   },
+   "properties": {
+    "type": "crosswalk",
+    "id": "XW-1"
+   }
+  }
+ ]
+}

@@ -1,0 +1,3283 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640011.5,
+      810000.0
+     ],
+     [
+      640011.5,
+      810007.3
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0001",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from A1",
+    "link": "A1",
+    "node": "INT-1",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 7.3,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640104.464,
+     810007.91
+    ]
+   },
+   "properties": {
+    "id": "S0002",
+    "code": "W3-3",
+    "name": "Signal Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01",
+    "rule_id": "MUTCD.2C.35.SIGNALAHEAD",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from A1",
+    "link": "A1",
+    "node": "INT-1",
+    "x": 640104.464,
+    "y": 810007.91,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 104.5,
+    "azimuth_deg": 90.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0001",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Are the signal faces visible for sufficient distance? If not, W3-3 is mandatory.",
+    "notes": "advance 93 m (Table 2C-3 Cond. B @ 40/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      639988.5,
+      810000.0
+     ],
+     [
+      639988.5,
+      809992.7
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0004",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from A0",
+    "link": "A0",
+    "node": "INT-1",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 7.3,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     639895.536,
+     809992.09
+    ]
+   },
+   "properties": {
+    "id": "S0005",
+    "code": "W3-3",
+    "name": "Signal Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01",
+    "rule_id": "MUTCD.2C.35.SIGNALAHEAD",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from A0",
+    "link": "A0",
+    "node": "INT-1",
+    "x": 639895.536,
+    "y": 809992.09,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 104.5,
+    "azimuth_deg": 270.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0002",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Are the signal faces visible for sufficient distance? If not, W3-3 is mandatory.",
+    "notes": "advance 93 m (Table 2C-3 Cond. B @ 40/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      809988.5
+     ],
+     [
+      640003.65,
+      809988.5
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0007",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from S1a",
+    "link": "S1a",
+    "node": "INT-1",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640004.26,
+     809912.3
+    ]
+   },
+   "properties": {
+    "id": "S0008",
+    "code": "W3-3",
+    "name": "Signal Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01",
+    "rule_id": "MUTCD.2C.35.SIGNALAHEAD",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from S1a",
+    "link": "S1a",
+    "node": "INT-1",
+    "x": 640004.26,
+    "y": 809912.3,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 87.7,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0003",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Are the signal faces visible for sufficient distance? If not, W3-3 is mandatory.",
+    "notes": "advance 76 m (Table 2C-3 Cond. B @ 35/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      810011.5
+     ],
+     [
+      639996.35,
+      810011.5
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0010",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from S1b",
+    "link": "S1b",
+    "node": "INT-1",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     639995.74,
+     810087.7
+    ]
+   },
+   "properties": {
+    "id": "S0011",
+    "code": "W3-3",
+    "name": "Signal Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01",
+    "rule_id": "MUTCD.2C.35.SIGNALAHEAD",
+    "trigger": "INT-SIGNAL",
+    "where": "INT-1 approach from S1b",
+    "link": "S1b",
+    "node": "INT-1",
+    "x": 639995.74,
+    "y": 810087.7,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 87.7,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0004",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Are the signal faces visible for sufficient distance? If not, W3-3 is mandatory.",
+    "notes": "advance 76 m (Table 2C-3 Cond. B @ 35/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640060.0,
+     809992.09
+    ]
+   },
+   "properties": {
+    "id": "S0013",
+    "code": "R2-1",
+    "name": "SPEED LIMIT",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "2B.21-17 (beyond major intersections)",
+    "rule_id": "MUTCD.2B.21.SPEED-REMIND",
+    "trigger": "AFTER-MAJOR-INT",
+    "where": "after INT-1 on A1",
+    "link": "A1",
+    "node": "INT-1",
+    "x": 640060.0,
+    "y": 809992.09,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 190.0,
+    "azimuth_deg": 270.0,
+    "size": "30x36",
+    "legend": "60 km/h",
+    "support": "P0005",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     639940.0,
+     810007.91
+    ]
+   },
+   "properties": {
+    "id": "S0014",
+    "code": "R2-1",
+    "name": "SPEED LIMIT",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "2B.21-17 (beyond major intersections)",
+    "rule_id": "MUTCD.2B.21.SPEED-REMIND",
+    "trigger": "AFTER-MAJOR-INT",
+    "where": "after INT-1 on A0",
+    "link": "A0",
+    "node": "INT-1",
+    "x": 639940.0,
+    "y": 810007.91,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 340.0,
+    "azimuth_deg": 90.0,
+    "size": "30x36",
+    "legend": "60 km/h",
+    "support": "P0006",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640254.26,
+     809991.5
+    ]
+   },
+   "properties": {
+    "id": "S0015",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02 (near side, right-hand side, as close as practicable)",
+    "rule_id": "MUTCD.2B.18.STOP",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-2 approach from S2a",
+    "link": "S2a",
+    "node": "INT-2",
+    "x": 640254.26,
+    "y": 809991.5,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 8.5,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0007",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      809991.5
+     ],
+     [
+      640253.65,
+      809991.5
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0016",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-2 approach from S2a",
+    "link": "S2a",
+    "node": "INT-2",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640254.26,
+     809944.256
+    ]
+   },
+   "properties": {
+    "id": "S0017",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-2 approach from S2a",
+    "link": "S2a",
+    "node": "INT-2",
+    "x": 640254.26,
+    "y": 809944.256,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 55.7,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0008",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640245.74,
+     810008.5
+    ]
+   },
+   "properties": {
+    "id": "S0018",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02 (near side, right-hand side, as close as practicable)",
+    "rule_id": "MUTCD.2B.18.STOP",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-2 approach from S2b",
+    "link": "S2b",
+    "node": "INT-2",
+    "x": 640245.74,
+    "y": 810008.5,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 8.5,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0009",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      810008.5
+     ],
+     [
+      640246.35,
+      810008.5
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0019",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-2 approach from S2b",
+    "link": "S2b",
+    "node": "INT-2",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640245.74,
+     810055.744
+    ]
+   },
+   "properties": {
+    "id": "S0020",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-2 approach from S2b",
+    "link": "S2b",
+    "node": "INT-2",
+    "x": 640245.74,
+    "y": 810055.744,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 55.7,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0010",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640497.565,
+     810008.5
+    ]
+   },
+   "properties": {
+    "id": "S0021",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02 (near side, right-hand side, as close as practicable)",
+    "rule_id": "MUTCD.2B.18.STOP",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-3 approach from S3b",
+    "link": "S3b",
+    "node": "INT-3",
+    "x": 640497.565,
+    "y": 810008.5,
+    "side": "right",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 8.5,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0011",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640502.435,
+     810008.5
+    ]
+   },
+   "properties": {
+    "id": "S0022",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "2B.18-17 (additional STOP sign on left for 2+ approach lanes)",
+    "rule_id": "MUTCD.2B.18.STOP-LEFT",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-3 approach from S3b",
+    "link": "S3b",
+    "node": "INT-3",
+    "x": 640502.435,
+    "y": 810008.5,
+    "side": "left",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 8.5,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0012",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640501.825,
+      810008.5
+     ],
+     [
+      640498.1749999999,
+      810008.5
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0023",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-3 approach from S3b",
+    "link": "S3b",
+    "node": "INT-3",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640497.565,
+     810055.744
+    ]
+   },
+   "properties": {
+    "id": "S0024",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-3 approach from S3b",
+    "link": "S3b",
+    "node": "INT-3",
+    "x": 640497.565,
+    "y": 810055.744,
+    "side": "right",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 55.7,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0013",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640496.675,
+     809992.09
+    ]
+   },
+   "properties": {
+    "id": "S0025",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-3: A2 crossing one-way S3b",
+    "link": "A2",
+    "node": "INT-3",
+    "x": 640496.675,
+    "y": 809992.09,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 3.3,
+    "azimuth_deg": 270.0,
+    "size": "48x18",
+    "legend": "arrow right",
+    "support": "P0014",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "near-right corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640504.825,
+     810007.91
+    ]
+   },
+   "properties": {
+    "id": "S0026",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-3: A2 crossing one-way S3b",
+    "link": "A2",
+    "node": "INT-3",
+    "x": 640504.825,
+    "y": 810007.91,
+    "side": "left",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 270.0,
+    "size": "48x18",
+    "legend": "arrow right",
+    "support": "P0015",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "far-left corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640503.325,
+     810007.91
+    ]
+   },
+   "properties": {
+    "id": "S0027",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-3: A3 crossing one-way S3b",
+    "link": "A3",
+    "node": "INT-3",
+    "x": 640503.325,
+    "y": 810007.91,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 3.3,
+    "azimuth_deg": 90.0,
+    "size": "48x18",
+    "legend": "arrow left",
+    "support": "P0016",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "near-right corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640495.175,
+     809992.09
+    ]
+   },
+   "properties": {
+    "id": "S0028",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-3: A3 crossing one-way S3b",
+    "link": "A3",
+    "node": "INT-3",
+    "x": 640495.175,
+    "y": 809992.09,
+    "side": "left",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 90.0,
+    "size": "48x18",
+    "legend": "arrow left",
+    "support": "P0017",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "far-left corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640657.036,
+     809992.09
+    ]
+   },
+   "properties": {
+    "id": "S0029",
+    "code": "W2-2",
+    "name": "Side Road",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "2C.41 Intersection warning signs",
+    "rule_id": "MUTCD.2C.41.INTWARN",
+    "trigger": "INT-UNCONTROLLED-MAJOR",
+    "where": "INT-4 approach from A3",
+    "link": "A3",
+    "node": "INT-4",
+    "x": 640657.036,
+    "y": 809992.09,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 93.0,
+    "azimuth_deg": 270.0,
+    "size": "36x36",
+    "legend": "",
+    "support": "P0018",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "advance 93 m (Table 2C-3 Cond. B @ 40/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640879.54,
+     810010.96
+    ]
+   },
+   "properties": {
+    "id": "S0030",
+    "code": "W2-2",
+    "name": "Side Road",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "2C.41 Intersection warning signs",
+    "rule_id": "MUTCD.2C.41.INTWARN",
+    "trigger": "INT-UNCONTROLLED-MAJOR",
+    "where": "INT-4 approach from A4",
+    "link": "A4",
+    "node": "INT-4",
+    "x": 640879.54,
+    "y": 810010.96,
+    "side": "right",
+    "offset_m": 10.96,
+    "height_m": 1.52,
+    "back_m": 129.5,
+    "azimuth_deg": 90.0,
+    "size": "36x36",
+    "legend": "",
+    "support": "P0019",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "advance 130 m (Table 2C-3 Cond. B @ 50/0 mph); mount: 2A.15-04 (Standard); 2A.16-03 (Guidance)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640004.85,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0031",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.04-04 (R1-3P shall be mounted below each STOP sign); 2B.18-01",
+    "rule_id": "MUTCD.2B.04.ALLWAY",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from C1",
+    "link": "C1",
+    "node": "INT-5",
+    "x": 640004.85,
+    "y": 810254.26,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.33,
+    "back_m": 4.8,
+    "azimuth_deg": 90.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0020",
+    "companions": "R1-3P",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option); bottom raised 0.20 m for plaque R1-3P below (2A.15)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640004.85,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0032",
+    "code": "R1-3P",
+    "name": "ALL-WAY plaque",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.04-04 (R1-3P shall be mounted below each STOP sign); 2B.18-01",
+    "rule_id": "MUTCD.2B.04.ALLWAY",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from C1",
+    "link": "C1",
+    "node": "INT-5",
+    "x": 640004.85,
+    "y": 810254.26,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 90.0,
+    "size": "18x6",
+    "legend": "",
+    "support": "P0020",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "plaque below S0031 R1-1",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640004.85,
+      810250.0
+     ],
+     [
+      640004.85,
+      810253.65
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0033",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from C1",
+    "link": "C1",
+    "node": "INT-5",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640081.05,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0034",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from C1",
+    "link": "C1",
+    "node": "INT-5",
+    "x": 640081.05,
+    "y": 810254.26,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 81.1,
+    "azimuth_deg": 90.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0021",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 76 m (Table 2C-3 Cond. B @ 35/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640004.26,
+     810245.15
+    ]
+   },
+   "properties": {
+    "id": "S0035",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.04-04 (R1-3P shall be mounted below each STOP sign); 2B.18-01",
+    "rule_id": "MUTCD.2B.04.ALLWAY",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1b",
+    "link": "S1b",
+    "node": "INT-5",
+    "x": 640004.26,
+    "y": 810245.15,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.33,
+    "back_m": 4.8,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0022",
+    "companions": "R1-3P",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option); bottom raised 0.20 m for plaque R1-3P below (2A.15)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640004.26,
+     810245.15
+    ]
+   },
+   "properties": {
+    "id": "S0036",
+    "code": "R1-3P",
+    "name": "ALL-WAY plaque",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.04-04 (R1-3P shall be mounted below each STOP sign); 2B.18-01",
+    "rule_id": "MUTCD.2B.04.ALLWAY",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1b",
+    "link": "S1b",
+    "node": "INT-5",
+    "x": 640004.26,
+    "y": 810245.15,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 180.0,
+    "size": "18x6",
+    "legend": "",
+    "support": "P0022",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "plaque below S0035 R1-1",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      810245.15
+     ],
+     [
+      640003.65,
+      810245.15
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0037",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1b",
+    "link": "S1b",
+    "node": "INT-5",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640004.26,
+     810168.95
+    ]
+   },
+   "properties": {
+    "id": "S0038",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1b",
+    "link": "S1b",
+    "node": "INT-5",
+    "x": 640004.26,
+    "y": 810168.95,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 81.1,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0023",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 76 m (Table 2C-3 Cond. B @ 35/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     639995.74,
+     810254.85
+    ]
+   },
+   "properties": {
+    "id": "S0039",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.04-04 (R1-3P shall be mounted below each STOP sign); 2B.18-01",
+    "rule_id": "MUTCD.2B.04.ALLWAY",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1c",
+    "link": "S1c",
+    "node": "INT-5",
+    "x": 639995.74,
+    "y": 810254.85,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.33,
+    "back_m": 4.8,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0024",
+    "companions": "R1-3P",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option); bottom raised 0.20 m for plaque R1-3P below (2A.15)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     639995.74,
+     810254.85
+    ]
+   },
+   "properties": {
+    "id": "S0040",
+    "code": "R1-3P",
+    "name": "ALL-WAY plaque",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.04-04 (R1-3P shall be mounted below each STOP sign); 2B.18-01",
+    "rule_id": "MUTCD.2B.04.ALLWAY",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1c",
+    "link": "S1c",
+    "node": "INT-5",
+    "x": 639995.74,
+    "y": 810254.85,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 0.0,
+    "size": "18x6",
+    "legend": "",
+    "support": "P0024",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "plaque below S0039 R1-1",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640000.0,
+      810254.85
+     ],
+     [
+      639996.35,
+      810254.85
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0041",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1c",
+    "link": "S1c",
+    "node": "INT-5",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     639995.74,
+     810331.05
+    ]
+   },
+   "properties": {
+    "id": "S0042",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-AWAY",
+    "where": "INT-5 approach from S1c",
+    "link": "S1c",
+    "node": "INT-5",
+    "x": 639995.74,
+    "y": 810331.05,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 81.0,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0025",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 76 m (Table 2C-3 Cond. B @ 35/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640254.26,
+     810245.15
+    ]
+   },
+   "properties": {
+    "id": "S0043",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02 (near side, right-hand side, as close as practicable)",
+    "rule_id": "MUTCD.2B.18.STOP",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-6 approach from S2b",
+    "link": "S2b",
+    "node": "INT-6",
+    "x": 640254.26,
+    "y": 810245.15,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0026",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      810245.15
+     ],
+     [
+      640253.65,
+      810245.15
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0044",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-6 approach from S2b",
+    "link": "S2b",
+    "node": "INT-6",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640254.26,
+     810197.906
+    ]
+   },
+   "properties": {
+    "id": "S0045",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-6 approach from S2b",
+    "link": "S2b",
+    "node": "INT-6",
+    "x": 640254.26,
+    "y": 810197.906,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 52.1,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0027",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640245.74,
+     810254.85
+    ]
+   },
+   "properties": {
+    "id": "S0046",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02 (near side, right-hand side, as close as practicable)",
+    "rule_id": "MUTCD.2B.18.STOP",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-6 approach from S2c",
+    "link": "S2c",
+    "node": "INT-6",
+    "x": 640245.74,
+    "y": 810254.85,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0028",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640250.0,
+      810254.85
+     ],
+     [
+      640246.35,
+      810254.85
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0047",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-6 approach from S2c",
+    "link": "S2c",
+    "node": "INT-6",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640245.74,
+     810302.094
+    ]
+   },
+   "properties": {
+    "id": "S0048",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-6 approach from S2c",
+    "link": "S2c",
+    "node": "INT-6",
+    "x": 640245.74,
+    "y": 810302.094,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 52.1,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0029",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640497.565,
+     810254.85
+    ]
+   },
+   "properties": {
+    "id": "S0049",
+    "code": "R1-2",
+    "name": "YIELD",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02",
+    "rule_id": "MUTCD.2B.10.YIELD",
+    "trigger": "INT-YIELD",
+    "where": "INT-7 approach from S3c",
+    "link": "S3c",
+    "node": "INT-7",
+    "x": 640497.565,
+    "y": 810254.85,
+    "side": "right",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 0.0,
+    "size": "36x36x36",
+    "legend": "",
+    "support": "P0030",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640501.825,
+      810254.85
+     ],
+     [
+      640498.1749999999,
+      810254.85
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0050",
+    "code": "YL",
+    "name": "Yield line (shark teeth)",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "3B.19-08/10 (yield line only with a YIELD sign)",
+    "rule_id": "MUTCD.3B.19.YIELDLINE",
+    "trigger": "INT-YIELD",
+    "where": "INT-7 approach from S3c",
+    "link": "S3c",
+    "node": "INT-7",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640497.565,
+     810302.094
+    ]
+   },
+   "properties": {
+    "id": "S0051",
+    "code": "W3-2",
+    "name": "Yield Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01",
+    "rule_id": "MUTCD.2C.35.YIELDAHEAD",
+    "trigger": "INT-YIELD",
+    "where": "INT-7 approach from S3c",
+    "link": "S3c",
+    "node": "INT-7",
+    "x": 640497.565,
+    "y": 810302.094,
+    "side": "right",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 52.1,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0031",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the YIELD sign visible for sufficient distance? If not, W3-2 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640496.675,
+     810245.74
+    ]
+   },
+   "properties": {
+    "id": "S0052",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C2 crossing one-way S3b",
+    "link": "C2",
+    "node": "INT-7",
+    "x": 640496.675,
+    "y": 810245.74,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 3.3,
+    "azimuth_deg": 270.0,
+    "size": "36x12",
+    "legend": "arrow right",
+    "support": "P0032",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "near-right corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640504.825,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0053",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C2 crossing one-way S3b",
+    "link": "C2",
+    "node": "INT-7",
+    "x": 640504.825,
+    "y": 810254.26,
+    "side": "left",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 270.0,
+    "size": "36x12",
+    "legend": "arrow right",
+    "support": "P0033",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "far-left corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640503.325,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0054",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C3 crossing one-way S3b",
+    "link": "C3",
+    "node": "INT-7",
+    "x": 640503.325,
+    "y": 810254.26,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 3.3,
+    "azimuth_deg": 90.0,
+    "size": "36x12",
+    "legend": "arrow left",
+    "support": "P0034",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "near-right corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640495.175,
+     810245.74
+    ]
+   },
+   "properties": {
+    "id": "S0055",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C3 crossing one-way S3b",
+    "link": "C3",
+    "node": "INT-7",
+    "x": 640495.175,
+    "y": 810245.74,
+    "side": "left",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 90.0,
+    "size": "36x12",
+    "legend": "arrow left",
+    "support": "P0035",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "far-left corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640496.675,
+     810245.74
+    ]
+   },
+   "properties": {
+    "id": "S0056",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C2 crossing one-way S3c",
+    "link": "C2",
+    "node": "INT-7",
+    "x": 640496.675,
+    "y": 810245.74,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 3.3,
+    "azimuth_deg": 270.0,
+    "size": "36x12",
+    "legend": "arrow right",
+    "support": "P0036",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "near-right corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640504.825,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0057",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C2 crossing one-way S3c",
+    "link": "C2",
+    "node": "INT-7",
+    "x": 640504.825,
+    "y": 810254.26,
+    "side": "left",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 270.0,
+    "size": "36x12",
+    "legend": "arrow right",
+    "support": "P0037",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "far-left corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640503.325,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0058",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C3 crossing one-way S3c",
+    "link": "C3",
+    "node": "INT-7",
+    "x": 640503.325,
+    "y": 810254.26,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 3.3,
+    "azimuth_deg": 90.0,
+    "size": "36x12",
+    "legend": "arrow left",
+    "support": "P0038",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "near-right corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640495.175,
+     810245.74
+    ]
+   },
+   "properties": {
+    "id": "S0059",
+    "code": "R6-1",
+    "name": "ONE WAY (arrow)",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.49 ONE WAY signs at intersecting roadways",
+    "rule_id": "MUTCD.2B.49.ONEWAY",
+    "trigger": "ONE-WAY-CROSSING",
+    "where": "INT-7: C3 crossing one-way S3c",
+    "link": "C3",
+    "node": "INT-7",
+    "x": 640495.175,
+    "y": 810245.74,
+    "side": "left",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 90.0,
+    "size": "36x12",
+    "legend": "arrow left",
+    "support": "P0039",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Low",
+    "study": "",
+    "notes": "far-left corner; position approximate, adjust on plan; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640754.26,
+     810245.15
+    ]
+   },
+   "properties": {
+    "id": "S0060",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02 (near side, right-hand side, as close as practicable)",
+    "rule_id": "MUTCD.2B.18.STOP",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-8 approach from S4b",
+    "link": "S4b",
+    "node": "INT-8",
+    "x": 640754.26,
+    "y": 810245.15,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0040",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640750.0,
+      810245.15
+     ],
+     [
+      640753.65,
+      810245.15
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0061",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-8 approach from S4b",
+    "link": "S4b",
+    "node": "INT-8",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640754.26,
+     810197.906
+    ]
+   },
+   "properties": {
+    "id": "S0062",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-8 approach from S4b",
+    "link": "S4b",
+    "node": "INT-8",
+    "x": 640754.26,
+    "y": 810197.906,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 52.1,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0041",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640745.74,
+     810254.85
+    ]
+   },
+   "properties": {
+    "id": "S0063",
+    "code": "R1-1",
+    "name": "STOP",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.18-01/02 (near side, right-hand side, as close as practicable)",
+    "rule_id": "MUTCD.2B.18.STOP",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-8 approach from S4c",
+    "link": "S4c",
+    "node": "INT-8",
+    "x": 640745.74,
+    "y": 810254.85,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 4.8,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0042",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      640750.0,
+      810254.85
+     ],
+     [
+      640746.35,
+      810254.85
+     ]
+    ]
+   },
+   "properties": {
+    "id": "M0064",
+    "code": "SL",
+    "name": "Stop line",
+    "kind": "marking",
+    "family": "markings",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)",
+    "rule_id": "MUTCD.3B.19.STOPLINE",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-8 approach from S4c",
+    "link": "S4c",
+    "node": "INT-8",
+    "x": null,
+    "y": null,
+    "side": "",
+    "offset_m": null,
+    "height_m": null,
+    "back_m": null,
+    "azimuth_deg": null,
+    "size": "",
+    "legend": "",
+    "support": "",
+    "companions": "",
+    "quantity": 3.6,
+    "unit": "m",
+    "confidence": "High",
+    "study": "",
+    "notes": "",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640745.74,
+     810302.094
+    ]
+   },
+   "properties": {
+    "id": "S0065",
+    "code": "W3-1",
+    "name": "Stop Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Conditional",
+    "provision": "Study",
+    "clause": "2C.35-01 (shall be installed where the STOP sign is not visible for sufficient distance)",
+    "rule_id": "MUTCD.2C.35.STOPAHEAD",
+    "trigger": "INT-STOP-2WAY",
+    "where": "INT-8 approach from S4c",
+    "link": "S4c",
+    "node": "INT-8",
+    "x": 640745.74,
+    "y": 810302.094,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 52.1,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0043",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory.",
+    "notes": "advance 47 m (Table 2C-3 Cond. B @ 25/0 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640502.435,
+     810010.3
+    ]
+   },
+   "properties": {
+    "id": "S0066",
+    "code": "R5-1",
+    "name": "DO NOT ENTER",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.46 DO NOT ENTER where entry is prohibited",
+    "rule_id": "MUTCD.2B.46.DONOTENTER",
+    "trigger": "ONE-WAY-EXIT",
+    "where": "exit end of one-way S3b at INT-3",
+    "link": "S3b",
+    "node": "INT-3",
+    "x": 640502.435,
+    "y": 810010.3,
+    "side": "right",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0044",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Medium",
+    "study": "",
+    "notes": "faces traffic entering against the one-way flow; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640497.565,
+     810010.3
+    ]
+   },
+   "properties": {
+    "id": "S0067",
+    "code": "R5-1",
+    "name": "DO NOT ENTER",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.46 DO NOT ENTER where entry is prohibited",
+    "rule_id": "MUTCD.2B.46.DONOTENTER",
+    "trigger": "ONE-WAY-EXIT",
+    "where": "exit end of one-way S3b at INT-3",
+    "link": "S3b",
+    "node": "INT-3",
+    "x": 640497.565,
+    "y": 810010.3,
+    "side": "left",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0045",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Medium",
+    "study": "",
+    "notes": "faces traffic entering against the one-way flow; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640502.435,
+     810256.65
+    ]
+   },
+   "properties": {
+    "id": "S0068",
+    "code": "R5-1",
+    "name": "DO NOT ENTER",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.46 DO NOT ENTER where entry is prohibited",
+    "rule_id": "MUTCD.2B.46.DONOTENTER",
+    "trigger": "ONE-WAY-EXIT",
+    "where": "exit end of one-way S3c at INT-7",
+    "link": "S3c",
+    "node": "INT-7",
+    "x": 640502.435,
+    "y": 810256.65,
+    "side": "right",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0046",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Medium",
+    "study": "",
+    "notes": "faces traffic entering against the one-way flow; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640497.565,
+     810256.65
+    ]
+   },
+   "properties": {
+    "id": "S0069",
+    "code": "R5-1",
+    "name": "DO NOT ENTER",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.46 DO NOT ENTER where entry is prohibited",
+    "rule_id": "MUTCD.2B.46.DONOTENTER",
+    "trigger": "ONE-WAY-EXIT",
+    "where": "exit end of one-way S3c at INT-7",
+    "link": "S3c",
+    "node": "INT-7",
+    "x": 640497.565,
+    "y": 810256.65,
+    "side": "left",
+    "offset_m": 2.44,
+    "height_m": 2.13,
+    "back_m": 0.0,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0047",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "Medium",
+    "study": "",
+    "notes": "faces traffic entering against the one-way flow; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640787.3,
+     809989.04
+    ]
+   },
+   "properties": {
+    "id": "S0070",
+    "code": "R2-1",
+    "name": "SPEED LIMIT",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.21-14 (at points of change from one speed limit to another)",
+    "rule_id": "MUTCD.2B.21.SPEED-CHANGE",
+    "trigger": "SPEED-ZONE",
+    "where": "speed change A3->A4",
+    "link": "A4",
+    "node": "INT-4",
+    "x": 640787.3,
+    "y": 809989.04,
+    "side": "right",
+    "offset_m": 10.96,
+    "height_m": 1.52,
+    "back_m": 512.7,
+    "azimuth_deg": 270.0,
+    "size": "30x36",
+    "legend": "80 km/h",
+    "support": "P0048",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "37 m beyond the intersection; mount: 2A.15-04 (Standard); 2A.16-03 (Guidance)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640712.7,
+     810007.91
+    ]
+   },
+   "properties": {
+    "id": "S0071",
+    "code": "R2-1",
+    "name": "SPEED LIMIT",
+    "kind": "sign",
+    "family": "regulatory",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "2B.21-14 (at points of change from one speed limit to another)",
+    "rule_id": "MUTCD.2B.21.SPEED-CHANGE",
+    "trigger": "SPEED-ZONE",
+    "where": "speed change A4->A3",
+    "link": "A3",
+    "node": "INT-4",
+    "x": 640712.7,
+    "y": 810007.91,
+    "side": "right",
+    "offset_m": 7.91,
+    "height_m": 2.13,
+    "back_m": 212.7,
+    "azimuth_deg": 90.0,
+    "size": "30x36",
+    "legend": "60 km/h",
+    "support": "P0049",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "37 m beyond the intersection; mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640788.1,
+     810010.96
+    ]
+   },
+   "properties": {
+    "id": "S0072",
+    "code": "W3-5",
+    "name": "Reduced Speed Limit Ahead",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Recommended",
+    "provision": "Guidance",
+    "clause": "2C.40 Reduced Speed Limit Ahead",
+    "rule_id": "MUTCD.2C.40.REDUCED-AHEAD",
+    "trigger": "SPEED-ZONE",
+    "where": "speed change A4->A3",
+    "link": "A4",
+    "node": "INT-4",
+    "x": 640788.1,
+    "y": 810010.96,
+    "side": "right",
+    "offset_m": 10.96,
+    "height_m": 1.52,
+    "back_m": 38.1,
+    "azimuth_deg": 90.0,
+    "size": "36x36",
+    "legend": "60 km/h",
+    "support": "P0050",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "advance 38 m (Table 2C-3 Cond. B @ 50/30 mph); mount: 2A.15-04 (Standard); 2A.16-03 (Guidance)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640254.26,
+     809750.94
+    ]
+   },
+   "properties": {
+    "id": "S0073",
+    "code": "S1-1",
+    "name": "School",
+    "kind": "sign",
+    "family": "school",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "Chapter 7B School Advance Warning / School Crossing assembly - section to confirm",
+    "rule_id": "MUTCD.7B.SCHOOL-ADVANCE",
+    "trigger": "SCHOOL",
+    "where": "school SCH-1 on S2a (fwd)",
+    "link": "S2a",
+    "node": "",
+    "x": 640254.26,
+    "y": 809750.94,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 249.1,
+    "azimuth_deg": 180.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0051",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "advance 99 m (Table 2C-3 Cond. A @ 25 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640245.74,
+     809949.06
+    ]
+   },
+   "properties": {
+    "id": "S0074",
+    "code": "S1-1",
+    "name": "School",
+    "kind": "sign",
+    "family": "school",
+    "cls": "Mandatory",
+    "provision": "Standard",
+    "clause": "Chapter 7B School Advance Warning / School Crossing assembly - section to confirm",
+    "rule_id": "MUTCD.7B.SCHOOL-ADVANCE",
+    "trigger": "SCHOOL",
+    "where": "school SCH-1 on S2a (rev)",
+    "link": "S2a",
+    "node": "",
+    "x": 640245.74,
+    "y": 809949.06,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 249.1,
+    "azimuth_deg": 0.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0052",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "advance 99 m (Table 2C-3 Cond. A @ 25 mph); mount: 2A.15-05 (Standard); 2A.16-10 (Option)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640375.0,
+     810245.74
+    ]
+   },
+   "properties": {
+    "id": "S0076",
+    "code": "W11-2",
+    "name": "Pedestrian Crossing",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "2C.55 Pedestrian crossing sign (W11-2 + W16-7P at the crossing)",
+    "rule_id": "MUTCD.2C.55.PED",
+    "trigger": "PED-XING-MIDBLOCK",
+    "where": "crosswalk XW-1 on C2 (fwd)",
+    "link": "C2",
+    "node": "",
+    "x": 640375.0,
+    "y": 810245.74,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.48,
+    "back_m": 125.0,
+    "azimuth_deg": 270.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0053",
+    "companions": "W16-7P",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option); bottom raised 0.35 m for plaque W16-7P below (2A.15)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640375.0,
+     810245.74
+    ]
+   },
+   "properties": {
+    "id": "S0077",
+    "code": "W16-7P",
+    "name": "Diagonal Arrow plaque",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "2C.55 Pedestrian crossing sign (W11-2 + W16-7P at the crossing)",
+    "rule_id": "MUTCD.2C.55.PED",
+    "trigger": "PED-XING-MIDBLOCK",
+    "where": "crosswalk XW-1 on C2 (fwd)",
+    "link": "C2",
+    "node": "",
+    "x": 640375.0,
+    "y": 810245.74,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 125.0,
+    "azimuth_deg": 270.0,
+    "size": "24x12",
+    "legend": "",
+    "support": "P0053",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "plaque below S0076 W11-2",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640375.0,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0078",
+    "code": "W11-2",
+    "name": "Pedestrian Crossing",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "2C.55 Pedestrian crossing sign (W11-2 + W16-7P at the crossing)",
+    "rule_id": "MUTCD.2C.55.PED",
+    "trigger": "PED-XING-MIDBLOCK",
+    "where": "crosswalk XW-1 on C2 (rev)",
+    "link": "C2",
+    "node": "",
+    "x": 640375.0,
+    "y": 810254.26,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.48,
+    "back_m": 125.0,
+    "azimuth_deg": 90.0,
+    "size": "30x30",
+    "legend": "",
+    "support": "P0054",
+    "companions": "W16-7P",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "mount: 2A.15-05 (Standard); 2A.16-10 (Option); bottom raised 0.35 m for plaque W16-7P below (2A.15)",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     640375.0,
+     810254.26
+    ]
+   },
+   "properties": {
+    "id": "S0079",
+    "code": "W16-7P",
+    "name": "Diagonal Arrow plaque",
+    "kind": "sign",
+    "family": "warning",
+    "cls": "Optional",
+    "provision": "Option",
+    "clause": "2C.55 Pedestrian crossing sign (W11-2 + W16-7P at the crossing)",
+    "rule_id": "MUTCD.2C.55.PED",
+    "trigger": "PED-XING-MIDBLOCK",
+    "where": "crosswalk XW-1 on C2 (rev)",
+    "link": "C2",
+    "node": "",
+    "x": 640375.0,
+    "y": 810254.26,
+    "side": "right",
+    "offset_m": 4.26,
+    "height_m": 2.13,
+    "back_m": 125.0,
+    "azimuth_deg": 90.0,
+    "size": "24x12",
+    "legend": "",
+    "support": "P0054",
+    "companions": "",
+    "quantity": null,
+    "unit": "",
+    "confidence": "High",
+    "study": "",
+    "notes": "plaque below S0078 W11-2",
+    "code_source": "mutcd_11e",
+    "verify": true
+   }
+  }
+ ],
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "EPSG:22992"
+  }
+ }
+}

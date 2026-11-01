@@ -1,0 +1,3 @@
+{"all_links": {"class": "arterial", "speed_kmh": 90, "lanes": 1, "oneway": false, "urban": false, "aadt": 4200},
+ "links": {"H36": {"class": "local", "speed_kmh": 60, "aadt": 300}},
+ "nodes": {"N002": {"control": "stop_minor"}}}

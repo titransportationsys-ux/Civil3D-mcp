@@ -1,0 +1,12 @@
+{
+ "status": "done",
+ "counts": {
+  "mandatory": 34,
+  "recommended": 3,
+  "optional": 7,
+  "conditional": 15,
+  "pending": 0
+ },
+ "issues": "Rulebook mutcd_11e not signed off: results are DRAFT. 12 device(s) Low confidence.",
+ "outputs": "urban_grid_Sign_Schedule.xlsx\nurban_grid_Signs.geojson\nurban_grid_Signing.dxf\nurban_grid_Report.docx"
+}
