@@ -76,6 +76,7 @@ python -m engine.run --input <file> --settings settings.json --overrides overrid
 10. `--allow-partial` only when the user explicitly skips a question. 11. Re-read the input before every run and compare layer counts. 12. Old junction coordinates are not reused without that check.
 - Grade crossings: W10-1 Mandatory on every approach (user removes it where 8B.06-01 applies); Crossbuck 4.6 m + half gauge before the track.
 - Not automated (place by hand or as `type: sign` points): ONE WAY / Keep Right at divided crossings (2B.49), Yield Here To Pedestrians (2B.19), BEGIN/END ONE WAY, roundabout island signs, parking, W10-2/3/4, W12-2a.
+- **Placement rules and workflow**: `docs/Sign_Placement_Rules.md` (stations, offsets, heights, spacing, QA, the 81 rules, and the manual-placement method). MUTCD values only; Egyptian and SHC placement values must come from their own sources.
 - Roundabouts need `inscribed_radius_m` from the user; school zones need `school_zone: true` only where designated by statute.
 
 ## 7. Adding another code
