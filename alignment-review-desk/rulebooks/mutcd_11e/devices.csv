@@ -1,0 +1,1072 @@
+# Sign catalog. Sizes W x H in inches. official_name = name as printed in the MUTCD table/text.
+# name_verify / size_verify: PDF = checked against T&I's copy of the MUTCD 11th Edition PDF on 30 Sep 2026 (Tables 2B-1, 2C-1, 7B-1); 0 = not verified.
+# symbol: picture of the sign cropped from the manual's figures (public-domain FHWA publication); symbol_source gives the figure and page.
+# orientation: lr = sign has a left/right form chosen from geometry; the schedule states the orientation in words.
+# Every MUTCD sign and plaque with a size-table row or a named designation is listed (full catalog, 12 Oct 2026); the first 29 rows are the hand-verified core set.
+code,official_name,name_source,name_verify,family,shape,color,orientation,legend,conv_single,conv_multi,expressway,freeway,minimum,oversized,size_source,size_verify,symbol,symbol_source
+R1-1,Stop,"Table 2B-1, manual p.68 (row ""Stop"", 2B.04)",PDF,regulatory,octagon,red,none,STOP,30x30,36x36,36x36,,30x30,48x48,"Table 2B-1, manual p.68",PDF,symbols/R1-1.png,"Figure 2B-1, manual p.74"
+R1-2,Yield,"Table 2B-1, manual p.68 (row ""Yield"", 2B.05)",PDF,regulatory,triangle,red,none,YIELD,36x36x36,48x48x48,48x48x48,60x60x60,30x30x30,,"Table 2B-1, manual p.68",PDF,symbols/R1-2.png,"Figure 2B-1, manual p.74"
+R1-3P,All Way (plaque),"Table 2B-1, manual p.68 (row ""All Way (plaque)"", 2B.04)",PDF,regulatory,rectangle,red,none,ALL-WAY,18x6,18x6,,,,30x12,"Table 2B-1, manual p.68",PDF,symbols/R1-3P.png,"Figure 2B-1, manual p.74"
+R2-1,Speed Limit,"Table 2B-1, manual p.68 (row ""Speed Limit"", 2B.21)",PDF,regulatory,rectangle,white,none,SPEED LIMIT {speed},24x30,30x36,36x48,48x60,18x24,30x36,"Table 2B-1, manual p.68",PDF,symbols/R2-1.png,"Figure 2B-3, manual p.86"
+R4-7,Keep Right,"Table 2B-1, manual p.69 (row ""Keep Right"", 2B.39)",PDF,regulatory,rectangle,white,none,symbol,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-7.png,"Figure 2B-10, manual p.103"
+R5-1,Do Not Enter,"Table 2B-1, manual p.70 (row ""Do Not Enter"", 2B.46)",PDF,regulatory,square,red,none,DO NOT ENTER,30x30,36x36,36x36,48x48,,36x36,"Table 2B-1, manual p.70",PDF,symbols/R5-1.png,"Figure 2B-13, manual p.109"
+R5-1a,Wrong Way,"Table 2B-1, manual p.70 (row ""Wrong Way"", 2B.47)",PDF,regulatory,rectangle,red,none,WRONG WAY,36x24,42x30,36x24,42x30,30x18,42x30,"Table 2B-1, manual p.70",PDF,symbols/R5-1a.png,"Figure 2B-13, manual p.109"
+R6-1,One Way,"Table 2B-1, manual p.70 (row ""One Way"", 2B.49)",PDF,regulatory,rectangle,white,lr,ONE WAY + arrow,36x12,48x18,48x18,48x18,,72x24,"Table 2B-1, manual p.70",PDF,symbols/R6-1.png,"Figure 2B-13, manual p.109"
+R6-2,One Way,"Table 2B-1, manual p.70 (row ""One Way"", 2B.49)",PDF,regulatory,rectangle,white,lr,ONE WAY + arrow,24x30,30x36,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.70",PDF,symbols/R6-2.png,"Figure 2B-13, manual p.109"
+W1-1,Turn,"Table 2C-1, manual p.148 (row ""Horizontal Alignment"", 2C.07)",PDF,warning,diamond,yellow,lr,symbol,30x30,36x36,36x36,36x36,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-1.png,"Figure 2C-1, manual p.153"
+W1-2,Curve,"Table 2C-1, manual p.148 (row ""Horizontal Alignment"", 2C.07)",PDF,warning,diamond,yellow,lr,symbol,30x30,36x36,36x36,36x36,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-2.png,"Figure 2C-1, manual p.153"
+W1-3,Reverse Turn,"Table 2C-1, manual p.148 (row ""Horizontal Alignment"", 2C.07)",PDF,warning,diamond,yellow,lr,symbol,30x30,36x36,36x36,36x36,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-3.png,"Figure 2C-1, manual p.153"
+W1-4,Reverse Curve,"Table 2C-1, manual p.148 (row ""Horizontal Alignment"", 2C.07)",PDF,warning,diamond,yellow,lr,symbol,30x30,36x36,36x36,36x36,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-4.png,"Figure 2C-1, manual p.153"
+W1-8,Chevron Alignment,"Table 2C-1, manual p.148 (row ""Chevron Alignment"", 2C.08)",PDF,warning,rectangle,yellow,lr,symbol,18x24,18x24,30x36,36x48,,24x30,"Table 2C-1, manual p.148",PDF,symbols/W1-8.png,"Figure 2C-1, manual p.153"
+W13-1P,Advisory Speed (plaque),"Table 2C-1, manual p.150 (row ""Advisory Speed (plaque)"", 2C.59)",PDF,warning,square,yellow,none,{speed},18x18,18x18,24x24,30x30,,30x30,"Table 2C-1, manual p.150",PDF,symbols/W13-1P.png,"Figure 2C-1, manual p.153"
+W2-1,Cross Road,"Table 2C-1, manual p.148 (row ""Intersection Warning"", 2C.41)",PDF,warning,diamond,yellow,none,symbol,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W2-1.png,"Figure 2C-9/2C-10, manual p.179"
+W2-2,Side Road,"Table 2C-1, manual p.148 (row ""Intersection Warning"", 2C.41)",PDF,warning,diamond,yellow,lr,symbol,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W2-2.png,"Figure 2C-9/2C-10, manual p.179"
+W2-4,T-Intersection,"Table 2C-1, manual p.148 (row ""Intersection Warning"", 2C.41)",PDF,warning,diamond,yellow,none,symbol,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W2-4.png,"Figure 2C-9/2C-10, manual p.179"
+W2-6,Circular Intersection,"Table 2C-1, manual p.148 (row ""Intersection Warning"", 2C.41)",PDF,warning,diamond,yellow,none,symbol,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W2-6.png,"Figure 2C-9/2C-10, manual p.179"
+W3-1,Stop Ahead,"Table 2C-1, manual p.148 (row ""Stop, Yield, Signal Ahead"", 2C.35)",PDF,warning,diamond,yellow,none,symbol,30x30,30x30,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W3-1.png,"Figure 2C-8, manual p.177"
+W3-2,Yield Ahead,"Table 2C-1, manual p.148 (row ""Stop, Yield, Signal Ahead"", 2C.35)",PDF,warning,diamond,yellow,none,symbol,30x30,30x30,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W3-2.png,"Figure 2C-8, manual p.177"
+W3-3,Signal Ahead,"Table 2C-1, manual p.148 (row ""Stop, Yield, Signal Ahead"", 2C.35)",PDF,warning,diamond,yellow,none,symbol,30x30,30x30,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W3-3.png,"Figure 2C-8, manual p.177"
+W3-5,Reduced Speed Limit Ahead,"Table 2C-1, manual p.148 (row ""Reduced Speed Limit Ahead"", 2C.40)",PDF,warning,diamond,yellow,none,symbol: arrow over SPEED LIMIT {speed},36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W3-5.png,"Figure 2C-9/2C-10, manual p.179"
+W4-2,Lane Ends,"Table 2C-1, manual p.148 (row ""Lane Ends"", 2C.47)",PDF,warning,diamond,yellow,lr,symbol,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W4-2.png,"Figure 2C-11, manual p.182"
+W11-2,Pedestrian,"Table 2C-1, manual p.149 (row ""Pedestrian"", 2C.55)",PDF,warning,diamond,yellow,none,symbol,30x30,36x36,36x36,,,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-2.png,"Figure 2C-15, manual p.193"
+W16-7P,Diagonal Downward Arrow (plaque),"Table 2C-1, manual p.150 (row ""Diagonal Downward"", 2C.63)",PDF,warning,rectangle,yellow,lr,arrow,21x15,21x15,,,,30x21,"Table 2C-1, manual p.150",PDF,symbols/W16-7P.png,"Figure 2C-16, manual p.195"
+W16-9P,Ahead (plaque),"Table 2C-1, manual p.150 (row ""Ahead (plaque)"", 2C.55)",PDF,warning,rectangle,yellow,none,AHEAD,24x12,24x12,30x18,,,30x18,"Table 2C-1, manual p.150",PDF,symbols/W16-9P.png,"Figure 2C-16, manual p.195"
+S1-1,School,"Table 7B-1, manual p.971 (row ""School"", 7B.02)",PDF,school,pentagon,fluorescent_yellow_green,none,symbol,36x36,36x36,,,30x30,48x48,"Table 7B-1, manual p.971",PDF,symbols/S1-1.png,"Figure 7B-1, manual p.973"
+DELINEATOR,Delineator (single yellow retroreflector),engine item; Chapter 3G not verified,0,warning,circle,yellow,none,,3x3,3x3,3x3,3x3,,,not verified,0,,
+D1-1,Destination (1 line),Table 2D-1 (2D.36),PDF,guide,,,none,,Variesx18,Variesx18,,,,,"Table 2D-1, manual p.207",PDF,symbols/D1-1.png,"Figure 2D-9, manual p.233"
+D1-1a,Destination and Distance (1 line),Table 2D-1 (2D.36),PDF,guide,,,none,,Variesx18,Variesx18,,,,,"Table 2D-1, manual p.207",PDF,,
+D1-1b,Bicycle Destination Signs,Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx6,Variesx6,,,Variesx6,,"Table 9A-1, manual p.1050",PDF,symbols/D1-1b.png,"Figure 9D-1, manual p.1070"
+D1-1c,Bicycle Destination (1 line),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx6,Variesx6,,,Variesx6,,"Table 9A-1, manual p.1050",PDF,symbols/D1-1c.png,"Figure 9D-1, manual p.1070"
+D1-1d,Circular Intersection Destination (1 line),Table 2D-1 (2D.39),PDF,guide,,,none,,Variesx18,Variesx18,,,,,"Table 2D-1, manual p.207",PDF,symbols/D1-1d.png,"Figure 2D-9, manual p.239"
+D1-1e,Circular Intersection Departure Guide,Table 2D-1 (2D.39),PDF,guide,,,none,,Variesx42,Variesx42,,,,,"Table 2D-1, manual p.207",PDF,,
+D1-2,Destination (2 lines),Table 2D-1 (2D.36),PDF,guide,,,none,,Variesx30,Variesx30,,,,,"Table 2D-1, manual p.207",PDF,symbols/D1-2.png,"Figure 2D-9, manual p.233"
+D1-2a,Destination and Distance (2 lines),Table 2D-1 (2D.36),PDF,guide,,,none,,Variesx30,Variesx30,,,,,"Table 2D-1, manual p.207",PDF,symbols/D1-2a.png,"Figure 2D-9, manual p.233"
+D1-2b,Bicycle Destination (2 lines),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx12,Variesx12,,,Variesx12,,"Table 9A-1, manual p.1050",PDF,symbols/D1-2b.png,"Figure 9D-1, manual p.1070"
+D1-2c,Bicycle Destination (2 lines),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx12,Variesx12,,,Variesx12,,"Table 9A-1, manual p.1050",PDF,symbols/D1-2c.png,"Figure 9D-1, manual p.1070"
+D1-2d,Circular Intersection Destination (2 lines),Table 2D-1 (2D.39),PDF,guide,,,none,,Variesx30,Variesx30,,,,,"Table 2D-1, manual p.207",PDF,symbols/D1-2d.png,"Figure 2D-9, manual p.239"
+D1-3,Destination (3 lines),Table 2D-1 (2D.36),PDF,guide,,,none,,Variesx42,Variesx42,,,,,"Table 2D-1, manual p.208",PDF,symbols/D1-3.png,"Figure 2D-9, manual p.233"
+D1-3a,Destination and Distance (3 lines),Table 2D-1 (2D.36),PDF,guide,,,none,,Variesx42,Variesx42,,,,,"Table 2D-1, manual p.208",PDF,symbols/D1-3a.png,"Figure 2D-9, manual p.233"
+D1-3b,Bicycle Destination (3 lines),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx18,Variesx18,,,Variesx18,,"Table 9A-1, manual p.1050",PDF,symbols/D1-3b.png,"Figure 9D-1, manual p.1070"
+D1-3c,Bicycle Destination (3 lines),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx18,Variesx18,,,Variesx18,,"Table 9A-1, manual p.1050",PDF,symbols/D1-3c.png,"Figure 9D-1, manual p.1070"
+D1-3d,Circular Intersection Destination (3 lines),Table 2D-1 (2D.39),PDF,guide,,,none,,Variesx42,Variesx42,,,,,"Table 2D-1, manual p.208",PDF,symbols/D1-3d.png,"Figure 2D-9, manual p.239"
+D1-5,Circular Intersection Diagrammatic Destination,Table 2D-1 (2D.39),PDF,guide,,,none,,Variesx72,Variesx72,,,,,"Table 2D-1, manual p.208",PDF,symbols/D1-5.png,"Figure 2D-9, manual p.239"
+D1-5a,"Circular Intersection Diagrammatic Destination,",Table 2D-1 (2D.39),PDF,guide,,,none,,Variesx78,Variesx78,,,,,"Table 2D-1, manual p.208",PDF,symbols/D1-5a.png,"Figure 2D-9, manual p.239"
+D2-1,Distance (1 line),Table 2D-1 (2D.43),PDF,guide,,,none,,Variesx18,Variesx18,,,,,"Table 2D-1, manual p.208",PDF,symbols/D2-1.png,"Figure 2D-9, manual p.233"
+D2-1a,Bike Route Destination and Distance (1 Line),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx12,Variesx12,,,Variesx12,,"Table 9A-1, manual p.1050",PDF,symbols/D2-1a.png,"Figure 9D-1, manual p.1070"
+D2-2,Distance (2 lines),Table 2D-1 (2D.43),PDF,guide,,,none,,Variesx30,Variesx30,,,,,"Table 2D-1, manual p.208",PDF,symbols/D2-2.png,"Figure 2D-9, manual p.233"
+D2-2a,Bike Route Destination and Distance (2 Lines),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx15,Variesx15,,,Variesx15,,"Table 9A-1, manual p.1050",PDF,symbols/D2-2a.png,"Figure 9D-1, manual p.1070"
+D2-3,Distance (3 lines),Table 2D-1 (2D.43),PDF,guide,,,none,,Variesx42,Variesx42,,,,,"Table 2D-1, manual p.208",PDF,symbols/D2-3.png,"Figure 2D-9, manual p.233"
+D2-3a,Bike Route Destination and Distance (3 Lines),Table 9A-1 (9D.01),PDF,guide,,,none,,Variesx18,Variesx18,,,Variesx18,,"Table 9A-1, manual p.1050",PDF,symbols/D2-3a.png,"Figure 9D-1, manual p.1070"
+D3-1,Street Name (1 line),Table 2D-1 (2D.45),PDF,guide,,,none,,Variesx48,Variesx48,,,,,"Table 2D-1, manual p.208",PDF,symbols/D3-1.png,"Figure 2D-14, manual p.247"
+D3-1a,Street Name (1 line),Table 2D-1 (2D.45),PDF,guide,,,none,,Variesx48,Variesx48,,,,,"Table 2D-1, manual p.208",PDF,symbols/D3-1a.png,"Figure 2D-14, manual p.247"
+D3-2,Advance Street Name (2 lines),Table 2D-1 (2D.46),PDF,guide,,,none,,Variesx54,Variesx54,,,,,"Table 2D-1, manual p.208",PDF,,
+D4-1,Parking Area Directional,Table 2D-1 (2D.47),PDF,guide,,,none,,30x24,30x24,,,18x15,,"Table 2D-1, manual p.208",PDF,symbols/D4-1.png,"Figure 2D-14, manual p.247"
+D4-2,Park - Ride,Table 2D-1 (2D.48),PDF,guide,,,none,,30x36,30x36,,,24x30,36x48,"Table 2D-1, manual p.208",PDF,symbols/D4-2.png,"Figure 2D-14, manual p.247"
+D4-3,Bicycle Parking Area Directional,Table 9A-1 (9D.09),PDF,guide,,,none,,18x12,18x12,,,18x12,,"Table 9A-1, manual p.1050",PDF,symbols/D4-3.png,"Figure 9D-1, manual p.1070"
+D4-4,Bicycle-Sharing Station Directional,Table 9A-1 (9D.09),PDF,guide,,,none,,12x18,12x18,,,12x18,,"Table 9A-1, manual p.1050",PDF,symbols/D4-4.png,"Figure 9D-1, manual p.1071"
+D4-4a,Bicycle Lockers Directional,Table 9A-1 (9D.09),PDF,guide,,,none,,12x18,12x18,,,12x18,,"Table 9A-1, manual p.1050",PDF,symbols/D4-4a.png,"Figure 9D-1, manual p.1071"
+D5-1,Rest Area Advance,Table 2I-1 (2I.05),PDF,guide,,,none,,78x36,78x36,132x60(F),132x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-1.png,"Figure 2I-5, manual p.485"
+D5-1a,Rest Area Advance Direction,Table 2I-1 (2I.05),PDF,guide,,,none,,78x36,78x36,132x60(F),132x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-1a.png,"Figure 2I-5, manual p.485"
+D5-2,Rest Area Entrance Direction,Table 2I-1 (2I.05),PDF,guide,,,none,,78x36,78x36,132x66(F),132x66(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-2.png,"Figure 2I-5, manual p.485"
+D5-2a,Rest Area Gore,Table 2I-1 (2I.05),PDF,guide,,,none,,42x48,42x48,78x78(F),78x78(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-2a.png,"Figure 2I-5, manual p.485"
+D5-5,Rest Area Directional,Table 2I-1 (2I.05),PDF,guide,,,none,,42x48,42x48,,,,,"Table 2I-1, manual p.476",PDF,symbols/D5-5.png,"Figure 2I-5, manual p.485"
+D5-6,Next Rest Area,Table 2I-1 (2I.05),PDF,guide,,,none,,78x54,78x54,132x78(F),132x78(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-6.png,"Figure 2I-5, manual p.485"
+D5-7,Rest Area Tourist Info Center Advance,Table 2I-1 (2I.08),PDF,guide,,,none,,90x72,90x72,156x108(F),156x108(F),,,"Table 2I-1, manual p.476",PDF,,
+D5-7a,Rest Area Tourist Info Center,Table 2I-1 (2I.08),PDF,guide,,,none,,90x72,90x72,156x108(F),156x108(F),,,"Table 2I-1, manual p.476",PDF,,
+D5-8,Rest Area Tourist Info Center Entrance Direction,Table 2I-1 (2I.08),PDF,guide,,,none,,84x72,84x72,138x108(F),138x108(F),,,"Table 2I-1, manual p.476",PDF,,
+D5-9,Parking Area Advance,Table 2I-1 (2I.05),PDF,guide,,,none,,96x36,96x36,162x60(F),162x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-9.png,"Figure 2I-5, manual p.485"
+D5-9a,Parking Area Entrance Direction,Table 2I-1 (2I.05),PDF,guide,,,none,,96x36,96x36,162x60(F),162x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-9a.png,"Figure 2I-5, manual p.485"
+D5-9b,Parking Area Gore,Table 2I-1 (2I.05),PDF,guide,,,none,,62x48,62x48,108x78(F),108x78(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-9b.png,"Figure 2I-5, manual p.485"
+D5-10,"Picnic Area (Roadside Table, Roadside",Table 2I-1 (2I.05),PDF,guide,,,none,,84x36,84x36,144x60(F),144x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-10.png,"Figure 2I-5, manual p.485"
+D5-10a,"Picnic Area (Roadside Table, Roadside",Table 2I-1 (2I.05),PDF,guide,,,none,,84x36,84x36,144x60(F),144x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-10a.png,"Figure 2I-5, manual p.485"
+D5-10b,"Picnic Area (Roadside Table, Roadside",Table 2I-1 (2I.05),PDF,guide,,,none,,54x48,54x48,92x78(F),92x78(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-10b.png,"Figure 2I-5, manual p.485"
+D5-11,"Scenic Area (Scenic View, Scenic",Table 2I-1 (2I.05),PDF,guide,,,none,,84x36,84x36,144x60(F),144x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-11.png,"Figure 2I-5, manual p.485"
+D5-11a,"Scenic Area (Scenic View, Scenic",Table 2I-1 (2I.05),PDF,guide,,,none,,84x36,84x36,144x60(F),144x60(F),,,"Table 2I-1, manual p.476",PDF,symbols/D5-11a.png,"Figure 2I-5, manual p.485"
+D5-11b,Overlook) Gore,Table 2I-1 (2I.05),PDF,guide,,,none,,54x48,54x48,76x66(E),76x66(E),,,"Table 2I-1, manual p.476",PDF,symbols/D5-11b.png,"Figure 2I-5, manual p.485"
+D5-12,Interstate Oasis,Table 2I-1 (2I.04),PDF,guide,,,none,,,,198x60(F),198x60(F),,,"Table 2I-1, manual p.476",PDF,,
+D5-12aP,Interstate Oasis (plaque),Table 2I-1 (2I.04),PDF,guide,,,none,,,,114x48,114x48,,,"Table 2I-1, manual p.476",PDF,,
+D5-12b,Interstate Oasis Directional,Table 2I-1 (2I.04),PDF,guide,,,none,,,,48x36,48x36,,,"Table 2I-1, manual p.476",PDF,,
+D5-13,Brake Check Area Advance,Table 2I-1 (2I.06),PDF,guide,,,none,,96x54,96x54,132x66,132x66,,,"Table 2I-1, manual p.476",PDF,symbols/D5-13.png,"Figure 2I-5, manual p.485"
+D5-14,Brake Check Area Entrance Direction,Table 2I-1 (2I.06),PDF,guide,,,none,,96x54,96x54,132x78,132x78,,,"Table 2I-1, manual p.476",PDF,symbols/D5-14.png,"Figure 2I-5, manual p.485"
+D5-15,Chain-Up Area Advance,Table 2I-1 (2I.07),PDF,guide,,,none,,72x54,72x54,102x66,102x66,,,"Table 2I-1, manual p.476",PDF,symbols/D5-15.png,"Figure 2I-5, manual p.485"
+D5-16,Chain-Up Area Entrance Direction,Table 2I-1 (2I.07),PDF,guide,,,none,,72x54,72x54,102x78,102x78,,,"Table 2I-1, manual p.476",PDF,symbols/D5-16.png,"Figure 2I-5, manual p.485"
+D8-1,Advance Weigh Station Distance,Table 2D-1 (2D.51),PDF,guide,,,none,,78x60,78x60,,,60x48,96x72,"Table 2D-1, manual p.208",PDF,,
+D8-1a,Weigh Station Ahead,Table 2D-1 (2D.51),PDF,guide,,,none,,66x48,66x48,,,48x36,,"Table 2D-1, manual p.208",PDF,,
+D8-2,Weigh Station Advance Direction,Table 2D-1 (2D.51),PDF,guide,,,none,,84x72,84x72,,,66x54,108x90,"Table 2D-1, manual p.208",PDF,,
+D8-3,Weigh Station Entrance Direction,Table 2D-1 (2D.51),PDF,guide,,,none,,66x60,66x60,,,48x42,84x78,"Table 2D-1, manual p.208",PDF,,
+D9-1,Telephone,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-1.png,"Figure 2I-1, manual p.478"
+D9-2,Hospital,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-2.png,"Figure 2I-1, manual p.478"
+D9-3,Camping,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-3.png,"Figure 2I-1, manual p.478"
+D9-4,Litter Container,Table 2I-1 (2I.02),PDF,guide,,,none,,24x30,24x30,36x48,36x48,,,"Table 2I-1, manual p.476",PDF,symbols/D9-4.png,"Figure 2I-1, manual p.478"
+D9-6,International Symbol of Accessibility,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-6.png,"Figure 2I-1, manual p.478"
+D9-6P,Van Accessible (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,18x9,18x9,,,,,"Table 2I-1, manual p.476",PDF,symbols/D9-6P.png,"Figure 2I-1, manual p.478"
+D9-7,Gas,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-7.png,"Figure 2I-1, manual p.478"
+D9-8,Food,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-8.png,"Figure 2I-1, manual p.478"
+D9-9,Lodging,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-9.png,"Figure 2I-1, manual p.478"
+D9-10,Tourist Information,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-10.png,"Figure 2I-1, manual p.478"
+D9-11,Diesel Fuel,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-11.png,"Figure 2I-1, manual p.478"
+D9-11a,Alternative Fuel - Compressed Natural Gas,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-11a.png,"Figure 2I-1, manual p.478"
+D9-11b,Electric Vehicle Charging,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,symbols/D9-11b.png,"Figure 2I-1, manual p.478"
+D9-11bP,Electric Vehicle Charging (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,24x18,24x18,30x24,30x24,,,"Table 2I-1, manual p.476",PDF,symbols/D9-11bP.png,"Figure 2I-1, manual p.478"
+D9-11c,Alternative Fuel - Ethanol,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.476",PDF,,
+D9-11d,Alternative Fuel - Liquefied Natural Gas,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-11d.png,"Figure 2I-1, manual p.478"
+D9-11e,Alternative Fuel - Liquefied Petroleum Gas,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-11e.png,"Figure 2I-1, manual p.478"
+D9-11f,Alternative Fuel - Hydrogen,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-11f.png,"Figure 2I-1, manual p.478"
+D9-11g,Alternative Fuel - Biofuel,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-11g.png,"Figure 2I-1, manual p.478"
+D9-12,RV Sanitary Station,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-12.png,"Figure 2I-1, manual p.478"
+D9-13,Emergency Medical Services,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-13.png,"Figure 2I-1, manual p.478"
+D9-13aP,Hospital (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,24x12,24x12,30x12,30x12,,,"Table 2I-1, manual p.477",PDF,symbols/D9-13aP.png,"Figure 2I-1, manual p.478"
+D9-13bP,Ambulance Station (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,24x12,24x12,30x15,30x15,,,"Table 2I-1, manual p.477",PDF,symbols/D9-13bP.png,"Figure 2I-1, manual p.478"
+D9-13cP,Emergency Medical Care (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,24x18,24x18,30x24,30x24,,,"Table 2I-1, manual p.477",PDF,symbols/D9-13cP.png,"Figure 2I-1, manual p.478"
+D9-13dP,Trauma Center (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,24x12,24x12,30x15,30x15,,,"Table 2I-1, manual p.477",PDF,symbols/D9-13dP.png,"Figure 2I-1, manual p.478"
+D9-14,Police,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-14.png,"Figure 2I-1, manual p.478"
+D9-16,Truck Parking,Table 2I-1 (2I.03),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-16.png,"Figure 2I-1, manual p.478"
+D9-16aP,Truck External Power (plaque),Table 2I-1 (2I.03),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-16aP.png,"Figure 2I-1, manual p.478"
+D9-16b,Truck Parking Availability - Exit Number,Table 2I-1 (2I.15),PDF,guide,,,none,,Variesx144,Variesx144,Variesx144,Variesx144,,,"Table 2I-1, manual p.477",PDF,,
+D9-16c,Truck Parking Availability - Distance,Table 2I-1 (2I.15),PDF,guide,,,none,,Variesx144,Variesx144,Variesx144,Variesx144,,,"Table 2I-1, manual p.477",PDF,,
+D9-16d,Signing for Truck Parking Availability (D9-16b through D9-16e),text (2I.15),PDF,guide,,,none,,,,,,,,section text,0,,
+D9-16e,Signing for Truck Parking Availability (D9-16b through D9-16e),text (2I.15),PDF,guide,,,none,,,,,,,,section text,0,,
+D9-17P,Next Services Advance (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,72x24,72x24,114x30,114x30,,,"Table 2I-1, manual p.477",PDF,,
+D9-17a,Next EV Charging,text (2H.14),PDF,guide,,,none,,,,,,,,section text,0,,
+D9-18,,Table 2I-1 (2I.03),PDF,guide,,,none,,108x84,108x84,,,,,"Table 2I-1, manual p.477",PDF,,
+D9-18a,General Services with Exit Number,Table 2I-1 (2I.03),PDF,guide,,,none,,72x60,72x60,102x84(E),102x84(E),,,"Table 2I-1, manual p.477",PDF,,
+D9-18b,,Table 2I-1 (2I.03),PDF,guide,,,none,,108x84,108x84,,,,,"Table 2I-1, manual p.477",PDF,,
+D9-18c,General Services with Action Message,Table 2I-1 (2I.03),PDF,guide,,,none,,72x60,72x60,102x84(E),102x84(E),,,"Table 2I-1, manual p.477",PDF,,
+D9-18dP,Rural Interchange General Services,Table 2I-1 (2I.03),PDF,guide,,,none,,,,120x36,120x36,,,"Table 2I-1, manual p.477",PDF,,
+D9-18eP,Rural Interchange General Services,Table 2I-1 (2I.03),PDF,guide,,,none,,,,Variesx24,Variesx24,,,"Table 2I-1, manual p.477",PDF,,
+D9-18fP,Rural Interchange General Services,Table 2I-1 (2I.03),PDF,guide,,,none,,,,Variesx42,Variesx42,,,"Table 2I-1, manual p.477",PDF,,
+D9-19,Alternative Fuels Corridor,Table 2H-1 (2H.14),PDF,guide,,,none,,24x24,24x24,36x36,36x36,,,"Table 2H-1, manual p.461",PDF,,
+D9-19aP,Alternative Fuels Corridor (1 line) (plaque),Table 2H-1 (2H.14),PDF,guide,,,none,,30x9,30x9,42x12,42x12,,,"Table 2H-1, manual p.461",PDF,,
+D9-19bP,Alternative Fuels Corridor (2 lines) (plaque),Table 2H-1 (2H.14),PDF,guide,,,none,,30x12,30x12,42x18,42x18,,,"Table 2H-1, manual p.461",PDF,,
+D9-20,Pharmacy,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-20.png,"Figure 2I-1, manual p.478"
+D9-20aP,24-Hour (plaque),Table 2I-1 (2I.02),PDF,guide,,,none,,24x12,24x12,30x12,30x12,,,"Table 2I-1, manual p.477",PDF,symbols/D9-20aP.png,"Figure 2I-1, manual p.478"
+D9-21,Telecommunications Device for the Deaf,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-21.png,"Figure 2I-1, manual p.478"
+D9-22,Wireless Internet,Table 2I-1 (2I.02),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2I-1, manual p.477",PDF,symbols/D9-22.png,"Figure 2I-1, manual p.478"
+D10-1,Reference Location (1 digit),Table 2H-1 (2H.11),PDF,guide,,,none,,10x18,10x18,12x24,12x24,,,"Table 2H-1, manual p.461",PDF,symbols/D10-1.png,"Figure 9D-1, manual p.1071"
+D10-1a,Intermediate Reference Location (2 digits),Table 2H-1 (2H.11),PDF,guide,,,none,,10x27,10x27,12x36,12x36,,,"Table 2H-1, manual p.461",PDF,symbols/D10-1a.png,"Figure 9D-1, manual p.1071"
+D10-2,Reference Location (2 digits),Table 2H-1 (2H.11),PDF,guide,,,none,,10x27,10x27,12x36,12x36,,,"Table 2H-1, manual p.461",PDF,symbols/D10-2.png,"Figure 9D-1, manual p.1071"
+D10-2a,Intermediate Reference Location (3 digits),Table 2H-1 (2H.11),PDF,guide,,,none,,10x36,10x36,12x48,12x48,,,"Table 2H-1, manual p.461",PDF,symbols/D10-2a.png,"Figure 9D-1, manual p.1071"
+D10-3,Reference Location (3 digits),Table 2H-1 (2H.11),PDF,guide,,,none,,10x36,10x36,12x48,12x48,,,"Table 2H-1, manual p.461",PDF,symbols/D10-3.png,"Figure 9D-1, manual p.1071"
+D10-3a,Intermediate Reference Location (4 digits),Table 2H-1 (2H.11),PDF,guide,,,none,,10x48,10x48,12x60,12x60,,,"Table 2H-1, manual p.461",PDF,symbols/D10-3a.png,"Figure 9D-1, manual p.1071"
+D10-4,Enhanced Reference Location,Table 2H-1 (2H.12),PDF,guide,,,none,,18x54,18x54,,,,,"Table 2H-1, manual p.461",PDF,,
+D10-5,Intermediate Enhanced Reference Location,Table 2H-1 (2H.12),PDF,guide,,,none,,18x60,18x60,,,,,"Table 2H-1, manual p.461",PDF,,
+D11-1,Bike Route,Table 9A-1 (9D.02),PDF,guide,,,none,,24x18,24x18,,,24x18,,"Table 9A-1, manual p.1051",PDF,symbols/D11-1.png,"Figure 9D-1, manual p.1071"
+D11-1bP,Bike Route (plaque),Table 9A-1 (9D.03),PDF,guide,,,none,,18x6,18x6,,,18x6,,"Table 9A-1, manual p.1051",PDF,symbols/D11-1bP.png,"Figure 9D-1, manual p.1071"
+D11-1c,Bike Route with Destination,Table 9A-1 (9D.02),PDF,guide,,,none,,24x18,24x18,,,24x18,,"Table 9A-1, manual p.1051",PDF,,
+D11-10a,Shared-Use Path Destination (1 line),Table 9A-1 (9D.12),PDF,guide,,,none,,,,,,Variesx6,,"Table 9A-1, manual p.1051",PDF,symbols/D11-10a.png,"Figure 9D-1, manual p.1071"
+D11-10b,Shared-Use Path Destination (2 lines),Table 9A-1 (9D.12),PDF,guide,,,none,,,,,,Variesx12,,"Table 9A-1, manual p.1051",PDF,symbols/D11-10b.png,"Figure 9D-1, manual p.1071"
+D11-10c,Shared-Use Path Destination (3 lines),Table 9A-1 (9D.12),PDF,guide,,,none,,,,,,Variesx18,,"Table 9A-1, manual p.1051",PDF,symbols/D11-10c.png,"Figure 9D-1, manual p.1071"
+D11-10d,Shared-Use Path Destination and Distance (1 line),Table 9A-1 (9D.12),PDF,guide,,,none,,,,,,Variesx6,,"Table 9A-1, manual p.1051",PDF,symbols/D11-10d.png,"Figure 9D-1, manual p.1071"
+D11-10e,Shared-Use Path Destination and,Table 9A-1 (9D.12),PDF,guide,,,none,,,,,,Variesx12,,"Table 9A-1, manual p.1051",PDF,symbols/D11-10e.png,"Figure 9D-1, manual p.1071"
+D11-10f,Shared-Use Path Destination and,Table 9A-1 (9D.12),PDF,guide,,,none,,,,,,Variesx18,,"Table 9A-1, manual p.1051",PDF,symbols/D11-10f.png,"Figure 9D-1, manual p.1071"
+D11-11,Bicycles Directional,Table 9A-1 (9D.11),PDF,guide,,,none,,,,,,18x18,,"Table 9A-1, manual p.1051",PDF,symbols/D11-11.png,"Figure 9D-1, manual p.1072"
+D11-12,Pedestrians Directional,Table 9A-1 (9D.11),PDF,guide,,,none,,,,,,18x18,,"Table 9A-1, manual p.1051",PDF,symbols/D11-12.png,"Figure 9D-1, manual p.1072"
+D11-13,Skaters Directional,Table 9A-1 (9D.11),PDF,guide,,,none,,,,,,18x18,,"Table 9A-1, manual p.1051",PDF,symbols/D11-13.png,"Figure 9D-1, manual p.1072"
+D11-14,Equestrians Directional,Table 9A-1 (9D.11),PDF,guide,,,none,,,,,,18x18,,"Table 9A-1, manual p.1051",PDF,symbols/D11-14.png,"Figure 9D-1, manual p.1072"
+D11-20,Two-Stage Bicycle Turn Box Advance,Table 9A-1 (9D.13),PDF,guide,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1051",PDF,symbols/D11-20.png,"Figure 9D-1, manual p.1072"
+D11-20a,Two-Stage Bicycle Turn Box,Table 9A-1 (9D.13),PDF,guide,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1051",PDF,symbols/D11-20a.png,"Figure 9D-1, manual p.1072"
+D12-1,Radio - Weather Information,Table 2I-1 (2I.09),PDF,guide,,,none,,84x48,84x48,132x84,132x84,,,"Table 2I-1, manual p.477",PDF,symbols/D12-1.png,"Figure 2I-8, manual p.488"
+D12-1a,Radio - Traffic Information,Table 2I-1 (2I.09),PDF,guide,,,none,,96x48,96x48,120x60,120x60,,,"Table 2I-1, manual p.477",PDF,,
+D12-1bP,Urgent Message When Flashing (plaque),Table 2I-1 (2I.09),PDF,guide,,,none,,84x30,84x30,108x36,108x36,,,"Table 2I-1, manual p.477",PDF,,
+D12-2,Carpool Information,Table 2I-1 (2I.14),PDF,guide,,,none,,60x42,60x42,96x66,96x66,,,"Table 2I-1, manual p.477",PDF,symbols/D12-2.png,"Figure 2I-8, manual p.488"
+D12-3,Channel 9 Monitored,Table 2I-1 (2I.10),PDF,guide,,,none,,84x48,84x48,132x84,132x84,,,"Table 2I-1, manual p.477",PDF,symbols/D12-3.png,"Figure 2I-8, manual p.488"
+D12-4,Emergency Call 911,Table 2I-1 (2I.11),PDF,guide,,,none,,66x30,66x30,96x48,96x48,,,"Table 2I-1, manual p.477",PDF,symbols/D12-4.png,"Figure 2I-8, manual p.488"
+D12-5,Travel Info Call 511 (pictograph),Table 2I-1 (2I.12),PDF,guide,,,none,,48x60,48x60,66x72,66x72,,,"Table 2I-1, manual p.477",PDF,,
+D12-5a,Travel Info Call 511,Table 2I-1 (2I.12),PDF,guide,,,none,,48x36,48x36,66x48,66x48,,,"Table 2I-1, manual p.477",PDF,symbols/D12-5a.png,"Figure 2I-8, manual p.488"
+D12-6,Roadside Assistance,Table 2I-1 (2I.13),PDF,guide,,,none,,60x42,60x42,78x54,78x54,,,"Table 2I-1, manual p.477",PDF,symbols/D12-6.png,"Figure 2I-8, manual p.488"
+D13-1,Crossover,Table 2D-1 (2D.52),PDF,guide,,,none,,60x30,60x30,,,,78x42,"Table 2D-1, manual p.208",PDF,symbols/D13-1.png,"Figure 2D-26, manual p.263"
+D13-2,Crossover,Table 2D-1 (2D.52),PDF,guide,,,none,,60x30,60x30,,,,78x42,"Table 2D-1, manual p.208",PDF,symbols/D13-2.png,"Figure 2D-26, manual p.263"
+D13-3,Freeway Entrance,Table 2D-1 (2D.50),PDF,guide,,,none,,48x30,48x30,,,,,"Table 2D-1, manual p.208",PDF,,
+D13-3a,Freeway Entrance (Directional),Table 2D-1 (2D.50),PDF,guide,,,none,,48x42,48x42,,,,,"Table 2D-1, manual p.208",PDF,,
+D15-1,Combination Lane Use / Destination,Table 2D-1 (2D.38),PDF,guide,,,none,,Variesx96,Variesx96,,,,,"Table 2D-1, manual p.208",PDF,symbols/D15-1.png,"Figure 2D-9, manual p.233"
+D17-1,Next Truck Lane,Table 2D-1 (2D.53),PDF,guide,,,none,,42x48,42x48,,,,60x66,"Table 2D-1, manual p.208",PDF,symbols/D17-1.png,"Figure 2D-26, manual p.263"
+D17-2,Advance Truck Lane,Table 2D-1 (2D.53),PDF,guide,,,none,,42x42,42x42,,,,60x54,"Table 2D-1, manual p.208",PDF,symbols/D17-2.png,"Figure 2D-26, manual p.263"
+D17-3,Next Passing Lane,Table 2D-1 (2D.53),PDF,guide,,,none,,42x48,42x48,,,,60x66,"Table 2D-1, manual p.208",PDF,symbols/D17-3.png,"Figure 2D-26, manual p.263"
+D17-4,Advance Passing Lane,Table 2D-1 (2D.53),PDF,guide,,,none,,42x42,42x42,,,,60x54,"Table 2D-1, manual p.208",PDF,symbols/D17-4.png,"Figure 2D-26, manual p.263"
+D17-5,Advance Emergency Turn-Out,Table 2D-1 (2D.54),PDF,guide,,,none,,60x36,60x36,,,,78x54,"Table 2D-1, manual p.208",PDF,symbols/D17-5.png,"Figure 2D-29, manual p.266"
+D17-6,Emergency Turn-Out (Directional),Table 2D-1 (2D.54),PDF,guide,,,none,,60x36,60x36,,,,78x60,"Table 2D-1, manual p.208",PDF,symbols/D17-6.png,"Figure 2D-29, manual p.266"
+D17-7,Advance Slow Vehicle Turn-Out,Table 2D-1 (2D.54),PDF,guide,,,none,,72x36,72x36,,,,96x54,"Table 2D-1, manual p.208",PDF,symbols/D17-7.png,"Figure 2D-29, manual p.266"
+E1-1,Interchange Advance Guide (1 destination),Table 2E-1 (2E.23),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E1-2,Interchange Advance Guide (2 destinations),Table 2E-1 (2E.23),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E1-3,Interchange Advance Guide (3 destinations),Table 2E-1 (2E.23),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E1-5P,"1-, 2-Digit Exit Number",Table 2E-1 (2E.23),PDF,guide,,,none,,114x30,114x30,,,114x30,,"Table 2E-1, manual p.294",PDF,,
+E1-5aP,LEFT,Table 2E-1 (2E.23),PDF,guide,,,none,,132x30,132x30,,,132x30,,"Table 2E-1, manual p.294",PDF,,
+E1-5bP,Left Exit Number,Table 2E-1 (2E.23),PDF,guide,,,none,,138x30,138x30,,,138x30,,"Table 2E-1, manual p.294",PDF,,
+E1-5cP,3-Digit Exit Number (with single-letter suffix),Table 2E-1 (2E.23),PDF,guide,,,none,,156x30,156x30,,,156x30,,"Table 2E-1, manual p.294",PDF,,
+E1-5dP,"1-, 2-Digit Exit Number (with dual-letter suffix)",Table 2E-1 (2E.23),PDF,guide,,,none,,168x30,168x30,,,168x30,,"Table 2E-1, manual p.294",PDF,,
+E1-5eP,3-Digit Exit Number (with dual-letter suffix),Table 2E-1 (2E.23),PDF,guide,,,none,,186x30,186x30,,,186x30,,"Table 2E-1, manual p.294",PDF,,
+E1-5fP,"1-, 2-Digit Exit Number",Table 2E-1 (2E.23),PDF,guide,,,none,,114x54,114x54,,,114x54,,"Table 2E-1, manual p.294",PDF,,
+E1-5gP,3-Digit Exit Number,Table 2E-1 (2E.23),PDF,guide,,,none,,132x54,132x54,,,132x54,,"Table 2E-1, manual p.294",PDF,,
+E1-5hP,"1-, 2-Digit Exit Number (with single-letter suffix)",Table 2E-1 (2E.23),PDF,guide,,,none,,138x54,138x54,,,138x54,,"Table 2E-1, manual p.294",PDF,,
+E1-5iP,3-Digit Exit Number (with single-letter suffix),Table 2E-1 (2E.23),PDF,guide,,,none,,156x54,156x54,,,156x54,,"Table 2E-1, manual p.294",PDF,,
+E1-5jP,"1-, 2-Digit Exit Number (with dual-letter suffix)",Table 2E-1 (2E.23),PDF,guide,,,none,,168x54,168x54,,,168x54,,"Table 2E-1, manual p.294",PDF,,
+E1-5kP,3-Digit Exit Number (with dual-letter suffix),Table 2E-1 (2E.23),PDF,guide,,,none,,186x54,186x54,,,186x54,,"Table 2E-1, manual p.294",PDF,,
+E1-5mP,Left (plaque),Table 2E-1 (2E.23),PDF,guide,,,none,,72x30,72x30,,,72x30,,"Table 2E-1, manual p.294",PDF,,
+E2-1P,Next Exit (1 line) (plaque),Table 2E-1 (2E.46),PDF,guide,,,none,,Variesx24,Variesx24,,,Variesx24,,"Table 2E-1, manual p.294",PDF,,
+E2-1aP,Next Exit (2 lines) (plaque),Table 2E-1 (2E.46),PDF,guide,,,none,,Variesx36,Variesx36,,,Variesx36,,"Table 2E-1, manual p.294",PDF,,
+E3-1,Supplemental (1 destination),Table 2E-1 (2E.51),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E3-2,Supplemental (2 destinations),Table 2E-1 (2E.51),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E4-1,Exit Direction (1 destination),Table 2E-1 (2E.25),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E4-2,Exit Direction (2 destinations),Table 2E-1 (2E.25),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E4-3,Exit Direction (3 destinations),Table 2E-1 (2E.25),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E5-1,Exit Gore,Table 2E-1 (2E.26),PDF,guide,,,none,,72x60,72x60,,,72x60,,"Table 2E-1, manual p.294",PDF,,
+E5-1a,Exit Gore,Table 2E-1 (2E.26),PDF,guide,,,none,,156x60,156x60,,,156x60,,"Table 2E-1, manual p.294",PDF,,
+E5-1bP,Exit Gore Number,Table 2E-1 (2E.26),PDF,guide,,,none,,120x30,120x30,,,120x30,,"Table 2E-1, manual p.294",PDF,,
+E5-1c,Narrow Exit Gore,Table 2E-1 (2E.26),PDF,guide,,,none,,60x90,60x90,,,60x90,,"Table 2E-1, manual p.294",PDF,,
+E5-2,Exit Open,Table 6I-1 (6H.12),PDF,guide,,,none,,48x36,48x36,48x36,48x36,,,"Table 6I-1, manual p.811",PDF,symbols/E5-2.png,"Figure 6I-1, manual p.812"
+E5-2a,Exit Closed,Table 6I-1 (6H.12),PDF,guide,,,none,,48x36,48x36,48x36,48x36,,,"Table 6I-1, manual p.811",PDF,symbols/E5-2a.png,"Figure 6I-1, manual p.812"
+E5-3,Exit Only,Table 6I-1 (6H.13),PDF,guide,,,none,,48x36,48x36,48x36,48x36,,,"Table 6I-1, manual p.811",PDF,symbols/E5-3.png,"Figure 6I-1, manual p.812"
+E6-1,Pull-Through,Table 2E-1 (2E.27),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E6-1a,Pull-Through (Destination),Table 2E-1 (2E.27),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E6-2,Pull-Through (Down Arrows),Table 2E-1 (2E.27),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.294",PDF,,
+E6-2a,"Pull-Through (Destination, Down Arrows)",Table 2E-1 (2E.27),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E7-1,Post-Interchange Distance,Table 2E-1 (2E.48),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E7-2,Post-Interchange Distance,Table 2E-1 (2E.48),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E7-3,Post-Interchange Distance,Table 2E-1 (2E.48),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E7-4,Post-Interchange Travel Time,Table 2E-1 (2E.49),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E7-5,Distance and Travel Time,Table 2E-1 (2E.50),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E7-6,Comparative Travel Time,Table 2E-1 (2E.50),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E8-1,Preferential Lane Entrance Gore,Table 2G-1 (2G.10),PDF,guide,,,none,,,,48x96,48x96,,,"Table 2G-1, manual p.408",PDF,symbols/E8-1.png,"Figure 2G-6, manual p.421"
+E8-1a,Preferential Lane Intermediate,Table 2G-1 (2G.10),PDF,guide,,,none,,,,48x84,48x84,,,"Table 2G-1, manual p.408",PDF,symbols/E8-1a.png,"Figure 2G-6, manual p.421"
+E8-2,Preferential Lane Entrance,Table 2G-1 (2G.10),PDF,guide,,,none,,,,228x72,228x72,,,"Table 2G-1, manual p.408",PDF,symbols/E8-2.png,"Figure 2G-6, manual p.421"
+E8-2a,Preferential Lane Entrance,Table 2G-1 (2G.10),PDF,guide,,,none,,,,186x108,186x108,,,"Table 2G-1, manual p.408",PDF,symbols/E8-2a.png,"Figure 2G-6, manual p.421"
+E8-3,Preferential Lane Entrance Advance,Table 2G-1 (2G.10),PDF,guide,,,none,,,,186x96,186x96,,,"Table 2G-1, manual p.408",PDF,,
+E8-4,Preferential Lane Direct Exit Gore,Table 2G-1 (2G.15),PDF,guide,,,none,,,,60x78,60x78,,,"Table 2G-1, manual p.408",PDF,symbols/E8-4.png,"Figure 2G-14, manual p.431"
+E8-5,Intermediate Egress Direction,Table 2G-1 (2G.13),PDF,guide,,,none,,,,Variesx90,Variesx90,,,"Table 2G-1, manual p.408",PDF,,
+E8-6,AdvanceGuide,Table 2G-1 (2G.13),PDF,guide,,,none,,,,Variesx84,Variesx84,,,"Table 2G-1, manual p.408",PDF,,
+E9-1,Interchange Sequence (2 interchanges),Table 2E-1 (2E.24),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E9-2,Interchange Sequence (3 interchanges),Table 2E-1 (2E.24),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E9-3,Next Exits (1 destination),Table 2E-1 (2E.53),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E9-3a,Next Exits (2 destinations),Table 2E-1 (2E.53),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E9-4,Community Interchanges (2 interchanges),Table 2E-1 (2E.52),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E9-5,Community Interchanges (3 interchanges),Table 2E-1 (2E.52),PDF,guide,,,none,,Varies,Varies,,,Varies,,"Table 2E-1, manual p.295",PDF,,
+E11-1,Exit Only (with arrow),Table 2E-1 (2E.28),PDF,guide,,,none,,174x36,174x36,,,174x36,,"Table 2E-1, manual p.295",PDF,,
+E11-1a,Exit,Table 2E-1 (2E.28),PDF,guide,,,none,,66x18,66x18,,,66x18,,"Table 2E-1, manual p.295",PDF,,
+E11-1b,Only,Table 2E-1 (2E.28),PDF,guide,,,none,,66x18,66x18,,,66x18,,"Table 2E-1, manual p.295",PDF,,
+E11-1c,Exit Only,Table 2E-1 (2E.28),PDF,guide,,,none,,120x18,120x18,,,120x18,,"Table 2E-1, manual p.295",PDF,,
+E11-1d,Exit Only (with arrow),Table 2E-1 (2E.28),PDF,guide,,,none,,174x36,174x36,,,174x36,,"Table 2E-1, manual p.295",PDF,,
+E11-1e,Exit Only (with two arrows),Table 2E-1 (2E.28),PDF,guide,,,none,,222x36,222x36,,,222x36,,"Table 2E-1, manual p.295",PDF,,
+E11-1f,Exit Only (with two arrows),Table 2E-1 (2E.28),PDF,guide,,,none,,222x36,222x36,,,222x36,,"Table 2E-1, manual p.295",PDF,,
+E11-2,Left (panel),Table 2E-1 (2E.24),PDF,guide,,,none,,60x18,60x18,,,60x18,,"Table 2E-1, manual p.295",PDF,,
+E13-2,Exit Direction Advisory Speed (panel),Table 2E-1 (2E.25),PDF,guide,,,none,,162x24,162x24,,,162x24,,"Table 2E-1, manual p.295",PDF,,
+EM1-1,Evacuation Route,Table 2N-1 (2N.03),PDF,guide,,,none,,24x24,24x24,,,24x24,,"Table 2N-1, manual p.532",PDF,symbols/EM1-1.png,"Figure 2N-1, manual p.531"
+EM1-1a,Use of the specific Evacuation Route,text (2N.03),PDF,guide,,,none,,,,,,,,section text,0,symbols/EM1-1a.png,"Figure 2N-1, manual p.531"
+EM1-2,Evacuation Route,Table 2N-1 (2N.03),PDF,guide,,,none,,24x24,24x24,,,24x24,,"Table 2N-1, manual p.532",PDF,symbols/EM1-2.png,"Figure 2N-1, manual p.531"
+EM2-1,Area Closed,Table 2N-1 (2N.04),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM2-1.png,"Figure 2N-1, manual p.531"
+EM2-2,Traffic Control Point,Table 2N-1 (2N.05),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM2-2.png,"Figure 2N-1, manual p.531"
+EM2-3,Maintain Top Safe Speed,Table 2N-1 (2N.06),PDF,guide,,,none,,24x30,24x30,,,24x30,,"Table 2N-1, manual p.532",PDF,symbols/EM2-3.png,"Figure 2N-1, manual p.531"
+EM2-4,Permit Required,Table 2N-1 (2N.07),PDF,guide,,,none,,24x30,24x30,,,24x30,,"Table 2N-1, manual p.532",PDF,symbols/EM2-4.png,"Figure 2N-1, manual p.531"
+EM3-1,MEDICAL CENTER,Table 2N-1 (2N.08),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM3-1.png,"Figure 2N-1, manual p.531"
+EM3-1a,WELFARE CENTER,Table 2N-1 (2N.08),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM3-1a.png,"Figure 2N-1, manual p.531"
+EM3-1b,REGISTRATION CENTER,Table 2N-1 (2N.08),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM3-1b.png,"Figure 2N-1, manual p.531"
+EM3-1c,DECONTAMINATION CENTER,Table 2N-1 (2N.08),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM3-1c.png,"Figure 2N-1, manual p.531"
+EM4-1,EMERGENCY,Table 2N-1 (2N.09),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM4-1.png,"Figure 2N-1, manual p.531"
+EM4-1a,HURRICANE,Table 2N-1 (2N.09),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM4-1a.png,"Figure 2N-1, manual p.531"
+EM4-1b,FALLOUT,Table 2N-1 (2N.09),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM4-1b.png,"Figure 2N-1, manual p.531"
+EM4-1c,CHEMICAL,Table 2N-1 (2N.09),PDF,guide,,,none,,30x24,30x24,,,30x24,,"Table 2N-1, manual p.532",PDF,symbols/EM4-1c.png,"Figure 2N-1, manual p.531"
+EM-1a,Evacuation Route,Table 2N-1 (2N.03),PDF,guide,,,none,,24x24,24x24,,,24x24,,"Table 2N-1, manual p.532",PDF,,
+G20-1,Road Work Next XX Miles,Table 6H-1 (6H.35),PDF,guide,,,none,,36x18,36x18,48x24,48x24,,,"Table 6H-1, manual p.804",PDF,symbols/G20-1.png,"Figure 6H-1, manual p.802"
+G20-2,End Road Work,Table 6H-1 (6H.36),PDF,guide,,,none,,36x18,36x18,48x24,48x24,,,"Table 6H-1, manual p.804",PDF,symbols/G20-2.png,"Figure 6H-1, manual p.802"
+G20-4,Pilot Car Follow Me,Table 6H-1 (6H.37),PDF,guide,,,none,,36x18,36x18,,,,,"Table 6H-1, manual p.804",PDF,symbols/G20-4.png,"Figure 6H-1, manual p.802"
+G20-5aP,Work Zone (plaque),Table 6G-1 (6G.08),PDF,guide,,,none,,24x18,24x18,30x24,30x24,,,"Table 6G-1, manual p.796",PDF,,
+I1-1,Traffic Signal Speed,Table 2H-1 (2H.04),PDF,guide,,,none,,24x36,24x36,,,,,"Table 2H-1, manual p.461",PDF,,
+I2-1,Jurisdictional Boundary Signs,text (2H.05),PDF,guide,,,none,,,,,,,,section text,0,,
+I2-2,Geographical Feature,Table 2H-1 (2H.06),PDF,guide,,,none,,Variesx36,Variesx36,,,,,"Table 2H-1, manual p.461",PDF,,
+I2-3,Grade Separation Identification,Table 2H-1 (2H.10),PDF,guide,,,none,,,,Variesx18,Variesx18,,,"Table 2H-1, manual p.461",PDF,,
+I2-3a,Grade Separation Identification (2 lines),Table 2H-1 (2H.10),PDF,guide,,,none,,,,Variesx24,Variesx24,,,"Table 2H-1, manual p.461",PDF,,
+I2-4,Future Interstate Corridor,Table 2H-1 (2H.08),PDF,guide,,,none,,54x36,54x36,72x48,72x48,,,"Table 2H-1, manual p.461",PDF,,
+I2-4a,Future I-XX Corridor,Table 2H-1 (2H.08),PDF,guide,,,none,,48x36,48x36,66x48,66x48,,,"Table 2H-1, manual p.461",PDF,,
+I2-5,Project Information,Table 2H-1 (2H.09),PDF,guide,,,none,,96x48,96x48,156x72,156x72,,,"Table 2H-1, manual p.461",PDF,,
+I3-5,Airport,Table 2H-1 (2H.01),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2H-1, manual p.461",PDF,,
+I3-6,Bus Station,Table 2H-1 (2H.01),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2H-1, manual p.461",PDF,,
+I3-7,Train Station,Table 2H-1 (2H.01),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2H-1, manual p.461",PDF,,
+I3-8,Light Rail Transit Station,Table 2H-1 (2H.01),PDF,guide,,,none,,24x24,24x24,,,,,"Table 2H-1, manual p.461",PDF,,
+I3-9,Vehicle Ferry Terminal,Table 2H-1 (2H.01),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2H-1, manual p.461",PDF,,
+I3-10,Passenger Only Ferry Terminal,Table 2H-1 (2H.01),PDF,guide,,,none,,24x24,24x24,30x30,30x30,,,"Table 2H-1, manual p.461",PDF,,
+I3-10P,Ferry (plaque),Table 2H-1 (2H.01),PDF,guide,,,none,,24x12,24x12,30x18,30x18,,,"Table 2H-1, manual p.461",PDF,,
+I4-1,Library,Table 2H-1 (2H.01),PDF,guide,,,none,,24x24,24x24,,,,,"Table 2H-1, manual p.461",PDF,,
+I4-2,Recycling Center,Table 2H-1 (2H.01),PDF,guide,,,none,,30x36,30x36,,,,,"Table 2H-1, manual p.461",PDF,,
+I13-1,Emergency Notification,Table 8B-1 (8B.27),PDF,guide,,,none,,12x9,12x9,,,12x9,,"Table 8B-1, manual p.995",PDF,,
+I13-2,Push to Exit,Table 8B-1 (8E.06),PDF,guide,,,none,,18x9,18x9,,,18x9,,"Table 8B-1, manual p.995",PDF,,
+I20-1,Acknowledgment,Table 2H-1 (2H.13),PDF,guide,,,none,,36x30,36x30,72x48,72x48,,,"Table 2H-1, manual p.461",PDF,,
+I20-2,Acknowledgment,Table 2H-1 (2H.13),PDF,guide,,,none,,36x30,36x30,72x48,72x48,,,"Table 2H-1, manual p.461",PDF,,
+I20-3,Acknowledgment,Table 2H-1 (2H.13),PDF,guide,,,none,,42x24,42x24,96x36,96x36,,,"Table 2H-1, manual p.461",PDF,,
+I20-4,Acknowledgment - Rest Area,Table 2H-1 (2H.13),PDF,guide,,,none,,56x36,56x36,72x48,72x48,,,"Table 2H-1, manual p.461",PDF,,
+I20-4a,Acknowledgment - Welcome Center,Table 2H-1 (2H.13),PDF,guide,,,none,,56x36,56x36,72x48,72x48,,,"Table 2H-1, manual p.461",PDF,,
+I20-5P,Acknowledgment Signs and Plaques (I20 Series),text (2H.13),PDF,guide,,,none,,,,,,,,section text,0,,
+M1-1,Interstate Route (1 or 2 digits),Table 2D-1 (2D.11),PDF,guide,,,none,,30x24,30x24,,,,45x36,"Table 2D-1, manual p.207",PDF,symbols/M1-1.png,"Figure 2D-4, manual p.217"
+M1-1a,Interstate Route (1 or 2 digits),Table 2D-1 (2D.11),PDF,guide,,,none,,30x24,30x24,,,,45x36,"Table 2D-1, manual p.207",PDF,symbols/M1-1a.png,"Figure 2D-4, manual p.217"
+M1-2,Loop,Table 2D-1 (2D.11),PDF,guide,,,none,,30x24,30x24,,,,45x36,"Table 2D-1, manual p.207",PDF,symbols/M1-2.png,"Figure 2D-4, manual p.217"
+M1-3,Spur,Table 2D-1 (2D.11),PDF,guide,,,none,,30x24,30x24,,,,45x36,"Table 2D-1, manual p.207",PDF,symbols/M1-3.png,"Figure 2D-4, manual p.217"
+M1-4,U.S. Route (1 or 2 digits),Table 2D-1 (2D.11),PDF,guide,,,none,,30x24,30x24,,,,45x36,"Table 2D-1, manual p.207",PDF,symbols/M1-4.png,"Figure 2D-4, manual p.217"
+M1-5,State Route (1 or 2 digits),Table 2D-1 (2D.11),PDF,guide,,,none,,30x24,30x24,,,,45x36,"Table 2D-1, manual p.207",PDF,symbols/M1-5.png,"Figure 2D-4, manual p.217"
+M1-6,County Route,Table 2D-1 (2D.11),PDF,guide,,,none,,24x24,24x24,,,,36x36,"Table 2D-1, manual p.207",PDF,symbols/M1-6.png,"Figure 2D-4, manual p.217"
+M1-7,Forest Route,Table 2D-1 (2D.11),PDF,guide,,,none,,24x24,24x24,,,18x18,36x36,"Table 2D-1, manual p.207",PDF,symbols/M1-7.png,"Figure 2D-4, manual p.217"
+M1-8,State or Local Bicycle Route,Table 9A-1 (9D.05),PDF,guide,,,none,,18x24,18x24,,,12x18,,"Table 9A-1, manual p.1051",PDF,symbols/M1-8.png,"Figure 9D-1, manual p.1072"
+M1-8a,State or Local Bicycle Route,Table 9A-1 (9D.05),PDF,guide,,,none,,18x24,18x24,,,12x18,,"Table 9A-1, manual p.1051",PDF,symbols/M1-8a.png,"Figure 9D-1, manual p.1072"
+M1-8b,Non-Numbered Bicycle Route,Table 9A-1 (9D.06),PDF,guide,,,none,,18x18,18x18,,,12x12,,"Table 9A-1, manual p.1051",PDF,symbols/M1-8b.png,"Figure 9D-1, manual p.1072"
+M1-8c,Non-Numbered Bicycle Route,Table 9A-1 (9D.06),PDF,guide,,,none,,18x18,18x18,,,12x12,,"Table 9A-1, manual p.1051",PDF,symbols/M1-8c.png,"Figure 9D-1, manual p.1072"
+M1-9,U.S. Bicycle Route,Table 9A-1 (9D.07),PDF,guide,,,none,,18x24,18x24,,,12x18,,"Table 9A-1, manual p.1051",PDF,symbols/M1-9.png,"Figure 9D-1, manual p.1072"
+M1-10,Eisenhower Interstate System,Table 2E-1 (2E.56),PDF,guide,,,none,,36x36,36x36,,,36x36,,"Table 2E-1, manual p.295",PDF,,
+M1-10a,Eisenhower Interstate System,Table 2E-1 (2E.56),PDF,guide,,,none,,36x36,36x36,,,36x36,,"Table 2E-1, manual p.295",PDF,,
+M2-1P,Junction (plaque),Table 2D-1 (2D.13),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M2-1P.png,"Figure 2D-5, manual p.219"
+M2-2,Combination Junction (2 route signs),Table 2D-1 (2D.14),PDF,guide,,,none,,60x48,60x48,,,,,"Table 2D-1, manual p.207",PDF,symbols/M2-2.png,"Figure 2D-5, manual p.219"
+M3-1P,Cardinal Direction (plaque),Table 2D-1 (2D.15),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M3-1P.png,"Figure 2D-5, manual p.219"
+M3-2P,Cardinal Direction (plaque),Table 2D-1 (2D.15),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M3-2P.png,"Figure 2D-5, manual p.219"
+M3-3P,Cardinal Direction (plaque),Table 2D-1 (2D.15),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M3-3P.png,"Figure 2D-5, manual p.219"
+M3-4P,Cardinal Direction (plaque),Table 2D-1 (2D.15),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M3-4P.png,"Figure 2D-5, manual p.219"
+M4-1P,Alternate (plaque),Table 2D-1 (2D.17),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-1P.png,"Figure 2D-5, manual p.219"
+M4-1aP,Alternate (plaque),Table 2D-1 (2D.17),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-1aP.png,"Figure 2D-5, manual p.219"
+M4-2P,By-Pass (plaque),Table 2D-1 (2D.18),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-2P.png,"Figure 2D-5, manual p.219"
+M4-3P,Business (plaque),Table 2D-1 (2D.19),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-3P.png,"Figure 2D-5, manual p.219"
+M4-4P,Truck (plaque),Table 2D-1 (2D.20),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-4P.png,"Figure 2D-5, manual p.219"
+M4-5P,To (plaque),Table 2D-1 (2D.21),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-5P.png,"Figure 2D-5, manual p.219"
+M4-6P,End (plaque),Table 2D-1 (2D.22),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-6P.png,"Figure 2D-5, manual p.219"
+M4-7P,Temporary (plaque),Table 2D-1 (2D.24),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-7P.png,"Figure 2D-5, manual p.219"
+M4-7aP,Temporary (plaque),Table 2D-1 (2D.24),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-7aP.png,"Figure 2D-5, manual p.219"
+M4-8P,Bicycle Route Auxiliary Signs (plaque),Table 9A-1 (9D.08),PDF,guide,,,none,,12x6,12x6,,,12x6,,"Table 9A-1, manual p.1051",PDF,symbols/M4-8P.png,"Figure 6I-1, manual p.812"
+M4-8a,End Detour,Table 6I-1 (6I.02),PDF,guide,,,none,,24x18,24x18,24x18,24x18,,,"Table 6I-1, manual p.811",PDF,symbols/M4-8a.png,"Figure 6I-1, manual p.812"
+M4-8bP,End (plaque),Table 6I-1 (6I.02),PDF,guide,,,none,,24x12,24x12,24x12,24x12,,,"Table 6I-1, manual p.811",PDF,symbols/M4-8bP.png,"Figure 6I-1, manual p.812"
+M4-9,Detour,Table 6I-1 (6I.02),PDF,guide,,,none,,30x24,30x24,48x36,48x36,,,"Table 6I-1, manual p.811",PDF,symbols/M4-9.png,"Figure 6I-1, manual p.812"
+M4-9a,Bike/Pedestrian Detour,Table 6I-1 (6I.02),PDF,guide,,,none,,30x24,30x24,,,,,"Table 6I-1, manual p.811",PDF,symbols/M4-9a.png,"Figure 6I-1, manual p.812"
+M4-9b,Pedestrian Detour,Table 6I-1 (6I.02),PDF,guide,,,none,,30x24,30x24,,,,,"Table 6I-1, manual p.811",PDF,symbols/M4-9b.png,"Figure 6I-1, manual p.812"
+M4-9c,Bike Detour (with arrow),Table 6I-1 (6I.02),PDF,guide,,,none,,30x24,30x24,,,,,"Table 6I-1, manual p.811",PDF,symbols/M4-9c.png,"Figure 6I-1, manual p.812"
+M4-10,Detour,Table 6I-1 (6I.02),PDF,guide,,,none,,48x18,48x18,,,,,"Table 6I-1, manual p.811",PDF,symbols/M4-10.png,"Figure 6I-1, manual p.812"
+M4-11,Emergency Route,Table 2D-1 (2D.59),PDF,guide,,,none,,30x30,30x30,,,,,"Table 2D-1, manual p.207",PDF,symbols/M4-11.png,"Figure 2D-37, manual p.280"
+M4-11a,Emergency Route,Table 2D-1 (2D.59),PDF,guide,,,none,,30x30,30x30,,,,,"Table 2D-1, manual p.207",PDF,,
+M4-11bP,Emergency Route To (plaque),Table 2D-1 (2D.59),PDF,guide,,,none,,30x18,30x18,,,,,"Table 2D-1, manual p.207",PDF,symbols/M4-11bP.png,"Figure 2D-37, manual p.280"
+M4-11cP,Emergency Route To (plaque),Table 2D-1 (2D.59),PDF,guide,,,none,,30x18,30x18,,,,,"Table 2D-1, manual p.207",PDF,symbols/M4-11cP.png,"Figure 2D-37, manual p.280"
+M4-12,End Emergency Route,Table 2D-1 (2D.59),PDF,guide,,,none,,24x18,24x18,,,,,"Table 2D-1, manual p.207",PDF,symbols/M4-12.png,"Figure 2D-37, manual p.280"
+M4-14P,Begin (plaque),Table 2D-1 (2D.23),PDF,guide,,,none,,24x12,24x12,,,,36x18,"Table 2D-1, manual p.207",PDF,symbols/M4-14P.png,"Figure 2D-5, manual p.219"
+M4-17,Toll Collector,Table 2F-1 (2F.12),PDF,guide,,,none,,,,48x48,48x48,,,"Table 2F-1, manual p.381",PDF,,
+M4-18,Exact Change,Table 2F-1 (2F.12),PDF,guide,,,none,,,,48x48,48x48,,,"Table 2F-1, manual p.381",PDF,,
+M5-1P,Advance Turn Arrow Auxiliary Plaques,Table 2D-1 (2D.26),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M5-1P.png,"Figure 2D-6, manual p.222"
+M5-2P,Advance Turn Arrow (plaque),Table 2D-1 (2D.26),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M5-2P.png,"Figure 2D-6, manual p.222"
+M5-3P,Circular Intersection Advance Turn Arrow,Table 2D-1 (2D.26),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M5-3P.png,"Figure 2D-6, manual p.222"
+M5-4P,Lane Designation Auxiliary Plaques,Table 2D-1 (2D.27),PDF,guide,,,none,,24x18,24x18,,,,36x24,"Table 2D-1, manual p.207",PDF,symbols/M5-4P.png,"Figure 2D-6, manual p.222"
+M5-5P,Lane Designation (plaque),Table 2D-1 (2D.27),PDF,guide,,,none,,24x18,24x18,,,,36x24,"Table 2D-1, manual p.207",PDF,symbols/M5-5P.png,"Figure 2D-6, manual p.222"
+M5-6P,Lane Designation (plaque),Table 2D-1 (2D.27),PDF,guide,,,none,,24x18,24x18,,,,36x24,"Table 2D-1, manual p.207",PDF,symbols/M5-6P.png,"Figure 2D-6, manual p.222"
+M6-1P,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-1P.png,"Figure 2D-6, manual p.222"
+M6-2P,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-2P.png,"Figure 2D-6, manual p.222"
+M6-2aP,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-2aP.png,"Figure 2D-6, manual p.222"
+M6-3P,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-3P.png,"Figure 2D-6, manual p.222"
+M6-4P,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-4P.png,"Figure 2D-6, manual p.222"
+M6-5P,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-5P.png,"Figure 2D-6, manual p.222"
+M6-6P,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-6P.png,"Figure 2D-6, manual p.222"
+M6-7P,Directional Arrow (plaque),Table 2D-1 (2D.28),PDF,guide,,,none,,21x15,21x15,,,,30x21,"Table 2D-1, manual p.207",PDF,symbols/M6-7P.png,"Figure 2D-6, manual p.222"
+M10-1,National Scenic Byway,Table 2D-1 (2D.57),PDF,guide,,,none,,24x24,24x24,,,,,"Table 2D-1, manual p.207",PDF,,
+M10-1aP,National Scenic Byway (plaque),Table 2D-1 (2D.57),PDF,guide,,,none,,24x12,24x12,,,,,"Table 2D-1, manual p.207",PDF,,
+M10-2,Byway Identification,Table 2D-1 (2D.58),PDF,guide,,,none,,24x24,24x24,,,,,"Table 2D-1, manual p.207",PDF,,
+M10-2aP,Byway Identification (plaque),Table 2D-1 (2D.58),PDF,guide,,,none,,24x12,24x12,,,,,"Table 2D-1, manual p.207",PDF,,
+M10-3,State Scenic Byway System,Table 2D-1 (2D.58),PDF,guide,,,none,,24x24,24x24,,,,,"Table 2D-1, manual p.207",PDF,,
+M10-3a,State Scenic Byway - Simple Graphic and Byway,Table 2D-1 (2D.58),PDF,guide,,,none,,24x24,24x24,,,,,"Table 2D-1, manual p.207",PDF,,
+M10-3bP,Scenic Byway (plaque),Table 2D-1 (2D.58),PDF,guide,,,none,,24x12,24x12,,,,,"Table 2D-1, manual p.207",PDF,,
+M11-1,National Historic Trail - Identification,Table 2D-1 (2D.58),PDF,guide,,,none,,24x24,24x24,,,,,"Table 2D-1, manual p.207",PDF,,
+M11-1aP,National Historic Trail - Historic Route (plaque),Table 2D-1 (2D.58),PDF,guide,,,none,,24x12,24x12,,,,,"Table 2D-1, manual p.207",PDF,,
+M11-1bP,National Historic Trail - Crossing (plaque),Table 2D-1 (2D.58),PDF,guide,,,none,,24x12,24x12,,,,,"Table 2D-1, manual p.207",PDF,,
+M11-1cP,National Historic Trail - Auto Tour Route (plaque),Table 2D-1 (2D.58),PDF,guide,,,none,,24x12,24x12,,,,,"Table 2D-1, manual p.207",PDF,,
+M11-1dP,National Historic Trail - Distance (plaque),Table 2D-1 (2D.58),PDF,guide,,,none,,24x12,24x12,,,,,"Table 2D-1, manual p.207",PDF,,
+OM1-1,Object Marker Design and Placement Height,text (2C.70),PDF,warning,,,none,,,,,,,,section text,0,symbols/OM1-1.png,"Figure 2C-17, manual p.199"
+OM1-2,Object Marker Design and Placement Height,text (2C.70),PDF,warning,,,none,,,,,,,,section text,0,symbols/OM1-2.png,"Figure 2C-17, manual p.199"
+OM1-3,Object Marker Design and Placement Height,text (2C.70),PDF,warning,,,none,,,,,,,,section text,0,symbols/OM1-3.png,"Figure 2C-17, manual p.199"
+OM4-1,Object Marker Design and Placement Height,text (2C.70),PDF,warning,,,none,,,,,,,,section text,0,symbols/OM4-1.png,"Figure 2C-17, manual p.199"
+OM4-2,Object Marker Design and Placement Height,text (2C.70),PDF,warning,,,none,,,,,,,,section text,0,symbols/OM4-2.png,"Figure 2C-17, manual p.199"
+OM4-3,Object Marker Design and Placement Height,text (2C.70),PDF,warning,,,none,,,,,,,,section text,0,symbols/OM4-3.png,"Figure 2C-17, manual p.199"
+OM3-C,Object Marker Type 3,Table 9A-1 (9C.09),PDF,warning,,,none,,12x36,12x36,,,6x18,,"Table 9A-1, manual p.1050",PDF,,
+OM3-L,Object Marker Type 3,Table 9A-1 (9C.09),PDF,warning,,,none,,12x36,12x36,,,6x18,,"Table 9A-1, manual p.1050",PDF,,
+OM3-R,Object Marker Type 3,Table 9A-1 (9C.09),PDF,warning,,,none,,12x36,12x36,,,6x18,,"Table 9A-1, manual p.1050",PDF,,
+R1-2aP,To Oncoming Traffic (plaque),Table 2B-1 (2B.18),PDF,regulatory,,,none,,24x18,24x18,36x30,48x36,24x18,,"Table 2B-1, manual p.68",PDF,symbols/R1-2aP.png,"Figure 6G-1, manual p.794"
+R1-2bP,To Traffic in Circle (plaque),Table 2B-1 (2B.18),PDF,regulatory,,,none,,24x15,24x15,,,24x15,36x24,"Table 2B-1, manual p.68",PDF,symbols/R1-2bP.png,"Figure 2B-1, manual p.74"
+R1-2cP,To All Lanes (plaque),Table 2B-1 (2B.18),PDF,regulatory,,,none,,24x15,24x15,,,24x15,36x24,"Table 2B-1, manual p.68",PDF,symbols/R1-2cP.png,"Figure 2B-1, manual p.74"
+R1-5,Yield Here to Pedestrians,Table 2B-1 (2B.19),PDF,regulatory,,,none,,,36x36,,,,36x36,"Table 2B-1, manual p.68",PDF,symbols/R1-5.png,"Figure 2B-2, manual p.82"
+R1-5a,Yield Here toSchool Crossings,Table 7B-1 (7B.03),PDF,regulatory,,,none,,36x36,36x36,,,,,"Table 7B-1, manual p.971",PDF,,
+R1-5b,Stop Here for Pedestrians,Table 2B-1 (2B.19),PDF,regulatory,,,none,,,36x36,,,,36x36,"Table 2B-1, manual p.68",PDF,symbols/R1-5b.png,"Figure 2B-2, manual p.82"
+R1-5c,Stop Here for School Crossing,Table 7B-1 (7B.03),PDF,regulatory,,,none,,36x36,36x36,,,,,"Table 7B-1, manual p.971",PDF,symbols/R1-5c.png,"Figure 7B-1, manual p.974"
+R1-5d,Yield Here to Trail Crossings,Table 2B-1 (2B.19),PDF,regulatory,,,none,,,36x42,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-5d.png,"Figure 2B-2, manual p.82"
+R1-5e,StopHere for Trail Crossing,Table 2B-1 (2B.19),PDF,regulatory,,,none,,,36x42,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-5e.png,"Figure 2B-2, manual p.82"
+R1-6,In-Street Pedestrian Crossing -,Table 2B-1 (2B.20),PDF,regulatory,,,none,,12x36,12x36,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-6.png,"Figure 2B-2, manual p.82"
+R1-6a,In-Street Pedestrian Crossing -,Table 2B-1 (2B.20),PDF,regulatory,,,none,,12x36,12x36,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-6a.png,"Figure 2B-2, manual p.82"
+R1-6b,School Crossing,text (2B.20),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R1-6b.png,"Figure 7B-1, manual p.974"
+R1-6c,In-Street and Overhead Pedestrian and Trail Crossing Signs (R1-6 and R1-9 Series),text (2B.20),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R1-6c.png,"Figure 7B-1, manual p.974"
+R1-6d,In-Street Trail Crossing -,Table 2B-1 (2B.20),PDF,regulatory,,,none,,12x36,12x36,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-6d.png,"Figure 2B-2, manual p.82"
+R1-6e,In-Street Trail Crossing -,Table 2B-1 (2B.20),PDF,regulatory,,,none,,12x36,12x36,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-6e.png,"Figure 2B-2, manual p.82"
+R1-7,Wait on Stop,Table 6G-1 (6L.03),PDF,regulatory,,,none,,24x30,24x30,24x30,24x30,,,"Table 6G-1, manual p.796",PDF,symbols/R1-7.png,"Figure 6G-1, manual p.794"
+R1-7a,Wait on Stop - Go on Slow,Table 6G-1 (6G.03),PDF,regulatory,,,none,,30x36,30x36,30x36,30x36,,,"Table 6G-1, manual p.796",PDF,symbols/R1-7a.png,"Figure 6G-1, manual p.794"
+R1-8,Go on Slow,Table 6G-1 (6L.03),PDF,regulatory,,,none,,24x30,24x30,24x30,24x30,,,"Table 6G-1, manual p.796",PDF,symbols/R1-8.png,"Figure 6G-1, manual p.794"
+R1-9,Overhead Pedestrian Crossing -,Table 2B-1 (2B.20),PDF,regulatory,,,none,,90x24,90x24,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-9.png,"Figure 2B-2, manual p.82"
+R1-9a,Overhead Pedestrian Crossing -,Table 2B-1 (2B.20),PDF,regulatory,,,none,,90x24,90x24,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-9a.png,"Figure 2B-2, manual p.82"
+R1-9b,Overhead School Crossing,Table 7B-1 (7B.03),PDF,regulatory,,,none,,90x24,90x24,,,,,"Table 7B-1, manual p.971",PDF,symbols/R1-9b.png,"Figure 7B-1, manual p.974"
+R1-9c,Overhead School Crossing,Table 7B-1 (7B.03),PDF,regulatory,,,none,,90x24,90x24,,,,,"Table 7B-1, manual p.971",PDF,symbols/R1-9c.png,"Figure 7B-1, manual p.974"
+R1-9d,Overhead Trail Crossing,Table 2B-1 (2B.20),PDF,regulatory,,,none,,72x24,72x24,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-9d.png,"Figure 2B-2, manual p.82"
+R1-9e,Overhead Trail Crossing,Table 2B-1 (2B.20),PDF,regulatory,,,none,,72x24,72x24,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-9e.png,"Figure 2B-2, manual p.82"
+R1-10P,Except Right Turn (plaque),Table 2B-1 (2B.04),PDF,regulatory,,,none,,24x18,24x18,,,,,"Table 2B-1, manual p.68",PDF,symbols/R1-10P.png,"Figure 2B-1, manual p.74"
+R2-2P,Truck Speed Limit (plaque),Table 2B-1 (2B.22),PDF,regulatory,,,none,,24x24,24x24,36x36,48x48,,36x36,"Table 2B-1, manual p.68",PDF,symbols/R2-2P.png,"Figure 2B-3, manual p.86"
+R2-2aP,Bus Speed Limit (plaque),Table 2B-1 (2B.22),PDF,regulatory,,,none,,24x24,24x24,36x36,48x48,,36x36,"Table 2B-1, manual p.68",PDF,symbols/R2-2aP.png,"Figure 2B-3, manual p.86"
+R2-2bP,Truck-Bus Speed Limit (plaque),Table 2B-1 (2B.22),PDF,regulatory,,,none,,24x30,24x30,36x42,48x54,,36x42,"Table 2B-1, manual p.68",PDF,symbols/R2-2bP.png,"Figure 2B-3, manual p.86"
+R2-2cP,Vehicles Over X Tons Speed,Table 2B-1 (2B.22),PDF,regulatory,,,none,,24x30,24x30,36x42,48x54,,36x42,"Table 2B-1, manual p.68",PDF,symbols/R2-2cP.png,"Figure 2B-3, manual p.86"
+R2-3P,Night Speed Limit (plaque),Table 2B-1 (2B.23),PDF,regulatory,,,none,,24x24,24x24,36x36,48x48,,36x36,"Table 2B-1, manual p.68",PDF,symbols/R2-3P.png,"Figure 2B-3, manual p.86"
+R2-4P,Minimum Speed Limit (plaque),Table 2B-1 (2B.24),PDF,regulatory,,,none,,24x24,24x24,36x36,48x48,,36x36,"Table 2B-1, manual p.68",PDF,symbols/R2-4P.png,"Figure 2B-3, manual p.86"
+R2-4a,Combined Maximum and Minimum,Table 2B-1 (2B.24),PDF,regulatory,,,none,,24x48,24x48,36x72,48x96,,36x72,"Table 2B-1, manual p.68",PDF,symbols/R2-4a.png,"Figure 2B-3, manual p.86"
+R2-5P,Unless Otherwise Posted (plaque),Table 2B-1 (2B.21),PDF,regulatory,,,none,,24x18,24x18,36x24,36x24,,36x24,"Table 2B-1, manual p.68",PDF,symbols/R2-5P.png,"Figure 2B-3, manual p.86"
+R2-5aP,Citywide (plaque),Table 2B-1 (2B.21),PDF,regulatory,,,none,,24x6,24x6,,,,30x9,"Table 2B-1, manual p.68",PDF,symbols/R2-5aP.png,"Figure 2B-3, manual p.86"
+R2-5bP,Neighborhood (plaque),Table 2B-1 (2B.21),PDF,regulatory,,,none,,24x6,24x6,,,,30x9,"Table 2B-1, manual p.68",PDF,symbols/R2-5bP.png,"Figure 2B-3, manual p.86"
+R2-5cP,Residential (plaque),Table 2B-1 (2B.21),PDF,regulatory,,,none,,24x6,24x6,,,,30x9,"Table 2B-1, manual p.68",PDF,symbols/R2-5cP.png,"Figure 2B-3, manual p.86"
+R2-6P,Fines Higher (plaque),Table 2B-1 (2B.25),PDF,regulatory,,,none,,24x18,24x18,36x24,48x36,,36x24,"Table 2B-1, manual p.68",PDF,symbols/R2-6P.png,"Figure 2B-3, manual p.86"
+R2-6aP,Fines Double (plaque),Table 2B-1 (2B.25),PDF,regulatory,,,none,,24x18,24x18,36x24,48x36,,36x24,"Table 2B-1, manual p.68",PDF,symbols/R2-6aP.png,"Figure 2B-3, manual p.86"
+R2-6bP,$XX Fine (plaque),Table 2B-1 (2B.25),PDF,regulatory,,,none,,24x18,24x18,36x24,48x36,,36x24,"Table 2B-1, manual p.68",PDF,symbols/R2-6bP.png,"Figure 2B-3, manual p.86"
+R2-10,Begin Higher Fines Zone,Table 2B-1 (2B.25),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.68",PDF,symbols/R2-10.png,"Figure 2B-3, manual p.86"
+R2-11,End Higher Fines Zone,Table 2B-1 (2B.25),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.68",PDF,symbols/R2-11.png,"Figure 2B-3, manual p.86"
+R2-12,End Work Zone Speed Limit,Table 6G-1 (6G.08),PDF,regulatory,,,none,,24x36,24x36,36x54,36x54,,,"Table 6G-1, manual p.796",PDF,symbols/R2-12.png,"Figure 6G-1, manual p.794"
+R2-13,End Variable Speed Limit,Table 2B-1 (2B.21),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.68",PDF,symbols/R2-13.png,"Figure 2B-3, manual p.86"
+R2-14,End Truck Speed Limit,Table 2B-1 (2B.21),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.68",PDF,symbols/R2-14.png,"Figure 2B-3, manual p.86"
+R3-1,No Right Turn,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x24,36x36,36x36,,,48x48,"Table 2B-1, manual p.68",PDF,symbols/R3-1.png,"Figure 2B-4, manual p.90"
+R3-1a,No Right Turn - Train (symbol),Table 8B-1 (8D.10),PDF,regulatory,,,none,,24x30,30x36,,,,,"Table 8B-1, manual p.994",PDF,,
+R3-1b,Movement Prohibition -,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x36,24x36,36x54,36x54,,,"Table 2B-1, manual p.68",PDF,symbols/R3-1b.png,"Figure 2B-4, manual p.90"
+R3-1c,Movement Prohibition -,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x42,24x42,36x60,36x60,,,"Table 2B-1, manual p.68",PDF,,
+R3-1d,Movement Prohibition -,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x48,24x48,36x66,36x66,,,"Table 2B-1, manual p.68",PDF,symbols/R3-1d.png,"Figure 2B-4, manual p.90"
+R3-1e,Movement Prohibition -,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x36,24x36,36x54,36x54,,,"Table 2B-1, manual p.68",PDF,symbols/R3-1e.png,"Figure 2B-4, manual p.90"
+R3-1f,Movement Prohibition -,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x42,24x42,36x66,36x66,,,"Table 2B-1, manual p.68",PDF,symbols/R3-1f.png,"Figure 2B-4, manual p.90"
+R3-1g,Movement Prohibition -,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x36,24x36,36x54,36x54,,,"Table 2B-1, manual p.68",PDF,symbols/R3-1g.png,"Figure 2B-4, manual p.90"
+R3-1h,Movement Prohibition -,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x42,24x42,36x66,36x66,,,"Table 2B-1, manual p.69",PDF,,
+R3-2,No Left Turn,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x24,36x36,36x36,,,48x48,"Table 2B-1, manual p.68",PDF,symbols/R3-2.png,"Figure 2B-4, manual p.90"
+R3-2a,No Left Turn - Train (symbol),Table 8B-1 (8D.10),PDF,regulatory,,,none,,24x30,30x36,,,,,"Table 8B-1, manual p.994",PDF,symbols/R3-2a.png,"Figure 8B-1, manual p.996"
+R3-3,NO TURNS,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x24,36x36,36x36,,,48x48,"Table 2B-1, manual p.68",PDF,symbols/R3-3.png,"Figure 2B-4, manual p.90"
+R3-4,No U-Turn,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x24,36x36,36x36,,,48x48,"Table 2B-1, manual p.68",PDF,symbols/R3-4.png,"Figure 2B-4, manual p.90"
+R3-5,Mandatory Movement Lane Control Signs,Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-5.png,"Figure 2B-4, manual p.90"
+R3-5a,Mandatory Movement Lane Control,Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-5a.png,"Figure 2B-4, manual p.90"
+R3-5bP,Left Lane (plaque),Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x12,30x12,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-5bP.png,"Figure 2B-4, manual p.90"
+R3-5cP,HOV 2+ (plaque),Table 2B-1 (2B.28),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-5cP.png,"Figure 2B-4, manual p.90"
+R3-5dP,Taxi Lane (plaque),Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x12,30x12,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-5dP.png,"Figure 2B-4, manual p.90"
+R3-5fP,Right Lane (plaque),Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x12,30x12,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-5fP.png,"Figure 2B-4, manual p.90"
+R3-5gP,Bus Lane (plaque),Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x12,30x12,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-5gP.png,"Figure 2B-4, manual p.90"
+R3-5hP,Bike Lane (plaque),Table 9A-1 (9B.04),PDF,regulatory,,,none,,30x12,30x12,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R3-5hP.png,"Figure 9B-1, manual p.1052"
+R3-6,Optional Movement Lane Control,Table 2B-1 (2B.29),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-6.png,"Figure 2B-4, manual p.90"
+R3-6a,Optional Movement U and Left Turn,Table 2B-1 (2B.29),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-6a.png,"Figure 2B-4, manual p.90"
+R3-6b,Optional Movement Left Turns,Table 2B-1 (2B.29),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-6b.png,"Figure 2B-4, manual p.90"
+R3-7,Right (Left) Lane Must Turn,Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x30,36x36,48x48,,,48x48,"Table 2B-1, manual p.69",PDF,symbols/R3-7.png,"Figure 6G-1, manual p.794"
+R3-7aP,Except Buses (plaque),Table 2B-1 (2B.28),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-7aP.png,"Figure 2B-4, manual p.90"
+R3-7bP,Except Bicycles (plaque),Table 2B-1 (2B.28),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-7bP.png,"Figure 2B-4, manual p.90"
+R3-8,Advance Intersection Lane Control,Table 2B-1 (2B.28),PDF,regulatory,,,none,,,,,Variesx36,,,"Table 2B-1, manual p.69",PDF,symbols/R3-8.png,"Figure 2B-4, manual p.90"
+R3-8a,,Table 2B-1 (2B.28),PDF,regulatory,,,none,,,,,Variesx36,,,"Table 2B-1, manual p.69",PDF,symbols/R3-8a.png,"Figure 2B-4, manual p.90"
+R3-8b,,Table 2B-1 (2B.28),PDF,regulatory,,,none,,,,,Variesx36,,,"Table 2B-1, manual p.69",PDF,symbols/R3-8b.png,"Figure 2B-4, manual p.90"
+R3-8x,Advance Intersection Lane Control with Bike Lane,Table 9A-1 (9B.03),PDF,regulatory,,,none,,Variesx36,Variesx36,,,,,"Table 9A-1, manual p.1049",PDF,,
+R3-8xa,,Table 2B-1 (2B.28),PDF,regulatory,,,none,,,,,Variesx36,,,"Table 2B-1, manual p.69",PDF,symbols/R3-8xa.png,"Figure 2B-4, manual p.90"
+R3-8xb,,Table 2B-1 (2B.28),PDF,regulatory,,,none,,,,,Variesx36,,,"Table 2B-1, manual p.69",PDF,symbols/R3-8xb.png,"Figure 2B-4, manual p.90"
+R3-8xc,,Table 2B-1 (2B.28),PDF,regulatory,,,none,,,,,Variesx36,,,"Table 2B-1, manual p.69",PDF,symbols/R3-8xc.png,"Figure 2B-4, manual p.90"
+R3-9a,Two-Way Left Turn Only (overhead),Table 2B-1 (2B.32),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-9a.png,"Figure 2B-6, manual p.95"
+R3-9b,Two-Way Left Turn Only,Table 2B-1 (2B.32),PDF,regulatory,,,none,,24x36,24x36,,,,36x48,"Table 2B-1, manual p.69",PDF,symbols/R3-9b.png,"Figure 2B-6, manual p.95"
+R3-9cP,Begin (plaque),Table 2B-1 (2B.33),PDF,regulatory,,,none,,24x12,24x12,,,,36x18,"Table 2B-1, manual p.69",PDF,symbols/R3-9cP.png,"Figure 2B-6, manual p.95"
+R3-9dP,End (plaque),Table 2B-1 (2B.33),PDF,regulatory,,,none,,24x12,24x12,,,,36x18,"Table 2B-1, manual p.69",PDF,symbols/R3-9dP.png,"Figure 2B-6, manual p.95"
+R3-9e,Reversible Lane Control (overhead),Table 2B-1 (2B.34),PDF,regulatory,,,none,,108x48,108x48,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-9e.png,"Figure 2B-6, manual p.95"
+R3-9f,Reversible Lane Control,Table 2B-1 (2B.34),PDF,regulatory,,,none,,30x42,36x54,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-9f.png,"Figure 2B-6, manual p.95"
+R3-9g,Advance Reversible Lane Control,Table 2B-1 (2B.34),PDF,regulatory,,,none,,108x36,108x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-9g.png,"Figure 2B-6, manual p.95"
+R3-9h,Advance Reversible Lane Control,Table 2B-1 (2B.34),PDF,regulatory,,,none,,108x36,108x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-9h.png,"Figure 2B-6, manual p.95"
+R3-9i,End Reverse Lane,Table 2B-1 (2B.34),PDF,regulatory,,,none,,108x48,108x48,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-9i.png,"Figure 2B-6, manual p.95"
+R3-10,Vehicle Occupancy Definition,Table 2G-1 (2G.04),PDF,regulatory,,,none,,30x42,30x42,36x60,78x96,,78x96,"Table 2G-1, manual p.407",PDF,symbols/R3-10.png,"Figure 2G-1, manual p.410"
+R3-10a,ILEV,Table 2G-1 (2G.04),PDF,regulatory,,,none,,30x42,30x42,36x60,78x96,,78x96,"Table 2G-1, manual p.407",PDF,symbols/R3-10a.png,"Figure 2G-1, manual p.410"
+R3-11,Preferential Lane Operation Signs,text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-11.png,"Figure 2G-1, manual p.410"
+R3-11a,Preferential Lane Operation,text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-11a.png,"Figure 2G-1, manual p.410"
+R3-11b,Preferential Lane Operation,text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-11b.png,"Figure 2G-1, manual p.410"
+R3-11c,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,,
+R3-11d,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-11d.png,"Figure 2G-1, manual p.410"
+R3-11e,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-11e.png,"Figure 2G-1, manual p.410"
+R3-11f,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-11f.png,"Figure 2G-1, manual p.410"
+R3-11g,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-11g.png,"Figure 2G-1, manual p.410"
+R3-11hP,Motorcycles Allowed (plaque),Table 2G-1 (2G.05),PDF,regulatory,,,none,,30x15,30x15,36x18,78x36,,78x36,"Table 2G-1, manual p.407",PDF,symbols/R3-11hP.png,"Figure 2G-1, manual p.410"
+R3-12,Preferential Lane Advance Signs,Table 2G-1 (2G.06),PDF,regulatory,,,none,,30x42,30x42,36x60,48x84,,48x84,"Table 2G-1, manual p.407",PDF,symbols/R3-12.png,"Figure 2G-1, manual p.410"
+R3-12a,Preferential Lane Ends Signs,Table 2G-1 (2G.06),PDF,regulatory,,,none,,30x42,30x42,36x60,48x84,,48x84,"Table 2G-1, manual p.407",PDF,symbols/R3-12a.png,"Figure 2G-1, manual p.410"
+R3-12b,High-Occupancy Vehicles,Table 2G-1 (2G.06),PDF,regulatory,,,none,,30x42,30x42,36x60,48x84,,48x84,"Table 2G-1, manual p.407",PDF,symbols/R3-12b.png,"Figure 2G-1, manual p.410"
+R3-12c,Preferential Lane Ends,text (2G.07),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-12c.png,"Figure 2G-1, manual p.410"
+R3-12d,A post-mounted Preferential Lane Ends,text (2G.07),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-12d.png,"Figure 2G-1, manual p.410"
+R3-12e,The Preferential Lane Advance,text (2G.06),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R3-12e.png,"Figure 2G-1, manual p.410"
+R3-12f,Preferential Lane Ahead or Ends,Table 2G-1 (2G.07),PDF,regulatory,,,none,,30x36,30x36,36x48,48x60,,48x60,"Table 2G-1, manual p.407",PDF,symbols/R3-12f.png,"Figure 2G-1, manual p.410"
+R3-12g,Preferential Lane Ahead or Ends,Table 2G-1 (2G.07),PDF,regulatory,,,none,,30x36,30x36,36x48,48x60,,48x60,"Table 2G-1, manual p.407",PDF,symbols/R3-12g.png,"Figure 2G-1, manual p.410"
+R3-12h,Preferential Lane Ends,Table 2G-1 (2G.07),PDF,regulatory,,,none,,36x48,36x48,48x66,60x84,,60x84,"Table 2G-1, manual p.407",PDF,symbols/R3-12h.png,"Figure 2G-1, manual p.410"
+R3-13,Preferential Lane Vehicle,Table 2G-1 (2G.04),PDF,regulatory,,,none,,66x36,66x36,84x48,144x78,,144x78,"Table 2G-1, manual p.407",PDF,symbols/R3-13.png,"Figure 2G-1, manual p.411"
+R3-13a,Preferential Lane Vehicle,Table 2G-1 (2G.04),PDF,regulatory,,,none,,66x36,66x36,84x48,144x78,,144x78,"Table 2G-1, manual p.407",PDF,,
+R3-14,HOV Lane Operation (overhead),Table 2G-1 (2G.05),PDF,regulatory,,,none,,72x60,72x60,96x72,144x108,,144x108,"Table 2G-1, manual p.407",PDF,symbols/R3-14.png,"Figure 2G-1, manual p.411"
+R3-14a,HOV Lane Operation (overhead),Table 2G-1 (2G.05),PDF,regulatory,,,none,,72x60,72x60,96x72,144x108,,144x108,"Table 2G-1, manual p.407",PDF,symbols/R3-14a.png,"Figure 2G-1, manual p.411"
+R3-14b,HOV Lane Operation,Table 2G-1 (2G.05),PDF,regulatory,,,none,,72x60,72x60,96x72,120x96,,120x96,"Table 2G-1, manual p.407",PDF,symbols/R3-14b.png,"Figure 2G-1, manual p.411"
+R3-14c,Preferential Lane Operation,Table 2G-1 (2G.05),PDF,regulatory,,,none,,90x60,90x60,108x72,156x102,,156x102,"Table 2G-1, manual p.407",PDF,symbols/R3-14c.png,"Figure 2G-1, manual p.411"
+R3-14d,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,,
+R3-14e,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,,
+R3-14f,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,,
+R3-14g,Preferential Lane Operation Signs (R3-11 Series and R3-14 Series),text (2G.05),PDF,regulatory,,,none,,,,,,,,section text,0,,
+R3-15,HOV Lane Ahead (overhead),Table 2G-1 (2G.06),PDF,regulatory,,,none,,66x36,66x36,84x48,102x60,,102x60,"Table 2G-1, manual p.407",PDF,symbols/R3-15.png,"Figure 2G-1, manual p.411"
+R3-15a,HOV Lane Begins XX Miles,Table 2G-1 (2G.06),PDF,regulatory,,,none,,78x48,114x72,144x84,150x108,,150x108,"Table 2G-1, manual p.407",PDF,symbols/R3-15a.png,"Figure 2G-1, manual p.411"
+R3-15b,HOV Lane Ends (overhead),Table 2G-1 (2G.07),PDF,regulatory,,,none,,66x36,66x36,84x48,102x60,,102x60,"Table 2G-1, manual p.407",PDF,symbols/R3-15b.png,"Figure 2G-1, manual p.411"
+R3-15c,Preferential Lane Ends,Table 2G-1 (2G.07),PDF,regulatory,,,none,,66x36,66x36,84x48,102x60,,102x60,"Table 2G-1, manual p.407",PDF,symbols/R3-15c.png,"Figure 2G-1, manual p.411"
+R3-15d,Preferential Lane Ahead or Ends,Table 2G-1 (2G.07),PDF,regulatory,,,none,,42x36,42x36,54x48,72x60,,72x60,"Table 2G-1, manual p.407",PDF,symbols/R3-15d.png,"Figure 2G-1, manual p.411"
+R3-15e,Preferential Lane Ahead or Ends,Table 2G-1 (2G.07),PDF,regulatory,,,none,,42x36,42x36,54x48,72x60,,72x60,"Table 2G-1, manual p.407",PDF,symbols/R3-15e.png,"Figure 2G-1, manual p.411"
+R3-17,Bike Lane,Table 9A-1 (9B.04),PDF,regulatory,,,none,,24x18,24x18,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R3-17.png,"Figure 9B-1, manual p.1052"
+R3-17aP,"Ahead, Ends (plaques)",Table 9A-1 (9B.04),PDF,regulatory,,,none,,24x9,24x9,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R3-17aP.png,"Figure 9B-1, manual p.1052"
+R3-17bP,"Ahead, Ends (plaques)",Table 9A-1 (9B.04),PDF,regulatory,,,none,,24x9,24x9,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R3-17bP.png,"Figure 9B-1, manual p.1052"
+R3-18,No U or Left Turn,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x24,36x36,36x36,,,48x48,"Table 2B-1, manual p.68",PDF,symbols/R3-18.png,"Figure 2B-4, manual p.91"
+R3-19,Lane For Left Turn Only,Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x24,30x24,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-19.png,"Figure 2B-4, manual p.91"
+R3-19a,Lane for U Turn Only,Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x24,30x24,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-19a.png,"Figure 2B-4, manual p.91"
+R3-19b,Lane For U and Left Turns Only,Table 2B-1 (2B.28),PDF,regulatory,,,none,,30x30,30x30,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-19b.png,"Figure 2B-4, manual p.91"
+R3-20,Begin Right (Left) Turn Lane,Table 2B-1 (2B.28),PDF,regulatory,,,none,,24x36,24x36,,,,,"Table 2B-1, manual p.69",PDF,,
+R3-23,Jughandle Signs,Table 2B-1 (2B.35),PDF,regulatory,,,none,,60x36,60x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-23.png,"Figure 2B-8, manual p.98"
+R3-23a,U TURN FROM RIGHT LANE,Table 2B-1 (2B.35),PDF,regulatory,,,none,,60x36,60x36,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-23a.png,"Figure 2B-8, manual p.98"
+R3-24,,Table 2B-1 (2B.35),PDF,regulatory,,,none,,,,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-24.png,"Figure 2B-8, manual p.98"
+R3-24a,U-Turns and Left Turns Directional,Table 2B-1 (2B.35),PDF,regulatory,,,none,,60x24,60x24,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-24a.png,"Figure 2B-8, manual p.98"
+R3-24b,,Table 2B-1 (2B.35),PDF,regulatory,,,none,,,,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-24b.png,"Figure 2B-8, manual p.98"
+R3-25,,Table 2B-1 (2B.35),PDF,regulatory,,,none,,,,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-25.png,"Figure 2B-8, manual p.98"
+R3-25a,U-Turns and Left Turns Directional,Table 2B-1 (2B.35),PDF,regulatory,,,none,,60x24,60x24,,,,,"Table 2B-1, manual p.69",PDF,,
+R3-25b,,Table 2B-1 (2B.35),PDF,regulatory,,,none,,,,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-25b.png,"Figure 2B-8, manual p.98"
+R3-26,U-Turns and Left Turns Directional,Table 2B-1 (2B.35),PDF,regulatory,,,none,,60x24,60x24,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-26.png,"Figure 2B-8, manual p.98"
+R3-26a,,Table 2B-1 (2B.35),PDF,regulatory,,,none,,,,,,,,"Table 2B-1, manual p.69",PDF,symbols/R3-26a.png,"Figure 2B-8, manual p.98"
+R3-27,No Straight Through,Table 2B-1 (2B.26),PDF,regulatory,,,none,,24x24,36x36,36x36,,,48x48,"Table 2B-1, manual p.68",PDF,symbols/R3-27.png,"Figure 2B-4, manual p.91"
+R3-28,Toll Rate,Table 2F-1 (2F.04),PDF,regulatory,,,none,,,,114x48,114x48,,,"Table 2F-1, manual p.381",PDF,symbols/R3-28.png,"Figure 2F-2, manual p.383"
+R3-29P,Pay Toll (plaque),Table 2F-1 (2F.04),PDF,regulatory,,,none,,,,24x18,24x18,,,"Table 2F-1, manual p.381",PDF,symbols/R3-29P.png,"Figure 2F-2, manual p.383"
+R3-30P,Take Ticket (plaque),Table 2F-1 (2F.04),PDF,regulatory,,,none,,,,24x18,24x18,,,"Table 2F-1, manual p.381",PDF,symbols/R3-30P.png,"Figure 2F-2, manual p.383"
+R3-31,ETC Account-Only,Table 2F-1 (2F.05),PDF,regulatory,,,none,,24x24,24x24,36x36,36x36,24x24,36x36,"Table 2F-1, manual p.381",PDF,,
+R3-32P,No Cash (plaque),Table 2F-1 (2F.05),PDF,regulatory,,,none,,24x12,24x12,36x18,36x18,24x12,36x18,"Table 2F-1, manual p.381",PDF,,
+R3-33,Right (Left) Lane Must Exit,Table 2B-1 (2B.31),PDF,regulatory,,,none,,,,78x36,78x36,,,"Table 2B-1, manual p.69",PDF,symbols/R3-33.png,"Figure 2B-4, manual p.91"
+R3-33a,Right (Left) Lane Must Exit,Table 2B-1 (2B.31),PDF,regulatory,,,none,,,,42x60,42x60,,,"Table 2B-1, manual p.69",PDF,symbols/R3-33a.png,"Figure 2B-4, manual p.91"
+R3-40,Occupancy Definition,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,54x66,54x66,,66x78,"Table 2G-1, manual p.407",PDF,symbols/R3-40.png,"Figure 2G-18, manual p.436"
+R3-42,Priced Managed Lane Ends,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,48x60,48x60,,60x78,"Table 2G-1, manual p.407",PDF,symbols/R3-42.png,"Figure 2G-18, manual p.436"
+R3-42a,Priced Managed Lane Ends,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,48x66,48x66,,60x84,"Table 2G-1, manual p.407",PDF,symbols/R3-42a.png,"Figure 2G-18, manual p.436"
+R3-42b,Restriction Ends,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,48x60,48x60,,60x78,"Table 2G-1, manual p.407",PDF,symbols/R3-42b.png,"Figure 2G-18, manual p.436"
+R3-42c,Restriction Ends,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,48x66,48x66,,60x84,"Table 2G-1, manual p.407",PDF,symbols/R3-42c.png,"Figure 2G-18, manual p.436"
+R3-43,Priced Managed Lane Vehicle,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,138x66,138x66,,,"Table 2G-1, manual p.407",PDF,symbols/R3-43.png,"Figure 2G-18, manual p.436"
+R3-44,Priced Managed Lane Operation,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,90x84,90x84,,,"Table 2G-1, manual p.407",PDF,symbols/R3-44.png,"Figure 2G-18, manual p.436"
+R3-44a,Priced Managed Lane Operation,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,132x84,132x84,,,"Table 2G-1, manual p.407",PDF,symbols/R3-44a.png,"Figure 2G-18, manual p.436"
+R3-44b,Priced Managed Lane Operation,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,90x72,90x72,,,"Table 2G-1, manual p.407",PDF,,
+R3-45,Priced Managed Lane Ends,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,90x66,90x66,,,"Table 2G-1, manual p.407",PDF,symbols/R3-45.png,"Figure 2G-18, manual p.436"
+R3-45a,Priced Managed Lane,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,114x66,114x66,,,"Table 2G-1, manual p.407",PDF,symbols/R3-45a.png,"Figure 2G-18, manual p.436"
+R3-48,Priced Managed Lane Toll Rate,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,Varies,Varies,,,"Table 2G-1, manual p.407",PDF,symbols/R3-48.png,"Figure 2G-18, manual p.436"
+R3-48a,Priced Managed Lane Toll Rate,Table 2G-1 (2G.18),PDF,regulatory,,,none,,,,Varies,Varies,,,"Table 2G-1, manual p.407",PDF,symbols/R3-48a.png,"Figure 2G-18, manual p.436"
+R3-51,Part-Time Travel on,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x78,66x78,,,"Table 2G-1, manual p.407",PDF,,
+R3-51aP,No Trucks (plaque),Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x12,66x12,,,"Table 2G-1, manual p.407",PDF,,
+R3-51bP,No Trucks or Buses (plaque),Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x24,66x24,,,"Table 2G-1, manual p.407",PDF,,
+R3-51cP,Emergency Stopping Only,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,54x42,54x42,,,"Table 2G-1, manual p.407",PDF,,
+R3-51d,Part-Time Travel on Shoulder Variable Operation,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x84,66x84,,,"Table 2G-1, manual p.408",PDF,,
+R3-51e,TRAVEL ON SHOULDER ON GREEN ARROW ONLY,Table 2G-1 (2G.24),PDF,regulatory,,,none,,,,66x84,66x84,,,"Table 2G-1, manual p.408",PDF,,
+R3-52,Part-Time Travel on Shoulder Ends,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x72,66x72,,,"Table 2G-1, manual p.408",PDF,,
+R3-52a,TRAVEL ON SHOULDERENDS,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x72,66x72,,,"Table 2G-1, manual p.408",PDF,,
+R3-52b,Shoulder Must Exit Advance,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x72,66x72,,,"Table 2G-1, manual p.408",PDF,,
+R3-52c,MILE,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,66x72,66x72,,,"Table 2G-1, manual p.408",PDF,,
+R3-56,Begin Exit Lane,Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,48x72,48x72,,,"Table 2G-1, manual p.408",PDF,,
+R3-57P,To Traffic on Shoulder (plaque),Table 2G-1 (2G.21),PDF,regulatory,,,none,,,,36x18,36x18,,,"Table 2G-1, manual p.408",PDF,,
+R4-1,Do Not Pass,Table 2B-1 (2B.36),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-1.png,"Figure 2B-10, manual p.103"
+R4-2,Pass With Care,Table 2B-1 (2B.37),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-2.png,"Figure 2B-10, manual p.103"
+R4-3,Slower Traffic Keep Right,Table 2B-1 (2B.38),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-3.png,"Figure 2B-10, manual p.103"
+R4-4,Begin Right Turn Lane Yield to Bikes,Table 9A-1 (9B.05),PDF,regulatory,,,none,,36x30,36x30,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R4-4.png,"Figure 9B-1, manual p.1052"
+R4-5,Trucks Use Right Lane,Table 2B-1 (2B.38),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-5.png,"Figure 2B-10, manual p.103"
+R4-7a,Keep Right,Table 2B-1 (2B.39),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-7a.png,"Figure 2B-10, manual p.103"
+R4-7b,Keep Right,Table 2B-1 (2B.39),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-7b.png,"Figure 2B-10, manual p.103"
+R4-7c,Narrow Keep Right,Table 2B-1 (2B.39),PDF,regulatory,,,none,,18x30,18x30,,,,,"Table 2B-1, manual p.69",PDF,symbols/R4-7c.png,"Figure 2B-10, manual p.103"
+R4-8,Keep Left,Table 2B-1 (2B.39),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-8.png,"Figure 2B-10, manual p.103"
+R4-8a,Keep Left,Table 2B-1 (2B.39),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-8a.png,"Figure 2B-10, manual p.103"
+R4-8b,Keep Left,Table 2B-1 (2B.39),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-8b.png,"Figure 2B-10, manual p.103"
+R4-8c,Narrow Keep Left,Table 2B-1 (2B.39),PDF,regulatory,,,none,,18x30,18x30,,,,,"Table 2B-1, manual p.69",PDF,symbols/R4-8c.png,"Figure 2B-10, manual p.103"
+R4-9,Stay in Lane,Table 2B-1 (2B.40),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.69",PDF,symbols/R4-9.png,"Figure 2B-10, manual p.103"
+R4-9a,Stay In Lane To Merge Point,Table 6G-1 (6G.07),PDF,regulatory,,,none,,36x48,36x48,36x48,36x48,,,"Table 6G-1, manual p.796",PDF,symbols/R4-9a.png,"Figure 6G-1, manual p.794"
+R4-10,Runaway Vehicles Only,Table 2B-1 (2B.41),PDF,regulatory,,,none,,48x48,48x48,,,,,"Table 2B-1, manual p.69",PDF,symbols/R4-10.png,"Figure 2B-10, manual p.103"
+R4-12,More Following Vehicles Must,Table 2B-1 (2B.42),PDF,regulatory,,,none,,42x24,42x24,,,,72x42,"Table 2B-1, manual p.70",PDF,symbols/R4-12.png,"Figure 2B-10, manual p.103"
+R4-13,Slow Vehicles Must Use,Table 2B-1 (2B.42),PDF,regulatory,,,none,,42x24,42x24,,,,,"Table 2B-1, manual p.70",PDF,symbols/R4-13.png,"Figure 2B-10, manual p.103"
+R4-14,Slow Vehicles Must Turn Out,Table 2B-1 (2B.42),PDF,regulatory,,,none,,30x42,30x42,,,,,"Table 2B-1, manual p.70",PDF,symbols/R4-14.png,"Figure 2B-10, manual p.103"
+R4-16,Keep Right Except to Pass,Table 2B-1 (2B.38),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.70",PDF,symbols/R4-16.png,"Figure 2B-10, manual p.103"
+R4-17,Do Not Drive on Shoulder,Table 2B-1 (2B.43),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.70",PDF,symbols/R4-17.png,"Figure 2B-10, manual p.103"
+R4-18,Do Not Pass on Shoulder,Table 2B-1 (2B.43),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,18x24,36x48,"Table 2B-1, manual p.70",PDF,symbols/R4-18.png,"Figure 2B-10, manual p.103"
+R4-19,Bicycle Passing Clearance,Table 9A-1 (9B.15),PDF,regulatory,,,none,,30x30,30x30,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R4-19.png,"Figure 9B-1, manual p.1052"
+R4-20,All Traffic,Table 2B-1 (2B.44),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.70",PDF,symbols/R4-20.png,"Figure 2B-10, manual p.103"
+R4-21,Right (Left) Turn Only,Table 2B-1 (2B.44),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 2B-1, manual p.70",PDF,symbols/R4-21.png,"Figure 2B-10, manual p.103"
+R5-1b,Bicycle Wrong Way,Table 9A-1 (9B.06),PDF,regulatory,,,none,,12x18,12x18,,,12x18,,"Table 9A-1, manual p.1049",PDF,,
+R5-2,No Trucks,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x24,24x24,30x30,36x36,,36x36,"Table 2B-1, manual p.70",PDF,symbols/R5-2.png,"Figure 2B-12, manual p.107"
+R5-2aP,Except Local Deliveries (plaque),Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x12,24x12,30x15,36x18,,36x18,"Table 2B-1, manual p.70",PDF,symbols/R5-2aP.png,"Figure 2B-12, manual p.107"
+R5-2b,No Thru Trucks,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x30,24x30,30x36,36x48,,36x48,"Table 2B-1, manual p.70",PDF,symbols/R5-2b.png,"Figure 2B-12, manual p.107"
+R5-3,No Motor Vehicles,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x24,24x24,,,24x24,,"Table 2B-1, manual p.70",PDF,symbols/R5-3.png,"Figure 2B-12, manual p.107"
+R5-4,No Commercial Vehicles,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x30,24x30,36x48,36x48,,,"Table 2B-1, manual p.70",PDF,symbols/R5-4.png,"Figure 2B-12, manual p.107"
+R5-5,No Vehicles with Lugs,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,,"Table 2B-1, manual p.70",PDF,symbols/R5-5.png,"Figure 2B-12, manual p.107"
+R5-6,No Bicycles,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x24,24x24,30x30,36x36,24x24,48x48,"Table 2B-1, manual p.70",PDF,symbols/R5-6.png,"Figure 2B-12, manual p.107"
+R5-7,No Non-Motorized Traffic,Table 2B-1 (2B.45),PDF,regulatory,,,none,,30x24,30x24,42x24,48x30,,42x24,"Table 2B-1, manual p.70",PDF,symbols/R5-7.png,"Figure 2B-12, manual p.107"
+R5-8,No Motor-Driven Cycles,Table 2B-1 (2B.45),PDF,regulatory,,,none,,30x24,30x24,42x24,48x30,,42x24,"Table 2B-1, manual p.70",PDF,symbols/R5-8.png,"Figure 2B-12, manual p.107"
+R5-10,"No Pedestrians, Bicycles,",Table 2B-1 (2B.45),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.70",PDF,symbols/R5-10.png,"Figure 2B-12, manual p.107"
+R5-10a,"No Pedestrians, Bicycles,",Table 2B-1 (2B.45),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.70",PDF,symbols/R5-10a.png,"Figure 2B-12, manual p.107"
+R5-10b,No Pedestrians or Bicycles,Table 2B-1 (2B.45),PDF,regulatory,,,none,,30x18,30x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R5-10b.png,"Figure 2B-12, manual p.107"
+R5-10c,No Pedestrians,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 2B-1, manual p.70",PDF,symbols/R5-10c.png,"Figure 2B-12, manual p.107"
+R5-10dP,On Freeway (plaque),Table 9A-1 (9B.17),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R5-10dP.png,"Figure 9B-1, manual p.1052"
+R5-11,Authorized Vehicles Only,Table 2B-1 (2B.45),PDF,regulatory,,,none,,30x24,30x24,,,,,"Table 2B-1, manual p.70",PDF,symbols/R5-11.png,"Figure 2B-12, manual p.107"
+R5-12,No Thru Traffic,Table 2B-1 (2B.45),PDF,regulatory,,,none,,24x30,24x30,,,,30x36,"Table 2B-1, manual p.70",PDF,symbols/R5-12.png,"Figure 2B-12, manual p.107"
+R6-3,Divided Highway Crossing,Table 2B-1 (2B.50),PDF,regulatory,,,none,,30x24,30x24,36x30,,,36x30,"Table 2B-1, manual p.70",PDF,symbols/R6-3.png,"Figure 2B-20, manual p.109"
+R6-3a,Divided Highway Crossing,Table 2B-1 (2B.50),PDF,regulatory,,,none,,30x24,30x24,36x30,,,36x30,"Table 2B-1, manual p.70",PDF,symbols/R6-3a.png,"Figure 2B-20, manual p.109"
+R6-5P,Roundabout Circulation (plaque),Table 2B-1 (2B.51),PDF,regulatory,,,none,,30x30,30x30,,,,,"Table 2B-1, manual p.70",PDF,symbols/R6-5P.png,"Figure 2B-20, manual p.109"
+R6-6,Begin One Way,Table 2B-1 (2B.49),PDF,regulatory,,,none,,24x30,30x36,,,,,"Table 2B-1, manual p.70",PDF,symbols/R6-6.png,"Figure 2B-20, manual p.109"
+R6-7,End One Way,Table 2B-1 (2B.49),PDF,regulatory,,,none,,24x30,30x36,,,,,"Table 2B-1, manual p.70",PDF,symbols/R6-7.png,"Figure 2B-20, manual p.109"
+R7-1,Parking Prohibition,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-1.png,"Figure 2B-25, manual p.124"
+R7-2,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-2.png,"Figure 2B-25, manual p.124"
+R7-2a,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-2a.png,"Figure 2B-25, manual p.124"
+R7-3,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-3.png,"Figure 2B-25, manual p.124"
+R7-4,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-4.png,"Figure 2B-25, manual p.124"
+R7-4a,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-4a.png,"Figure 2B-25, manual p.124"
+R7-5,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-5.png,"Figure 2B-25, manual p.124"
+R7-6,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-6.png,"Figure 2B-25, manual p.124"
+R7-8,Accessible Parking,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-8.png,"Figure 2B-25, manual p.125"
+R7-8aP,Van Accessible (plaque),Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x6,12x6,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-8aP.png,"Figure 2B-25, manual p.125"
+R7-9,No Parking Bike Lane,Table 9A-1 (9B.09),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R7-9.png,"Figure 9B-1, manual p.1052"
+R7-9a,No Parking Bike Lane,Table 9A-1 (9B.09),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R7-9a.png,"Figure 9B-1, manual p.1052"
+R7-10,Back-In Parking Sign,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-10.png,"Figure 2B-25, manual p.124"
+R7-20,"Parking Fee Station,",Table 2B-1 (2B.53),PDF,regulatory,,,none,,24x18,24x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-20.png,"Figure 2B-25, manual p.124"
+R7-21,Metered Parking,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-21.png,"Figure 2B-25, manual p.124"
+R7-21aP,Mobile Parking Payment (plaque),Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x6,12x6,,,,,"Table 2B-1, manual p.70",PDF,,
+R7-22,Metered Parking,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-22.png,"Figure 2B-25, manual p.124"
+R7-107,Parking Restrictions,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-107.png,"Figure 2B-25, manual p.124"
+R7-107a,No Parking Bus Stop,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x24,12x24,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-107a.png,"Figure 2B-25, manual p.124"
+R7-107b,No Parking Bus Stop,Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x30,12x30,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-107b.png,"Figure 2B-25, manual p.124"
+R7-108,Permissive Parking,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.70",PDF,symbols/R7-108.png,"Figure 2B-25, manual p.124"
+R7-111,No Parking Except Electric Vehicles,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-111.png,"Figure 2B-25, manual p.125"
+R7-111a,No Parking Except Electric Vehicles,Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-111a.png,"Figure 2B-25, manual p.125"
+R7-112,Electric Vehicle Parking (time limit),Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-112.png,"Figure 2B-25, manual p.125"
+R7-112a,Electric Vehicle Parking (time limit,Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-112a.png,"Figure 2B-25, manual p.125"
+R7-112b,Electric Vehicle Parking (time limit,Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x21,12x21,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-112b.png,"Figure 2B-25, manual p.125"
+R7-113,No Parking Except While Charging,Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-113.png,"Figure 2B-25, manual p.125"
+R7-113aP,Vehicle Must Be Plugged In (plaque),Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x6,12x6,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-113aP.png,"Figure 2B-25, manual p.125"
+R7-113bP,Vacate Stall When Charging,Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x6,12x6,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-113bP.png,"Figure 2B-25, manual p.125"
+R7-114,Vehicle Charging Only (time limit),Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-114.png,"Figure 2B-25, manual p.125"
+R7-114a,"Vehicle Charging Only (time limit,",Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-114a.png,"Figure 2B-25, manual p.125"
+R7-114b,Vehicle Charging Only (time limit,Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x21,12x21,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-114b.png,"Figure 2B-25, manual p.125"
+R7-200,No Parking/Restricted Parking,Table 2B-1 (2B.53),PDF,regulatory,,,none,,24x18,24x18,,,,,"Table 2B-1, manual p.71",PDF,,
+R7-200a,No Parking/Restricted Parking,Table 2B-1 (2B.53),PDF,regulatory,,,none,,12x36,12x36,,,,,"Table 2B-1, manual p.71",PDF,,
+R7-201P,Tow Away Zone (plaque),Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x6,12x6,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-201P.png,"Figure 2B-25, manual p.124"
+R7-201aP,"Parking, Standing, and Stopping Signs (R7 and R8 Series)",text (2B.52),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R7-201aP.png,"Figure 2B-25, manual p.124"
+R7-202P,This Side of Sign (plaque),Table 2B-1 (2B.52),PDF,regulatory,,,none,,12x6,12x6,,,,,"Table 2B-1, manual p.71",PDF,symbols/R7-202P.png,"Figure 2B-25, manual p.124"
+R7-203,Snow Emergency Route,Table 2B-1 (2B.52),PDF,regulatory,,,none,,18x24,18x24,,,,24x30,"Table 2B-1, manual p.71",PDF,symbols/R7-203.png,"Figure 2B-25, manual p.124"
+R8-1,No Parking on Pavement,Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.71",PDF,symbols/R8-1.png,"Figure 2B-25, manual p.124"
+R8-2,No Parking Except on Shoulder,Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.71",PDF,symbols/R8-2.png,"Figure 2B-25, manual p.124"
+R8-3,No Parking (symbol),Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x24,30x30,36x36,48x48,12x12,36x36,"Table 2B-1, manual p.71",PDF,symbols/R8-3.png,"Figure 2B-25, manual p.124"
+R8-3a,No Parking,Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x30,24x30,36x36,48x48,18x24,36x36,"Table 2B-1, manual p.71",PDF,symbols/R8-3a.png,"Figure 2B-25, manual p.124"
+R8-3c,On Pavement,Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x36,24x36,,,18x30,36x54,"Table 2B-1, manual p.71",PDF,symbols/R8-3c.png,"Figure 2B-25, manual p.124"
+R8-3d,On Bridge,Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x36,24x36,,,18x30,36x54,"Table 2B-1, manual p.71",PDF,symbols/R8-3d.png,"Figure 2B-25, manual p.124"
+R8-3e,On Tracks,Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x36,24x36,,,18x30,,"Table 2B-1, manual p.71",PDF,symbols/R8-3e.png,"Figure 2B-25, manual p.124"
+R8-3f,Except on Shoulder,Table 2B-1 (2B.52),PDF,regulatory,,,none,,24x36,24x36,,,18x30,36x54,"Table 2B-1, manual p.71",PDF,symbols/R8-3f.png,"Figure 2B-25, manual p.124"
+R8-4,Emergency Parking Only,Table 2B-1 (2B.55),PDF,regulatory,,,none,,30x24,30x24,30x24,48x36,,48x36,"Table 2B-1, manual p.71",PDF,,
+R8-5,No Stopping on Pavement,Table 2B-1 (2B.53),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.71",PDF,symbols/R8-5.png,"Figure 2B-25, manual p.124"
+R8-6,No Stopping Except on Shoulder,Table 2B-1 (2B.53),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.71",PDF,symbols/R8-6.png,"Figure 2B-25, manual p.124"
+R8-7,Emergency Stopping Only,Table 2B-1 (2B.55),PDF,regulatory,,,none,,30x24,30x24,48x36,48x36,,48x36,"Table 2B-1, manual p.71",PDF,,
+R8-8,Do Not Stop on Tracks,Table 8B-1 (8B.07),PDF,regulatory,,,none,,24x30,24x30,36x48,,,36x48,"Table 8B-1, manual p.994",PDF,symbols/R8-8.png,"Figure 8B-1, manual p.996"
+R8-9,Tracks Out of Service,Table 8B-1 (8B.08),PDF,regulatory,,,none,,24x24,24x24,36x36,,,36x36,"Table 8B-1, manual p.994",PDF,symbols/R8-9.png,"Figure 8B-1, manual p.996"
+R8-10,Stop Here When Flashing,Table 8B-1 (8B.09),PDF,regulatory,,,none,,24x36,24x36,,,,36x48,"Table 8B-1, manual p.994",PDF,symbols/R8-10.png,"Figure 8B-1, manual p.996"
+R8-10a,Stop Here When Flashing,Table 8B-1 (8B.09),PDF,regulatory,,,none,,24x30,24x30,,,,36x42,"Table 8B-1, manual p.994",PDF,symbols/R8-10a.png,"Figure 8B-1, manual p.996"
+R9-1,Walk on Left Facing Traffic,Table 2B-1 (2B.56),PDF,regulatory,,,none,,18x24,18x24,,,,,"Table 2B-1, manual p.71",PDF,symbols/R9-1.png,"Figure 2B-27, manual p.129"
+R9-2,Cross Only at Crosswalks,Table 2B-1 (2B.57),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R9-2.png,"Figure 2B-27, manual p.129"
+R9-3,No Pedestrian Crossing (symbol),Table 2B-1 (2B.57),PDF,regulatory,,,none,,18x18,18x18,24x24,30x30,,30x30,"Table 2B-1, manual p.71",PDF,symbols/R9-3.png,"Figure 2B-12, manual p.107"
+R9-3a,No Pedestrian Crossing,Table 2B-1 (2B.57),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.71",PDF,symbols/R9-3a.png,"Figure 2B-27, manual p.129"
+R9-3bP,Use Crosswalk (plaque),Table 2B-1 (2B.57),PDF,regulatory,,,none,,18x12,18x12,,,,,"Table 2B-1, manual p.72",PDF,symbols/R9-3bP.png,"Figure 2B-27, manual p.129"
+R9-3cP,Ride With Traffic (plaque),Table 9A-1 (9B.06),PDF,regulatory,,,none,,12x12,12x12,,,12x12,,"Table 9A-1, manual p.1049",PDF,,
+R9-4,No Hitchhiking (symbol),Table 2B-1 (2B.56),PDF,regulatory,,,none,,18x18,18x18,,,,24x24,"Table 2B-1, manual p.72",PDF,symbols/R9-4.png,"Figure 2B-27, manual p.129"
+R9-4a,No Hitchhiking,Table 2B-1 (2B.56),PDF,regulatory,,,none,,18x24,18x24,,,12x18,,"Table 2B-1, manual p.72",PDF,symbols/R9-4a.png,"Figure 2B-27, manual p.129"
+R9-5,Bicycles Use Pedestrian Signal,Table 9A-1 (9B.11),PDF,regulatory,,,none,,12x18,12x18,,,12x18,,"Table 9A-1, manual p.1049",PDF,symbols/R9-5.png,"Figure 9B-1, manual p.1052"
+R9-6,Bicycles Yield to Pedestrians,Table 9A-1 (9B.12),PDF,regulatory,,,none,,12x18,12x18,,,12x18,,"Table 9A-1, manual p.1049",PDF,symbols/R9-6.png,"Figure 9B-1, manual p.1052"
+R9-7,Shared-Use Path Restriction,Table 9A-1 (9B.13),PDF,regulatory,,,none,,,,,,12x18,,"Table 9A-1, manual p.1049",PDF,symbols/R9-7.png,"Figure 9B-1, manual p.1052"
+R9-8,Pedestrian Crosswalk,Table 6G-1 (6G.09),PDF,regulatory,,,none,,36x18,36x18,,,,,"Table 6G-1, manual p.796",PDF,symbols/R9-8.png,"Figure 6G-1, manual p.795"
+R9-9,Sidewalk Closed,Table 6G-1 (6G.10),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 6G-1, manual p.796",PDF,symbols/R9-9.png,"Figure 6G-1, manual p.795"
+R9-10,"Sidewalk Closed, Use Other Side",Table 6G-1 (6G.10),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 6G-1, manual p.796",PDF,symbols/R9-10.png,"Figure 6G-1, manual p.795"
+R9-11,"Sidewalk Closed Ahead, Cross Here",Table 6G-1 (6G.10),PDF,regulatory,,,none,,24x18,24x18,,,,,"Table 6G-1, manual p.796",PDF,symbols/R9-11.png,"Figure 6G-1, manual p.795"
+R9-11a,"Sidewalk Closed, Cross Here",Table 6G-1 (6G.10),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 6G-1, manual p.796",PDF,symbols/R9-11a.png,"Figure 6G-1, manual p.795"
+R9-12,Bike Lane Closed,Table 6G-1 (6P.01),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 6G-1, manual p.796",PDF,symbols/R9-12.png,"Figure 6G-1, manual p.795"
+R9-13,No Skaters,Table 2B-1 (2B.45),PDF,regulatory,,,none,,18x18,18x18,24x24,30x30,,30x30,"Table 2B-1, manual p.72",PDF,symbols/R9-13.png,"Figure 2B-12, manual p.107"
+R9-14,No Equestrians,Table 2B-1 (2B.45),PDF,regulatory,,,none,,18x18,18x18,24x24,30x30,,30x30,"Table 2B-1, manual p.72",PDF,symbols/R9-14.png,"Figure 2B-12, manual p.107"
+R9-15,No Snowmobiles,Table 2B-1 (2B.45),PDF,regulatory,,,none,,18x18,18x18,24x24,30x30,,30x30,"Table 2B-1, manual p.72",PDF,symbols/R9-15.png,"Figure 2B-12, manual p.107"
+R9-16,No All-Terrian Vehicles,Table 2B-1 (2B.45),PDF,regulatory,,,none,,18x18,18x18,24x24,30x30,,30x30,"Table 2B-1, manual p.72",PDF,symbols/R9-16.png,"Figure 2B-12, manual p.107"
+R9-19P,Except on Shoulder (plaque),Table 2B-1 (2B.45),PDF,regulatory,,,none,,18x12,18x12,24x18,30x24,,30x24,"Table 2B-1, manual p.72",PDF,symbols/R9-19P.png,"Figure 2B-12, manual p.107"
+R9-20,Bicycles Allowed Use of Full Lane,Table 9A-1 (9B.14),PDF,regulatory,,,none,,30x30,30x30,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-20.png,"Figure 6G-1, manual p.795"
+R9-21,Bicycles Use Shoulder Only,Table 9A-1 (9B.16),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-21.png,"Figure 9B-1, manual p.1052"
+R9-22,Bicycles Must Exit,Table 9A-1 (9B.17),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-22.png,"Figure 9B-1, manual p.1052"
+R9-23,Bicycle All Turns from Bike Lane,Table 9A-1 (9B.18),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-23.png,"Figure 9B-1, manual p.1052"
+R9-23a,Bicycle Left Turn from Bike Lane,Table 9A-1 (9B.18),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-23a.png,"Figure 9B-1, manual p.1052"
+R9-23b,Bicycle Turn Must Use Turn Box,Table 9A-1 (9B.18),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-23b.png,"Figure 9B-1, manual p.1052"
+R9-23c,Bicycle Left Turn Must Use Turn Box,Table 9A-1 (9B.18),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-23c.png,"Figure 9B-1, manual p.1052"
+R9-24,Bicycle Jughandle Signs,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-24.png,"Figure 9B-1, manual p.1053"
+R9-24a,Bicycle All Turns,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-24a.png,"Figure 9B-1, manual p.1053"
+R9-25,Bicycle U and Left Turns,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x9,24x9,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-25.png,"Figure 9B-1, manual p.1053"
+R9-25a,Bicycle U and Left Turns,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x9,24x9,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-25a.png,"Figure 9B-1, manual p.1053"
+R9-25b,Bicycle U and Left Turns,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x9,24x9,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-25b.png,"Figure 9B-1, manual p.1053"
+R9-26,Bicycle U Turn,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-26.png,"Figure 9B-1, manual p.1053"
+R9-26a,Bicycle U Turn,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-26a.png,"Figure 9B-1, manual p.1053"
+R9-26b,Bicycle U Turn,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-26b.png,"Figure 9B-1, manual p.1053"
+R9-27,Bicycle Left Turn,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-27.png,"Figure 9B-1, manual p.1053"
+R9-27a,Bicycle Left Turn,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-27a.png,"Figure 9B-1, manual p.1053"
+R9-27b,Bicycle Left Turn,Table 9A-1 (9B.19),PDF,regulatory,,,none,,24x6,24x6,,,,,"Table 9A-1, manual p.1049",PDF,symbols/R9-27b.png,"Figure 9B-1, manual p.1053"
+R10-1,Cross Only On Green,Table 2B-1 (2B.58),PDF,regulatory,,,none,,12x18,12x18,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-1.png,"Figure 2B-27, manual p.129"
+R10-2,SIGNAL,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-2.png,"Figure 2B-27, manual p.129"
+R10-3,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3.png,"Figure 2B-27, manual p.129"
+R10-3a,Cross Street Wait for Walk Signal,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x15,9x15,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3a.png,"Figure 2B-27, manual p.129"
+R10-3b,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3b.png,"Figure 2B-27, manual p.129"
+R10-3c,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3c.png,"Figure 2B-27, manual p.129"
+R10-3d,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3d.png,"Figure 2B-27, manual p.129"
+R10-3e,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x15,9x15,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3e.png,"Figure 2B-27, manual p.129"
+R10-3f,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x15,9x15,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3f.png,"Figure 2B-27, manual p.129"
+R10-3g,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x15,9x15,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3g.png,"Figure 2B-27, manual p.129"
+R10-3h,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x15,9x15,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3h.png,"Figure 2B-27, manual p.129"
+R10-3i,Pedestrian Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x15,9x15,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-3i.png,"Figure 2B-27, manual p.130"
+R10-4,Bicycle Actuation Signs,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-4.png,"Figure 2B-27, manual p.130"
+R10-4a,Cross Street Wait for Green Signal,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x15,9x15,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-4a.png,"Figure 2B-27, manual p.130"
+R10-4b,Maintaining Minimum Retrorefectivityl,text (2A.22),PDF,regulatory,,,none,,,,,,,,section text,0,,
+R10-5,Left on Green Arrow Only,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x36,30x36,30x36,,24x30,48x60,"Table 2B-1, manual p.72",PDF,symbols/R10-5.png,"Figure 2B-28, manual p.132"
+R10-6,STOPHERE ON RED,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x36,24x36,,,,36x48,"Table 2B-1, manual p.72",PDF,symbols/R10-6.png,"Figure 2B-28, manual p.132"
+R10-6a,Stop Here on Red,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x30,24x30,,,,36x42,"Table 2B-1, manual p.72",PDF,symbols/R10-6a.png,"Figure 2B-28, manual p.132"
+R10-7,Do Not Block Intersection,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-7.png,"Figure 2B-28, manual p.132"
+R10-8,Use Lane with Green Arrow,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x36,30x36,36x42,,,60x72,"Table 2B-1, manual p.72",PDF,symbols/R10-8.png,"Figure 2B-28, manual p.132"
+R10-10,Left (Right) Turn Signal,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x30,24x30,,,,30x36,"Table 2B-1, manual p.72",PDF,symbols/R10-10.png,"Figure 2B-28, manual p.132"
+R10-10a,U- Turn Signal,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x30,24x30,,,,30x36,"Table 2B-1, manual p.72",PDF,symbols/R10-10a.png,"Figure 2B-28, manual p.132"
+R10-10b,Left (Right) Lane Signal,Table 8B-1 (8D.11),PDF,regulatory,,,none,,30x36,30x36,,,24x30,,"Table 8B-1, manual p.994",PDF,symbols/R10-10b.png,"Figure 8B-1, manual p.996"
+R10-10c,Left (Right) Turn Lane Signal,Table 8B-1 (8D.11),PDF,regulatory,,,none,,30x42,30x42,,,24x36,,"Table 8B-1, manual p.994",PDF,symbols/R10-10c.png,"Figure 8B-1, manual p.996"
+R10-11,No Turn on Red,Table 2B-1 (2B.60),PDF,regulatory,,,none,,24x30,24x30,,,,36x48,"Table 2B-1, manual p.72",PDF,symbols/R10-11.png,"Figure 2B-28, manual p.132"
+R10-11a,No Turn on Circular Red,Table 2B-1 (2B.60),PDF,regulatory,,,none,,24x30,24x30,,,,36x48,"Table 2B-1, manual p.72",PDF,symbols/R10-11a.png,"Figure 2B-28, manual p.132"
+R10-11b,No Turn on Red,Table 2B-1 (2B.60),PDF,regulatory,,,none,,24x24,24x24,,,,36x36,"Table 2B-1, manual p.72",PDF,symbols/R10-11b.png,"Figure 2B-28, manual p.132"
+R10-11c,No Turn on Red Except From,Table 2B-1 (2B.60),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.72",PDF,,
+R10-11d,No Turn on Red From This Lane,Table 2B-1 (2B.60),PDF,regulatory,,,none,,30x42,30x42,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-11d.png,"Figure 2B-28, manual p.132"
+R10-12,Left Turn Yield on Green,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-12.png,"Figure 2B-28, manual p.132"
+R10-12a,Left Turn Yield on Flashing,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-12a.png,"Figure 2B-28, manual p.132"
+R10-12b,Left Turn Yield to Bicycle,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-12b.png,"Figure 2B-28, manual p.132"
+R10-13,Emergency Signal,Table 2B-1 (2B.59),PDF,regulatory,,,none,,36x24,36x24,,,,42x30,"Table 2B-1, manual p.72",PDF,symbols/R10-13.png,"Figure 2B-28, manual p.132"
+R10-14,Emergency Signal - Stop on,Table 2B-1 (2B.59),PDF,regulatory,,,none,,36x42,36x42,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-14.png,"Figure 2B-28, manual p.132"
+R10-14a,Traffc Signal Signs and Plaques (R10i -5 through R10-30),text (2B.59),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R10-14a.png,"Figure 2B-28, manual p.132"
+R10-14b,Stop Here on Flashing Red,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x36,24x36,,,,36x48,"Table 2B-1, manual p.72",PDF,symbols/R10-14b.png,"Figure 2B-28, manual p.132"
+R10-15,Turning Vehicles Yield to,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x30,30x30,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-15.png,"Figure 2B-28, manual p.133"
+R10-15a,Turning Vehicles Stop for,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x30,30x30,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-15a.png,"Figure 2B-28, manual p.133"
+R10-16,U-Turn Yield to Right Turn,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-16.png,"Figure 2B-28, manual p.133"
+R10-17a,Right on Red Arrow After Stop,Table 2B-1 (2B.60),PDF,regulatory,,,none,,30x36,30x36,,,,36x48,"Table 2B-1, manual p.72",PDF,symbols/R10-17a.png,"Figure 2B-28, manual p.133"
+R10-18,Traffic Laws Photo Enforced,Table 2B-1 (2B.69),PDF,regulatory,,,none,,36x24,36x24,48x30,54x36,,54x36,"Table 2B-1, manual p.72",PDF,symbols/R10-18.png,"Figure 2B-32, manual p.140"
+R10-18a,Traffic Signal Photo Enforced,Table 2B-1 (2B.69),PDF,regulatory,,,none,,30x42,30x42,30x42,,,36x54,"Table 2B-1, manual p.72",PDF,symbols/R10-18a.png,"Figure 2B-32, manual p.140"
+R10-19P,Photo Enforced (symbol plaque),Table 2B-1 (2B.69),PDF,regulatory,,,none,,24x12,24x12,36x18,48x24,,48x24,"Table 2B-1, manual p.72",PDF,symbols/R10-19P.png,"Figure 2B-32, manual p.140"
+R10-19aP,Photo Enforced (plaque),Table 2B-1 (2B.69),PDF,regulatory,,,none,,24x18,24x18,36x24,48x36,,48x36,"Table 2B-1, manual p.72",PDF,symbols/R10-19aP.png,"Figure 2B-32, manual p.140"
+R10-20aP,MON—FRI (and times),Table 2B-1 (2B.60),PDF,regulatory,,,none,,24x18,24x18,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-20aP.png,"Figure 2B-28, manual p.133"
+R10-22,Bicycle Detector,Table 9A-1 (9B.20),PDF,regulatory,,,none,,12x18,12x18,,,12x18,,"Table 9A-1, manual p.1049",PDF,symbols/R10-22.png,"Figure 9B-1, manual p.1053"
+R10-23,Crosswalk - Stop on Red,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 2B-1, manual p.72",PDF,symbols/R10-23.png,"Figure 2B-28, manual p.133"
+R10-23a,Stop on Red - Yield on Flashing,Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-23a.png,"Figure 2B-28, manual p.133"
+R10-24,Bike Push Button for Green Light,Table 9A-1 (9B.20),PDF,regulatory,,,none,,9x15,9x15,,,9x15,,"Table 9A-1, manual p.1049",PDF,symbols/R10-24.png,"Figure 9B-1, manual p.1053"
+R10-25,Push Button For Warning Lights -,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-25.png,"Figure 2B-27, manual p.130"
+R10-26,Bike Push Button for Green Light (arrow),Table 9A-1 (9B.20),PDF,regulatory,,,none,,9x15,9x15,,,9x15,,"Table 9A-1, manual p.1049",PDF,symbols/R10-26.png,"Figure 9B-1, manual p.1053"
+R10-27,Left Turn Yield on Flashing Red,Table 2B-1 (2B.59),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-27.png,"Figure 2B-28, manual p.133"
+R10-28,XX Vehicles per Green,Table 2B-1 (2B.61),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-28.png,"Figure 2B-29, manual p.135"
+R10-29,XX Vehicles per Green Each Lane,Table 2B-1 (2B.61),PDF,regulatory,,,none,,36x24,36x24,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-29.png,"Figure 2B-29, manual p.135"
+R10-30,Right Turn on Red Must,Table 2B-1 (2B.60),PDF,regulatory,,,none,,30x36,30x36,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-30.png,"Figure 2B-28, manual p.133"
+R10-31P,At Signal (plaque),Table 2B-1 (2B.59),PDF,regulatory,,,none,,24x9,24x9,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-31P.png,"Figure 2B-28, manual p.133"
+R10-32P,Push Button for 2 Seconds for,Table 2B-1 (2B.58),PDF,regulatory,,,none,,9x12,9x12,,,,,"Table 2B-1, manual p.73",PDF,symbols/R10-32P.png,"Figure 2B-27, manual p.130"
+R10-40,Bicycle Signal,Table 9A-1 (9B.22),PDF,regulatory,,,none,,12x21,12x21,,,12x21,,"Table 9A-1, manual p.1049",PDF,symbols/R10-40.png,"Figure 9B-1, manual p.1053"
+R10-40a,Bicycle Signal,Table 9A-1 (9B.22),PDF,regulatory,,,none,,12x21,12x21,,,12x21,,"Table 9A-1, manual p.1049",PDF,symbols/R10-40a.png,"Figure 9B-1, manual p.1053"
+R10-41,Bicycle Signal,Table 9A-1 (9B.22),PDF,regulatory,,,none,,12x21,12x21,,,12x21,,"Table 9A-1, manual p.1049",PDF,symbols/R10-41.png,"Figure 9B-1, manual p.1053"
+R10-41a,"Bicycle Signal Signs (R10-40, R10-40a, R10-41, R10-41a, R10-41b, and R10-41c)",text (9B.22),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R10-41a.png,"Figure 9B-1, manual p.1053"
+R10-41b,"Bicycle Signal Signs (R10-40, R10-40a, R10-41, R10-41a, R10-41b, and R10-41c)",text (9B.22),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R10-41b.png,"Figure 9B-1, manual p.1053"
+R10-41c,"Bicycle Signal Signs (R10-40, R10-40a, R10-41, R10-41a, R10-41b, and R10-41c)",text (9B.22),PDF,regulatory,,,none,,,,,,,,section text,0,symbols/R10-41c.png,"Figure 9B-1, manual p.1053"
+R11-1,Keep Off Median,Table 2B-1 (2B.62),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R11-1.png,"Figure 2B-30, manual p.136"
+R11-2,ROAD CLOSED Sign,Table 2B-1 (2B.63),PDF,regulatory,,,none,,48x30,48x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R11-2.png,"Figure 2B-30, manual p.136"
+R11-2a,STREET CLOSED,Table 2B-1 (2B.63),PDF,regulatory,,,none,,48x30,48x30,,,,,"Table 2B-1, manual p.73",PDF,,
+R11-2b,BRIDGE OUT,Table 2B-1 (2B.63),PDF,regulatory,,,none,,48x30,48x30,,,,,"Table 2B-1, manual p.73",PDF,,
+R11-2c,PATH CLOSED,Table 2B-1 (2B.63),PDF,regulatory,,,none,,48x30,48x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R11-2c.png,"Figure 6G-1, manual p.795"
+R11-3,Road Closed - Local Traffic Only,Table 2B-1 (2B.63),PDF,regulatory,,,none,,60x30,60x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R11-3.png,"Figure 2B-30, manual p.136"
+R11-3a,LOCALTRAFFIC ONLY,Table 2B-1 (2B.63),PDF,regulatory,,,none,,60x30,60x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R11-3a.png,"Figure 2B-30, manual p.136"
+R11-3b,BRIDGE OUT,Table 2B-1 (2B.63),PDF,regulatory,,,none,,60x30,60x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R11-3b.png,"Figure 2B-30, manual p.136"
+R11-4,ROAD CLOSED TO THRU TRAFFIC,Table 2B-1 (2B.63),PDF,regulatory,,,none,,60x30,60x30,,,,,"Table 2B-1, manual p.73",PDF,symbols/R11-4.png,"Figure 2B-30, manual p.136"
+R12-1,Weight Limit Signs,Table 2B-1 (2B.64),PDF,regulatory,,,none,,24x30,24x30,36x48,,,36x48,"Table 2B-1, manual p.73",PDF,symbols/R12-1.png,"Figure 2B-30, manual p.136"
+R12-2,TONSor AXLE WEIGHT LIMIT XX LBS,Table 2B-1 (2B.64),PDF,regulatory,,,none,,24x30,24x30,36x48,,,36x48,"Table 2B-1, manual p.73",PDF,symbols/R12-2.png,"Figure 2B-30, manual p.136"
+R12-4,"Weight Limit - Axle, Gross",Table 2B-1 (2B.64),PDF,regulatory,,,none,,36x24,36x24,,,,,"Table 2B-1, manual p.73",PDF,symbols/R12-4.png,"Figure 2B-30, manual p.136"
+R12-5,Weight Limit,Table 2B-1 (2B.64),PDF,regulatory,,,none,,24x36,24x36,36x48,48x60,,,"Table 2B-1, manual p.73",PDF,symbols/R12-5.png,"Figure 2B-30, manual p.136"
+R12-6,Weight Limit - Specialized,Table 2B-1 (2B.64),PDF,regulatory,,,none,,30x42,36x48,36x48,48x60,,48x60,"Table 2B-1, manual p.73",PDF,symbols/R12-6.png,"Figure 2B-30, manual p.136"
+R12-7,Weight Limit - Emergency Vehicles,Table 2B-1 (2B.64),PDF,regulatory,,,none,,30x36,30x36,48x60,48x60,,48x60,"Table 2B-1, manual p.73",PDF,symbols/R12-7.png,"Figure 2B-30, manual p.136"
+R12-7aP,Weight Limit - Emergency,Table 2B-1 (2B.64),PDF,regulatory,,,none,,30x30,30x30,48x48,48x48,,48x48,"Table 2B-1, manual p.73",PDF,symbols/R12-7aP.png,"Figure 2B-30, manual p.136"
+R13-1,Weigh Station,Table 2B-1 (2B.65),PDF,regulatory,,,none,,72x54,72x54,96x72,132x90,,,"Table 2B-1, manual p.73",PDF,symbols/R13-1.png,"Figure 2B-31, manual p.139"
+R14-1,Truck Route,Table 2B-1 (2B.66),PDF,regulatory,,,none,,24x18,24x18,,,,,"Table 2B-1, manual p.73",PDF,symbols/R14-1.png,"Figure 2B-31, manual p.139"
+R14-2,Hazardous Material,Table 2B-1 (2B.67),PDF,regulatory,,,none,,24x24,24x24,30x30,36x36,,42x42,"Table 2B-1, manual p.73",PDF,symbols/R14-2.png,"Figure 2B-31, manual p.139"
+R14-3,Hazardous Material,Table 2B-1 (2B.67),PDF,regulatory,,,none,,24x24,24x24,30x30,36x36,,42x42,"Table 2B-1, manual p.73",PDF,symbols/R14-3.png,"Figure 2B-31, manual p.139"
+R14-4,National Network,Table 2B-1 (2B.68),PDF,regulatory,,,none,,30x30,30x30,36x36,36x36,,42x42,"Table 2B-1, manual p.73",PDF,symbols/R14-4.png,"Figure 2B-31, manual p.139"
+R14-5,National Network,Table 2B-1 (2B.68),PDF,regulatory,,,none,,30x30,30x30,36x36,36x36,,42x42,"Table 2B-1, manual p.73",PDF,symbols/R14-5.png,"Figure 2B-31, manual p.139"
+R15-1,Grade Crossing (Crossbuck),Table 8B-1 (8B.03),PDF,regulatory,,,none,,48x9,48x9,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-1.png,"Figure 8B-1, manual p.996"
+R15-2P,Number of Tracks (plaque),Table 8B-1 (8B.03),PDF,regulatory,,,none,,27x18,27x18,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-2P.png,"Figure 8B-1, manual p.996"
+R15-3P,Exempt (plaque),Table 8B-1 (8B.11),PDF,regulatory,,,none,,24x12,24x12,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-3P.png,"Figure 8B-1, manual p.996"
+R15-4,Light Rail Transit Only Lane Signs,text (8B.12),PDF,regulatory,,,none,,,,,,,,section text,0,,
+R15-4a,Light Rail Only Right Lane,Table 8B-1 (8B.12),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-4a.png,"Figure 8B-1, manual p.996"
+R15-4b,Light Rail Only Left Lane,Table 8B-1 (8B.12),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-4b.png,"Figure 8B-1, manual p.996"
+R15-4c,Light Rail Only Center Lane,Table 8B-1 (8B.12),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-4c.png,"Figure 8B-1, manual p.996"
+R15-5,Light Rail Do Not Pass (symbol),Table 8B-1 (8B.13),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-5.png,"Figure 8B-1, manual p.996"
+R15-5a,Do Not Pass Stopped Train,Table 8B-1 (8B.13),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-5a.png,"Figure 8B-1, manual p.996"
+R15-6,No Motor Vehicles On Tracks,Table 8B-1 (8B.14),PDF,regulatory,,,none,,24x24,24x24,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-6.png,"Figure 8B-1, manual p.996"
+R15-6a,Do Not Drive On Tracks,Table 8B-1 (8B.14),PDF,regulatory,,,none,,24x30,24x30,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-6a.png,"Figure 8B-1, manual p.996"
+R15-7,Light Rail Divided,Table 8B-1 (8B.15),PDF,regulatory,,,none,,24x24,24x24,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-7.png,"Figure 8B-1, manual p.996"
+R15-7a,Light Rail Divided Highway,Table 8B-1 (8B.15),PDF,regulatory,,,none,,24x24,24x24,,,,,"Table 8B-1, manual p.994",PDF,symbols/R15-7a.png,"Figure 8B-1, manual p.996"
+R15-8,Look,Table 8B-1 (8E.03),PDF,regulatory,,,none,,18x9,18x9,,,18x9,,"Table 8B-1, manual p.994",PDF,symbols/R15-8.png,"Figure 8B-1, manual p.996"
+R16-3,Move Over or Reduce Speed,Table 2B-1 (2B.71),PDF,regulatory,,,none,,,60x48,84x60,102x72,,84x60,"Table 2B-1, manual p.73",PDF,symbols/R16-3.png,"Figure 2B-32, manual p.140"
+R16-4,Minor Crashes Move Vehicles from,Table 2B-1 (2B.70),PDF,regulatory,,,none,,,60x42,84x54,96x60,,84x54,"Table 2B-1, manual p.73",PDF,symbols/R16-4.png,"Figure 2B-32, manual p.140"
+R16-5,Lights On When Using Wipers,Table 2B-1 (2B.73),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.73",PDF,symbols/R16-5.png,"Figure 2B-34, manual p.141"
+R16-6,LIGHTS ON WHEN RAINING,Table 2B-1 (2B.73),PDF,regulatory,,,none,,24x30,24x30,36x48,48x60,,36x48,"Table 2B-1, manual p.73",PDF,symbols/R16-6.png,"Figure 2B-34, manual p.141"
+R16-7,Turn On Headlights Next XX Miles,Table 2B-1 (2B.73),PDF,regulatory,,,none,,60x18,60x18,96x30,132x36,,96x30,"Table 2B-1, manual p.73",PDF,symbols/R16-7.png,"Figure 2B-34, manual p.141"
+R16-8,"Turn On, Check Headlights",Table 2B-1 (2B.73),PDF,regulatory,,,none,,42x18,42x18,60x30,78x36,,60x30,"Table 2B-1, manual p.73",PDF,symbols/R16-8.png,"Figure 2B-34, manual p.141"
+R16-9,"Turn On, Check Headlights",Table 2B-1 (2B.73),PDF,regulatory,,,none,,42x18,42x18,60x30,78x36,,60x30,"Table 2B-1, manual p.73",PDF,symbols/R16-9.png,"Figure 2B-34, manual p.141"
+R16-10,BEGIN DAYTIMEHEADLIGHT SECTION,Table 2B-1 (2B.73),PDF,regulatory,,,none,,60x18,60x18,96x30,120x36,,96x30,"Table 2B-1, manual p.73",PDF,symbols/R16-10.png,"Figure 2B-34, manual p.141"
+R16-11,ENDDAYTIME HEADLIGHT SECTION,Table 2B-1 (2B.73),PDF,regulatory,,,none,,60x18,60x18,96x30,120x36,,96x30,"Table 2B-1, manual p.73",PDF,symbols/R16-11.png,"Figure 2B-34, manual p.141"
+R16-15,No Hand-Held Phone Use By Driver,Table 2B-1 (2B.72),PDF,regulatory,,,none,,,,72x48,72x48,,,"Table 2B-1, manual p.73",PDF,symbols/R16-15.png,"Figure 2B-32, manual p.140"
+R16-15a,No Hand-Held Phone Use By Driver,Table 2B-1 (2B.72),PDF,regulatory,,,none,,30x42,30x42,,,,,"Table 2B-1, manual p.73",PDF,symbols/R16-15a.png,"Figure 2B-32, manual p.140"
+R22-2,Turn Off 2-Way Radio and Cell Phone,Table 6G-1 (6G.11),PDF,regulatory,,,none,,42x36,42x36,42x36,42x36,,,"Table 6G-1, manual p.796",PDF,symbols/R22-2.png,"Figure 6G-1, manual p.795"
+S3-1,School Bus Stop Ahead,Table 7B-1 (7B.04),PDF,school,,,none,,36x36,36x36,,,30x30,48x48,"Table 7B-1, manual p.971",PDF,symbols/S3-1.png,"Figure 7B-1, manual p.973"
+S3-2,School Bus Turn Ahead,Table 7B-1 (7B.04),PDF,school,,,none,,36x36,36x36,,,30x30,48x48,"Table 7B-1, manual p.971",PDF,,
+S4-1P,X:XX to X:XX AM,Table 7B-1 (7B.06),PDF,school,,,none,,24x12,24x12,,,,36x18,"Table 7B-1, manual p.971",PDF,,
+S4-2P,When Children Are Present,Table 7B-1 (7B.06),PDF,school,,,none,,24x12,24x12,,,,36x18,"Table 7B-1, manual p.971",PDF,,
+S4-3P,School,Table 7B-1 (7B.02),PDF,school,,,none,,24x9,24x9,,,,36x12,"Table 7B-1, manual p.971",PDF,,
+S4-4P,When Flashing,Table 7B-1 (7B.05),PDF,school,,,none,,24x12,24x12,,,,36x18,"Table 7B-1, manual p.971",PDF,,
+S4-5,Reduced School Speed,Table 7B-1 (7B.05),PDF,school,,,none,,36x36,36x36,,,30x30,48x48,"Table 7B-1, manual p.971",PDF,,
+S4-5a,Reduced School Speed,Table 7B-1 (7B.05),PDF,school,,,none,,36x36,36x36,,,30x30,48x48,"Table 7B-1, manual p.971",PDF,,
+S4-6P,Days of Week,Table 7B-1 (7B.05),PDF,school,,,none,,24x12,24x12,,,,36x18,"Table 7B-1, manual p.971",PDF,,
+S4-7P,All Year,Table 7B-1 (7B.02),PDF,school,,,none,,24x12,24x12,,,,30x18,"Table 7B-1, manual p.971",PDF,,
+S5-1,School Speed Limit XX,Table 7B-1 (7B.05),PDF,school,,,none,,24x48,24x48,,,,36x72,"Table 7B-1, manual p.971",PDF,,
+S5-2,End School Zone,Table 7B-1 (7B.02),PDF,school,,,none,,24x30,24x30,,,,36x48,"Table 7B-1, manual p.971",PDF,,
+S5-3,End School Speed Limit,Table 7B-1 (7B.05),PDF,school,,,none,,24x30,24x30,,,,36x48,"Table 7B-1, manual p.971",PDF,,
+W1-4b,Reverse Curve (2 or more lanes),Table 6H-1 (6H.30),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.803",PDF,symbols/W1-4b.png,"Figure 6H-1, manual p.799"
+W1-4c,Reverse Curve (2 or more lanes),Table 6H-1 (6H.30),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.803",PDF,symbols/W1-4c.png,"Figure 6H-1, manual p.799"
+W1-5,Winding Road,Table 2C-1 (2C.07),PDF,warning,,,none,,30x30,36x36,36x36,36x36,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-5.png,"Figure 2C-1, manual p.153"
+W1-6,One-Direction Large Arrow,Table 2C-1 (2C.10),PDF,warning,,,lr,,48x24,48x24,60x30,60x30,,60x30,"Table 2C-1, manual p.148",PDF,symbols/W1-6.png,"Figure 2C-1, manual p.153"
+W1-7,Two-Direction Large Arrow,Table 2C-1 (2C.43),PDF,warning,,,none,,48x24,48x24,,,,60x30,"Table 2C-1, manual p.148",PDF,symbols/W1-7.png,"Figure 2C-9, manual p.179"
+W1-10,Combination Horizontal,Table 2C-1 (2C.09),PDF,warning,,,none,,36x36,36x36,36x36,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W1-10.png,"Figure 2C-1, manual p.153"
+W1-10a,Combination Horizontal,Table 2C-1 (2C.09),PDF,warning,,,none,,36x36,36x36,36x36,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W1-10a.png,"Figure 2C-1, manual p.153"
+W1-10b,Combination Horizontal,Table 2C-1 (2C.09),PDF,warning,,,none,,36x36,36x36,36x36,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W1-10b.png,"Figure 2C-1, manual p.153"
+W1-10c,Combination Horizontal Alignment/Intersection Signs (W1-10 Series),text (2C.09),PDF,warning,,,none,,,,,,,,section text,0,symbols/W1-10c.png,"Figure 2C-1, manual p.153"
+W1-10d,Combination Horizontal Alignment/Intersection Signs (W1-10 Series),text (2C.09),PDF,warning,,,none,,,,,,,,section text,0,symbols/W1-10d.png,"Figure 2C-1, manual p.153"
+W1-10e,Combination Horizontal Alignment/Intersection Signs (W1-10 Series),text (2C.09),PDF,warning,,,none,,,,,,,,section text,0,symbols/W1-10e.png,"Figure 2C-1, manual p.153"
+W1-11,Hairpin Curve,Table 2C-1 (2C.07),PDF,warning,,,none,,30x30,30x30,36x36,48x48,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-11.png,"Figure 2C-1, manual p.153"
+W1-13,Truck Rollover,Table 2C-1 (2C.11),PDF,warning,,,lr,,36x36,36x36,36x36,48x48,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-13.png,"Figure 2C-1, manual p.153"
+W1-15,270-degree Curve,Table 2C-1 (2C.07),PDF,warning,,,none,,30x30,30x30,36x36,48x48,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W1-15.png,"Figure 2C-1, manual p.153"
+W2-3,Intersection Warning,Table 2C-1 (2C.41),PDF,warning,,,none,,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W2-3.png,"Figure 2C-9, manual p.179"
+W2-3a,Intersection Warning,Table 2C-1 (2C.41),PDF,warning,,,none,,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,,
+W2-5,Y-Intersection,Table 2C-1 (2C.41),PDF,warning,,,none,,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W2-5.png,"Figure 9C-1, manual p.1065"
+W2-7,Offset SideRoads,Table 2C-1 (2C.41),PDF,warning,,,none,,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,,
+W2-8,Double Side Roads,Table 2C-1 (2C.41),PDF,warning,,,none,,30x30,30x30,36x36,,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W2-8.png,"Figure 2C-9, manual p.179"
+W2-10,Traffic Entering When Flashing,Table 2C-1 (2C.42),PDF,warning,,,none,,36x36,36x36,48x48,,,,"Table 2C-1, manual p.148",PDF,,
+W2-11,Traffic Approaching,Table 2C-1 (2C.42),PDF,warning,,,none,,36x36,36x36,48x48,,,,"Table 2C-1, manual p.148",PDF,,
+W3-4,Be Prepared to Stop,Table 2C-1 (2C.35),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W3-4.png,"Figure 2C-8, manual p.177"
+W3-5a,XX MPH Speed Zone Ahead,Table 2C-1 (2C.40),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W3-5a.png,"Figure 2C-9, manual p.179"
+W3-5b,Variable Speed Zone Ahead,Table 2C-1 (2C.40),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W3-5b.png,"Figure 2C-9, manual p.179"
+W3-5c,XX MPH Truck Speed,Table 2C-1 (2C.40),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W3-5c.png,"Figure 2C-9, manual p.179"
+W3-6,Draw Bridge,Table 2C-1 (2C.36),PDF,warning,,,none,,36x36,36x36,48x48,,,60x60,"Table 2C-1, manual p.148",PDF,symbols/W3-6.png,"Figure 2C-8, manual p.177"
+W3-7,Ramp Meter Ahead,Table 2C-1 (2C.37),PDF,warning,,,none,,36x36,36x36,,,,,"Table 2C-1, manual p.148",PDF,symbols/W3-7.png,"Figure 2C-8, manual p.177"
+W3-8,Ramp Metered When Flashing,Table 2C-1 (2C.37),PDF,warning,,,none,,36x36,36x36,,,,,"Table 2C-1, manual p.148",PDF,symbols/W3-8.png,"Figure 2C-8, manual p.177"
+W3-9,Traffic Using Shoulder,Table 2G-1 (2G.22),PDF,warning,,,none,,,,36x48,48x60,,,"Table 2G-1, manual p.408",PDF,,
+W4-1,Merge,Table 2C-1 (2C.45),PDF,warning,,,lr,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W4-1.png,"Figure 2C-11, manual p.182"
+W4-3,Added Lane,Table 2C-1 (2C.46),PDF,warning,,,lr,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W4-3.png,"Figure 2C-11, manual p.182"
+W4-4P,Cross Traffic Does Not,Table 2C-1 (2C.66),PDF,warning,,,none,,24x12,24x12,36x18,,,48x24,"Table 2C-1, manual p.148",PDF,symbols/W4-4P.png,"Figure 2C-9, manual p.179"
+W4-4aP,Does Not Stop,Table 2C-1 (2C.66),PDF,warning,,,none,,24x12,24x12,36x18,,,48x24,"Table 2C-1, manual p.148",PDF,symbols/W4-4aP.png,"Figure 2C-9, manual p.179"
+W4-4bP,Oncoming Traffic Does Not Stop,Table 2C-1 (2C.66),PDF,warning,,,none,,24x12,24x12,36x18,,,48x24,"Table 2C-1, manual p.148",PDF,symbols/W4-4bP.png,"Figure 2C-9, manual p.179"
+W4-5,Entering Roadway Merge,Table 2C-1 (2C.45),PDF,warning,,,lr,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W4-5.png,"Figure 2C-11, manual p.182"
+W4-5aP,No Merge Area (plaque),Table 2C-1 (2C.45),PDF,warning,,,none,,18x24,18x24,24x30,24x30,,,"Table 2C-1, manual p.148",PDF,symbols/W4-5aP.png,"Figure 2C-11, manual p.182"
+W4-6,Entering Roadway Added Lane,Table 2C-1 (2C.46),PDF,warning,,,lr,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W4-6.png,"Figure 2C-11, manual p.182"
+W4-7,Heavy Merge from Right (Left),Table 2C-1 (2C.49),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W4-7.png,"Figure 2C-11, manual p.182"
+W4-8,Single Lane Transition,Table 2C-1 (2C.48),PDF,warning,,,none,,36x36,36x36,36x36,48x48,,48x48,"Table 2C-1, manual p.148",PDF,symbols/W4-8.png,"Figure 2C-11, manual p.182"
+W4-9,Work Affecting Pedestrian and Bicycle Facilities,text (6N.04),PDF,warning,,,none,,,,,,,,section text,0,,
+W5-1,Road Narrows,Table 2C-1 (2C.17),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W5-1.png,"Figure 2C-6, manual p.169"
+W5-2,Narrow Bridge,Table 2C-1 (2C.18),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W5-2.png,"Figure 2C-6, manual p.169"
+W5-2a,Narrow Underpass,Table 2C-1 (2C.18),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W5-2a.png,"Figure 2C-6, manual p.169"
+W5-3,One Lane Bridge,Table 2C-1 (2C.19),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W5-3.png,"Figure 2C-6, manual p.169"
+W5-3a,One Lane Underpass,Table 2C-1 (2C.19),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.148",PDF,symbols/W5-3a.png,"Figure 2C-6, manual p.169"
+W5-4,Ramp Narrows,Table 6H-1 (6H.10),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.803",PDF,symbols/W5-4.png,"Figure 6H-1, manual p.799"
+W5-4a,Path Narrows,Table 9A-1 (9C.08),PDF,warning,,,none,,,,,,18x18,,"Table 9A-1, manual p.1050",PDF,symbols/W5-4a.png,"Figure 9C-1, manual p.1065"
+W6-1,Divided Highway,Table 2C-1 (2C.20),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W6-1.png,"Figure 2C-6, manual p.169"
+W6-2,Divided Highway Ends,Table 2C-1 (2C.21),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W6-2.png,"Figure 2C-6, manual p.169"
+W6-3,Two-Way Traffic,Table 2C-1 (2C.51),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.148",PDF,symbols/W6-3.png,"Figure 2C-11, manual p.182"
+W6-4,Narrow Two-Way Traffic,Table 6H-1 (6H.17),PDF,warning,,,none,,12x18,12x18,12x18,12x18,,,"Table 6H-1, manual p.803",PDF,symbols/W6-4.png,"Figure 6H-1, manual p.799"
+W6-5,Two-Way Traffic (3-Lane),Table 2C-1 (2C.52),PDF,warning,,,none,,36x36,36x36,48x48,,,,"Table 2C-1, manual p.148",PDF,symbols/W6-5.png,"Figure 2C-11, manual p.182"
+W6-5a,Two-Way Traffic (3-Lane),Table 2C-1 (2C.52),PDF,warning,,,none,,36x36,36x36,48x48,,,,"Table 2C-1, manual p.148",PDF,symbols/W6-5a.png,"Figure 2C-11, manual p.182"
+W7-1,Hill,Table 2C-1 (2C.14),PDF,warning,,,none,,30x30,36x36,36x36,36x36,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W7-1.png,"Figure 2C-5, manual p.167"
+W7-1a,Hill with Grade,Table 2C-1 (2C.14),PDF,warning,,,none,,30x30,36x36,36x36,36x36,24x24,48x48,"Table 2C-1, manual p.148",PDF,symbols/W7-1a.png,"Figure 2C-5, manual p.167"
+W7-2P,Use Low Gear (plaque),Table 2C-1 (2C.64),PDF,warning,,,none,,24x18,24x18,,,,,"Table 2C-1, manual p.149",PDF,symbols/W7-2P.png,"Figure 2C-5, manual p.167"
+W7-2bP,Trucks Use Lower Gear (plaque),Table 2C-1 (2C.64),PDF,warning,,,none,,24x18,24x18,,,,,"Table 2C-1, manual p.149",PDF,symbols/W7-2bP.png,"Figure 2C-5, manual p.167"
+W7-3P,XX% Grade (plaque),Table 2C-1 (2C.64),PDF,warning,,,none,,24x18,24x18,,,,,"Table 2C-1, manual p.149",PDF,symbols/W7-3P.png,"Figure 2C-5, manual p.167"
+W7-3aP,Next XX Miles (plaque),Table 2C-1 (2C.61),PDF,warning,,,none,,24x18,24x18,,,,,"Table 2C-1, manual p.149",PDF,symbols/W7-3aP.png,"Figure 2C-5, manual p.167"
+W7-3bP,"XX% Grade, XX Miles (plaque)",Table 2C-1 (2C.64),PDF,warning,,,none,,24x18,24x18,,,,,"Table 2C-1, manual p.149",PDF,symbols/W7-3bP.png,"Figure 2C-5, manual p.167"
+W7-4,Runaway Truck Ramp XX Miles,Table 2C-1 (2C.15),PDF,warning,,,none,,84x48,84x48,120x72,120x72,,,"Table 2C-1, manual p.149",PDF,symbols/W7-4.png,"Figure 2C-5, manual p.167"
+W7-4b,Runaway Truck Ramp,Table 2C-1 (2C.15),PDF,warning,,,none,,84x54,84x54,120x78,120x78,,,"Table 2C-1, manual p.149",PDF,symbols/W7-4b.png,"Figure 2C-5, manual p.167"
+W7-4c,Truck Escape Ramp,Table 2C-1 (2C.15),PDF,warning,,,none,,78x60,78x60,78x60,78x60,,,"Table 2C-1, manual p.149",PDF,symbols/W7-4c.png,"Figure 2C-5, manual p.167"
+W7-4dP,"Sand, Gravel, Paved (plaques)",Table 2C-1 (2C.15),PDF,warning,,,none,,24x12,24x12,24x12,24x12,,,"Table 2C-1, manual p.149",PDF,symbols/W7-4dP.png,"Figure 2C-5, manual p.167"
+W7-4eP,"Sand, Gravel, Paved (plaques)",Table 2C-1 (2C.15),PDF,warning,,,none,,24x12,24x12,24x12,24x12,,,"Table 2C-1, manual p.149",PDF,symbols/W7-4eP.png,"Figure 2C-5, manual p.167"
+W7-4fP,"Sand, Gravel, Paved (plaques)",Table 2C-1 (2C.15),PDF,warning,,,none,,24x12,24x12,24x12,24x12,,,"Table 2C-1, manual p.149",PDF,symbols/W7-4fP.png,"Figure 2C-5, manual p.167"
+W7-5,Hill,Table 9A-1 (9C.08),PDF,warning,,,none,,30x30,30x30,,,18x18,,"Table 9A-1, manual p.1050",PDF,symbols/W7-5.png,"Figure 9C-1, manual p.1065"
+W7-6,Hill Blocks View,Table 2C-1 (2C.16),PDF,warning,,,none,,30x30,36x36,36x36,,,48x48,"Table 2C-1, manual p.149",PDF,symbols/W7-6.png,"Figure 2C-5, manual p.167"
+W8-1,Bump or Dip,Table 2C-1 (2C.26),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-1.png,"Figure 2C-7, manual p.174"
+W8-2,Bump or Dip,Table 2C-1 (2C.26),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-2.png,"Figure 2C-7, manual p.174"
+W8-3,Pavement Ends,Table 2C-1 (2C.28),PDF,warning,,,none,,36x36,36x36,48x48,,30x30,,"Table 2C-1, manual p.149",PDF,symbols/W8-3.png,"Figure 2C-7, manual p.174"
+W8-4,Soft Shoulder,Table 2C-1 (2C.29),PDF,warning,,,none,,36x36,36x36,48x48,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-4.png,"Figure 2C-7, manual p.174"
+W8-5,Slippery When Wet,Table 2C-1 (2C.30),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-5.png,"Figure 2C-7, manual p.174"
+W8-5P,Road Condition (plaques),Table 2C-1 (2C.30),PDF,warning,,,none,,24x18,24x18,30x24,36x30,,36x30,"Table 2C-1, manual p.149",PDF,symbols/W8-5P.png,"Figure 2C-7, manual p.174"
+W8-5aP,Ice (plaque),Table 2C-1 (2C.30),PDF,warning,,,none,,24x12,24x12,30x18,30x18,,,"Table 2C-1, manual p.149",PDF,symbols/W8-5aP.png,"Figure 2C-7, manual p.174"
+W8-5bP,Road Condition (plaques),Table 2C-1 (2C.30),PDF,warning,,,none,,24x18,24x18,30x24,36x30,,36x30,"Table 2C-1, manual p.149",PDF,symbols/W8-5bP.png,"Figure 2C-7, manual p.174"
+W8-5cP,Road Condition (plaques),Table 2C-1 (2C.30),PDF,warning,,,none,,24x18,24x18,30x24,36x30,,36x30,"Table 2C-1, manual p.149",PDF,symbols/W8-5cP.png,"Figure 2C-7, manual p.174"
+W8-6,Truck Crossing,Table 2C-1 (2C.54),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-6.png,"Figure 2C-14, manual p.191"
+W8-7,Loose Gravel,Table 2C-1 (2C.30),PDF,warning,,,none,,36x36,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-7.png,"Figure 2C-7, manual p.174"
+W8-8,Rough Road,Table 2C-1 (2C.30),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-8.png,"Figure 2C-7, manual p.174"
+W8-9,Low Shoulder,Table 2C-1 (2C.29),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-9.png,"Figure 2C-7, manual p.174"
+W8-10,Bicycle Surface Condition,Table 9A-1 (9C.03),PDF,warning,,,none,,30x30,30x30,,,18x18,,"Table 9A-1, manual p.1050",PDF,,
+W8-10P,Slippery When Wet (plaque),Table 9A-1 (9C.03),PDF,warning,,,none,,12x9,12x9,,,12x9,,"Table 9A-1, manual p.1050",PDF,,
+W8-11,Uneven Lanes,Table 2C-1 (2C.30),PDF,warning,,,none,,36x36,36x36,36x36,48x48,,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-11.png,"Figure 2C-7, manual p.174"
+W8-12,No Center Line,Table 2C-1 (2C.32),PDF,warning,,,none,,36x36,36x36,36x36,48x48,,,"Table 2C-1, manual p.149",PDF,symbols/W8-12.png,"Figure 2C-7, manual p.174"
+W8-13,Bridge Ices Before Road,Table 2C-1 (2C.30),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-13.png,"Figure 2C-7, manual p.174"
+W8-14,Fallen Rocks,Table 2C-1 (2C.30),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-14.png,"Figure 2C-7, manual p.174"
+W8-15,Grooved Pavement,Table 2C-1 (2C.31),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,,
+W8-15aP,Motorcycle (plaque),Table 2C-1 (2C.31),PDF,warning,,,none,,24x18,24x18,30x24,36x30,,36x30,"Table 2C-1, manual p.149",PDF,symbols/W8-15aP.png,"Figure 2C-7, manual p.174"
+W8-16,Metal Bridge Deck,Table 2C-1 (2C.31),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-16.png,"Figure 6H-1, manual p.800"
+W8-17,Shoulder Drop-Off,Table 2C-1 (2C.29),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,,
+W8-17P,Shoulder Drop-Off (plaque),Table 2C-1 (2C.29),PDF,warning,,,none,,24x18,24x18,30x24,36x30,,36x30,"Table 2C-1, manual p.149",PDF,symbols/W8-17P.png,"Figure 2C-7, manual p.174"
+W8-18,Road May Flood,Table 2C-1 (2C.34),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-18.png,"Figure 2C-7, manual p.174"
+W8-19,Depth Gauge,Table 2C-1 (2C.34),PDF,warning,,,none,,12x72,12x72,,,,,"Table 2C-1, manual p.149",PDF,symbols/W8-19.png,"Figure 2C-7, manual p.174"
+W8-21,Gusty Winds Area,Table 2C-1 (2C.34),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-21.png,"Figure 2C-7, manual p.174"
+W8-22,Fog Area,Table 2C-1 (2C.34),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-22.png,"Figure 2C-7, manual p.174"
+W8-23,No Shoulder,Table 2C-1 (2C.29),PDF,warning,,,none,,36x36,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-23.png,"Figure 2C-7, manual p.174"
+W8-24,Steel Plate Ahead,Table 6H-1 (6H.28),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.803",PDF,symbols/W8-24.png,"Figure 6H-1, manual p.800"
+W8-25,Shoulder Ends,Table 2C-1 (2C.29),PDF,warning,,,none,,30x30,36x36,36x36,48x48,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W8-25.png,"Figure 2C-7, manual p.174"
+W8-26,Road Ends,Table 2C-1 (2C.24),PDF,warning,,,none,,30x30,36x36,,,,,"Table 2C-1, manual p.149",PDF,symbols/W8-26.png,"Figure 2C-11, manual p.182"
+W8-26a,Street Ends,Table 2C-1 (2C.24),PDF,warning,,,none,,30x30,36x36,,,,,"Table 2C-1, manual p.149",PDF,symbols/W8-26a.png,"Figure 2C-11, manual p.182"
+W9-1,Right (Left) Lane Ends,Table 2C-1 (2C.47),PDF,warning,,,none,,36x36,36x36,36x36,48x48,30x30,48x48,"Table 2C-1, manual p.149",PDF,symbols/W9-1.png,"Figure 2C-11, manual p.182"
+W9-2,Lane Ends,Table 6H-1 (6H.01),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.803",PDF,,
+W9-2a,Merge Here Take Turns,Table 6H-1 (6N.19),PDF,warning,,,none,,36x48,36x48,36x48,36x48,,,"Table 6H-1, manual p.803",PDF,symbols/W9-2a.png,"Figure 6H-1, manual p.800"
+W9-3,Interior Lane Shift Ahead,Table 6H-1 (6H.07),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.803",PDF,symbols/W9-3.png,"Figure 6H-1, manual p.800"
+W9-4,Lanes Merge,Table 2C-1 (2C.48),PDF,warning,,,none,,36x36,36x36,36x36,48x48,30x30,48x48,"Table 2C-1, manual p.149",PDF,symbols/W9-4.png,"Figure 2C-11, manual p.182"
+W9-5,Bicycle Lane Ends,Table 9A-1 (9C.07),PDF,warning,,,none,,30x30,30x30,,,,,"Table 9A-1, manual p.1050",PDF,symbols/W9-5.png,"Figure 9C-1, manual p.1065"
+W9-5a,Bicycles Merging,Table 9A-1 (9C.07),PDF,warning,,,none,,30x30,30x30,,,18x18,,"Table 9A-1, manual p.1050",PDF,symbols/W9-5a.png,"Figure 6H-1, manual p.800"
+W9-6,Pay Toll XX Miles,Table 2F-1 (2F.06),PDF,warning,,,none,,96x66,96x66,96x66,96x66,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6.png,"Figure 2F-4, manual p.386"
+W9-6a,Stop Ahead Pay Toll,Table 2F-1 (2F.08),PDF,warning,,,none,,114x66,114x66,114x66,114x66,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6a.png,"Figure 2F-4, manual p.386"
+W9-6bP,Pay Toll and Take Ticket Advance Warning Plaques,text (2F.07),PDF,warning,,,none,,,,,,,,section text,0,symbols/W9-6bP.png,"Figure 2F-4, manual p.386"
+W9-6cP,Stop AheadPay Toll,Table 2F-1 (2F.09),PDF,warning,,,none,,264x30,264x30,264x30,264x30,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6cP.png,"Figure 2F-4, manual p.386"
+W9-6dP,Stop Ahead Pay,Table 2F-1 (2F.09),PDF,warning,,,none,,114x48,114x48,114x48,114x48,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6dP.png,"Figure 2F-4, manual p.386"
+W9-6e,Take Ticket XX Miles,Table 2F-1 (2F.06),PDF,warning,,,none,,114x48,114x48,114x48,114x48,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6e.png,"Figure 2F-4, manual p.386"
+W9-6f,Stop Ahead Take Ticket,Table 2F-1 (2F.08),PDF,warning,,,none,,114x48,114x48,114x48,114x48,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6f.png,"Figure 2F-4, manual p.386"
+W9-6gP,Take Ticket XX,Table 2F-1 (2F.07),PDF,warning,,,none,,216x30,216x30,216x30,216x30,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6gP.png,"Figure 2F-4, manual p.386"
+W9-6hP,Stop Ahead Take,Table 2F-1 (2F.09),PDF,warning,,,none,,282x30,282x30,282x30,282x30,,,"Table 2F-1, manual p.381",PDF,symbols/W9-6hP.png,"Figure 2F-4, manual p.386"
+W9-7,Right (Left) Lane for Exit Only,Table 2C-1 (2C.50),PDF,warning,,,none,,132x72,132x72,132x72,132x72,,,"Table 2C-1, manual p.149",PDF,symbols/W9-7.png,"Figure 2C-11, manual p.182"
+W10-1,Grade Crossing Advance Warning,Table 8B-1 (8B.06),PDF,warning,,,none,,36Dia.,36Dia.,48Dia.,,,48Dia.,"Table 8B-1, manual p.994",PDF,symbols/W10-1.png,"Figure 8B-4, manual p.1002"
+W10-1aP,Exempt (plaque),Table 8B-1 (8B.11),PDF,warning,,,none,,24x12,24x12,,,,,"Table 8B-1, manual p.994",PDF,symbols/W10-1aP.png,"Figure 8B-4, manual p.1002"
+W10-2,Grade Crossing and Intersection Advance Warning,Table 8B-1 (8B.06),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,symbols/W10-2.png,"Figure 8B-4, manual p.1002"
+W10-3,Grade Crossing and Intersection,Table 8B-1 (8B.06),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,symbols/W10-3.png,"Figure 8B-4, manual p.1002"
+W10-4,Grade Crossing and Intersection,Table 8B-1 (8B.06),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,symbols/W10-4.png,"Figure 8B-4, manual p.1002"
+W10-5,Low Ground Clearance (symbol),Table 8B-1 (8B.16),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,,
+W10-5P,Low Ground Clearance (plaque),Table 8B-1 (8B.16),PDF,warning,,,none,,30x24,30x24,,,,,"Table 8B-1, manual p.994",PDF,,
+W10-7,Light Rail Activated,Table 8B-1 (8B.17),PDF,warning,,,none,,24x24,24x24,,,,,"Table 8B-1, manual p.994",PDF,,
+W10-8,Trains May Exceed 80 MPH,Table 8B-1 (8B.19),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,symbols/W10-8.png,"Figure 8B-4, manual p.1002"
+W10-9,No Train Horn,Table 8B-1 (8B.20),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,symbols/W10-9.png,"Figure 8B-4, manual p.1002"
+W10-9P,No Train Horn (plaque),Table 8B-1 (8B.20),PDF,warning,,,none,,30x24,30x24,,,,,"Table 8B-1, manual p.994",PDF,symbols/W10-9P.png,"Figure 8B-4, manual p.1002"
+W10-11,Storage Space (symbol),Table 8B-1 (8B.21),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,symbols/W10-11.png,"Figure 8B-4, manual p.1002"
+W10-11a,Storage Space XX Feet,Table 8B-1 (8B.21),PDF,warning,,,none,,30x36,30x36,,,,,"Table 8B-1, manual p.994",PDF,symbols/W10-11a.png,"Figure 8B-4, manual p.1002"
+W10-11b,Storage Space XX Feet between,Table 8B-1 (8B.21),PDF,warning,,,none,,30x36,30x36,,,,,"Table 8B-1, manual p.994",PDF,symbols/W10-11b.png,"Figure 8B-4, manual p.1002"
+W10-12,Skewed Crossing (symbol),Table 8B-1 (8B.22),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.994",PDF,symbols/W10-12.png,"Figure 8B-4, manual p.1002"
+W10-13P,No Gates or Lights (plaque),Table 8B-1 (8B.23),PDF,warning,,,none,,30x24,30x24,,,,,"Table 8B-1, manual p.994",PDF,symbols/W10-13P.png,"Figure 8B-4, manual p.1002"
+W10-14P,Next Crossing (plaque),Table 8B-1 (8B.24),PDF,warning,,,none,,30x24,30x24,,,,,"Table 8B-1, manual p.994",PDF,symbols/W10-14P.png,"Figure 8B-4, manual p.1002"
+W10-14aP,Use Next Crossing (plaque),Table 8B-1 (8B.24),PDF,warning,,,none,,30x24,30x24,,,,,"Table 8B-1, manual p.994",PDF,symbols/W10-14aP.png,"Figure 8B-4, manual p.1002"
+W10-15P,Rough Crossing (plaque),Table 8B-1 (8B.25),PDF,warning,,,none,,30x24,30x24,,,,36x30,"Table 8B-1, manual p.995",PDF,symbols/W10-15P.png,"Figure 8B-4, manual p.1002"
+W10-16,Another Train Coming,Table 8B-1 (8B.18),PDF,warning,,,none,,30x30,30x30,,,,,"Table 8B-1, manual p.995",PDF,symbols/W10-16.png,"Figure 8B-4, manual p.1002"
+W10-21,Busway Crossing,Table 8B-1 (8B.06),PDF,warning,,,none,,36x36,36x36,48x48,,,48x48,"Table 8B-1, manual p.995",PDF,symbols/W10-21.png,"Figure 8B-4, manual p.1002"
+W10-21aP,Signal Ahead (plaque),Table 8B-1 (8B.06),PDF,warning,,,none,,30x24,30x24,,,,,"Table 8B-1, manual p.995",PDF,symbols/W10-21aP.png,"Figure 8B-4, manual p.1002"
+W11-1,Bicycle,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,30x30,36x36,,,48x48,"Table 2C-1, manual p.149",PDF,,
+W11-3,Deer,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-3.png,"Figure 2C-15, manual p.193"
+W11-4,Cattle,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-4.png,"Figure 2C-15, manual p.193"
+W11-5,Farm Vehicle,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-5.png,"Figure 2C-14, manual p.191"
+W11-6,Snowmobile,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-6.png,"Figure 2C-15, manual p.193"
+W11-7,Equestrian,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-7.png,"Figure 2C-15, manual p.193"
+W11-8,Emergency Vehicle,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,symbols/W11-8.png,"Figure 2C-14, manual p.191"
+W11-9,Handicapped,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,,48x48,"Table 2C-1, manual p.150",PDF,,
+W11-10,Truck,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,symbols/W11-10.png,"Figure 2C-14, manual p.191"
+W11-11,Golf Cart,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,symbols/W11-11.png,"Figure 2C-14, manual p.191"
+W11-12P,Emergency Signal Ahead (plaque),Table 2C-1 (2C.54),PDF,warning,,,none,,36x30,36x30,36x30,,,,"Table 2C-1, manual p.150",PDF,symbols/W11-12P.png,"Figure 2C-14, manual p.191"
+W11-14,Horse-Drawn Vehicle,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,symbols/W11-14.png,"Figure 2C-14, manual p.191"
+W11-15,Trail Crossing,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,,
+W11-15P,Trail Crossing (plaque),Table 2C-1 (2C.54),PDF,warning,,,none,,24x18,24x18,30x24,,,36x30,"Table 2C-1, manual p.150",PDF,symbols/W11-15P.png,"Figure 9C-1, manual p.1066"
+W11-15a,Trail Crossing,Table 2C-1 (2C.54),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,,
+W11-16,Bear,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-16.png,"Figure 2C-15, manual p.193"
+W11-17,Sheep,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-17.png,"Figure 2C-15, manual p.193"
+W11-18,Bighorn Sheep,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-18.png,"Figure 2C-15, manual p.193"
+W11-19,Donkey,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-19.png,"Figure 2C-15, manual p.193"
+W11-20,Elk,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-20.png,"Figure 2C-15, manual p.193"
+W11-21,Moose,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-21.png,"Figure 2C-15, manual p.193"
+W11-22,Wild Horse,Table 2C-1 (2C.55),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.149",PDF,symbols/W11-22.png,"Figure 2C-15, manual p.193"
+W12-1,Double Arrow,Table 2C-1 (2C.23),PDF,warning,,,none,,30x30,36x36,36x36,,,,"Table 2C-1, manual p.150",PDF,symbols/W12-1.png,"Figure 2C-6, manual p.169"
+W12-2,Low Clearance Advance,Table 2C-1 (2C.25),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 2C-1, manual p.150",PDF,symbols/W12-2.png,"Figure 2C-6, manual p.169"
+W12-2a,Low Clearance Overhead,Table 2C-1 (2C.25),PDF,warning,,,none,,84x24,84x24,84x24,84x24,,,"Table 2C-1, manual p.150",PDF,symbols/W12-2a.png,"Figure 2C-6, manual p.169"
+W12-2b,Low Clearance - Lane Overhead,Table 2C-1 (2C.25),PDF,warning,,,none,,102x24,102x24,102x24,102x24,,,"Table 2C-1, manual p.150",PDF,symbols/W12-2b.png,"Figure 2C-6, manual p.169"
+W13-1aP,,Table 2C-1 (2C.59),PDF,warning,,,none,,48x15,48x15,60x18,60x18,,,"Table 2C-1, manual p.150",PDF,symbols/W13-1aP.png,"Figure 2C-1, manual p.153"
+W13-2,Advisory Exit Speed,Table 2C-1 (2C.12),PDF,warning,,,none,,24x30,24x30,36x48,36x48,,48x60,"Table 2C-1, manual p.150",PDF,symbols/W13-2.png,"Figure 2C-1, manual p.153"
+W13-3,Advisory Exit or Ramp Speed,Table 2C-1 (2C.12),PDF,warning,,,none,,24x30,24x30,36x48,36x48,,48x60,"Table 2C-1, manual p.150",PDF,symbols/W13-3.png,"Figure 2C-1, manual p.153"
+W13-4P,On Ramp (plaque),Table 6H-1 (6H.09),PDF,warning,,,none,,36x36,36x36,36x36,36x36,,,"Table 6H-1, manual p.804",PDF,symbols/W13-4P.png,"Figure 6H-1, manual p.801"
+W13-6,Advisory Exit Speed,Table 2C-1 (2C.12),PDF,warning,,,none,,24x42,24x42,36x66,36x66,,48x84,"Table 2C-1, manual p.150",PDF,symbols/W13-6.png,"Figure 2C-1, manual p.153"
+W13-7,Advisory Ramp Speed,Table 2C-1 (2C.12),PDF,warning,,,none,,24x42,24x42,36x66,36x66,,48x84,"Table 2C-1, manual p.150",PDF,symbols/W13-7.png,"Figure 2C-1, manual p.153"
+W13-8,Alignment/Advisory Exit or,Table 2C-1 (2C.12),PDF,warning,,,none,,24x42,24x42,36x66,36x66,,48x84,"Table 2C-1, manual p.150",PDF,symbols/W13-8.png,"Figure 2C-1, manual p.153"
+W13-9,Alignment/Advisory Exit or,Table 2C-1 (2C.12),PDF,warning,,,none,,24x42,24x42,36x66,36x66,,48x84,"Table 2C-1, manual p.150",PDF,symbols/W13-9.png,"Figure 2C-1, manual p.153"
+W13-10,Alignment/Advisory Exit or,Table 2C-1 (2C.12),PDF,warning,,,none,,24x36,24x36,36x54,36x54,,48x72,"Table 2C-1, manual p.150",PDF,symbols/W13-10.png,"Figure 2C-1, manual p.153"
+W13-11,Alignment/Advisory Exit or,Table 2C-1 (2C.12),PDF,warning,,,none,,24x36,24x36,36x54,36x54,,48x72,"Table 2C-1, manual p.150",PDF,symbols/W13-11.png,"Figure 2C-1, manual p.153"
+W13-12,Alignment/Advisory Exit or,Table 2C-1 (2C.12),PDF,warning,,,none,,24x42,24x42,36x66,36x66,,48x84,"Table 2C-1, manual p.150",PDF,symbols/W13-12.png,"Figure 2C-1, manual p.153"
+W13-13,Alignment/Advisory Exit or,Table 2C-1 (2C.12),PDF,warning,,,none,,24x42,24x42,36x66,36x66,,48x84,"Table 2C-1, manual p.150",PDF,symbols/W13-13.png,"Figure 2C-1, manual p.153"
+W13-20,Vehicle Speed Feedback Sign,Table 2C-1 (2C.13),PDF,warning,,,none,,24x30,30x36,36x48,48x60,,,"Table 2C-1, manual p.150",PDF,,
+W13-20aP,Vehicle Speed Feedback (plaque),Table 2C-1 (2C.13),PDF,warning,,,none,,24x18,30x24,36x30,48x36,,,"Table 2C-1, manual p.150",PDF,,
+W14-1,ROAD ENDS Signs,Table 2C-1 (2C.24),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,,
+W14-1a,"Dead End, No Outlet (with arrow)",Table 2C-1 (2C.24),PDF,warning,,,none,,36x9,36x9,,,,,"Table 2C-1, manual p.150",PDF,symbols/W14-1a.png,"Figure 2C-6, manual p.169"
+W14-2,"Dead End, No Outlet",Table 2C-1 (2C.24),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,symbols/W14-2.png,"Figure 2C-6, manual p.169"
+W14-2a,"Dead End, No Outlet (with arrow)",Table 2C-1 (2C.24),PDF,warning,,,none,,36x9,36x9,,,,,"Table 2C-1, manual p.150",PDF,symbols/W14-2a.png,"Figure 2C-6, manual p.169"
+W14-3,No Passing Zone,Table 2C-1 (2C.53),PDF,warning,,,none,,48x48x36,48x48x36,64x64x48,64x64x48,40x40x30,64x64x48,"Table 2C-1, manual p.150",PDF,symbols/W14-3.png,"Figure 2C-11, manual p.182"
+W15-1,Playground,Table 2C-1 (2C.56),PDF,warning,,,none,,30x30,36x36,36x36,,24x24,48x48,"Table 2C-1, manual p.150",PDF,,
+W16-1P,In Road (plaque),Table 2C-1 (2C.67),PDF,warning,,,none,,18x12,18x12,24x18,,,24x18,"Table 2C-1, manual p.150",PDF,symbols/W16-1P.png,"Figure 2C-16, manual p.195"
+W16-1aP,In Street (plaque),Table 2C-1 (2C.67),PDF,warning,,,none,,18x12,18x12,24x18,,,24x18,"Table 2C-1, manual p.150",PDF,symbols/W16-1aP.png,"Figure 2C-16, manual p.195"
+W16-2P,XX Feet (2-line plaque),Table 2C-1 (2C.61),PDF,warning,,,none,,24x18,24x18,30x24,30x24,,30x24,"Table 2C-1, manual p.150",PDF,symbols/W16-2P.png,"Figure 2C-16, manual p.195"
+W16-2aP,XX Ft (1-line plaque),Table 2C-1 (2C.61),PDF,warning,,,none,,24x12,24x12,,,,30x18,"Table 2C-1, manual p.150",PDF,symbols/W16-2aP.png,"Figure 2C-16, manual p.195"
+W16-3P,XX Miles (2-line plaque),Table 2C-1 (2C.61),PDF,warning,,,none,,30x24,30x24,,,,,"Table 2C-1, manual p.150",PDF,symbols/W16-3P.png,"Figure 2C-16, manual p.195"
+W16-3aP,XX Miles (1-line plaque),Table 2C-1 (2C.61),PDF,warning,,,none,,30x12,30x12,,,,,"Table 2C-1, manual p.150",PDF,symbols/W16-3aP.png,"Figure 2C-16, manual p.195"
+W16-4P,Next XX Feet (plaque),Table 2C-1 (2C.61),PDF,warning,,,none,,30x24,30x24,,,,,"Table 2C-1, manual p.150",PDF,symbols/W16-4P.png,"Figure 2C-16, manual p.195"
+W16-5P,Supplemental Arrow (plaque),Table 2C-1 (2C.62),PDF,warning,,,none,,21x15,21x15,,,,30x21,"Table 2C-1, manual p.150",PDF,symbols/W16-5P.png,"Figure 2C-16, manual p.195"
+W16-6P,Supplemental Arrow (plaque),Table 2C-1 (2C.62),PDF,warning,,,none,,21x15,21x15,,,,30x21,"Table 2C-1, manual p.150",PDF,symbols/W16-6P.png,"Figure 2C-16, manual p.195"
+W16-7aP,Dual Downward Diagonal,Table 2C-1 (2C.63),PDF,warning,,,none,,21x15,21x15,,,,30x21,"Table 2C-1, manual p.150",PDF,symbols/W16-7aP.png,"Figure 2C-16, manual p.195"
+W16-8P,Advance Street Name,Table 2C-1 (2C.65),PDF,warning,,,none,,Variesx8,Variesx8,,,,,"Table 2C-1, manual p.150",PDF,symbols/W16-8P.png,"Figure 2C-16, manual p.195"
+W16-8aP,Advance Street Name,Table 2C-1 (2C.65),PDF,warning,,,none,,Variesx15,Variesx15,,,,,"Table 2C-1, manual p.150",PDF,symbols/W16-8aP.png,"Figure 2C-16, manual p.195"
+W16-10P,Photo Enforced (symbol plaque),Table 2C-1 (2C.69),PDF,warning,,,none,,24x12,24x12,36x18,,,48x24,"Table 2C-1, manual p.150",PDF,symbols/W16-10P.png,"Figure 2C-16, manual p.195"
+W16-10aP,Photo Enforced (plaque),Table 2C-1 (2C.69),PDF,warning,,,none,,24x18,24x18,36x30,,,48x36,"Table 2C-1, manual p.150",PDF,symbols/W16-10aP.png,"Figure 2C-16, manual p.195"
+W16-11P,High-Occupancy Vehicles (plaque),Table 2G-1 (2G.09),PDF,warning,,,none,,24x12,24x12,30x18,30x18,,30x18,"Table 2G-1, manual p.408",PDF,,
+W16-12P,Traffic Circle (plaque),Table 2C-1 (2C.41),PDF,warning,,,none,,24x18,24x18,,,,,"Table 2C-1, manual p.151",PDF,symbols/W16-12P.png,"Figure 2C-9, manual p.179"
+W16-12aP,Roundabout (plaque),Table 2C-1 (2C.41),PDF,warning,,,none,,24x12,24x12,,,,,"Table 2C-1, manual p.151",PDF,symbols/W16-12aP.png,"Figure 2C-9, manual p.179"
+W16-13P,When Flashing (plaque),Table 2C-1 (2C.55),PDF,warning,,,none,,24x18,24x18,,,,,"Table 2C-1, manual p.151",PDF,symbols/W16-13P.png,"Figure 2C-16, manual p.195"
+W16-15P,New (plaque),Table 2C-1 (2C.60),PDF,warning,,,none,,24x12,24x12,,,,,"Table 2C-1, manual p.151",PDF,symbols/W16-15P.png,"Figure 2C-16, manual p.195"
+W16-16P,Ticket (plaque),Table 2F-1 (2F.10),PDF,warning,,,none,,,,,,,,"Table 2F-1, manual p.381",PDF,symbols/W16-16P.png,"Figure 2F-4, manual p.386"
+W16-16aP,Last Exit Before Toll,Table 2F-1 (2F.10),PDF,warning,,,none,,,,144x54,144x54,,,"Table 2F-1, manual p.381",PDF,symbols/W16-16aP.png,"Figure 2F-4, manual p.386"
+W16-17P,Toll (plaque),Table 2F-1 (2F.11),PDF,warning,,,none,,24x12,24x12,36x18,36x18,24x12,36x18,"Table 2F-1, manual p.381",PDF,,
+W16-18P,Notice (plaque),Table 2C-1 (2A.11),PDF,warning,,,none,,24x12,24x12,,,,,"Table 2C-1, manual p.151",PDF,symbols/W16-18P.png,"Figure 2C-16, manual p.195"
+W16-19P,Last In Corridor (plaque),Table 2H-1 (2H.14),PDF,warning,,,none,,24x18,24x18,24x18,24x18,,,"Table 2H-1, manual p.461",PDF,,
+W16-20P,Except Bicycles (plaque),Table 2C-1 (2C.68),PDF,warning,,,none,,24x12,24x12,,,,,"Table 2C-1, manual p.151",PDF,symbols/W16-20P.png,"Figure 2C-16, manual p.195"
+W16-21P,2-Way Bicycle Cross Traffic (plaque),Table 9A-1 (9C.06),PDF,warning,,,none,,24x12,24x12,,,,,"Table 9A-1, manual p.1050",PDF,symbols/W16-21P.png,"Figure 9C-1, manual p.1066"
+W17-1,Speed Hump,Table 2C-1 (2C.27),PDF,warning,,,none,,30x30,36x36,,,24x24,48x48,"Table 2C-1, manual p.151",PDF,symbols/W17-1.png,"Figure 2C-7, manual p.174"
+W18-1,No Traffic Signs,Table 2C-1 (2C.33),PDF,warning,,,none,,30x30,36x36,,,24x24,36x36,"Table 2C-1, manual p.151",PDF,symbols/W18-1.png,"Figure 2C-6, manual p.169"
+W19-1,Freeway Ends XX Miles,Table 2C-1 (2C.22),PDF,warning,,,none,,,,,144x48,,,"Table 2C-1, manual p.151",PDF,symbols/W19-1.png,"Figure 2C-6, manual p.169"
+W19-2,Expressway Ends XX Miles,Table 2C-1 (2C.22),PDF,warning,,,none,,,,144x48,,,,"Table 2C-1, manual p.151",PDF,symbols/W19-2.png,"Figure 2C-6, manual p.169"
+W19-3,Freeway Ends,Table 2C-1 (2C.22),PDF,warning,,,none,,,,,48x48,,,"Table 2C-1, manual p.151",PDF,symbols/W19-3.png,"Figure 2C-6, manual p.169"
+W19-4,Expressway Ends,Table 2C-1 (2C.22),PDF,warning,,,none,,,,48x48,,,,"Table 2C-1, manual p.151",PDF,symbols/W19-4.png,"Figure 2C-6, manual p.169"
+W19-5,All Traffic Must Exit,Table 2C-1 (2C.22),PDF,warning,,,none,,,,90x48,90x48,,,"Table 2C-1, manual p.151",PDF,symbols/W19-5.png,"Figure 2C-6, manual p.169"
+W19-7aP,Freeway or Expressway Ends Signs (W19 Series),text (2C.22),PDF,warning,,,none,,,,,,,,section text,0,,
+W20-1,Road Work (with distance),Table 6H-1 (6H.03),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,,
+W20-1b,Path Work (with distance),Table 6H-1 (6P.01),PDF,warning,,,none,,36x36,36x36,,,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-1b.png,"Figure 6H-1, manual p.801"
+W20-2,Detour (with distance),Table 6H-1 (6H.04),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-2.png,"Figure 6H-1, manual p.801"
+W20-2a,Bike Detour (with distance),Table 6H-1 (6P.01),PDF,warning,,,none,,36x36,36x36,,,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-2a.png,"Figure 6H-1, manual p.801"
+W20-2b,Bike Diversion (with distance),Table 6H-1 (6P.01),PDF,warning,,,none,,36x36,36x36,,,30x30,,"Table 6H-1, manual p.804",PDF,,
+W20-3,Road Closed (with distance),Table 6H-1 (6H.05),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,,
+W20-3a,Path Closed (with distance),Table 6H-1 (6P.01),PDF,warning,,,none,,36x36,36x36,,,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-3a.png,"Figure 6H-1, manual p.801"
+W20-4,One Lane Road (with distance),Table 6H-1 (6H.06),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-4.png,"Figure 6H-1, manual p.801"
+W20-5,Closed Signs,Table 6H-1 (6H.07),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-5.png,"Figure 6H-1, manual p.801"
+W20-5a,Lane(s) Closed (with distance),Table 6H-1 (6H.07),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-5a.png,"Figure 6H-1, manual p.801"
+W20-5b,Bike Lane Closed (with distance),Table 6H-1 (6P.01),PDF,warning,,,none,,36x36,36x36,,,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W20-5b.png,"Figure 6H-1, manual p.801"
+W20-7,Flagger (symbol),Table 6H-1 (6H.15),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,,
+W20-7a,Flagger,Table 6H-1 (6H.15),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,,
+W20-8,Slow (on Stop/Slow Paddle),Table 6H-1 (6D.02),PDF,warning,,,none,,18x18,18x18,,,,,"Table 6H-1, manual p.804",PDF,,
+W21-1,Workers,Table 6H-1 (6H.18),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-1.png,"Figure 6H-1, manual p.801"
+W21-1a,Workers,Table 6H-1 (6H.18),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,,
+W21-2,Fresh Oil,Table 6H-1 (6H.19),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,,
+W21-3,Road Machinery Ahead,Table 6H-1 (6H.20),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-3.png,"Figure 6H-1, manual p.801"
+W21-4,Slow Moving Vehicle,Table 6H-1 (6N.05),PDF,warning,,,none,,36x18,36x18,,,,,"Table 6H-1, manual p.804",PDF,symbols/W21-4.png,"Figure 6H-1, manual p.801"
+W21-5,Shoulder Work,Table 6H-1 (6H.22),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-5.png,"Figure 6H-1, manual p.801"
+W21-5a,Shoulder Closed,Table 6H-1 (6H.22),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-5a.png,"Figure 6H-1, manual p.801"
+W21-5b,Shoulder Closed (with distance),Table 6H-1 (6H.22),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-5b.png,"Figure 6H-1, manual p.801"
+W21-6,Survey Crew,Table 6H-1 (6H.23),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-6.png,"Figure 6H-1, manual p.801"
+W21-7,Utility Work (with distance),Table 6H-1 (6H.24),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-7.png,"Figure 6H-1, manual p.801"
+W21-8,Mowing Ahead,Table 6H-1 (6N.05),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W21-8.png,"Figure 6H-1, manual p.801"
+W22-1,Blasting Zone Ahead,Table 6H-1 (6H.25),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W22-1.png,"Figure 6H-1, manual p.801"
+W22-3,End Blasting Zone,Table 6H-1 (6H.25),PDF,warning,,,none,,42x36,42x36,42x36,42x36,36x30,,"Table 6H-1, manual p.804",PDF,symbols/W22-3.png,"Figure 6H-1, manual p.802"
+W23-1,Slow Traffic Ahead,Table 6H-1 (6H.11),PDF,warning,,,none,,48x24,48x24,48x24,48x24,,,"Table 6H-1, manual p.804",PDF,symbols/W23-1.png,"Figure 6H-1, manual p.802"
+W23-2,New Traffic Pattern Ahead,Table 2C-1 (2C.38),PDF,warning,,,none,,36x36,36x36,,,,,"Table 2C-1, manual p.151",PDF,symbols/W23-2.png,"Figure 2C-8, manual p.177"
+W23-2a,New Signal Operation Ahead,Table 2C-1 (2C.38),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.151",PDF,symbols/W23-2a.png,"Figure 2C-8, manual p.177"
+W24-1,Double Reverse Curve (1 lane),Table 6H-1 (6H.31),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,,
+W24-1a,Double Reverse Curve (2 lanes),Table 6H-1 (6H.31),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W24-1a.png,"Figure 6H-1, manual p.802"
+W24-1b,Double Reverse Curve (3 lanes),Table 6H-1 (6H.31),PDF,warning,,,none,,36x36,36x36,48x48,48x48,30x30,,"Table 6H-1, manual p.804",PDF,symbols/W24-1b.png,"Figure 6H-1, manual p.802"
+W24-1cP,All Lanes (plaque),Table 6H-1 (6H.31),PDF,warning,,,none,,24x18,24x18,30x24,30x24,,,"Table 6H-1, manual p.804",PDF,,
+W25-1,Oncoming Traffic Has (May Have),Table 2C-1 (2C.44),PDF,warning,,,none,,24x30,24x30,,,,,"Table 2C-1, manual p.151",PDF,symbols/W25-1.png,"Figure 2C-9, manual p.179"
+W25-2,Oncoming Traffic Has (May Have),Table 2C-1 (2C.44),PDF,warning,,,none,,24x30,24x30,,,,,"Table 2C-1, manual p.151",PDF,symbols/W25-2.png,"Figure 2C-9, manual p.179"
+W26-1,Watch for Stopped Traffic,Table 2C-1 (2C.39),PDF,warning,,,none,,36x36,36x36,48x48,48x48,,,"Table 2C-1, manual p.151",PDF,symbols/W26-1.png,"Figure 2C-8, manual p.177"

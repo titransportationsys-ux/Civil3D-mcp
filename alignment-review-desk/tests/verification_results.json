@@ -1,0 +1,520 @@
+[
+ {
+  "id": "V1.1",
+  "case": "Table 2C-3 Cond A at 50 mph = 885 ft",
+  "expected": "269.7",
+  "actual": "269.7",
+  "result": "PASS"
+ },
+ {
+  "id": "V1.2",
+  "case": "50 km/h (31.1 mph) uses 35 mph row, Cond B stop = 250 ft",
+  "expected": "76.2",
+  "actual": "76.2",
+  "result": "PASS"
+ },
+ {
+  "id": "V1.3",
+  "case": "60 mph, advisory 40 mph = 200 ft",
+  "expected": "61.0",
+  "actual": "61.0",
+  "result": "PASS"
+ },
+ {
+  "id": "V1.4",
+  "case": "N/A cell falls back to 100 ft (notes 5/6)",
+  "expected": "30.5",
+  "actual": "30.5",
+  "result": "PASS"
+ },
+ {
+  "id": "V1.5",
+  "case": "Chevron spacing, advisory 40 mph = 120 ft",
+  "expected": "36.6",
+  "actual": "36.6",
+  "result": "PASS"
+ },
+ {
+  "id": "V1.5b",
+  "case": "Chevron spacing in km/h bands: 20 / 40 / 50 / 60 / 70 / 90 / 110 km/h = 40/80/80/120/120/160/200 ft",
+  "expected": "[12.2, 24.4, 24.4, 36.6, 36.6, 48.8, 61.0]",
+  "actual": "[12.2, 24.4, 24.4, 36.6, 36.6, 48.8, 61.0]",
+  "result": "PASS"
+ },
+ {
+  "id": "V2.1",
+  "case": "Table 2C-4 Chart A ('freeway', 500)",
+  "expected": "Required",
+  "actual": "Required",
+  "result": "PASS"
+ },
+ {
+  "id": "V2.2",
+  "case": "Table 2C-4 Chart A ('arterial', 900)",
+  "expected": "Optional",
+  "actual": "Optional",
+  "result": "PASS"
+ },
+ {
+  "id": "V2.3",
+  "case": "Table 2C-4 Chart A ('collector', 2000)",
+  "expected": "Recommended",
+  "actual": "Recommended",
+  "result": "PASS"
+ },
+ {
+  "id": "V2.4",
+  "case": "Table 2C-4 Chart A ('arterial', 3500)",
+  "expected": "Required",
+  "actual": "Required",
+  "result": "PASS"
+ },
+ {
+  "id": "V2.5",
+  "case": "Table 2C-4 Chart A ('arterial', 3500, True)",
+  "expected": "Recommended",
+  "actual": "Recommended",
+  "result": "PASS"
+ },
+ {
+  "id": "V2.6",
+  "case": "Table 2C-4 Chart A ('arterial', 5000)",
+  "expected": "Required",
+  "actual": "Required",
+  "result": "PASS"
+ },
+ {
+  "id": "V2.7",
+  "case": "Table 2C-4 Chart A ('local', 9000)",
+  "expected": "Optional",
+  "actual": "Optional",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.1",
+  "case": "Size W2-2 conv_multi",
+  "expected": "30x30",
+  "actual": "30x30",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.2",
+  "case": "Size W16-7P conv_single",
+  "expected": "21x15",
+  "actual": "21x15",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.3",
+  "case": "Size S1-1 conv_single",
+  "expected": "36x36",
+  "actual": "36x36",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.4",
+  "case": "Size R1-1 conv_multi",
+  "expected": "36x36",
+  "actual": "36x36",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.5",
+  "case": "Size R2-1 expressway",
+  "expected": "36x48",
+  "actual": "36x48",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.6",
+  "case": "Size W1-8 freeway",
+  "expected": "36x48",
+  "actual": "36x48",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.7",
+  "case": "Official name W16-7P",
+  "expected": "Diagonal Downward Arrow (plaque)",
+  "actual": "Diagonal Downward Arrow (plaque)",
+  "result": "PASS"
+ },
+ {
+  "id": "V3.8",
+  "case": "Official name R1-3P",
+  "expected": "All Way (plaque)",
+  "actual": "All Way (plaque)",
+  "result": "PASS"
+ },
+ {
+  "id": "V4.1",
+  "case": "Radius of an R=150 m, 80 deg arc within 3%",
+  "expected": "True",
+  "actual": "True",
+  "result": "PASS"
+ },
+ {
+  "id": "V4.2",
+  "case": "Advisory R=150 m, e=0.06 = 35 mph",
+  "expected": "35",
+  "actual": "35.0",
+  "result": "PASS"
+ },
+ {
+  "id": "V4.3",
+  "case": "Advisory R=40 m, e=0.04 = 20 mph",
+  "expected": "20",
+  "actual": "20.0",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.1",
+  "case": "One STOP, only on the side road",
+  "expected": "1",
+  "actual": "1",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.2",
+  "case": "STOP on the right (east) of the northbound approach",
+  "expected": "True",
+  "actual": "True",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.3",
+  "case": "STOP 4.85 m before the junction (half width 3.65 + 4 ft)",
+  "expected": "4.85",
+  "actual": "4.85",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.4",
+  "case": "W3-1 at 76.2 m + stop line = 81.1 m",
+  "expected": "81.1",
+  "actual": "81.1",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.5",
+  "case": "W3-1 is Conditional (sight distance not given)",
+  "expected": "Conditional",
+  "actual": "Conditional",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.6",
+  "case": "STOP rural mounting height 5 ft = 1.52 m",
+  "expected": "1.52",
+  "actual": "1.52",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.7",
+  "case": "STOP rural offset = 3.65 m half width + 12 ft",
+  "expected": "7.31",
+  "actual": "7.31",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.8",
+  "case": "No intersection warning on main road (junction is STOP-controlled)",
+  "expected": "0",
+  "actual": "0",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.9",
+  "case": "Left-hand traffic puts STOP on the west",
+  "expected": "True",
+  "actual": "True",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.10",
+  "case": "Uncontrolled T: W2-2 Side Road on both main approaches (Option)",
+  "expected": "(2, 'Optional')",
+  "actual": "(2, 'Optional')",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.11",
+  "case": "Eastbound W2-2 shows side road on the right",
+  "expected": "right",
+  "actual": "right",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.12",
+  "case": "W3-5 only where drop > 10 mph (90->60 yes, 60->45 no)",
+  "expected": "1",
+  "actual": "1",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.13",
+  "case": "R2-1 legends at change points",
+  "expected": "['SPEED LIMIT 45 km/h', 'SPEED LIMIT 60 km/h', 'SPEED LIMIT 90 km/h']",
+  "actual": "['SPEED LIMIT 45 km/h', 'SPEED LIMIT 60 km/h', 'SPEED LIMIT 90 km/h']",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.14",
+  "case": "Left curve eastbound: Curve sign W1-2, orientation left, Mandatory",
+  "expected": "('W1-2', 'left', 'Mandatory')",
+  "actual": "('W1-2', 'left', 'Mandatory')",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.15",
+  "case": "90 km/h, advisory 60 km/h (diff 30 km/h = Chart B 15 mph row): delineators, no chevrons",
+  "expected": "(False, True)",
+  "actual": "(False, True)",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.16",
+  "case": "Advisory plaque shows 60 km/h (39.4 mph = 63.4 km/h, floored to 10 km/h)",
+  "expected": "60 km/h",
+  "actual": "60 km/h",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.16b",
+  "case": "Advisory plaque at 30 km/h differential (90-60) is Mandatory (Table 2C-6: 15 mph / 30 km/h or more)",
+  "expected": "Mandatory",
+  "actual": "Mandatory",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.15b",
+  "case": "R=80 m, 90 km/h: advisory 40 km/h, diff 50 km/h: chevrons on the outside (right) of a left curve",
+  "expected": "True",
+  "actual": "True",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.19",
+  "case": "Crosswalk without Yield Here signs: advance W11-2 only, Optional",
+  "expected": "(['W11-2'], 'Optional')",
+  "actual": "(['W11-2'], 'Optional')",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.20",
+  "case": "Crosswalk with Yield Here signs: advance W11-2 + W11-2/W16-7P at the crosswalk",
+  "expected": "['W11-2', 'W11-2', 'W16-7P']",
+  "actual": "['W11-2', 'W11-2', 'W16-7P']",
+  "result": "PASS"
+ },
+ {
+  "id": "V6.1",
+  "case": "3B.02 centre line: 3 lanes / urban coll 6000 / urban coll 4000 / rural art 18 ft 3000 / 14 ft local / 18 ft local / one-way",
+  "expected": "['Mandatory', 'Mandatory', 'Recommended', 'Recommended', 'Conditional', 'Optional', None]",
+  "actual": "['Mandatory', 'Mandatory', 'Recommended', 'Recommended', 'Conditional', 'Optional', None]",
+  "result": "PASS"
+ },
+ {
+  "id": "V6.2",
+  "case": "3B.10 edge line: freeway / expressway / rural art 20 ft 6000 / rural coll 20 ft 3000 / rural art 18 ft 6000 / urban art 6000",
+  "expected": "['Mandatory', 'Mandatory', 'Mandatory', 'Recommended', 'Optional', 'Optional']",
+  "actual": "['Mandatory', 'Mandatory', 'Mandatory', 'Recommended', 'Optional', 'Optional']",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.21",
+  "case": "4-leg crossing of a one-way street: 4 ONE WAY signs (near-right + far-left per crossing approach), Mandatory",
+  "expected": "(4, {'Mandatory'}, 2, 2)",
+  "actual": "(4, {'Mandatory'}, 2, 2)",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.22",
+  "case": "T with one-way top: 2 ONE WAY signs facing the stem (near-right + far side, 2B.49-11)",
+  "expected": "(2, 1, 1)",
+  "actual": "(2, 1, 1)",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.23",
+  "case": "Site boundary: STOP (exit) + SPEED LIMIT 30 (entry), both Mandatory",
+  "expected": "[('R1-1', 'Mandatory', 'STOP'), ('R2-1', 'Mandatory', 'SPEED LIMIT 30 km/h')]",
+  "actual": "[('R1-1', 'Mandatory', 'STOP'), ('R2-1', 'Mandatory', 'SPEED LIMIT 30 km/h')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V7.1",
+  "case": "Core signs: size/name verified from the PDF and a picture file",
+  "expected": "[]",
+  "actual": "[]",
+  "result": "PASS"
+ },
+ {
+  "id": "V7.1b",
+  "case": "Full catalog: every sign with a size-table row has PDF sizes; at least 800 signs have a picture",
+  "expected": "(True, True)",
+  "actual": "(True, True)",
+  "result": "PASS"
+ },
+ {
+  "id": "V7.2",
+  "case": "2C.55: W16-7P below the crosswalk W11-2 is Mandatory (04); AHEAD W16-9P with the advance W11-2 is Recommended (03)",
+  "expected": "({'Mandatory'}, {'Recommended'})",
+  "actual": "({'Mandatory'}, {'Recommended'})",
+  "result": "PASS"
+ },
+ {
+  "id": "V8.1",
+  "case": "Designer-placed R7-1 and D3-1 sized/classed from the catalog; unknown code rejected",
+  "expected": "[('D3-1', 'Recommended', 'Variesx48', 'El Tahrir St'), ('R7-1', 'Recommended', '12x18', '')]",
+  "actual": "[('D3-1', 'Recommended', 'Variesx48', 'El Tahrir St'), ('R7-1', 'Recommended', '12x18', '')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V8.2",
+  "case": "Full catalog: every sign with a size table row or named designation (1,065) is loaded",
+  "expected": "True",
+  "actual": "True",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.16c",
+  "case": "Table 2C-6 in km/h: W13-1P at differential 10 / 20 / 30 / 50 km/h",
+  "expected": "['Optional', 'Recommended', 'Mandatory', 'Mandatory']",
+  "actual": "['Optional', 'Recommended', 'Mandatory', 'Mandatory']",
+  "result": "PASS"
+ },
+ {
+  "id": "V4.4",
+  "case": "Advisory in km/h: R=150 m, e=0.06, 90 km/h -> 39.4 mph = 63.4 km/h -> 60 km/h",
+  "expected": "60.0",
+  "actual": "60.0",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.17",
+  "case": "School without a designated zone: S1-1 Conditional",
+  "expected": "Conditional",
+  "actual": "Conditional",
+  "result": "PASS"
+ },
+ {
+  "id": "V5.18",
+  "case": "School with a designated zone: S1-1 Mandatory, 36x36",
+  "expected": "('Mandatory', '36x36')",
+  "actual": "('Mandatory', '36x36')",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.1",
+  "case": "Rail crossing: W10-1 Mandatory 425 ft ahead; R15-1 + R15-2P (2 tracks) Mandatory; RXR Mandatory at 80 km/h",
+  "expected": "('Mandatory', 129.5, ['R15-1', 'R15-2P', 'RXR', 'W10-1'], {'Mandatory'})",
+  "actual": "('Mandatory', 129.5, ['R15-1', 'R15-2P', 'RXR', 'W10-1'], {'Mandatory'})",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.2",
+  "case": "Bridge 5.2 m two-way (16-18 ft): W5-2 Recommended both ways (2C.18-01)",
+  "expected": "[('W5-2', 'Recommended'), ('W5-2', 'Recommended')]",
+  "actual": "[('W5-2', 'Recommended'), ('W5-2', 'Recommended')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.3",
+  "case": "Clearance 4.30 m < 14 ft 6 in: W12-2 Mandatory showing 4.30 m (14 ft 1 in) (2C.25-01/02)",
+  "expected": "('Mandatory', '4.30 m (14 ft 1 in)', 2)",
+  "actual": "('Mandatory', '4.30 m (14 ft 1 in)', 2)",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.4",
+  "case": "Speed hump: W17-1 + W13-1P 25 km/h, both Recommended (2C.27-01/02)",
+  "expected": "[('W13-1P', 'Recommended', '25 km/h'), ('W17-1', 'Recommended', '')]",
+  "actual": "[('W13-1P', 'Recommended', '25 km/h'), ('W17-1', 'Recommended', '')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.5",
+  "case": "Downgrade 7% over 400 m (> 1,000 ft): W7-1 + W7-3P 7% Recommended, downhill direction only (2C.14-02 C)",
+  "expected": "[('W7-1', 'Recommended', ''), ('W7-3P', 'Recommended', '7%')]",
+  "actual": "[('W7-1', 'Recommended', ''), ('W7-3P', 'Recommended', '7%')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.6",
+  "case": "NO PASSING ZONE pennant on the left-hand side (2C.53-01)",
+  "expected": "[('W14-3', 'left')]",
+  "actual": "[('W14-3', 'left')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.7",
+  "case": "Rail crossing without tracks / signals data: run stops with data questions",
+  "expected": "True",
+  "actual": "True",
+  "result": "PASS"
+ },
+ {
+  "id": "V9.8",
+  "case": "Underpass 4.5 m (< 16 ft): W5-3a Recommended; clearance 4.60 m: no W12-2; 1 track: no R15-2P",
+  "expected": "([('W5-3a', 'Recommended')], ['R15-1', 'RXR', 'W10-1'])",
+  "actual": "([('W5-3a', 'Recommended')], ['R15-1', 'RXR', 'W10-1'])",
+  "result": "PASS"
+ },
+ {
+  "id": "V10.1",
+  "case": "Divided section: W6-1 (R) + Keep Right on the nose (O, left); end: W6-2 + W6-3 to two-lane (R) (2C.20/2C.21/2C.51/2B.39)",
+  "expected": "([('R4-7', 'Optional', 'left'), ('W6-1', 'Recommended', 'right')], [('W6-2', 'Recommended'), ('W6-3', 'Recommended')])",
+  "actual": "([('R4-7', 'Optional', 'left'), ('W6-1', 'Recommended', 'right')], [('W6-2', 'Recommended'), ('W6-3', 'Recommended')])",
+  "result": "PASS"
+ },
+ {
+  "id": "V10.2",
+  "case": "Ramp joins without added lane: W4-1 Optional on the right of the freeway, 1,200 ft ahead (Cond A); no intersection question",
+  "expected": "('W4-1', 'Optional', 'right', 365.8)",
+  "actual": "('W4-1', 'Optional', 'right', 365.8)",
+  "result": "PASS"
+ },
+ {
+  "id": "V10.3",
+  "case": "Ramp adds a lane (2+1 -> 3): W4-3 Recommended on the freeway; entering-road W4-3 Conditional (2C.46-01)",
+  "expected": "[('W4-3', 'Conditional'), ('W4-3', 'Recommended')]",
+  "actual": "[('W4-3', 'Conditional'), ('W4-3', 'Recommended')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V10.4",
+  "case": "One-way street becomes two-lane two-way: W6-3 + W16-9P AHEAD, Recommended (2C.51-02)",
+  "expected": "[('W16-9P', 'Recommended'), ('W6-3', 'Recommended')]",
+  "actual": "[('W16-9P', 'Recommended'), ('W6-3', 'Recommended')]",
+  "result": "PASS"
+ },
+ {
+  "id": "V10.5",
+  "case": "Left turn R=60 m (W1-1): W1-6 Optional on the outside (right), arrow left (2C.10-02/04)",
+  "expected": "('Optional', 'right', 'left')",
+  "actual": "('Optional', 'right', 'left')",
+  "result": "PASS"
+ },
+ {
+  "id": "V12.1",
+  "case": "T&I style pack loads: template, 28 block-map rows, fixation post spec",
+  "expected": "(True, 28, 'Galvanized steel post, \u00d860.3 mm / 5 mm')",
+  "actual": "(True, 28, 'Galvanized steel post, \u00d860.3 mm / 5 mm')",
+  "result": "PASS"
+ },
+ {
+  "id": "V12.2",
+  "case": "Output DXF: signs on TI-Signs, T&I line types and dim style present, details copied, no audit errors",
+  "expected": "(True, True, True, True, False)",
+  "actual": "(True, True, True, True, False)",
+  "result": "PASS"
+ },
+ {
+  "id": "V12.3",
+  "case": "Schedule has T&I block, fixation detail, post and base columns",
+  "expected": "['T&I block', 'Fixation detail', 'Post', 'Base']",
+  "actual": "['T&I block', 'Fixation detail', 'Post', 'Base']",
+  "result": "PASS"
+ }
+]

@@ -1,0 +1,3 @@
+{"mode": "design", "code": "mutcd_11e", "families": ["reg", "warn", "mark", "delin", "supp"], "level": "opt",
+ "units": "metric", "drive": "right", "size": "auto", "env": ["auto"], "missing": "batch",
+ "outputs": ["same", "xlsx", "report", "boq"], "epsg": "22992", "tol": 15}

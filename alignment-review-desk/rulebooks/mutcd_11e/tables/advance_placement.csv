@@ -1,0 +1,18 @@
+# MUTCD 11th Ed. Table 2C-3 Guidelines for Advance Placement of Warning Signs (feet). Column cond_a = Condition A (speed reduction and lane changing in heavy traffic).
+# Columns b0..b80 = Condition B by advisory speed (mph); b0 = potential stop. Blank = N/A (placement per site conditions, 0-100 ft, min 100 ft between signs).
+# Source: FHWA MUTCD 11th Edition (Dec 2023), Chapter 2C, Table 2C-3. Verified row by row from the MUTCD 11th Ed. PDF (manual p.152) on 30 Sep 2026.
+speed_mph,cond_a,b0,b10,b20,b30,b40,b50,b60,b70,b80
+20,225,115,,,,,,,,
+25,325,155,,,,,,,,
+30,460,200,,,,,,,,
+35,565,250,,,,,,,,
+40,670,305,100,100,,,,,,
+45,775,360,125,100,100,,,,,
+50,885,425,200,175,125,100,,,,
+55,990,495,275,225,200,125,,,,
+60,1100,570,350,325,275,200,100,,,
+65,1200,645,450,400,350,275,200,100,,
+70,1250,730,525,500,450,375,275,150,,
+75,1350,820,625,600,550,475,375,250,100,
+80,1475,910,725,700,625,550,450,350,200,
+85,1600,1010,825,800,750,675,575,450,300,150

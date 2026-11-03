@@ -1,0 +1,12 @@
+# MUTCD 11th Ed. Table 3B-1 Minimum Passing Sight Distances for No-Passing Zone Markings (3B.02-04). Verified from the MUTCD 11th Ed. PDF (manual p.543) on 6 Oct 2026.
+speed_mph,psd_ft
+25,450
+30,500
+35,550
+40,600
+45,700
+50,800
+55,900
+60,1000
+65,1100
+70,1200

@@ -1,0 +1,7 @@
+id: egypt
+name: Egyptian Code for Urban and Rural Roads Works, Code 104 (Ecp-2020), Part 2 Traffic Engineering
+publisher: HBRC, ministerial decree 860 of 2020 (second update)
+traffic_side: right
+status: extracting          # scaffold: no value has been read from the printed code yet
+verified: false
+source_note: scanned Arabic PDF without a text layer; the project copy is not yet in the session

@@ -1,0 +1,3 @@
+# The repo-wide *.png rule would drop the T&I logo and the 837 MUTCD sign pictures the engine needs.
+!*.png
+__pycache__/

@@ -1,0 +1,34 @@
+id: mutcd_11e
+name: Manual on Uniform Traffic Control Devices, 11th Edition
+publisher: FHWA (USA)
+edition_date: 2023-12
+native_units: us_customary     # tables are in feet / mph / inches; engine converts
+traffic_side: right
+status: extracting             # extracting | review | signed
+verified: false
+provision_map:                 # MUTCD wording -> skill class
+  Standard: Mandatory
+  Guidance: Recommended
+  Option: Optional
+  Support: Note
+  Study: Conditional
+advisory_speed_rounding_mph: 5
+advisory_speed_rounding_kmh: 10
+speed_conversion: >
+  AASHTO metric practice: speed conditions in km/h in 10 km/h steps; a 5 mph step = 10 km/h
+  (5/10/15/20 mph differentials = 10/20/30/40 km/h), 30 mph = 50 km/h, 45 mph = 70 km/h.
+min_sign_spacing_ft: 100       # Table 2C-3 note 6
+notes: >
+  Values were extracted from the public FHWA 11th Edition chapter PDFs through a summarising web reader,
+  not a clean text copy. Every table carries "VERIFY before sign-off". A T&I engineer must check each
+  table and clause against the printed manual before this rulebook governs a design.
+  30 Sep 2026: 2B.49, 2C.55, 3B.02, 3B.10, Table 2C-6 (plaque) and chevron spacing confirmed from T&I's copy
+  (see docs/RULEBOOK_REVIEW.md).
+  30 Sep 2026: whole sign catalog (Tables 2B-1, 2C-1, 7B-1), Tables 2C-3, 2C-4, 2C-5, 2C-6 and mounting (2A.15/2A.16)
+  verified against T&I's MUTCD 11th Edition PDF; sign pictures cropped from its figures (symbols/).
+  12 Oct 2026: automatic placement extended to 74 signs. Hazard points (hazards.yaml, 34 types: grade crossing, narrow or
+  one-lane structure, low clearance, speed hump, bump/dip, pavement ends, downgrade, school bus stop, vehicle/animal
+  crossings, surface and shoulder conditions, no-passing zone start, dead end / no outlet) and network-derived signs
+  (divided section begins/ends, one-way to two-way, merge, added lane, W1-6 on turns). Clause text comes from the PDF text
+  layer of T&I's copy; engine assumptions: Table 2C-3 Condition B 0 mph column when no advisory speed is given; Crossbuck
+  4.6 m (15 ft) + half gauge before the track; 40 mph = 60 km/h for RXR markings (8C.02-02).

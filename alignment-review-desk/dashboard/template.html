@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alignment Review Desk</title>
+<style>
+/* Layout: one working surface. Header (T&I logo, file, run) + seven tabs: Overview, Map, Signs, Catalogue, Setup, Export, Methods.
+   Palette: T&I brand (Primary Green chrome, Charcoal headings, Neutral Tint paper). Red and amber mean "wrong" and "check" only; OK signs stay quiet slate. */
+:root{
+  --bg:#F4F6F5; --panel:#FFFFFF; --ink:#1A1F1C; --head:#434343; --muted:#6E6E6E; --line:#D9DFDC; --soft:#EAEFEC;
+  --accent:#019945; --accent-ink:#FFFFFF; --accent2:#40B273; --wrong:#C4262E; --check:#B96A00; --okc:#3C6E8F;
+  --map-bg:#FAFBFA; --map-kerb:#2C3733; --map-park:#C9D0CC; --map-cl:#B8505A; --map-bld:#9AA5A0; --map-node:#019945;
+  --pal0:#0050E6; --pal1:#0A9A3E; --pal2:#E0007A; --pal3:#E85A00; --pal4:#7A2CF0; --pal5:#008FA6; --pal6:#7A4A12; --pal7:#9A7D00;
+  --f-body:Arial,"Helvetica Neue",Helvetica,sans-serif; --f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F1512; --panel:#172019; --ink:#E8EEEA; --head:#D6DDD9; --muted:#9AA8A1; --line:#2A3630; --soft:#1F2A24;
+  --accent:#40B273; --accent-ink:#06210F; --accent2:#40B273; --wrong:#FF6B73; --check:#F2A640; --okc:#7FB2D4;
+  --map-bg:#0B100D; --map-kerb:#C8D3CD; --map-park:#4A544F; --map-cl:#E58A93; --map-bld:#6C7A73; --map-node:#40B273;
+  --pal0:#5C9DFF; --pal1:#3DDC84; --pal2:#FF5CB8; --pal3:#FF8A1F; --pal4:#B79BFF; --pal5:#35D6F0; --pal6:#D19A5C; --pal7:#FFD60A; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#0F1512; --panel:#172019; --ink:#E8EEEA; --head:#D6DDD9; --muted:#9AA8A1; --line:#2A3630; --soft:#1F2A24;
+  --accent:#40B273; --accent-ink:#06210F; --accent2:#40B273; --wrong:#FF6B73; --check:#F2A640; --okc:#7FB2D4;
+  --map-bg:#0B100D; --map-kerb:#C8D3CD; --map-park:#4A544F; --map-cl:#E58A93; --map-bld:#6C7A73; --map-node:#40B273;
+  --pal0:#5C9DFF; --pal1:#3DDC84; --pal2:#FF5CB8; --pal3:#FF8A1F; --pal4:#B79BFF; --pal5:#35D6F0; --pal6:#D19A5C; --pal7:#FFD60A; color-scheme:dark;}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:14px/1.45 var(--f-body);padding:0 max(16px,env(safe-area-inset-right)) 28px max(16px,env(safe-area-inset-left))}
+.wrap{max-width:1280px;margin:0 auto}
+header{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding:16px 0 10px}
+.brand{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logoTile{background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 12px;display:flex}
+.logoTile img{height:40px;width:auto;display:block}
+h1{font:700 24px/1.05 var(--f-body);letter-spacing:.03em;text-transform:uppercase;margin:0;color:var(--head)}
+h1 small{display:block;font:400 12px/1.4 var(--f-body);letter-spacing:0;text-transform:none;color:var(--muted);margin-top:4px}
+h2{font:700 17px/1.15 var(--f-body);letter-spacing:.03em;text-transform:uppercase;margin:0 0 8px;color:var(--head)}
+h3{font:700 11px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.hbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,select,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;white-space:nowrap;border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:7px 12px;min-height:34px}
+button:hover{border-color:var(--muted)}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+button.primary:hover{filter:brightness(1.07)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+input[type=text],input[type=search],select,textarea{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:5px 8px;min-height:32px;max-width:100%}
+input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 12px/1 var(--f-mono);padding:6px 9px;border:1px solid var(--line);border-radius:3px;background:var(--panel);white-space:nowrap}
+.draft{border-left:4px solid var(--check);background:var(--soft);padding:8px 12px;margin:0 0 12px;font-size:13px}
+nav.tabs{display:flex;gap:2px;border-bottom:2px solid var(--line);overflow-x:auto;margin-bottom:16px}
+nav.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:10px 15px;font:700 14px/1 var(--f-body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:-2px}
+nav.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs .n{font:500 11px var(--f-mono);margin-left:6px;color:var(--muted)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;margin-bottom:16px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.muted{color:var(--muted)} .small{font-size:12px} .mono{font-family:var(--f-mono);font-size:13px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%}
+th{text-align:left;font:700 11px/1.2 var(--f-body);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+th.s{cursor:pointer} th.s:hover{color:var(--ink)}
+td{padding:5px 8px;border-bottom:1px solid var(--soft);vertical-align:middle}
+tr.pick{cursor:pointer} tr.pick:hover td{background:var(--soft)} tr.sel td{background:var(--soft);font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:6px;padding:12px 14px}
+.kpi b{display:block;font:700 32px/1 var(--f-body);font-variant-numeric:tabular-nums} .kpi span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.kpi.wrong{border-left-color:var(--wrong)} .kpi.check{border-left-color:var(--check)} .kpi.ok{border-left-color:var(--okc)} .kpi.acc{border-left-color:var(--accent)}
+.pill{font:700 10px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;border-radius:3px;border:1px solid currentColor;white-space:nowrap}
+.pill.wrong{color:var(--wrong)} .pill.check{color:var(--check)} .pill.ok{color:var(--okc)} .pill.acc{color:var(--accent)}
+.barrow{display:grid;grid-template-columns:96px 1fr 34px;gap:10px;align-items:center;padding:4px;width:100%;text-align:left;border:0;background:none;min-height:0;border-radius:4px}
+.barrow:hover{background:var(--soft)} .barrow .ct{font:500 13px var(--f-mono);text-align:right}
+.bar2{display:flex;height:14px;background:var(--soft);border-radius:2px;overflow:hidden} .bar2 i{display:block;height:100%}
+.fbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.seg{display:inline-flex} .seg button{border-radius:0;margin-left:-1px;padding:5px 12px;min-height:30px} .seg button:first-child{border-radius:4px 0 0 4px;margin-left:0} .seg button:last-child{border-radius:0 4px 4px 0}
+.seg button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.fchip[aria-pressed=true]{background:color-mix(in srgb,var(--accent) 12%,var(--panel));border-color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+.fchip[aria-pressed=false]{opacity:.55}
+.fchip{padding:4px 10px;min-height:28px;font-size:12px}
+.dd{position:relative} .dd summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:4px;padding:6px 10px;background:var(--panel);min-height:32px;display:inline-flex;align-items:center}
+.dd summary::-webkit-details-marker{display:none} .ddbody{position:absolute;z-index:8;margin-top:4px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px;display:grid;gap:6px;min-width:210px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.ddbody label{display:flex;align-items:center;gap:8px}
+.mapwrap{position:relative;height:clamp(420px,64vh,740px);border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--map-bg);touch-action:none}
+#cv{width:100%;height:100%;display:block;cursor:grab} #cv.drag{cursor:grabbing}
+.legend{position:absolute;left:10px;top:10px;background:color-mix(in srgb,var(--panel) 92%,transparent);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font-size:12px;display:grid;gap:4px}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:8px;vertical-align:-2px;border-radius:2px}
+.zoom{position:absolute;right:10px;top:10px;display:grid;gap:4px} .zoom button{width:36px;padding:0;font-size:18px;line-height:1}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);padding:4px 8px;border-radius:3px;font-size:12px;max-width:280px;display:none;z-index:3}
+.coord{position:absolute;right:10px;bottom:8px;font:11px var(--f-mono);color:var(--muted);background:color-mix(in srgb,var(--panel) 85%,transparent);padding:2px 6px;border-radius:3px;pointer-events:none}
+.mapwrap:fullscreen{height:100vh;border:0;border-radius:0}
+.sel .t{font:700 20px/1.15 var(--f-body)}
+.dec{display:inline-flex} .dec button{border-radius:0;margin-left:-1px;min-height:30px;padding:4px 10px} .dec button:first-child{border-radius:4px 0 0 4px;margin-left:0} .dec button:last-child{border-radius:0 4px 4px 0}
+.dec button[aria-pressed=true].keep{background:var(--okc);color:#fff;border-color:var(--okc)}
+.dec button[aria-pressed=true].fix{background:var(--check);color:#fff;border-color:var(--check)}
+.dec button[aria-pressed=true].remove{background:var(--wrong);color:#fff;border-color:var(--wrong)}
+.form{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px 20px}
+.form label{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.notice{border-left:3px solid var(--check);background:var(--soft);padding:8px 12px;margin-bottom:12px;font-size:13px}
+.notice.err{border-color:var(--wrong)}
+.method h2{margin-top:6px} .method p,.method li{max-width:92ch} .method ul{margin:6px 0 10px;padding-left:20px}
+.eq{background:var(--soft);border-radius:4px;padding:10px 12px;font:13px/1.7 var(--f-mono);white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}
+.fig svg{display:block;width:100%;max-width:560px;height:auto}
+.flow{overflow-x:auto} .flow svg{min-width:880px;max-width:none}
+.flow .fb{fill:var(--panel);stroke:var(--line);stroke-width:1.5} .flow .fb.k{stroke:var(--accent);stroke-width:2.2} .flow .fb.q{fill:var(--soft);stroke:var(--check);stroke-width:1.8}
+.flow .ft{font:700 12px var(--f-body);fill:var(--ink)} .flow .fs{font:11px var(--f-body);fill:var(--muted)} .flow .fl{font:11px var(--f-mono);fill:var(--muted)} .flow .fn{font:700 11px var(--f-mono);fill:var(--accent)}
+.flow .fa{fill:none;stroke:var(--muted);stroke-width:1.6} .flow .fa.l{stroke:var(--check);stroke-dasharray:5 4}
+.who{font:700 10px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:2px 5px;border-radius:3px;background:var(--soft);color:var(--muted);margin-right:6px;white-space:nowrap}
+.who.you{background:color-mix(in srgb,var(--accent) 16%,var(--panel));color:var(--ink)} .fig text{fill:var(--ink);font:12px var(--f-body)}
+textarea.out{width:100%;min-height:150px;font:12px/1.4 var(--f-mono)}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+[hidden]{display:none!important}
+@media (max-width:560px){h1{font-size:20px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logoTile"><img id="logo" alt="Talaat &amp; Imam Consulting Engineers"></div>
+    <h1>Alignment Review Desk<small id="sub">Check the signs in a signing DXF against the MUTCD, Egyptian and SHC catalogue. Only problem areas are marked.</small></h1>
+  </div>
+  <div class="hbar">
+    <span class="chip" id="fileChip">no drawing</span>
+    <input type="file" id="file" accept=".dxf" hidden>
+    <button id="btnLoad">Load DXF</button>
+    <button id="btnDemo">Load Wyte demo</button>
+    <button id="btnRun" class="primary">Run checks</button>
+  </div>
+</header>
+<div class="draft" id="draft"></div>
+<div id="notices"></div>
+<nav class="tabs" role="tablist" id="tabs">
+  <button role="tab" data-v="overview">Overview</button>
+  <button role="tab" data-v="map">Map</button>
+  <button role="tab" data-v="signs">Signs<span class="n" id="nSigns"></span></button>
+  <button role="tab" data-v="cat">Catalogue</button>
+  <button role="tab" data-v="setup">Setup</button>
+  <button role="tab" data-v="export">Export</button>
+  <button role="tab" data-v="method">Methods</button>
+</nav>
+
+<section id="v-overview"></section>
+
+<section id="v-map" hidden>
+  <div class="fbar" id="fbMap"></div>
+  <div class="fbar">
+    <span class="muted small">Colour signs</span>
+    <div class="seg" id="segColor"><button data-c="status" aria-pressed="true">By check</button><button data-c="code" aria-pressed="false">By code</button><button data-c="family" aria-pressed="false">By family</button></div>
+    <details class="dd"><summary>Layers</summary><div class="ddbody">
+      <label><input type="checkbox" data-lv="kerb" checked>Carriageway edges</label><label><input type="checkbox" data-lv="park" checked>Parking</label>
+      <label><input type="checkbox" data-lv="cl" checked>Centrelines</label><label><input type="checkbox" data-lv="bld" checked>Buildings</label>
+      <label><input type="checkbox" data-lv="nodes" checked>Junctions and link names</label><label><input type="checkbox" data-lv="signs" checked>Signs</label><label><input type="checkbox" data-lv="lbl" checked>Sign labels</label></div></details>
+    <input type="search" id="mapSearch" placeholder="Find sign, e.g. S0020" size="18" aria-label="Find a sign by ID">
+    <button id="btnMeasure" aria-pressed="false">Measure</button>
+    <form id="gotoForm" class="hbar" style="gap:4px"><input type="text" id="gotoIn" placeholder="Go to E, N" size="20" aria-label="Go to E, N"><button type="submit">Go</button></form>
+    <button id="btnFs">Fullscreen</button><span class="mono small muted" id="measureOut"></span>
+  </div>
+  <div class="mapwrap" id="mapwrap">
+    <canvas id="cv"></canvas>
+    <div class="legend" id="legend"></div>
+    <div class="zoom"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">&minus;</button><button id="zfit" aria-label="Fit drawing" style="font-size:12px">Fit</button></div>
+    <div class="tip" id="tip"></div><div class="coord" id="coord"></div>
+  </div>
+  <div class="card sel" id="selCard" style="margin-top:12px" hidden></div>
+</section>
+
+<section id="v-signs" hidden></section>
+<section id="v-cat" hidden></section>
+<section id="v-setup" hidden></section>
+<section id="v-export" hidden></section>
+<section id="v-method" hidden class="method"></section>
+</div>
+
+<script>
+const DATA = /*DATA*/;
+const LOGO = "/*LOGO*/";
+</script>
+<script>
+"use strict";
+/* ================= helpers ================= */
+const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const hyp = Math.hypot;
+const f1 = v => (Math.round(v * 10) / 10).toFixed(1);
+function projSeg(px, py, ax, ay, bx, by) {
+  const dx = bx - ax, dy = by - ay, l2 = dx * dx + dy * dy;
+  let t = l2 ? ((px - ax) * dx + (py - ay) * dy) / l2 : 0; t = Math.max(0, Math.min(1, t));
+  const qx = ax + t * dx, qy = ay + t * dy; return { d: hyp(px - qx, py - qy), qx, qy, t };
+}
+const store = { get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } } };
+
+/* ================= DXF reader (browser, no libraries) ================= */
+function arcPts(cx, cy, r, a0, sw) {
+  const n = Math.max(3, Math.ceil(Math.abs(sw) / (Math.PI / 24))), out = [];
+  for (let i = 0; i <= n; i++) { const a = a0 + sw * i / n; out.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); }
+  return out;
+}
+function bulgePoly(vs, closed) {
+  const pts = [[vs[0].x, vs[0].y]], m = closed ? vs.length : vs.length - 1;
+  for (let k = 0; k < m; k++) {
+    const a = vs[k], b = vs[(k + 1) % vs.length], bu = a.b || 0;
+    if (Math.abs(bu) < 1e-9) { pts.push([b.x, b.y]); continue; }
+    const th = 4 * Math.atan(bu), c = hyp(b.x - a.x, b.y - a.y); if (c < 1e-9) continue;
+    const r = c / (2 * Math.sin(Math.abs(th) / 2)), mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, nx = -(b.y - a.y) / c, ny = (b.x - a.x) / c, d = (c / 2) / Math.tan(th / 2);
+    const cx = mx + nx * d, cy = my + ny * d, ap = arcPts(cx, cy, r, Math.atan2(a.y - cy, a.x - cx), th); ap.shift(); for (const p of ap) pts.push(p);
+  }
+  return pts;
+}
+function parseDxf(text) {
+  const L = text.split(/\r?\n/), n = L.length, ents = [], skipped = {};
+  let i = 0, section = '', expect = false, cur = null, poly = null;
+  const g1 = (g, c) => { for (const p of g) if (p[0] === c) return p[1]; };
+  const num = (g, c, d) => { const v = g1(g, c); return v === undefined ? d : parseFloat(v); };
+  const base = (t, g) => ({ type: t, layer: (g1(g, 8) || '0').trim() });
+  function entity(e) {
+    const g = e.g, t = e.type;
+    if (t === 'LINE') ents.push({ ...base(t, g), pts: [[num(g, 10, 0), num(g, 20, 0)], [num(g, 11, 0), num(g, 21, 0)]] });
+    else if (t === 'LWPOLYLINE') {
+      const vs = []; for (const [c, v] of g) { if (c === 10) vs.push({ x: parseFloat(v), y: 0, b: 0 }); else if (c === 20 && vs.length) vs[vs.length - 1].y = parseFloat(v); else if (c === 42 && vs.length) vs[vs.length - 1].b = parseFloat(v); }
+      if (vs.length > 1) ents.push({ ...base(t, g), pts: bulgePoly(vs, (num(g, 70, 0) & 1) === 1) });
+    } else if (t === 'ARC') {
+      let sw = (num(g, 51, 0) - num(g, 50, 0)) * Math.PI / 180; while (sw <= 0) sw += 2 * Math.PI;
+      ents.push({ ...base(t, g), pts: arcPts(num(g, 10, 0), num(g, 20, 0), num(g, 40, 0), num(g, 50, 0) * Math.PI / 180, sw) });
+    } else if (t === 'INSERT') ents.push({ ...base(t, g), name: (g1(g, 2) || '').trim(), x: num(g, 10, 0), y: num(g, 20, 0), rot: num(g, 50, 0) });
+    else if (t === 'TEXT') ents.push({ ...base(t, g), text: (g1(g, 1) || '').trim(), x: num(g, 10, 0), y: num(g, 20, 0) });
+    else if (t === 'POLYLINE') poly = { g, vs: [] };
+    else if (t === 'VERTEX' && poly) poly.vs.push({ x: num(g, 10, 0), y: num(g, 20, 0), b: num(g, 42, 0) });
+    else if (t === 'SEQEND' && poly) { if (poly.vs.length > 1) ents.push({ ...base('POLYLINE', poly.g), pts: bulgePoly(poly.vs, (num(poly.g, 70, 0) & 1) === 1) }); poly = null; }
+    else if (t !== 'VERTEX') skipped[t] = (skipped[t] || 0) + 1;
+  }
+  const flush = () => { if (cur && section === 'ENTITIES') entity(cur); cur = null; };
+  while (i + 1 < n) {
+    const code = parseInt(L[i], 10), val = L[i + 1]; i += 2;
+    if (code === 0) {
+      flush(); const v = val.trim();
+      if (v === 'SECTION') { expect = true; continue; } if (v === 'ENDSEC') { section = ''; continue; }
+      if (section === 'ENTITIES') cur = { type: v, g: [] };
+    } else if (expect && code === 2) { section = val.trim(); expect = false; }
+    else if (cur) cur.g.push([code, val]);
+  }
+  flush(); return { ents, skipped };
+}
+
+/* ================= network from centrelines (uploaded drawings) ================= */
+function buildNetwork(polys, snap = 1, tee = 12) {
+  const P = polys.map(p => p.map(q => [q[0], q[1]])), ends = [], splits = {};
+  P.forEach((p, i) => { ends.push([i, 0], [i, 1]); });
+  const endPt = (i, e) => P[i][e === 0 ? 0 : P[i].length - 1];
+  const joins = [];
+  for (const [i, e] of ends) {
+    const pt = endPt(i, e); let near = false;
+    for (const [j, f] of ends) { if (j === i && f === e) continue; const q = endPt(j, f); if (hyp(q[0] - pt[0], q[1] - pt[1]) <= snap) { near = true; break; } }
+    if (near) continue;
+    let best = null; P.forEach((p, j) => { if (j === i) return; for (let k = 0; k < p.length - 1; k++) { const r = projSeg(pt[0], pt[1], p[k][0], p[k][1], p[k + 1][0], p[k + 1][1]); if (r.d <= tee && (!best || r.d < best.d)) best = { d: r.d, j, k, q: [r.qx, r.qy], t: r.t }; } });
+    if (best) joins.push({ i, e, best });
+  }
+  for (const { i, e, best } of joins) { (splits[best.j] = splits[best.j] || []).push({ k: best.k, t: best.t, q: best.q }); }
+  for (const { i, e, best } of joins) { if (e === 0) P[i].unshift(best.q); else P[i].push(best.q); }
+  const nodes = [], nodeAt = (x, y) => { for (const n of nodes) if (hyp(n.x - x, n.y - y) <= snap) return n; const n = { id: 'n' + (nodes.length + 1), x, y, d: 0 }; nodes.push(n); return n; };
+  const links = [];
+  P.forEach((p, j) => {
+    const verts = p.map(q => ({ q, node: false })); const sp = (splits[j] || []).slice().sort((a, b) => a.k - b.k || a.t - b.t);
+    // insert split points after vertex k (indices shift as we insert)
+    let shift = 0; for (const s of sp) { verts.splice(s.k + 1 + shift, 0, { q: s.q, node: true }); shift++; }
+    verts[0].node = true; verts[verts.length - 1].node = true;
+    let seg = [verts[0].q], startNode = nodeAt(verts[0].q[0], verts[0].q[1]);
+    for (let v = 1; v < verts.length; v++) {
+      seg.push(verts[v].q);
+      if (verts[v].node) { const en = nodeAt(verts[v].q[0], verts[v].q[1]); if (seg.length > 1 && !(startNode === en && seg.length < 3)) links.push({ a: startNode, b: en, p: seg }); seg = [verts[v].q]; startNode = en; }
+    }
+  });
+  links.forEach(l => { l.a.d++; l.b.d++; });
+  nodes.sort((a, b) => b.y - a.y).forEach((n, i) => { n.l = 'n' + String(i + 1).padStart(2, '0'); });
+  const cnt = {}; const raw = links.map(l => `${l.a.l}-${l.b.l}`); raw.forEach(r => cnt[r] = (cnt[r] || 0) + 1); const seen = {};
+  const outNodes = {}; nodes.forEach(n => outNodes[n.id] = { l: n.l, x: n.x, y: n.y, d: n.d });
+  return { nodes: outNodes, links: links.map((l, i) => { const r = raw[i]; seen[r] = (seen[r] || 0) + 1; return { id: 'L' + (i + 1), n: cnt[r] > 1 ? `${r}~${seen[r]}` : r, a: l.a.id, b: l.b.id, p: l.p }; }) };
+}
+
+/* ================= checks ================= */
+const CHECKS = [
+  { id: 'block', sev: 'wrong', name: 'Block does not match code', rule: 'A T&I block (name starts TI-) on a sign must be one of the approved blocks for that sign\'s MUTCD code in the block map.', why: 'A wrong block draws a different sign from the one in the schedule.' },
+  { id: 'inside', sev: 'wrong', name: 'Sign inside the kerb line', rule: 'Offset beyond the nearest drawn kerb = (distance of the sign from the centreline) − (distance from the centreline to that kerb, on the sign\'s side). Below zero means the sign is on the carriageway side of the kerb.', why: 'A sign on the carriageway is a hazard and cannot be built there.' },
+  { id: 'arrowin', sev: 'wrong', name: 'Large arrow on the inside of the curve', rule: 'A W1-6 on a curve (the centreline turns 8° or more within 15 m either side) must be on the outside of the turn (2C.10-04).', why: 'On the inside it is hidden by the curve and points the wrong way.' },
+  { id: 'offset', sev: 'check', name: 'Less than 1 ft beyond the kerb', rule: 'Offset beyond the kerb is 0 to 0.30 m. The code minimum is 1 ft (2A.16-10); the T&I default is 2 ft (0.61 m).', why: 'Too close to the kerb for vehicle overhang and for the post.' },
+  { id: 'arrow', sev: 'check', name: 'Large arrow with no curve', rule: 'A W1-6 where the nearest centreline turns less than 8° within 15 m either side (2C.10-05: not where there is no alignment change).', why: 'The arrow may belong to a turn on a different link; confirm.' },
+  { id: 'dup', sev: 'check', name: 'Same code twice at one point', rule: 'Two or more signs with the same code share one coordinate.', why: 'One of them is redundant.' },
+  { id: 'cluster', sev: 'check', name: 'Three or more signs at one point', rule: 'Three or more signs (not counting plaques) share one coordinate.', why: 'A post carries a sign and its plaques. Several separate signs at one point usually mean the advance distance did not fit on a short approach.' },
+  { id: 'side', sev: 'check', name: 'STOP or YIELD on the left of approaching traffic', rule: 'R1-1 / R1-2 sits on the left of traffic approaching the nearest junction (right-hand traffic).', why: 'Usually a deliberate left-side pair; confirm it is not a misplaced sign.' },
+  { id: 'nolabel', sev: 'check', name: 'Sign without a readable label', rule: 'No unused label of the form CODE Snnnn within the label radius.', why: 'The sign cannot be listed or checked against the catalogue.' },
+  { id: 'gaps', sev: 'info', name: 'Missing sign numbers', rule: 'Sign numbers absent between the lowest and highest Snnnn.', why: 'Signs may have been deleted, or never drawn. A report line, not a flag on a sign.' }
+];
+const SIDE_CODES = ['R1-1', 'R1-2'];
+const SEVRANK = { ok: 0, check: 1, wrong: 2 };
+
+function suggestBlock(code, bmap) {
+  const rows = bmap.filter(r => r[0] === code); if (!rows.length) return 'engine symbol (no approved T&I block)';
+  if (code === 'W1-6') return 'TI-454 (right) or TI-455 (left): direction not stated in file';
+  const any = rows.find(r => !r[1]); if (any) return any[2];
+  const o = rows.find(r => r[1] === 'orient=right'); return o ? o[2] + ' (right)' : 'engine symbol (no approved block for this condition)';
+}
+function turnAt(l, q, span = 15) {
+  const pts = l.p; if (pts.length < 2) return 0;
+  const cum = [0]; for (let k = 1; k < pts.length; k++) cum.push(cum[k - 1] + hyp(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]));
+  let best = { d: 1e18, s: 0 };
+  for (let k = 0; k < pts.length - 1; k++) { const r = projSeg(q[0], q[1], pts[k][0], pts[k][1], pts[k + 1][0], pts[k + 1][1]); if (r.d < best.d) best = { d: r.d, s: cum[k] + hyp(r.qx - pts[k][0], r.qy - pts[k][1]) }; }
+  const hd = s => { s = Math.max(0, Math.min(cum[cum.length - 1] - 1e-6, s)); let k = 0; while (k < pts.length - 2 && cum[k + 1] <= s) k++; return Math.atan2(pts[k + 1][1] - pts[k][1], pts[k + 1][0] - pts[k][0]); };
+  const d = hd(best.s + span) - hd(best.s - span); return Math.atan2(Math.sin(d), Math.cos(d)) * 180 / Math.PI;
+}
+function kerbDist(q, nx, ny, segs, win = 14) {
+  let best = null;
+  for (const [a, b] of segs) {
+    const ex = b[0] - a[0], ey = b[1] - a[1], den = nx * ey - ny * ex; if (Math.abs(den) < 1e-12) continue;
+    const t = ((a[0] - q[0]) * ey - (a[1] - q[1]) * ex) / den, u = ((a[0] - q[0]) * ny - (a[1] - q[1]) * nx) / den;
+    if (t > 0.3 && t <= win && u >= 0 && u <= 1 && (best === null || t < best)) best = t;
+  }
+  return best;
+}
+const perms = arr => arr.length <= 1 ? [arr] : arr.flatMap((x, i) => perms(arr.filter((_, j) => j !== i)).map(r => [x, ...r]));
+function analyse(raw, P) {
+  const { ins, lab, net, bmap, cat } = raw, rx = new RegExp(P.labelRx), catMap = {}; cat.forEach(c => catMap[c[0]] = c);
+  const approved = {}; bmap.forEach(r => (approved[r[0]] = approved[r[0]] || new Set()).add(r[2]));
+  // how well a block fits a code: 3 approved T&I block, 2 the engine symbol of that code's shape, 1 any engine symbol, 0 a T&I block not approved for the code
+  const fit = (code, block) => { if (block.startsWith('TI-')) return approved[code] && approved[code].has(block) ? 3 : 0; const sh = ((catMap[code] || [])[4] || '').toUpperCase(); return block === 'MUTCD_' + sh ? 2 : 1; };
+  const labs = lab.filter(l => rx.test(l[0])), used = new Set(), groups = new Map();
+  ins.forEach(it => { const k = f1(it[1]) + ',' + f1(it[2]); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(it); });
+  // signs sharing a coordinate form a group. Each group takes its nearest unused labels, then labels are matched to blocks by fit.
+  // Drawings written by the engine put every label at the same offset from its insert. Detect it, and match on it exactly;
+  // otherwise fall back to the nearest unused labels.
+  let lo = null; { const cnt = {}; ins.forEach(it => { let b = null; for (const l of labs) { const d = hyp(l[1] - it[1], l[2] - it[2]); if (d <= P.labelR && (!b || d < b.d)) b = { d, v: f1(l[1] - it[1]) + ',' + f1(l[2] - it[2]) }; } if (b) cnt[b.v] = (cnt[b.v] || 0) + 1; });
+    const top = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0]; if (top && top[1] >= 0.5 * ins.length) { const v = top[0].split(',').map(Number); lo = { dx: v[0], dy: v[1] }; } }
+  const anchor = g => lo ? [g[0][1] + lo.dx, g[0][2] + lo.dy] : [g[0][1], g[0][2]], tol = lo ? 0.15 : P.labelR;
+  const glist = [...groups.values()].map(g => { const a = anchor(g); return { g, near: labs.map((l, i) => ({ i, d: hyp(l[1] - a[0], l[2] - a[1]) })).filter(o => o.d <= tol).sort((x, y) => x.d - y.d) }; })
+    .sort((a, b) => ((a.near[0] || { d: 1e9 }).d - (b.near[0] || { d: 1e9 }).d));
+  const sg = [], orphans = [];
+  const assign = (g, cand) => {
+    const k = cand.length; if (!k) return; const idx = cand.map((_, i) => i), tries = k <= 6 ? perms(idx) : [idx]; let bp = tries[0], bs = -1;
+    for (const pm of tries) { let sc = 0; for (let i = 0; i < k; i++) sc += fit(labs[cand[pm[i]].i][0].match(rx)[1], g[i][0]); if (sc > bs) { bs = sc; bp = pm; } }
+    for (let i = 0; i < k; i++) { const lb = labs[cand[bp[i]].i][0], m = lb.match(rx); sg.push({ it: g[i], code: m[1], id: m[2], label: lb, size: g.length }); }
+  };
+  for (const { g, near } of glist) {
+    const cand = near.filter(o => !used.has(o.i)).slice(0, g.length); cand.forEach(o => used.add(o.i));
+    g.slice(cand.length).forEach(it => orphans.push(it)); assign(g.slice(0, cand.length), cand);
+  }
+  // second pass: an insert left over takes the nearest unused label within the radius
+  for (const it of orphans.splice(0)) {
+    const o = labs.map((l, i) => ({ i, d: hyp(l[1] - it[1] - (lo ? lo.dx : 0), l[2] - it[2] - (lo ? lo.dy : 0)) })).filter(q => !used.has(q.i) && q.d <= P.labelR).sort((a, b) => a.d - b.d)[0];
+    if (o) { used.add(o.i); assign([it], [o]); } else orphans.push(it);
+  }
+  const segs = []; net.links.forEach(l => { for (let k = 0; k < l.p.length - 1; k++) segs.push([l, l.p[k], l.p[k + 1]]); });
+  const kerbSegs = []; (raw.kerb || []).forEach(pl => { for (let k = 0; k < pl.length - 1; k++) kerbSegs.push([pl[k], pl[k + 1]]); });
+  const byPoint = {}; sg.forEach(o => { const k = f1(o.it[1]) + ',' + f1(o.it[2]); (byPoint[k] = byPoint[k] || []).push(o); });
+  const signs = [];
+  for (const o of sg) {
+    const code = o.code, info = catMap[code] || [code, '(not in catalogue)', '', '', ''], x = o.it[1], y = o.it[2], block = o.it[0], pk = f1(x) + ',' + f1(y), here = byPoint[pk];
+    let best = null; for (const [l, a, b] of segs) { const r = projSeg(x, y, a[0], a[1], b[0], b[1]); if (!best || r.d < best.d) best = { d: r.d, l, qx: r.qx, qy: r.qy, a, b }; }
+    let link = '', node = '', off = null, side = 'n/a', gap = null, turn = null, dig = '';
+    if (best) {
+      const na = net.nodes[best.l.a], nb = net.nodes[best.l.b], nn = hyp(na.x - x, na.y - y) <= hyp(nb.x - x, nb.y - y) ? na : nb;
+      link = best.l.n; node = nn.l; off = best.d;
+      if (SIDE_CODES.includes(code)) { const tx = nn.x - best.qx, ty = nn.y - best.qy, n = hyp(tx, ty) || 1, cr = (tx / n) * (y - best.qy) - (ty / n) * (x - best.qx); side = cr < 0 ? 'right' : 'left'; }
+      const dx = best.b[0] - best.a[0], dy = best.b[1] - best.a[1], L = hyp(dx, dy) || 1, tx = dx / L, ty = dy / L, cr = tx * (y - best.qy) - ty * (x - best.qx);
+      dig = cr > 0 ? 'left' : 'right';
+      const k = kerbDist([best.qx, best.qy], cr > 0 ? -ty : ty, cr > 0 ? tx : -tx, kerbSegs); if (k !== null) gap = best.d - k;
+      if (code === 'W1-6') turn = turnAt(best.l, [best.qx, best.qy]);
+    }
+    const flags = [], ap = approved[code] || new Set();
+    if (block.startsWith('TI-') && !ap.has(block)) flags.push({ id: 'block', sev: 'wrong', txt: 'T&I block ' + block + ' is not approved for ' + code });
+    if (gap !== null && gap < 0) flags.push({ id: 'inside', sev: 'wrong', txt: 'Inside the kerb line by ' + f1(-gap) + ' m (on the carriageway side)' });
+    else if (gap !== null && gap < 0.30) flags.push({ id: 'offset', sev: 'check', txt: 'Only ' + (Math.round(gap * 100) / 100).toFixed(2) + ' m beyond the kerb (minimum 0.30 m, T&I default 0.61 m)' });
+    if (turn !== null) {
+      if (Math.abs(turn) < 8) flags.push({ id: 'arrow', sev: 'check', txt: 'No curve within 15 m of the centreline (turn ' + f1(Math.abs(turn)) + '°)' });
+      else if (best.d >= 1 && !((turn > 0 && dig === 'right') || (turn < 0 && dig === 'left'))) flags.push({ id: 'arrowin', sev: 'wrong', txt: 'On the inside of the curve' });
+    }
+    const same = here.filter(q => q.code === code).length; if (same > 1) flags.push({ id: 'dup', sev: 'check', txt: same + ' × ' + code + ' at this point' });
+    const nonPlaque = here.filter(q => !/P$/.test(q.code)).length; if (nonPlaque >= 3 && !/P$/.test(code)) flags.push({ id: 'cluster', sev: 'check', txt: nonPlaque + ' signs at one point' });
+    if (side === 'left') flags.push({ id: 'side', sev: 'check', txt: 'On the left of approaching traffic (pair or error?)' });
+    signs.push({ key: o.label, id: o.id, code, name: info[1], family: info[2], clause: info[3], x, y, blocks: [block], uniq: [block], n: here.length, link, node, off, gap, side, flags,
+      sev: flags.reduce((s, f) => SEVRANK[f.sev] > SEVRANK[s] ? f.sev : s, 'ok'), sugg: suggestBlock(code, bmap) });
+  }
+  orphans.forEach((it, i) => signs.push({ key: 'orphan' + i, id: '(no ID)', code: '?', name: 'Block ' + it[0], family: '', clause: '', x: it[1], y: it[2], blocks: [it[0]], uniq: [it[0]], n: 1, link: '', node: '', off: null, gap: null, side: 'n/a',
+    flags: [{ id: 'nolabel', sev: 'check', txt: 'No unused label within ' + P.labelR + ' m' }], sev: 'check', sugg: '' }));
+  signs.sort((a, b) => (parseInt(a.id.slice(1)) || 1e9) - (parseInt(b.id.slice(1)) || 1e9));
+  const nums = signs.map(s => parseInt(s.id.slice(1))).filter(Number.isFinite), gaps = [];
+  if (nums.length) { const set = new Set(nums); for (let k = Math.min(...nums); k <= Math.max(...nums); k++) if (!set.has(k)) gaps.push(k); }
+  return { signs, gaps, nIns: ins.length };
+}
+
+/* ================= state ================= */
+const P = { labelRx: '^([A-Z]\\d+(?:-\\d+[A-Za-z]*)?)\\s+(S\\d+)$', labelR: 6 };
+let RAW = null, RES = null, VIEW = { cx: 0, cy: 0, k: 1 }, COLOR = 'status', SEL = null, HOVER = null, MEASURE = null, MEASURING = false;
+let FILTERS = { codes: new Set(), sev: new Set(['wrong', 'check', 'ok']) }, LV = { kerb: 1, park: 1, cl: 1, bld: 1, nodes: 1, signs: 1, lbl: 1 };
+let DEC = {}, decKey = '';
+let UPLOAD = null;   // {layers:{name:{n,types,role}}, ents}
+
+function loadDemo() {
+  RAW = { file: DATA.file, ins: DATA.ins, lab: DATA.lab, net: { nodes: DATA.nodes, links: DATA.links }, kerb: DATA.kerb, park: DATA.park, cl: DATA.links.map(l => l.p), bld: DATA.bm, bmap: DATA.bmap, cat: DATA.cat, demo: true };
+  UPLOAD = null; setFile(DATA.file + ' (demo)'); run();
+}
+function setFile(name) { $('#fileChip').textContent = name; decKey = 'ti-alignment-dec:' + name; DEC = store.get(decKey) || {}; }
+function run() {
+  RES = analyse(RAW, P); SEL = null; FILTERS.codes = new Set(); notices();
+  $('#nSigns').textContent = RES.signs.length; renderAll(); fit();
+}
+function notices() {
+  const n = $('#notices'); n.innerHTML = '';
+  if (RES && !RES.signs.length) n.innerHTML = '<div class="notice">No signs were found. Check the Setup tab: choose the layer that holds sign blocks and the layer that holds sign labels (text such as <span class="mono">R1-1 S0001</span>).</div>';
+}
+
+/* ================= tabs ================= */
+const VIEWS = ['overview', 'map', 'signs', 'cat', 'setup', 'export', 'method'];
+function showTab(v) {
+  if (!VIEWS.includes(v)) v = 'overview';
+  $$('#tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.v === v));
+  VIEWS.forEach(x => $('#v-' + x).hidden = x !== v);
+  if (v === 'map') { sizeCanvas(); if (NEEDFIT) { NEEDFIT = false; fit(); } draw(); } try { history.replaceState(null, '', '#' + v); } catch (e) { }
+}
+$('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) showTab(b.dataset.v); });
+window.addEventListener('hashchange', () => showTab(location.hash.slice(1)));
+
+/* ================= rendering: overview ================= */
+function counts() {
+  const s = RES.signs, c = { n: s.length, wrong: 0, check: 0, ok: 0, byCode: {}, byFlag: {} };
+  s.forEach(x => { c[x.sev]++; const b = c.byCode[x.code] = c.byCode[x.code] || { n: 0, wrong: 0, check: 0, ok: 0 }; b.n++; b[x.sev]++; x.flags.forEach(f => c.byFlag[f.id] = (c.byFlag[f.id] || 0) + 1); });
+  c.byFlag.gaps = RES.gaps.length; return c;
+}
+function renderOverview() {
+  const c = counts(), el = $('#v-overview'), s = RES.signs;
+  const decided = s.filter(x => DEC[x.key] && DEC[x.key].d).length;
+  const rows = Object.entries(c.byCode).sort((a, b) => b[1].n - a[1].n);
+  const mx = Math.max(1, ...rows.map(r => r[1].n));
+  const topFlags = CHECKS.map(k => ({ k, n: c.byFlag[k.id] || 0 })).filter(x => x.n);
+  el.innerHTML = `
+  <div class="kpis">
+    <div class="kpi acc"><b>${c.n}</b><span>Signs found</span></div>
+    <div class="kpi wrong"><b>${c.wrong}</b><span>Wrong</span></div>
+    <div class="kpi check"><b>${c.check}</b><span>To check</span></div>
+    <div class="kpi ok"><b>${c.ok}</b><span>No finding</span></div>
+    <div class="kpi"><b>${RES.gaps.length}</b><span>Missing numbers</span></div>
+    <div class="kpi"><b>${decided}/${c.n}</b><span>Reviewed</span></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><h3>Signs by code (click to show on the map)</h3>
+      ${rows.map(([code, b]) => `<button class="barrow" data-code="${esc(code)}"><span class="mono">${esc(code)}</span>
+        <span class="bar2" style="width:${Math.max(6, b.n / mx * 100)}%"><i style="flex:${b.wrong};background:var(--wrong)"></i><i style="flex:${b.check};background:var(--check)"></i><i style="flex:${b.ok};background:var(--okc)"></i></span><span class="ct">${b.n}</span></button>`).join('') || '<div class="empty">No signs.</div>'}
+      <p class="small muted" style="margin:10px 0 0"><span class="pill wrong">wrong</span> <span class="pill check">check</span> <span class="pill ok">no finding</span></p></div>
+    <div class="card"><h3>What the checks found</h3>
+      <table><tbody>${topFlags.map(x => `<tr class="pick" data-flag="${x.k.id}"><td><span class="pill ${x.k.sev === 'info' ? 'acc' : x.k.sev}">${x.k.sev === 'info' ? 'report' : x.k.sev}</span></td><td>${esc(x.k.name)}</td><td class="mono" style="text-align:right">${x.n}</td></tr>`).join('') || '<tr><td class="muted">No findings.</td></tr>'}</tbody></table>
+      ${RES.gaps.length ? `<p class="small muted" style="margin-top:10px">Missing numbers: <span class="mono">${RES.gaps.slice(0, 40).map(g => 'S' + String(g).padStart(4, '0')).join(', ')}${RES.gaps.length > 40 ? ' …' : ''}</span></p>` : ''}
+    </div>
+  </div>
+  <div class="card"><h3>Next</h3><p style="margin:0">Open <b>Map</b> to see each finding in place, or <b>Signs</b> to mark every sign Keep, Fix or Remove. <b>Export</b> copies your decisions so they can go back to the engine. Findings are read from the drawing only; no sign was added, moved or classed.</p></div>`;
+}
+
+/* ================= signs table ================= */
+let SORT = { k: 'id', dir: 1 }, TF = { q: '', code: '', dec: '', flag: '' };
+function decOf(s) { return (DEC[s.key] && DEC[s.key].d) || ''; }
+function renderSigns() {
+  const el = $('#v-signs'); const codes = [...new Set(RES.signs.map(s => s.code))].sort();
+  let rows = RES.signs.filter(s => FILTERS.sev.has(s.sev) && (!TF.code || s.code === TF.code) && (!TF.flag || s.flags.some(f => f.id === TF.flag)) && (!TF.dec || (TF.dec === 'none' ? !decOf(s) : decOf(s) === TF.dec)) &&
+    (!TF.q || (s.id + ' ' + s.code + ' ' + s.name + ' ' + s.link + ' ' + s.node + ' ' + s.blocks.join(' ')).toLowerCase().includes(TF.q.toLowerCase())));
+  const key = { id: s => parseInt(s.id.slice(1)) || 0, code: s => s.code, sev: s => -SEVRANK[s.sev], link: s => s.link, off: s => s.off ?? 1e9 }[SORT.k] || (s => s.id);
+  rows.sort((a, b) => { const x = key(a), y = key(b); return (x > y ? 1 : x < y ? -1 : 0) * SORT.dir; });
+  const th = (k, t) => `<th class="s" data-sort="${k}">${t}${SORT.k === k ? (SORT.dir > 0 ? ' ▲' : ' ▼') : ''}</th>`;
+  el.innerHTML = `<div class="fbar">
+    <input type="search" id="tq" placeholder="Search ID, code, link, block" value="${esc(TF.q)}" size="26" aria-label="Search signs">
+    <select id="tcode" aria-label="Filter by code"><option value="">All codes</option>${codes.map(c => `<option ${TF.code === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select>
+    <select id="tdec" aria-label="Filter by decision"><option value="">Any decision</option><option value="none" ${TF.dec === 'none' ? 'selected' : ''}>Not reviewed</option><option value="keep" ${TF.dec === 'keep' ? 'selected' : ''}>Keep</option><option value="fix" ${TF.dec === 'fix' ? 'selected' : ''}>Fix</option><option value="remove" ${TF.dec === 'remove' ? 'selected' : ''}>Remove</option></select>
+    ${['wrong', 'check', 'ok'].map(k => `<button class="fchip" data-sev="${k}" aria-pressed="${FILTERS.sev.has(k)}"><span class="pill ${k}">${k === 'ok' ? 'no finding' : k}</span></button>`).join('')}
+    ${TF.flag ? `<button class="fchip" data-clearflag="1" aria-pressed="true">Finding: ${esc((CHECKS.find(k => k.id === TF.flag) || {}).name)} ✕</button>` : ''}
+    <span class="muted small">${rows.length} of ${RES.signs.length}</span></div>
+  <div class="card scroll" style="padding:0"><table><thead><tr>${th('id', 'ID')}${th('code', 'Code')}<th>Name</th>${th('link', 'Link')}<th>Junction</th>${th('off', 'Offset m')}<th>Side</th><th>Blocks as drawn</th><th>Suggested block</th>${th('sev', 'Check')}<th>Decision</th><th>Note</th></tr></thead>
+  <tbody>${rows.map(s => { const d = DEC[s.key] || {}; return `<tr class="pick ${SEL === s.key ? 'sel' : ''}" data-key="${esc(s.key)}">
+    <td class="mono">${esc(s.id)}</td><td class="mono">${esc(s.code)}</td><td>${esc(s.name)}</td><td class="mono">${esc(s.link)}</td><td class="mono">${esc(s.node)}</td><td class="mono">${s.off == null ? '' : f1(s.off)}</td><td>${esc(s.side)}</td>
+    <td class="mono small">${esc(s.uniq.join(', '))}${s.n > 1 ? ' · ' + s.n + ' signs at this point' : ''}</td><td class="small">${esc(s.sugg)}</td>
+    <td>${s.flags.length ? s.flags.map(f => `<div class="small"><span class="pill ${f.sev}">${f.sev}</span> ${esc(f.txt)}</div>`).join('') : '<span class="pill ok">no finding</span>'}</td>
+    <td><select data-dec="${esc(s.key)}" aria-label="Decision for ${esc(s.id)}"><option value="">—</option>${['keep', 'fix', 'remove'].map(o => `<option value="${o}" ${d.d === o ? 'selected' : ''}>${o}</option>`).join('')}</select></td>
+    <td><input type="text" data-note="${esc(s.key)}" value="${esc(d.note || '')}" size="18" aria-label="Note for ${esc(s.id)}"></td></tr>`; }).join('')}</tbody></table>
+  ${rows.length ? '' : '<div class="empty">No signs match these filters.</div>'}</div>`;
+}
+function setDec(key, patch) { DEC[key] = { ...(DEC[key] || {}), ...patch }; store.set(decKey, DEC); renderOverview(); }
+
+/* ================= catalogue ================= */
+let CF = { q: '', mode: 'linked', more: 250 };
+function catalogueRows() {
+  const used = {}; RES.signs.forEach(s => used[s.code] = (used[s.code] || 0) + 1);
+  const cat = {}; DATA.cat.forEach(c => { cat[c[0]] = c; }); const linked = new Set(DATA.mlinks.map(r => r[1]).filter(Boolean));
+  const out = DATA.mlinks.map(r => ({ id: r[0], m: r[1], name: (cat[r[1]] || [])[1] || '', cl: (cat[r[1]] || [])[3] || '', when: r[2], eg: r[3], shc: r[4], blk: r[5], match: r[6], ap: r[7], by: r[8], used: used[r[1]] || 0, fam: (cat[r[1]] || [])[2] || '' }));
+  DATA.cat.forEach(c => { if (!linked.has(c[0])) out.push({ id: '', m: c[0], name: c[1], cl: c[3], when: '', eg: '', shc: '', blk: '', match: '', ap: '', by: '', used: used[c[0]] || 0, fam: c[2] }); });
+  return out;
+}
+function renderCat() {
+  const el = $('#v-cat'), all = catalogueRows();
+  let rows = all.filter(r => (CF.mode === 'all' || (CF.mode === 'linked' && r.id) || (CF.mode === 'used' && r.used) || (CF.mode === 'egy' && r.id && !r.m)) &&
+    (!CF.q || (r.id + r.m + r.name + r.eg + r.blk + r.fam).toLowerCase().includes(CF.q.toLowerCase())));
+  const shown = rows.slice(0, CF.more);
+  el.innerHTML = `<div class="notice">Each name and clause comes from that code's own catalogue. A link is <b>approved</b> only by a T&amp;I engineer. Egyptian numbers come from T&amp;I block names and are not yet checked against the printed code. Egyptian names and SHC are empty until their sources are read. No sign is matched by look-alike.</div>
+  <div class="fbar"><input type="search" id="cq" placeholder="Search code, name, block" value="${esc(CF.q)}" size="26" aria-label="Search catalogue">
+    <div class="seg" id="cmode">${[['linked', 'Linked'], ['used', 'In this drawing'], ['egy', 'Egyptian only'], ['all', 'All MUTCD']].map(([k, t]) => `<button data-m="${k}" aria-pressed="${CF.mode === k}">${t}</button>`).join('')}</div>
+    <span class="muted small">${rows.length} rows</span></div>
+  <div class="card scroll" style="padding:0"><table><thead><tr><th>Master ID</th><th>MUTCD</th><th>MUTCD name</th><th>Clause</th><th>Condition</th><th>Egyptian code</th><th>Egyptian name</th><th>SHC</th><th>T&amp;I block</th><th>Match</th><th>Approved</th><th>In drawing</th></tr></thead>
+  <tbody>${shown.map(r => `<tr><td class="mono">${esc(r.id)}</td><td class="mono">${esc(r.m)}</td><td>${esc(r.name)}</td><td class="mono">${esc(r.cl)}</td><td class="small">${esc(r.when)}</td><td class="mono">${esc(r.eg)}</td><td class="muted">${r.eg ? '—' : ''}</td><td class="muted">${r.id ? '—' : ''}</td><td class="mono small">${esc(r.blk)}</td>
+    <td>${r.match ? `<span class="pill ${r.match === 'same' ? 'acc' : r.match === 'check' ? 'check' : 'ok'}">${esc(r.match)}</span>` : ''}</td><td>${r.ap === 'yes' ? '<span class="pill acc">yes</span>' : r.id ? '<span class="pill ok">no</span>' : ''}</td><td class="mono">${r.used || ''}</td></tr>`).join('')}</tbody></table>
+  ${rows.length > shown.length ? `<div style="padding:12px"><button id="cmore">Show ${Math.min(250, rows.length - shown.length)} more</button></div>` : ''}</div>`;
+}
+
+/* ================= setup ================= */
+function renderSetup() {
+  const el = $('#v-setup'); let layers = '';
+  if (UPLOAD) {
+    layers = `<div class="card scroll"><h3>Layers in ${esc(UPLOAD.file)}</h3><table><thead><tr><th>Layer</th><th>Entities</th><th>Role</th></tr></thead><tbody>${Object.entries(UPLOAD.layers).map(([n, l]) =>
+      `<tr><td class="mono">${esc(n)}</td><td class="mono small">${esc(Object.entries(l.types).map(([t, c]) => t + ' ' + c).join(', '))}</td><td><select data-role="${esc(n)}" aria-label="Role of ${esc(n)}">${[['ignore', 'Ignore'], ['signs', 'Sign blocks'], ['labels', 'Sign labels'], ['cl', 'Centreline'], ['kerb', 'Carriageway edge'], ['park', 'Parking'], ['bld', 'Buildings']].map(([v, t]) => `<option value="${v}" ${l.role === v ? 'selected' : ''}>${t}</option>`).join('')}</select></td></tr>`).join('')}</tbody></table></div>`;
+  } else layers = `<div class="card"><h3>Layers</h3><p class="muted" style="margin:0">The Wyte demo uses fixed roles: signs on <span class="mono">TI-Signs</span>, labels on <span class="mono">TI-Text</span>, centrelines <span class="mono">TI - CL</span>, kerbs <span class="mono">TI - CW</span>, parking <span class="mono">TI - Parking</span>, buildings <span class="mono">TI - BM</span>. Load a DXF to set your own.</p></div>`;
+  el.innerHTML = layers + `<div class="grid2"><div class="card"><h3>Parameters</h3><div class="form">
+    <label>Label pattern (regex: code, then ID)<input type="text" id="pLabel" value="${esc(P.labelRx)}" size="34"></label>
+    <label>Label search radius (m)<input type="text" id="pRad" value="${P.labelR}" size="6"></label>
+    <label>Traffic side<span><b>right</b> (Egypt)</span></label>
+    <label>Side test applies to<span class="mono">${SIDE_CODES.join(', ')}</span></label></div>
+    <p style="margin:12px 0 0"><button class="primary" id="btnApply">Apply and run checks</button></p></div>
+    <div class="card scroll"><h3>Approved T&amp;I block map (${DATA.bmap.length} rows)</h3><table><thead><tr><th>MUTCD</th><th>Condition</th><th>T&amp;I block</th></tr></thead><tbody>${DATA.bmap.map(r => `<tr><td class="mono">${esc(r[0])}</td><td class="small">${esc(r[1])}</td><td class="mono">${esc(r[2])}</td></tr>`).join('')}</tbody></table></div></div>`;
+}
+
+/* ================= export ================= */
+const csvCell = v => { v = String(v ?? ''); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+const toCsv = rows => rows.map(r => r.map(csvCell).join(',')).join('\n');
+function signCsv() { return toCsv([['ID', 'Code', 'Name', 'E', 'N', 'Link', 'Junction', 'Offset_m', 'Side', 'Blocks_as_drawn', 'Inserts', 'Suggested_block', 'Check', 'Decision', 'Note'],
+  ...RES.signs.map(s => [s.id, s.code, s.name, f1(s.x), f1(s.y), s.link, s.node, s.off == null ? '' : f1(s.off), s.side, s.uniq.join('; '), s.n, s.sugg, s.flags.map(f => f.txt).join('; ') || 'OK', (DEC[s.key] || {}).d || '', (DEC[s.key] || {}).note || ''])]); }
+function decCsv() { return toCsv([['ID', 'Code', 'Decision', 'Note'], ...RES.signs.filter(s => DEC[s.key] && (DEC[s.key].d || DEC[s.key].note)).map(s => [s.id, s.code, DEC[s.key].d || '', DEC[s.key].note || ''])]); }
+function flagCsv() { return toCsv([['ID', 'Code', 'Severity', 'Finding'], ...RES.signs.flatMap(s => s.flags.map(f => [s.id, s.code, f.sev, f.txt])), ...RES.gaps.map(g => ['S' + String(g).padStart(4, '0'), '', 'report', 'Number missing from the sequence'])]); }
+function renderExport() {
+  $('#v-export').innerHTML = `<div class="card"><h3>Copy for review</h3><p class="muted" style="margin-top:0">Downloads are not available on this page, so each button copies text you can paste into Excel or a message. Nothing leaves this page.</p>
+  <div class="hbar"><button class="primary" data-copy="sign">Copy sign list</button><button data-copy="flag">Copy findings</button><button data-copy="dec">Copy my decisions</button><span class="small muted" id="copyMsg" role="status"></span></div>
+  <p class="small muted">Decisions are saved in this browser only. Copy them to keep or share them.</p><textarea class="out" id="copyOut" readonly aria-label="Text to copy" placeholder="The copied text appears here."></textarea></div>
+  <div class="card"><h3>Run summary</h3><div class="eq" id="sumTxt">${esc(summaryTxt())}</div></div>`;
+}
+function summaryTxt() { const c = counts(); return `Alignment Review Desk - DRAFT\nFile: ${$('#fileChip').textContent}\nSigns: ${c.n}   Wrong: ${c.wrong}   To check: ${c.check}   No finding: ${c.ok}   Missing numbers: ${RES.gaps.length}\nRulebook ${DATA.rb.code}: status ${DATA.rb.status} (not signed off)\nChecks run: ${CHECKS.filter(k => k.id !== 'gaps').map(k => k.id).join(', ')}, gaps`; }
+
+/* ================= map ================= */
+const cv = $('#cv'), ctx = cv.getContext('2d');
+let W = 0, H = 0, DPR = 1;
+function sizeCanvas() { const r = cv.getBoundingClientRect(); DPR = window.devicePixelRatio || 1; W = r.width; H = r.height; cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR); }
+const wx = x => (x - VIEW.cx) * VIEW.k + W / 2, wy = y => -(y - VIEW.cy) * VIEW.k + H / 2, ix = x => (x - W / 2) / VIEW.k + VIEW.cx, iy = y => -(y - H / 2) / VIEW.k + VIEW.cy;
+function bounds() {
+  const b = { x0: 1e18, y0: 1e18, x1: -1e18, y1: -1e18 }, add = (x, y) => { b.x0 = Math.min(b.x0, x); b.x1 = Math.max(b.x1, x); b.y0 = Math.min(b.y0, y); b.y1 = Math.max(b.y1, y); };
+  RAW.net.links.forEach(l => l.p.forEach(p => add(p[0], p[1]))); (RAW.kerb || []).forEach(l => l.forEach(p => add(p[0], p[1]))); RES.signs.forEach(s => add(s.x, s.y));
+  if (b.x0 > b.x1) { b.x0 = 0; b.x1 = 100; b.y0 = 0; b.y1 = 100; } return b;
+}
+let NEEDFIT = false;
+function fit() { if (!RAW) return; const b = bounds(); sizeCanvas(); if (W < 50 || H < 50) { NEEDFIT = true; return; } const k = Math.min((W - 60) / Math.max(1, b.x1 - b.x0), (H - 60) / Math.max(1, b.y1 - b.y0)); VIEW = { cx: (b.x0 + b.x1) / 2, cy: (b.y0 + b.y1) / 2, k: isFinite(k) ? k : 1 }; draw(); }
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const PAL = ['--pal0', '--pal1', '--pal2', '--pal3', '--pal4', '--pal5', '--pal6', '--pal7'];
+function signColor(s) {
+  if (COLOR === 'status') return s.sev === 'wrong' ? css('--wrong') : s.sev === 'check' ? css('--check') : css('--okc');
+  if (COLOR === 'family') return /^R/.test(s.code) ? css('--pal0') : /^W/.test(s.code) ? css('--pal3') : css('--pal1');
+  const codes = [...new Set(RES.signs.map(x => x.code))].sort(); return css(PAL[codes.indexOf(s.code) % PAL.length]);
+}
+function marker(x, y, r, s) {
+  ctx.beginPath();
+  if (s.code === 'R1-1') { for (let i = 0; i < 8; i++) { const a = Math.PI / 8 + i * Math.PI / 4; ctx.lineTo(x + r * 1.1 * Math.cos(a), y + r * 1.1 * Math.sin(a)); } ctx.closePath(); }
+  else if (s.code === 'R1-2') { ctx.moveTo(x - r * 1.15, y - r * .8); ctx.lineTo(x + r * 1.15, y - r * .8); ctx.lineTo(x, y + r * 1.1); ctx.closePath(); }
+  else if (/^W/.test(s.code)) { ctx.moveTo(x, y - r * 1.25); ctx.lineTo(x + r * 1.25, y); ctx.lineTo(x, y + r * 1.25); ctx.lineTo(x - r * 1.25, y); ctx.closePath(); }
+  else if (/^R/.test(s.code)) ctx.arc(x, y, r, 0, 7);
+  else ctx.rect(x - r, y - r, 2 * r, 2 * r);
+}
+function visible(s) { return FILTERS.sev.has(s.sev) && (!FILTERS.codes.size || FILTERS.codes.has(s.code)); }
+function draw() {
+  if (!RAW || !RES || $('#v-map').hidden) return;
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0); ctx.fillStyle = css('--map-bg'); ctx.fillRect(0, 0, W, H);
+  const line = (pts, closed) => { ctx.beginPath(); pts.forEach((p, i) => i ? ctx.lineTo(wx(p[0]), wy(p[1])) : ctx.moveTo(wx(p[0]), wy(p[1]))); if (closed) ctx.closePath(); ctx.stroke(); };
+  ctx.lineJoin = 'round';
+  if (LV.park && RAW.park) { ctx.strokeStyle = css('--map-park'); ctx.lineWidth = 1; RAW.park.forEach(p => line(p)); }
+  if (LV.kerb && RAW.kerb) { ctx.strokeStyle = css('--map-kerb'); ctx.lineWidth = 1.2; RAW.kerb.forEach(p => line(p)); }
+  if (LV.cl) { ctx.strokeStyle = css('--map-cl'); ctx.lineWidth = 1.4; ctx.setLineDash([8, 5]); RAW.net.links.forEach(l => line(l.p)); ctx.setLineDash([]); }
+  if (LV.bld && RAW.bld) { ctx.strokeStyle = css('--map-bld'); ctx.lineWidth = 2; RAW.bld.forEach(p => { ctx.strokeRect(wx(p[0]) - 7, wy(p[1]) - 7, 14, 14); }); }
+  if (LV.nodes) {
+    ctx.font = '11px ui-monospace,Menlo,monospace'; ctx.textBaseline = 'middle';
+    RAW.net.links.forEach(l => { if (VIEW.k < 1.6) return; const m = midPoint(l.p); ctx.fillStyle = css('--muted'); ctx.fillText(l.n, wx(m[0]) + 4, wy(m[1]) - 8); });
+    Object.values(RAW.net.nodes).forEach(n => { ctx.beginPath(); ctx.arc(wx(n.x), wy(n.y), n.d >= 3 ? 4 : 3, 0, 7); ctx.fillStyle = css('--map-node'); ctx.fill(); ctx.fillStyle = css('--ink'); ctx.fillText(n.l, wx(n.x) + 6, wy(n.y) + 10); });
+  }
+  if (LV.signs) {
+    ctx.font = '11px ui-monospace,Menlo,monospace';
+    for (const s of RES.signs) {
+      if (!visible(s)) continue; const x = wx(s.x), y = wy(s.y), r = s.key === SEL ? 9 : 7, col = signColor(s);
+      if (s.n > 1) { ctx.beginPath(); ctx.arc(x, y, r + 6, 0, 7); ctx.setLineDash([3, 3]); ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.stroke(); ctx.setLineDash([]); }
+      marker(x, y, r, s); ctx.fillStyle = col; ctx.globalAlpha = s.sev === 'ok' ? .85 : 1; ctx.fill(); ctx.globalAlpha = 1; ctx.strokeStyle = css('--map-bg'); ctx.lineWidth = 1.5; ctx.stroke();
+      if (s.key === SEL || s.key === HOVER) { marker(x, y, r + 4, s); ctx.strokeStyle = css('--ink'); ctx.lineWidth = 2; ctx.stroke(); }
+      if (LV.lbl && (VIEW.k > 2.4 || s.key === SEL)) { ctx.fillStyle = css('--ink'); ctx.fillText(s.code + ' ' + s.id, x + r + 8, y); }
+    }
+  }
+  if (MEASURE) { ctx.strokeStyle = css('--ink'); ctx.lineWidth = 1.5; ctx.setLineDash([4, 3]); line(MEASURE.pts.concat(MEASURE.cur ? [MEASURE.cur] : [])); ctx.setLineDash([]); }
+  legend();
+}
+function midPoint(p) { let L = 0; for (let i = 1; i < p.length; i++) L += hyp(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]); let t = L / 2; for (let i = 1; i < p.length; i++) { const d = hyp(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]); if (t <= d) { const u = t / (d || 1); return [p[i - 1][0] + (p[i][0] - p[i - 1][0]) * u, p[i - 1][1] + (p[i][1] - p[i - 1][1]) * u]; } t -= d; } return p[0]; }
+function legend() {
+  let h = '';
+  if (COLOR === 'status') h = `<div><i style="background:var(--wrong)"></i>Wrong</div><div><i style="background:var(--check)"></i>To check</div><div><i style="background:var(--okc)"></i>No finding</div>`;
+  else if (COLOR === 'family') h = `<div><i style="background:var(--pal0)"></i>R regulatory</div><div><i style="background:var(--pal3)"></i>W warning</div><div><i style="background:var(--pal1)"></i>Other</div>`;
+  else h = [...new Set(RES.signs.map(x => x.code))].sort().map((c, i) => `<div><i style="background:var(${PAL[i % PAL.length]})"></i>${esc(c)}</div>`).join('');
+  $('#legend').innerHTML = h + `<div class="muted">Dashed ring = several signs at one point</div>`;
+}
+function renderMapFilters() {
+  const codes = [...new Set(RES.signs.map(s => s.code))].sort();
+  $('#fbMap').innerHTML = `<span class="muted small">Show</span>${['wrong', 'check', 'ok'].map(k => `<button class="fchip" data-sev="${k}" aria-pressed="${FILTERS.sev.has(k)}"><span class="pill ${k}">${k === 'ok' ? 'no finding' : k}</span></button>`).join('')}
+   <span class="muted small" style="margin-left:6px">Codes</span>${codes.map(c => `<button class="fchip" data-code="${esc(c)}" aria-pressed="${!FILTERS.codes.size || FILTERS.codes.has(c)}">${esc(c)}</button>`).join('')}${FILTERS.codes.size ? '<button class="fchip" data-code="*">All codes</button>' : ''}`;
+}
+function renderSel() {
+  const el = $('#selCard'), s = RES && RES.signs.find(x => x.key === SEL); if (!s) { el.hidden = true; return; } el.hidden = false;
+  const link = DATA.mlinks.filter(r => r[1] === s.code), d = DEC[s.key] || {};
+  el.innerHTML = `<div class="hbar" style="justify-content:space-between"><div class="t">${esc(s.code)} · ${esc(s.id)} <span class="pill ${s.sev}" style="vertical-align:middle">${s.sev === 'ok' ? 'no finding' : s.sev}</span></div>
+    <div class="dec" role="group" aria-label="Decision">${['keep', 'fix', 'remove'].map(o => `<button class="${o}" data-d="${o}" aria-pressed="${d.d === o}">${o}</button>`).join('')}</div></div>
+  <p style="margin:6px 0">${esc(s.name)}${s.clause ? ' · MUTCD ' + esc(s.clause) : ''}</p>
+  <div class="grid2"><div><h3>Position</h3><div class="mono">E ${f1(s.x)} · N ${f1(s.y)}</div><div class="small muted">Link ${esc(s.link)} · junction ${esc(s.node)} · ${s.off == null ? '' : f1(s.off) + ' m from centreline'}${s.side !== 'n/a' ? ' · ' + esc(s.side) + ' of approaching traffic' : ''}</div>
+    <h3 style="margin-top:12px">Blocks as drawn</h3><div class="mono small">${esc(s.blocks.join(', '))}</div><div class="small muted">Suggested: ${esc(s.sugg)}</div></div>
+   <div><h3>Findings</h3>${s.flags.length ? s.flags.map(f => `<div style="margin-bottom:4px"><span class="pill ${f.sev}">${f.sev}</span> ${esc(f.txt)}</div>`).join('') : '<div class="muted">No finding.</div>'}
+    <h3 style="margin-top:12px">Catalogue links</h3>${link.length ? link.map(r => `<div class="small"><span class="mono">${esc(r[0])}</span> · Egyptian ${esc(r[3]) || '—'} · block ${esc(r[5])} · <span class="pill ${r[6] === 'same' ? 'acc' : 'check'}">${esc(r[6])}</span> ${r[7] === 'yes' ? 'approved' : 'not approved'}</div>`).join('') : '<div class="small muted">No cross-code link yet.</div>'}</div></div>
+   ${(() => { const o = RES.signs.filter(q => q.key !== s.key && q.x === s.x && q.y === s.y); return o.length ? `<p class="small" style="margin:10px 0 0">Also at this point: ${o.map(q => `<button class="fchip" data-pick="${esc(q.key)}">${esc(q.code)} ${esc(q.id)}</button>`).join(' ')}</p>` : ''; })()}
+  <p style="margin:10px 0 0"><input type="text" id="selNote" value="${esc(d.note || '')}" placeholder="Note for this sign" size="50" aria-label="Note for this sign"></p>`;
+}
+function select(key, center) {
+  SEL = key; const s = RES.signs.find(x => x.key === key); if (s && center) { VIEW.cx = s.x; VIEW.cy = s.y; VIEW.k = Math.max(VIEW.k, 4); }
+  renderSel(); draw(); if (!$('#v-signs').hidden) renderSigns();
+}
+function hit(mx, my) { let best = null, bd = 14; for (const s of RES.signs) { if (!visible(s)) continue; const d = hyp(wx(s.x) - mx, wy(s.y) - my); if (d < bd) { bd = d; best = s; } } return best; }
+/* pointer handling */
+let drag = null;
+cv.addEventListener('pointerdown', e => { cv.setPointerCapture(e.pointerId); const r = cv.getBoundingClientRect(); drag = { x: e.clientX, y: e.clientY, cx: VIEW.cx, cy: VIEW.cy, moved: false, rx: e.clientX - r.left, ry: e.clientY - r.top }; cv.classList.add('drag'); });
+cv.addEventListener('pointermove', e => {
+  const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+  $('#coord').textContent = `E ${f1(ix(mx))}  N ${f1(iy(my))}`;
+  if (drag) { const dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 4) drag.moved = true; if (drag.moved) { VIEW.cx = drag.cx - dx / VIEW.k; VIEW.cy = drag.cy + dy / VIEW.k; draw(); } return; }
+  if (MEASURING && MEASURE) { MEASURE.cur = [ix(mx), iy(my)]; draw(); }
+  const h = RES && hit(mx, my), tip = $('#tip');
+  if (h) { HOVER = h.key; tip.style.display = 'block'; tip.style.left = Math.min(mx + 14, W - 200) + 'px'; tip.style.top = (my + 14) + 'px'; tip.textContent = `${h.code} ${h.id} · ${h.name}${h.flags.length ? ' · ' + h.flags.length + ' finding(s)' : ''}`; } else { HOVER = null; tip.style.display = 'none'; }
+  draw();
+});
+cv.addEventListener('pointerup', e => {
+  cv.classList.remove('drag'); if (!drag) return; const was = drag; drag = null; if (was.moved) return;
+  if (MEASURING) { const x = ix(was.rx), y = iy(was.ry); MEASURE = MEASURE || { pts: [] }; MEASURE.pts.push([x, y]); if (MEASURE.pts.length === 2) { $('#measureOut').textContent = 'Distance ' + f1(hyp(MEASURE.pts[1][0] - MEASURE.pts[0][0], MEASURE.pts[1][1] - MEASURE.pts[0][1])) + ' m'; MEASURING = false; $('#btnMeasure').setAttribute('aria-pressed', 'false'); MEASURE.cur = null; } draw(); return; }
+  const h = hit(was.rx, was.ry); select(h ? h.key : null, false);
+});
+cv.addEventListener('pointerleave', () => { HOVER = null; $('#tip').style.display = 'none'; draw(); });
+cv.addEventListener('wheel', e => { e.preventDefault(); const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top, bx = ix(mx), by = iy(my), f = e.deltaY < 0 ? 1.25 : 0.8; VIEW.k *= f; VIEW.cx = bx - (mx - W / 2) / VIEW.k; VIEW.cy = by + (my - H / 2) / VIEW.k; draw(); }, { passive: false });
+function zoom(f) { VIEW.k *= f; draw(); }
+$('#zin').onclick = () => zoom(1.4); $('#zout').onclick = () => zoom(1 / 1.4); $('#zfit').onclick = fit;
+$('#btnFs').onclick = () => { const w = $('#mapwrap'); try { document.fullscreenElement ? document.exitFullscreen() : w.requestFullscreen(); } catch (e) { } };
+document.addEventListener('fullscreenchange', () => { sizeCanvas(); draw(); });
+window.addEventListener('resize', () => { sizeCanvas(); draw(); });
+$('#btnMeasure').onclick = e => { MEASURING = !MEASURING; MEASURE = null; $('#measureOut').textContent = MEASURING ? 'Click two points' : ''; e.currentTarget.setAttribute('aria-pressed', MEASURING); draw(); };
+$('#gotoForm').onsubmit = e => { e.preventDefault(); const m = $('#gotoIn').value.match(/(-?\d+(?:\.\d+)?)[\s,;]+(-?\d+(?:\.\d+)?)/); if (m) { VIEW.cx = +m[1]; VIEW.cy = +m[2]; VIEW.k = Math.max(VIEW.k, 4); draw(); } };
+$('#mapSearch').addEventListener('input', e => { const q = e.target.value.trim().toLowerCase(); if (!q) return; const s = RES.signs.find(x => x.id.toLowerCase() === q || x.id.toLowerCase().endsWith(q)); if (s) select(s.key, true); });
+$$('[data-lv]').forEach(c => c.addEventListener('change', () => { LV[c.dataset.lv] = c.checked ? 1 : 0; draw(); }));
+$('#segColor').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; COLOR = b.dataset.c; $$('#segColor button').forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); });
+new MutationObserver(() => draw()).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => draw());
+
+/* ================= methods ================= */
+function renderMethods() {
+  $('#v-method').innerHTML = `
+  <div class="card"><h2>What this page does</h2>
+    <p>It reads a signing drawing (a DXF with sign blocks on a sign layer and a text label beside each sign), lists every sign once, and checks each against the T&amp;I block map and the road network. It shows the findings on a map and in a table, lets you mark each sign Keep, Fix or Remove, and links each MUTCD code to its Egyptian and SHC equivalents in the master catalogue. It reads; it never edits the drawing and never designs a sign.</p>
+    <p class="muted small">Every output is <b>DRAFT</b> while the rulebook is not signed off by a T&amp;I engineer. Rulebook ${esc(DATA.rb.code)} is currently <b>${esc(DATA.rb.status)}</b>.</p></div>
+
+
+  <div class="card"><h2>What the engine does, in order</h2>
+    <p>The signing engine behind this page turns a road network into a draft signing and marking design. For each situation on the network that a traffic-control manual says needs a sign or marking, it works out which device is needed and exactly where it goes. In audit mode it makes the same design and compares it with an existing sign inventory.</p>
+    <ol style="padding-left:20px;margin:8px 0">
+      <li><b>Reads the network</b> from a DXF, GeoJSON or CSV. Centrelines (and kerb lines, if supplied) become links and nodes.</li>
+      <li><b>Asks for what is missing.</b> Road class, speed, lanes, one-way, urban or rural, and the control type at each junction are never assumed. The run stops with questions (exit 2) until you answer.</li>
+      <li><b>Detects triggers</b>, the situations that call for a device: stop, yield, signal and roundabout approaches, uncontrolled major roads, speed changes, lane drops, divided-road changes, merges, curves, one-way streets, crosswalks, school zones, grade crossings and 34 hazard types, plus the base markings on every link. There are 56 triggers (22 general, 34 hazard).</li>
+      <li><b>Looks up the rule</b> for each trigger in the rulebook (MUTCD 11th Edition today). The rule gives the device, its class (Mandatory, Recommended, Optional or Conditional) and the clause behind it.</li>
+      <li><b>Places each device:</b> how far before the trigger, which side, how far from the kerb, at what height and facing which way. It then keeps the required spacing between posts and reports conflicts.</li>
+      <li><b>Records every device</b> with its code, clause, position, size, confidence and notes.</li>
+      <li><b>Writes the outputs when you ask:</b> the sign schedule, GeoJSON, a DXF in the T&amp;I drawing style, and a report.</li>
+    </ol>
+    <p class="small muted">The design logic (triggers and placement) is shared across codes. Adding the Egyptian or SHC code means adding its own rulebook files, not changing the engine, once their sources are available.</p></div>
+
+  <div class="card"><h2>What it deliberately is not</h2><ul>
+    <li><b>It does not compute sight distance.</b> STOP, YIELD and Signal Ahead stay Conditional until you confirm visibility.</li>
+    <li><b>It does not design guide signs or temporary traffic control.</b> Guide signs need a destinations list.</li>
+    <li><b>It does not place chevron and arrow pavement markings</b> (TI-614 to TI-619, L13-1 to L13-6). The rule is still to be given by T&amp;I.</li>
+    <li><b>It never fills a missing value silently.</b> It asks, and a question you skip is recorded as skipped.</li>
+    <li><b>It never mixes codes.</b> No MUTCD value is carried into an Egyptian or SHC rulebook, and no sign is matched by look-alike.</li>
+    <li><b>Its output is a draft.</b> Everything stays DRAFT until a T&amp;I engineer signs off the rulebook.</li></ul></div>
+
+  <div class="card"><h2>Workflow</h2>
+    <p>One run, from a new project to a signed-off drawing. Claude stops and asks whenever a value is missing; nothing is filled in silently, and no file is sent until you ask for it.</p>
+    <div class="flow"><svg viewBox="0 0 980 270" role="img" aria-label="Workflow: project set-up, re-read drawing, confirm layers, run engine with a questions loop, review signs, decide and fix, confirm catalogue links, deliver on request, engineer sign-off">
+      <defs><marker id="wa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker><marker id="wl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--check)"/></marker></defs>
+      <g>
+        <rect class="fb" x="10" y="20" width="175" height="62" rx="6"/><text class="fn" x="20" y="38">1</text><text class="ft" x="36" y="38">Set up project</text><text class="fs" x="20" y="56">folder + control workbook</text><text class="fs" x="20" y="71">(Settings, Junctions, Runs)</text>
+        <rect class="fb" x="205" y="20" width="175" height="62" rx="6"/><text class="fn" x="215" y="38">2</text><text class="ft" x="231" y="38">Re-read the drawing</text><text class="fs" x="215" y="56">layer counts vs the last run</text><text class="fs" x="215" y="71">changed? report it first</text>
+        <rect class="fb" x="400" y="20" width="175" height="62" rx="6"/><text class="fn" x="410" y="38">3</text><text class="ft" x="426" y="38">Confirm layers</text><text class="fs" x="410" y="56">centreline, kerb, buildings</text><text class="fs" x="410" y="71">you confirm; none assumed</text>
+        <rect class="fb" x="595" y="20" width="175" height="62" rx="6"/><text class="fn" x="605" y="38">4</text><text class="ft" x="621" y="38">Run the engine</text><text class="fs" x="605" y="56">settings.json + overrides.json</text><text class="fs" x="605" y="71">rulebook status: DRAFT</text>
+        <rect class="fb" x="790" y="20" width="175" height="62" rx="6"/><text class="fn" x="800" y="38">5</text><text class="ft" x="816" y="38">Design done (exit 0)</text><text class="fs" x="800" y="56">counts, Conditional items,</text><text class="fs" x="800" y="71">Low-confidence devices</text>
+        <rect class="fb q" x="595" y="104" width="175" height="44" rx="6"/><text class="ft" x="605" y="122">Ask you (exit 2)</text><text class="fs" x="605" y="138">list of eng-* questions</text>
+      </g>
+      <path class="fa" d="M185 51H205" marker-end="url(#wa)"/><path class="fa" d="M380 51H400" marker-end="url(#wa)"/><path class="fa" d="M575 51H595" marker-end="url(#wa)"/>
+      <path class="fa" d="M770 51H790" marker-end="url(#wa)"/><text class="fl" x="780" y="13" text-anchor="middle">exit 0</text>
+      <path class="fa l" d="M662 82V104" marker-end="url(#wl)"/><path class="fa l" d="M716 104V82" marker-end="url(#wl)"/>
+      <text class="fl" x="560" y="98" text-anchor="end">exit 2: missing data</text><text class="fl" x="726" y="98">answers → overrides</text>
+      <text class="fl" x="595" y="162">exit 3: input problem → ask you</text>
+      <path class="fa" d="M877 82V170H102V190" marker-end="url(#wa)"/>
+      <g>
+        <rect class="fb k" x="10" y="190" width="175" height="62" rx="6"/><text class="fn" x="20" y="208">6</text><text class="ft" x="36" y="208">Review the signs</text><text class="fs" x="20" y="226">this page: map + findings</text><text class="fs" x="20" y="241">wrong, to check, no finding</text>
+        <rect class="fb k" x="205" y="190" width="175" height="62" rx="6"/><text class="fn" x="215" y="208">7</text><text class="ft" x="231" y="208">Decide and fix</text><text class="fs" x="215" y="226">Keep / Fix / Remove + note</text><text class="fs" x="215" y="241">engineer edits, then re-run</text>
+        <rect class="fb k" x="400" y="190" width="175" height="62" rx="6"/><text class="fn" x="410" y="208">8</text><text class="ft" x="426" y="208">Confirm catalogue links</text><text class="fs" x="410" y="226">13 check rows, Egyptian names</text><text class="fs" x="410" y="241">approved by a T&amp;I engineer</text>
+        <rect class="fb" x="595" y="190" width="175" height="62" rx="6"/><text class="fn" x="605" y="208">9</text><text class="ft" x="621" y="208">Deliver when asked</text><text class="fs" x="605" y="226">schedule, GeoJSON, DXF, report</text><text class="fs" x="605" y="241">confirm once before sending</text>
+        <rect class="fb" x="790" y="190" width="175" height="62" rx="6"/><text class="fn" x="800" y="208">10</text><text class="ft" x="822" y="208">Sign-off</text><text class="fs" x="800" y="226">engineer signs the rulebook</text><text class="fs" x="800" y="241">DRAFT is removed, then handoff</text>
+      </g>
+      <path class="fa" d="M185 221H205" marker-end="url(#wa)"/><path class="fa" d="M380 221H400" marker-end="url(#wa)"/><path class="fa" d="M575 221H595" marker-end="url(#wa)"/><path class="fa" d="M770 221H790" marker-end="url(#wa)"/>
+      
+    </svg></div>
+    <p class="small muted">Green outline = work done on this page. Amber = a stop: the run waits for your answer. Steps 7 and 4 repeat until the review is clean.</p>
+    <ol style="padding-left:20px;margin:10px 0 0">
+      <li><span class="who">Claude</span>Create <span class="mono">Projects/&lt;CODE&gt;_&lt;Name&gt;/</span> with 00_Control, 01_Input, 02_Runs, 03_Outputs and the bilingual control workbook. Right-hand traffic is the default.</li>
+      <li><span class="who">Claude</span>Copy the drawing into 01_Input (never edit the original). Count entities by layer and compare with the last run. If anything changed, report it and do not reuse old junction numbers until you re-confirm them.</li>
+      <li><span class="who you">You</span>Confirm the centreline, kerb and building layers. Answer the questions: speed limit, road class, junction controls, dead-end type, sight restrictions, AADT, roundabout size.</li>
+      <li><span class="who">Claude</span>Write settings and overrides from your answers only, then run. Exit 2 lists the missing data (links shown node-to-node); answer and re-run. A question is skipped only when you say so, and the skip is recorded.</li>
+      <li><span class="who">Claude</span>Report counts by class, Conditional items (studies needed), Low-confidence devices, spacing moves and the DRAFT status.</li>
+      <li><span class="who you">You</span>Load the signing DXF on this page and work through the Map and Signs tabs. Start with the red findings.</li>
+      <li><span class="who you">You</span>Mark each sign Keep, Fix or Remove with a note, then copy the decisions (Export). Claude applies them as overrides or sign points, and the checks are re-run.</li>
+      <li><span class="who you">You</span>Approve cross-code links in the Catalogue. Egyptian and SHC names are read only from their own sources.</li>
+      <li><span class="who">Claude</span>Write the sign schedule, GeoJSON, DXF and report only when you ask, after one confirmation. Every file carries DRAFT in its name.</li>
+      <li><span class="who you">You</span>A T&amp;I engineer signs the rulebook off; until then everything stays DRAFT. Each chat ends with a handoff: decisions, current state, next steps.</li>
+    </ol>
+  </div>
+
+  <div class="grid2">
+  <div class="card"><h2>1. Reading the drawing</h2><ul>
+    <li>The DXF is read in your browser; nothing is uploaded. Lines, polylines (with arcs), arcs, block inserts and single-line text are used; other entities are ignored.</li>
+    <li>You assign a role to each layer (Setup): sign blocks, sign labels, centreline, carriageway edge, parking, buildings, or ignore.</li>
+    <li>A <b>sign</b> is one block insert matched to one label of the form <span class="mono">CODE Snnnn</span> (for example <span class="mono">R1-1 S0001</span>). Each position takes its nearest unused labels (within the label radius, default 6 m). Where several signs share a position, the labels are matched to the blocks whose code fits: the approved T&amp;I block, or the engine symbol for that code's shape.</li>
+    <li>Inserts left without a label are reported, not dropped. Signs at one position are different signs, not duplicates, unless they share a code.</li></ul></div>
+  <div class="card"><h2>2. Network and link names</h2><ul>
+    <li>Centreline ends within 1 m join into one node. A free end within 12 m of another centreline joins it as a T-junction, and that line is split there.</li>
+    <li>Links are named <b>node-to-node</b>, for example <span class="mono">N009-N010</span>. Two links between the same nodes get a <span class="mono">~</span> suffix.</li>
+    <li>The Wyte demo uses the engine's own node numbers. A drawing you load gets provisional numbers (<span class="mono">n01</span>, <span class="mono">n02</span>, north to south); the engine's N-numbers apply after an engine run.</li></ul></div></div>
+
+  <div class="card"><h2>3. The checks</h2><div class="scroll"><table><thead><tr><th>Check</th><th>Severity</th><th>Rule</th><th>Why it matters</th></tr></thead><tbody>
+    ${CHECKS.map(k => `<tr><td><b>${esc(k.name)}</b></td><td><span class="pill ${k.sev === 'info' ? 'acc' : k.sev}">${k.sev === 'info' ? 'report' : k.sev}</span></td><td>${esc(k.rule)}</td><td>${esc(k.why)}</td></tr>`).join('')}</tbody></table></div>
+    <p class="small muted">Wrong = the drawing contradicts the block map or the offset rule. To check = unusual, and may be intended. Kerb measurements come from the drawn kerb lines, simplified to 0.12 m, so a result within 0.1 m of a limit is a close call. A sign with no finding is not certified correct: the checks look for the problems listed above and nothing else.</p></div>
+
+  <div class="grid2">
+  <div class="card fig"><h2>4. Which side of the road</h2>
+    <p>For STOP and YIELD, the sign must be on the right of the traffic that approaches the junction (right-hand traffic, Egypt).</p>
+    <div class="eq">q  = nearest point on the nearest centreline
+J  = the nearer end node of that link (the junction)
+t  = J − q            (direction of travel toward J)
+c  = t.x·(sign.y − q.y) − t.y·(sign.x − q.x)
+side = right if c &lt; 0, left if c ≥ 0</div>
+    <svg viewBox="0 0 420 150" role="img" aria-label="Side test: the junction J lies ahead; a sign below the travel line is on the right, above is on the left">
+      <line x1="30" y1="75" x2="330" y2="75" stroke="currentColor" stroke-dasharray="7 5" opacity=".5"/>
+      <path d="M40 75 L320 75" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#ah)"/>
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker></defs>
+      <circle cx="350" cy="75" r="7" fill="var(--map-node)"/><text x="336" y="60">J</text><text x="44" y="68">q</text><text x="70" y="96" fill="currentColor" font-size="11">travel →</text>
+      <polygon points="150,112 166,112 158,126" fill="var(--okc)"/><text x="174" y="124">right (c &lt; 0): expected</text>
+      <polygon points="150,38 166,38 158,52" fill="var(--check)"/><text x="174" y="38">left (c ≥ 0): check</text></svg></div>
+  <div class="card"><h2>5. Catalogue and crosswalk</h2><ul>
+    <li>Each code keeps its own catalogue: MUTCD 11th Edition (${DATA.cat.length} signs, names from the printed tables), the Egyptian code (Code 104, Part 2) and SHC. A name or clause is shown only from its own code's source.</li>
+    <li>The <b>link table</b> says which signs are the same device. A link is <b>approved</b> only when a T&amp;I engineer has approved it; the ${DATA.mlinks.filter(r => r[7] === 'yes').length} approved links come from the T&amp;I block map ("for now"). No link is made by look-alike.</li>
+    <li>Egyptian numbers come from T&amp;I block names and stay unverified until read from the printed code. Egyptian names and SHC are empty until those sources are read.</li>
+    <li>Egyptian clauses use Egyptian numbering only; MUTCD numbers are never used in an Egyptian field, or the reverse.</li></ul></div></div>
+
+  <div class="grid2">
+  <div class="card"><h2>6. Limits</h2><ul>
+    <li>Checks cover only the problems listed in section 3. They do not compute sight distance, advisory speeds or sign spacing, and they do not judge whether a sign is required there.</li>
+    <li>Sign class (Mandatory, Recommended, Optional, Conditional) and clause come from an engine run, not from the drawing; this page does not add them.</li>
+    <li>Guide signs, temporary traffic control, and chevron and arrow placement (TI-614 to TI-619, L13-n) are not covered.</li>
+    <li>Bulged polylines and arcs are read; splines, hatches and nested blocks are not.</li>
+    <li>Right-hand traffic is assumed; the side test is meaningless for left-hand traffic.</li>
+    <li>On a drawing you load, the side test uses this page's simplified network, which can differ from the engine's (for Wyte: 17 links against 18, and one extra left-side finding). Treat the engine run as the reference.</li></ul></div>
+  <div class="card"><h2>7. Status and sources</h2><ul>
+    <li>Sign names: MUTCD 11th Edition tables, checked against the T&amp;I copy of the PDF (30 Sep 2026).</li>
+    <li>Block map: 28 approved rows, of which 13 are "check" matches T&amp;I still has to confirm.</li>
+    <li>Open: Egyptian PDF to read, SHC source, 54 unverified MUTCD rules, engineer sign-off.</li>
+    <li>Demo data: <span class="mono">Wyte_Signing_1.dxf</span> (signs, labels) on the network of <span class="mono">Wyte.dxf</span> (layers TI - CL, TI - CW, TI - Parking, TI - BM).</li>
+    <li>Your decisions are stored in this browser only. Use Export to copy them.</li></ul></div></div>`;
+}
+
+/* ================= wiring ================= */
+function renderAll() { renderOverview(); renderMapFilters(); renderSigns(); renderCat(); renderSetup(); renderExport(); renderMethods(); renderSel(); }
+document.addEventListener('click', e => {
+  const t = e.target;
+  let b = t.closest('.barrow[data-code]'); if (b) { FILTERS.codes = new Set([b.dataset.code]); renderMapFilters(); showTab('map'); draw(); return; }
+  b = t.closest('tr[data-flag]'); if (b) { TF = { q: '', code: '', dec: '', flag: b.dataset.flag === 'gaps' ? '' : b.dataset.flag }; FILTERS.sev = new Set(['wrong', 'check', 'ok']); renderSigns(); showTab('signs'); return; }
+  if (t.closest('[data-clearflag]')) { TF.flag = ''; renderSigns(); return; }
+  b = t.closest('#fbMap [data-sev], #v-signs [data-sev]'); if (b) { const k = b.dataset.sev; FILTERS.sev.has(k) ? FILTERS.sev.delete(k) : FILTERS.sev.add(k); if (!FILTERS.sev.size) FILTERS.sev = new Set([k]); renderMapFilters(); renderSigns(); draw(); return; }
+  b = t.closest('#fbMap [data-code]'); if (b) { const c = b.dataset.code; if (c === '*') FILTERS.codes = new Set(); else { FILTERS.codes.has(c) ? FILTERS.codes.delete(c) : FILTERS.codes.add(c); } renderMapFilters(); draw(); return; }
+  b = t.closest('#v-signs th[data-sort]'); if (b) { const k = b.dataset.sort; SORT = { k, dir: SORT.k === k ? -SORT.dir : 1 }; renderSigns(); return; }
+  b = t.closest('#v-signs tr[data-key]'); if (b && !t.closest('select,input')) { select(b.dataset.key, true); showTab('map'); return; }
+  b = t.closest('#selCard [data-d]'); if (b) { const s = RES.signs.find(x => x.key === SEL); const cur = (DEC[s.key] || {}).d; setDec(s.key, { d: cur === b.dataset.d ? '' : b.dataset.d }); renderSel(); renderSigns(); return; }
+  b = t.closest('[data-pick]'); if (b) { select(b.dataset.pick, true); return; }
+  b = t.closest('#cmode [data-m]'); if (b) { CF.mode = b.dataset.m; CF.more = 250; renderCat(); return; }
+  if (t.id === 'cmore') { CF.more += 250; renderCat(); return; }
+  if (t.id === 'btnApply') { P.labelRx = $('#pLabel').value || P.labelRx; P.labelR = parseFloat($('#pRad').value) || 6; try { new RegExp(P.labelRx); } catch (er) { P.labelRx = '^([A-Z]\\d+(?:-\\d+[A-Za-z]*)?)\\s+(S\\d+)$'; } if (UPLOAD) applyUpload(); run(); showTab('overview'); return; }
+  b = t.closest('[data-copy]'); if (b) { const txt = { sign: signCsv, flag: flagCsv, dec: decCsv }[b.dataset.copy](); const ta = $('#copyOut'); ta.value = txt; ta.select();
+    const done = ok => { $('#copyMsg').textContent = ok ? 'Copied.' : 'Select the text below and copy it.'; };
+    try { navigator.clipboard.writeText(txt).then(() => done(true), () => done(false)); } catch (er) { done(false); } return; }
+});
+document.addEventListener('input', e => {
+  const t = e.target;
+  if (t.id === 'tq') { TF.q = t.value; const p = t.selectionStart; renderSigns(); const n = $('#tq'); n.focus(); n.setSelectionRange(p, p); }
+  else if (t.id === 'cq') { CF.q = t.value; CF.more = 250; const p = t.selectionStart; renderCat(); const n = $('#cq'); n.focus(); n.setSelectionRange(p, p); }
+  else if (t.dataset && t.dataset.note) { setDec(t.dataset.note, { note: t.value }); }
+  else if (t.id === 'selNote') { setDec(SEL, { note: t.value }); }
+});
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.id === 'tcode') { TF.code = t.value; renderSigns(); } else if (t.id === 'tdec') { TF.dec = t.value; renderSigns(); }
+  else if (t.dataset && t.dataset.dec) { setDec(t.dataset.dec, { d: t.value }); if (SEL === t.dataset.dec) renderSel(); }
+  else if (t.dataset && t.dataset.role) { UPLOAD.layers[t.dataset.role].role = t.value; }
+});
+/* loading a DXF */
+$('#btnLoad').onclick = () => $('#file').click(); $('#btnDemo').onclick = loadDemo; $('#btnRun').onclick = () => { if (UPLOAD) applyUpload(); run(); };
+$('#file').addEventListener('change', e => {
+  const f = e.target.files[0]; if (!f) return; $('#notices').innerHTML = '<div class="notice">Reading ' + esc(f.name) + '…</div>';
+  const rd = new FileReader(); rd.onload = () => {
+    try {
+      const { ents, skipped } = parseDxf(rd.result), layers = {};
+      ents.forEach(en => { const l = layers[en.layer] = layers[en.layer] || { types: {}, role: 'ignore' }; l.types[en.type] = (l.types[en.type] || 0) + 1; });
+      Object.entries(layers).forEach(([n, l]) => l.role = guessRole(n, l));
+      UPLOAD = { file: f.name, ents, layers }; setFile(f.name); applyUpload(); run(); showTab('overview');
+      if (!ents.length) $('#notices').innerHTML = '<div class="notice err">No drawing entities were read from this file. Check that it is an ASCII DXF (not DWG or binary DXF).</div>';
+    } catch (er) { $('#notices').innerHTML = '<div class="notice err">This file could not be read: ' + esc(er.message) + '. Save it as an ASCII DXF and try again.</div>'; }
+  }; rd.readAsText(f); e.target.value = '';
+});
+function guessRole(n, l) {
+  const s = n.toLowerCase(), t = l.types;
+  if (/sign/.test(s) && t.INSERT) return 'signs'; if (/text|label|anno/.test(s) && t.TEXT) return 'labels'; if (/(^|[^a-z])cl([^a-z]|$)|centre|center/.test(s)) return 'cl';
+  if (/(^|[^a-z])cw([^a-z]|$)|kerb|curb|edge|carriageway/.test(s)) return 'kerb'; if (/park/.test(s)) return 'park'; if (/(^|[^a-z])bm([^a-z]|$)|build/.test(s)) return 'bld'; return 'ignore';
+}
+function applyUpload() {
+  const by = r => UPLOAD.ents.filter(e => UPLOAD.layers[e.layer].role === r), lines = r => by(r).filter(e => e.pts).map(e => e.pts);
+  const cl = lines('cl'), net = cl.length ? buildNetwork(cl) : { nodes: {}, links: [] };
+  RAW = { file: UPLOAD.file, ins: by('signs').filter(e => e.type === 'INSERT').map(e => [e.name, e.x, e.y, e.rot]), lab: by('labels').filter(e => e.type === 'TEXT').map(e => [e.text, e.x, e.y]),
+    net, kerb: lines('kerb'), park: lines('park'), cl, bld: by('bld').filter(e => e.type === 'INSERT').map(e => [e.x, e.y]), bmap: DATA.bmap, cat: DATA.cat, demo: false };
+}
+$('#logo').src = LOGO;
+$('#draft').innerHTML = `<b>DRAFT.</b> Rulebook ${esc(DATA.rb.code)} status: ${esc(DATA.rb.status)}. Findings are read from the drawing and are not signed off by a T&amp;I engineer.`;
+loadDemo(); showTab(location.hash.slice(1) || 'overview');
+</script>
+</body>
+</html>

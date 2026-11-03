@@ -1,0 +1,32 @@
+# Sign blocks from the T&I template used for MUTCD codes. Only rows with approved = yes are used; others draw the engine symbol.
+# when: empty = always; orient=left/right matches the device orientation; legend=<text> matches the legend.
+# match: same = same meaning and shape family; check = close equivalent, T&I to confirm.
+mutcd_code,when,block,block_meaning,match,approved
+R1-1,,TI-301,STOP (Egyptian sign 301),same,yes
+R1-2,,TI-302,Give way / YIELD (302),same,yes
+R2-1,legend=SPEED LIMIT 60 km/h,TI-342-60 km,Speed limit 60 km/h (342),same,yes
+R2-1,legend=SPEED LIMIT 100 km/h,TI-342-100 km,Speed limit 100 km/h (342),same,yes
+R3-1,,TI-346,No right turn (346),same,yes
+R3-2,,TI-347,No left turn (347),same,yes
+R3-4,,TI-348 L,No U-turn (348 L),same,yes
+R4-7,,TI-327,Keep right (327),same,yes
+R4-8,,TI-328,Keep left (328),same,yes
+W1-6,orient=right,TI-454,Large arrow right (454),same,yes
+W1-6,orient=left,TI-455,Large arrow left (455),same,yes
+W11-2,,PEDESTRIAN SIGN,Pedestrian crossing warning,same,yes
+W17-1,,speed hump,Speed hump warning,same,yes
+W6-3,,TI-416,Two-way traffic (416),same,yes
+W5-1,,TI-424,Road narrows both sides (424),same,yes
+W1-1,orient=right,TI-410 R,Sharp bend right (410 R),check,yes
+W1-2,orient=right,TI-411 R,Bend right (411 R),check,yes
+W1-2,orient=left,TI-411 L,Bend left (411 L),check,yes
+W1-3,orient=left,TI-412 L,Double bend first left (412 L),check,yes
+W1-4,,TI-413,Double bend (413),check,yes
+W1-5,,TI-414,Winding road (414),check,yes
+W2-1,,TI-401,Crossroad (401),check,yes
+W2-2,orient=right,TI-402,Side road right (402),check,yes
+W2-2,orient=left,TI-404,Side road left (404),check,yes
+W2-4,,TI-403,T-junction (403),check,yes
+W7-1,,TI-415,Steep descent (415),check,yes
+W1-8,orient=right,TI-456,Chevron board right (456),check,yes
+W1-8,orient=left,TI-457,Chevron board left (457),check,yes

@@ -1,0 +1,46 @@
+# T&I drawing style pack, taken from "ACAD-Signs & Markings Details EGY & KSA.dxf" (Claude Project "Signs").
+# The engine copies this file's layers, line types, text styles and dimension styles into every output DXF,
+# draws signs and markings on the T&I layers, inserts T&I sign blocks where block_map.csv has an approved row,
+# and places the T&I standard details beside the design.
+name: T&I signs and markings details (EGY & KSA)
+template: template.dxf
+layers:
+  sign: TI-Signs            # sign symbols and plaques
+  study: TI-Signs           # Conditional devices (drawn in colour 8, grey)
+  label: TI-Text            # code / id labels
+  marking: TI-MARKING       # pavement markings
+  details: TI-DETAILS       # imported standard details keep their own layers
+text_style: JEREC           # swisscl.ttf, the style used on TI-Text in the template
+text_style_arabic: XARB
+text_height: 2.0
+dimstyle: TI 1000
+# pavement marking line types: template line types first; T&I-named types added where the template has none
+marking_linetypes:
+  solid: Continuous
+  double_solid: Continuous
+  broken_10_30: TI-BRK 3-9          # added: 3 m line, 9 m gap (MUTCD 3A.06: 10 ft / 30 ft)
+  dotted_3_9: TI-DOT 0.9-2.7        # added: 0.9 m line, 2.7 m gap (MUTCD 3B.07-11)
+  high_visibility: PEDESTRIAN_0_5_0_5   # template: 0.5 m dash + 0.5 m gap
+  left_edge: TI-LE                  # template: Left Edge with L.E label (used for EL-SY)
+  triangles: Continuous
+  symbol: Continuous
+  study: DASHED
+added_linetypes:
+  "TI-BRK 3-9": {description: "Broken line 3 m / 9 m", pattern: [12.0, 3.0, -9.0]}
+  "TI-DOT 0.9-2.7": {description: "Dotted line 0.9 m / 2.7 m", pattern: [3.6, 0.9, -2.7]}
+details:
+  place: right              # standard details placed to the right of the design extents
+  gap_m: 100
+  skip_layers: ["TI-Veiw Ports"]
+fixation:                   # schedule columns, from the template's fixation details (drawn at 1:20)
+  post: "Galvanized steel post, Ø60.3 mm / 5 mm"
+  base: "Plain concrete base, 0.60 m wide x 0.90 m deep"
+  height_to_bottom_m: 2.10
+  details:
+    regulatory: MANDATORY SIGNS FIXATION DETAILS
+    warning: WARNING SIGNS FIXATION DETAILS
+    school: WARNING SIGNS FIXATION DETAILS
+    W1-8: SIGN 456 & 457 FIXATION DETAILS
+    W1-6: SIGN 456 & 457 FIXATION DETAILS
+    R15-1: SIGN (R15-3) FIXATION DETAILS
+    guide: CANTILEVER SIGN

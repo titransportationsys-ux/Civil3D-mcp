@@ -1,0 +1,5 @@
+# MUTCD 11th Ed. Section 2A.15 (height) and 2A.16 (lateral offset). Units feet. Verified from the MUTCD 11th Ed. PDF (2A.15-04/05/11, 2A.16-03/10, manual pp.58-59) on 30 Sep 2026.
+context,min_height_ft,height_clause,height_provision,lateral_offset_ft,offset_reference,offset_clause,offset_provision
+rural,5,2A.15-04,Standard,12,edge_of_traveled_way,2A.16-03,Guidance
+urban,7,2A.15-05,Standard,2,face_of_curb,T&I default 2 ft; code minimum 1 ft (2A.16-10),Option
+freeway,7,2A.15-11,Standard,12,edge_of_traveled_way,2A.16-03,Guidance

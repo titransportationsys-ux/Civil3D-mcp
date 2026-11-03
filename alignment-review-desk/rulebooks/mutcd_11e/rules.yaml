@@ -1,0 +1,889 @@
+# MUTCD 11th Edition rulebook: trigger -> devices.
+#
+# Each rule:
+#   id           unique id (MUTCD.<section>.<n>)
+#   trigger      code-neutral trigger id produced by engine/triggers.py
+#   device       sign code (devices.csv) or marking code (markings.csv)
+#   kind         sign | marking
+#   provision    Standard | Guidance | Option | Study   (-> Mandatory / Recommended / Optional / Conditional)
+#   when         optional expression over the trigger context `t` (see engine/triggers.py for fields)
+#   provision_if optional list of {when, provision} that override `provision` (first match wins)
+#   placement    kind + params, implemented in engine/placement.py
+#   clause       MUTCD section-paragraph reference
+#   study        what engineering study decides a Conditional device
+#   companions   plaques mounted on the same support
+#   verify       true while the value has not been checked against the printed manual
+#
+# Expressions: python syntax, names available: t (trigger context), mph(kmh), ft(m).
+# Speed conditions are metric (km/h). mph thresholds converted AASHTO-style: each 5 mph step = 10 km/h,
+# 30 mph = 50 km/h, 45 mph = 70 km/h. Advisory speeds are floored to 10 km/h. Tables 2C-3/2C-5 stay in US units.
+
+rules:
+
+# ---------------------------------------------------------------- intersections
+- id: MUTCD.2B.04.ALLWAY
+  trigger: INT-STOP-AWAY
+  device: R1-1
+  kind: sign
+  provision: Standard
+  companions: [R1-3P]
+  placement: {kind: at_stop_line, side: right}
+  clause: "2B.04-04 (R1-3P shall be mounted below each STOP sign); 2B.18-01"
+  verify: true
+
+- id: MUTCD.2B.18.STOP
+  trigger: INT-STOP-2WAY
+  device: R1-1
+  kind: sign
+  provision: Standard
+  placement: {kind: at_stop_line, side: right}
+  clause: "2B.18-01/02 (near side, right-hand side, as close as practicable)"
+  verify: true
+
+- id: MUTCD.2B.18.STOP-LEFT
+  trigger: [INT-STOP-2WAY, INT-STOP-AWAY]
+  device: R1-1
+  kind: sign
+  provision: Option
+  when: "t['lanes'] >= 2 or t['oneway']"
+  placement: {kind: at_stop_line, side: left}
+  clause: "2B.18-17 (additional STOP sign on left for 2+ approach lanes)"
+  verify: true
+
+- id: MUTCD.3B.19.STOPLINE
+  trigger: [INT-STOP-2WAY, INT-STOP-AWAY, INT-SIGNAL]
+  device: SL
+  kind: marking
+  provision: Guidance
+  placement: {kind: stop_line}
+  clause: "3B.19 (4-30 ft from edge of intersecting traveled way; 12-24 in wide)"
+  verify: true
+
+- id: MUTCD.2C.35.STOPAHEAD
+  trigger: [INT-STOP-2WAY, INT-STOP-AWAY]
+  device: W3-1
+  kind: sign
+  provision: Study
+  provision_if:
+    - {when: "t.get('sight_restricted') is True", provision: Standard}
+    - {when: "t.get('sight_restricted') is False", provision: Option}
+  study: "Is the STOP sign visible for sufficient distance (Table 2C-3, Condition B 0 mph)? If not, W3-1 is mandatory."
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: stop_line, side: right}
+  clause: "2C.35-01 (shall be installed where the primary device is not visible for a sufficient distance)"
+  verify: true
+
+- id: MUTCD.2B.10.YIELD
+  trigger: INT-YIELD
+  device: R1-2
+  kind: sign
+  provision: Standard
+  placement: {kind: at_stop_line, side: right}
+  clause: "2B.18-01/02"
+  verify: true
+
+- id: MUTCD.3B.19.YIELDLINE
+  trigger: [INT-YIELD, INT-ROUNDABOUT]
+  device: YL
+  kind: marking
+  provision: Option
+  placement: {kind: stop_line}
+  clause: "3B.19-08/10 (yield line only with a YIELD sign)"
+  verify: true
+
+- id: MUTCD.2C.35.YIELDAHEAD
+  trigger: INT-YIELD
+  device: W3-2
+  kind: sign
+  provision: Study
+  provision_if:
+    - {when: "t.get('sight_restricted') is True", provision: Standard}
+    - {when: "t.get('sight_restricted') is False", provision: Option}
+  study: "Is the YIELD sign visible for sufficient distance? If not, W3-2 is mandatory."
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: stop_line, side: right}
+  clause: "2C.35-01"
+  verify: true
+
+- id: MUTCD.2C.35.SIGNALAHEAD
+  trigger: INT-SIGNAL
+  device: W3-3
+  kind: sign
+  provision: Study
+  provision_if:
+    - {when: "t.get('sight_restricted') is True", provision: Standard}
+    - {when: "t.get('sight_restricted') is False", provision: Option}
+  study: "Are the signal faces visible for sufficient distance? If not, W3-3 is mandatory."
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: stop_line, side: right}
+  clause: "2C.35-01"
+  verify: true
+
+- id: MUTCD.3C.02.CROSSWALK-SIGNAL
+  trigger: INT-SIGNAL
+  device: CW
+  kind: marking
+  provision: Guidance
+  placement: {kind: crosswalk}
+  clause: "3C.02-01 (crosswalk markings should be installed at signalized locations)"
+  verify: true
+
+- id: MUTCD.2B.ROUNDABOUT.YIELD
+  trigger: INT-ROUNDABOUT
+  device: R1-2
+  kind: sign
+  provision: Standard
+  placement: {kind: at_stop_line, side: right}
+  clause: "2B.10-05 (YIELD shall be used at the entrance to a roundabout)"
+  verify: true
+
+- id: MUTCD.2C.ROUNDABOUT.W2-6
+  trigger: INT-ROUNDABOUT
+  device: W2-6
+  kind: sign
+  provision: Option
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: stop_line, side: right}
+  clause: "2C.41-02 (Circular Intersection sign may be installed)"
+  verify: true
+
+- id: MUTCD.2C.41.INTWARN
+  trigger: INT-UNCONTROLLED-MAJOR
+  device: "{t['warn_symbol']}"
+  kind: sign
+  provision: Option
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: node, side: right}
+  clause: "2C.41-01 (Cross Road / Side Road / T-Intersection signs may be used)"
+  verify: true
+
+# ---------------------------------------------------------------- horizontal alignment
+- id: MUTCD.2C.06.CURVE-SIGN
+  trigger: CURVE
+  device: "{t['curve_sign']}"
+  kind: sign
+  provision: Guidance
+  when: "t['diff_kmh'] >= 10 and not t['suppress_sign']"
+  provision_if:
+    - {when: "t['diff_kmh'] < 20", provision: Option}
+    - {when: "t['chart_a'] == 'Required'", provision: Standard}
+    - {when: "t['chart_a'] == 'Recommended'", provision: Guidance}
+    - {when: "t['chart_a'] == 'Optional'", provision: Option}
+  companions:
+    - device: W13-1P
+      provision: Option
+      provision_if:
+        - {when: "t['diff_kmh'] >= 30", provision: Standard}
+        - {when: "t['diff_kmh'] >= 20", provision: Guidance}
+      clause: "2C.59-03 (Standard) and Table 2C-6 (differential 5 mph / 10 km/h Optional, 10 mph / 20 km/h Recommended, 15 mph / 30 km/h or more Required). 2C.59-05 (Standard): not installed until the advisory speed is set by an engineering study. Verified from the MUTCD 11th Ed. PDF, manual p.196"
+  placement: {kind: advance, condition: B, advisory_mph: "t['advisory_mph']", from: curve_start, side: right}
+  clause: "2C.06, Table 2C-4 Chart A (need by roadway type and AADT) and Chart B (devices); sign choice 2C.07-02/03. Advisory plaque per Table 2C-6"
+  verify: true
+
+- id: MUTCD.2C.08.CHEVRONS
+  trigger: CURVE
+  device: W1-8
+  kind: sign
+  provision: Guidance
+  when: "t['diff_kmh'] >= 40"
+  provision_if:
+    - {when: "t['chart_a'] == 'Required'", provision: Standard}
+    - {when: "t['chart_a'] == 'Optional'", provision: Option}
+  placement: {kind: along_curve, side: outside}
+  clause: "2C.08, Table 2C-4 Chart B (20 mph / 40 km/h or more: chevrons), Table 2C-5 spacing"
+  verify: true
+
+- id: MUTCD.2C.06.DELINEATORS
+  trigger: CURVE
+  device: DELINEATOR
+  kind: sign
+  provision: Guidance
+  when: "30 <= t['diff_kmh'] < 40"
+  provision_if:
+    - {when: "t['chart_a'] == 'Required'", provision: Standard}
+    - {when: "t['chart_a'] == 'Optional'", provision: Option}
+  placement: {kind: along_curve, side: outside, spacing_scale: 0.5}
+  clause: "Table 2C-4 Chart B (15 mph / 30 km/h: delineators); Chapter 3G delineator spacing"
+  verify: true
+
+# ---------------------------------------------------------------- speed
+- id: MUTCD.2B.21.SPEED-CHANGE
+  trigger: SPEED-ZONE
+  device: R2-1
+  kind: sign
+  provision: Standard
+  placement: {kind: at_point, side: right}
+  clause: "2B.21-14 (at points of change from one speed limit to another)"
+  verify: true
+
+- id: MUTCD.2B.21.SITE-ENTRY
+  trigger: BOUNDARY-ENTRY
+  device: R2-1
+  kind: sign
+  provision: Standard
+  placement: {kind: downstream, distance_m: 15, side: right, legend: new_kmh}
+  clause: "2B.21-14 (at points of change from one speed limit to another): posted limit at the site entry, just inside the gate"
+  verify: true
+
+- id: MUTCD.2C.40.REDUCED-AHEAD
+  trigger: SPEED-ZONE
+  device: W3-5
+  kind: sign
+  provision: Guidance
+  when: "t['reduction_kmh'] >= 20"
+  placement: {kind: advance, condition: B, advisory_mph: "t['new_mph']", from: point, side: right}
+  clause: "2C.40-01 (should be used where the limit is reduced by more than 10 mph; metric 20 km/h or more)"
+  verify: true
+
+- id: MUTCD.2B.21.SPEED-REMIND
+  trigger: AFTER-MAJOR-INT
+  device: R2-1
+  kind: sign
+  provision: Guidance
+  placement: {kind: downstream, distance_m: 60, side: right}
+  clause: "2B.21-17 (beyond major intersections)"
+  verify: true
+
+# ---------------------------------------------------------------- one-way / wrong-way
+- id: MUTCD.2B.49.ONEWAY
+  trigger: ONE-WAY-CROSSING
+  device: R6-1
+  kind: sign
+  provision: Standard
+  placement: {kind: at_node_facing_cross, side: both_far}
+  clause: "2B.49 (text confirmed by T&I 30 Sep 2026). 01/02 shall: ONE WAY parallel to the one-way street at all alleys and roadways that intersect it. 09 unsignalised: near-right and far-left corners facing traffic entering or crossing. 10 signalised: near signal faces or as 09. 11 T-intersection with one-way top: near-right and far side facing the stem. 03/04 divided highways, 05 far-right option, 06 interchange omission, 12 roundabout island, 14 R6-6/R6-7: not automated"
+  verify: false
+
+- id: MUTCD.2B.46.DONOTENTER
+  trigger: ONE-WAY-EXIT
+  device: R5-1
+  kind: sign
+  provision: Standard
+  placement: {kind: at_exit_end, side: both}
+  clause: "2B.46 DO NOT ENTER where entry is prohibited"
+  verify: true
+
+# ---------------------------------------------------------------- lanes
+- id: MUTCD.2C.47.LANE-ENDS
+  trigger: LANE-DROP
+  device: W4-2
+  kind: sign
+  provision: Guidance
+  placement: {kind: advance, condition: A, from: point, side: right}
+  clause: "2C.47 Lane Ends"
+  verify: true
+
+- id: MUTCD.3B.12.LANE-REDUCTION
+  trigger: LANE-DROP
+  device: LDRP
+  kind: marking
+  provision: Standard
+  placement: {kind: taper}
+  clause: "3B.12 lane-reduction transition; taper L = WS/1.6 (>= 70 km/h) or WS^2/155 (< 70 km/h), metric form of WS / WS^2/60 at 45 mph, Guidance 08"
+  verify: true
+
+# ---------------------------------------------------------------- pedestrians / schools
+- id: MUTCD.3C.02.CROSSWALK-MIDBLOCK
+  trigger: PED-XING-MIDBLOCK
+  device: CW
+  kind: marking
+  provision: Standard
+  placement: {kind: crosswalk}
+  clause: "3C.02-05 (crosswalk markings shall be provided at legally established non-intersection crosswalks)"
+  verify: true
+
+- id: MUTCD.2C.55.PED-ADVANCE
+  trigger: PED-XING-MIDBLOCK
+  device: W11-2
+  kind: sign
+  provision: Option
+  companions:
+    - device: W16-9P
+      provision: Guidance
+      clause: "2C.55-03 (Guidance): if used in advance of a pedestrian crossing, W11-2 should be supplemented with an AHEAD (W16-9P) or XX FEET (W16-2P) plaque. Verified from the MUTCD 11th Ed. PDF, manual p.192"
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: point, side: right}
+  clause: "2C.55-01 (Option): Non-Vehicular Warning signs may be used to alert road users in advance of locations where unexpected entries into the roadway might occur. Verified from the MUTCD 11th Ed. PDF, manual p.192. 2C.55-05 (Standard): not on an approach controlled by STOP or YIELD. Distance: Table 2C-3 Condition B, 0 mph column (engine assumption, potential stop)"
+  verify: false
+
+- id: MUTCD.2C.55.PED-AT-CROSSWALK
+  trigger: PED-XING-MIDBLOCK
+  device: W11-2
+  kind: sign
+  provision: Option
+  when: "t.get('yield_here_signs')"
+  companions:
+    - device: W16-7P
+      provision: Standard
+      clause: "2C.55-04 (Standard): a post-mounted W11-2 at the crossing point shall have a W16-7P plaque mounted below it (not used if the sign is overhead). Verified from the MUTCD 11th Ed. PDF, manual p.192"
+  placement: {kind: at_point, side: right}
+  clause: "2C.55-08 and 2B.19-09 (Option): W11-2 may be placed overhead or post-mounted with a W16-7P plaque at the crosswalk where Yield Here To (Stop Here For) Pedestrians signs have been installed in advance of the crosswalk. 2B.19-10 (Standard): the Yield Here To sign shall not be on the same post. Verified from the MUTCD 11th Ed. PDF, manual pp.81, 193. Needs yield_here_signs: true on the crosswalk"
+  verify: false
+
+- id: MUTCD.7B.SCHOOL-ADVANCE
+  trigger: SCHOOL
+  device: S1-1
+  kind: sign
+  provision: Study
+  provision_if:
+    - {when: "t.get('school_zone') is True", provision: Standard}
+  study: "Is a school zone designated under State or local statute here? If yes, S1-1 is mandatory at the start of the zone (7B.02-04)."
+  placement: {kind: advance, condition: A, from: point, side: right}
+  clause: "7B.02-04 (S1-1 shall identify the beginning of a designated school zone)"
+  verify: true
+
+# ---------------------------------------------------------------- base markings (per link)
+- id: MUTCD.3B.02.CENTERLINE
+  trigger: MARK-LINK
+  device: CL-DY
+  kind: marking
+  provision: Option                       # 04: other paved two-way traveled ways 16 ft or wider
+  when: "not t['oneway'] and not t['divided']"
+  provision_if:
+    - {when: "t['lanes_total'] >= 3", provision: Standard}
+    - {when: "t['urban'] and t['class'] in ('arterial','collector') and t['width_ft'] >= 20 and t['aadt'] >= 6000", provision: Standard}
+    - {when: "t['urban'] and t['class'] in ('arterial','collector') and t['width_ft'] >= 20 and t['aadt'] >= 4000", provision: Guidance}
+    - {when: "(not t['urban']) and t['class'] in ('arterial','collector') and t['width_ft'] >= 18 and t['aadt'] >= 3000", provision: Guidance}
+    - {when: "t['width_ft'] < 16", provision: Study}
+  study: "Traveled way under 16 ft (4.9 m): decide by engineering judgment (edge encroachment, parked vehicles, encroachment into the opposing lane), 3B.02-03"
+  placement: {kind: link_line, offset: center}
+  clause: "3B.02 (text confirmed by T&I 30 Sep 2026). 01 shall: urban arterial/collector, 20 ft+, ADT 6000+; any 3+ lane undivided two-way road. 02 should: urban arterial/collector 20 ft+ ADT 4000+; rural arterial/collector 18 ft+ ADT 3000+; elsewhere where an engineering study shows a need. 03 under 16 ft engineering judgment. 04 may: other two-way 16 ft+. 05 ADT may be an engineering estimate"
+  verify: false
+
+- id: MUTCD.3B.10.EDGELINE
+  trigger: MARK-LINK
+  device: EL-SW
+  kind: marking
+  provision: Option
+  provision_if:
+    - {when: "t['class'] in ('freeway','expressway')", provision: Standard}
+    - {when: "(not t['urban']) and t['class'] == 'arterial' and t['width_ft'] >= 20 and t['aadt'] >= 6000", provision: Standard}
+    - {when: "(not t['urban']) and t['class'] in ('arterial','collector') and t['width_ft'] >= 20 and t['aadt'] >= 3000", provision: Guidance}
+  placement: {kind: link_line, offset: right_edge}
+  clause: "3B.10 (text confirmed by T&I 30 Sep 2026). 01 shall: freeways, expressways, rural arterials 20 ft+ ADT 6000+. 02 should: rural arterials/collectors 20 ft+ ADT 3000+; elsewhere where an engineering study shows a need. 03 should not where a study or judgment shows it decreases safety. 04 may: with or without centre line. 05 may be excluded by judgment where edges are delineated by curbs, parking or other markings. 06 outside edge of a marked bike lane may be omitted. 07 may be used to keep traffic off weak shoulders"
+  verify: false
+
+- id: MUTCD.3B.04.LANELINE
+  trigger: MARK-LINK
+  device: LL-BW
+  kind: marking
+  provision: Guidance
+  when: "t['lanes'] >= 2"
+  provision_if:
+    - {when: "t['class'] in ('freeway',)", provision: Standard}
+  placement: {kind: link_line, offset: lane_lines}
+  clause: "3B.06-02 (shall on freeways and Interstates); 3B.06-03 (should on 2+ adjacent lanes same direction)"
+  verify: true
+
+- id: MUTCD.3B.NOPASS
+  trigger: MARK-LINK
+  device: NO-PASSING-STUDY
+  kind: marking
+  provision: Study
+  when: "(not t['urban']) and (not t['oneway']) and (not t['divided']) and t['lanes'] == 1"
+  study: "Passing sight distance survey against Table 3B-1 to locate no-passing zones."
+  placement: {kind: link_note}
+  clause: "3B.02/3B.03 no-passing zones, Table 3B-1"
+  verify: true
+
+# ---------------------------------------------------------------- any MUTCD sign placed by the designer
+- id: MUTCD.CATALOG.SIGN-REQUEST
+  trigger: SIGN-REQUEST
+  device: "{t['code']}"
+  kind: sign
+  provision: "{t['request_provision']}"
+  placement: {kind: at_point, side: right}
+  clause: "{'Designer-placed. Class basis: MUTCD ' + (t['request_basis'] or 'no use paragraph names this sign (Optional)') + '; full provisions in the rule book'}"
+  verify: false
+
+# ---------------------------------------------------------------- hazard points (hazards.yaml)
+# A point with `type: <hazard>`; trigger HAZ-<HAZARD>. Advance distance: Table 2C-3 Condition B, column = the point's
+# advisory_kmh when given, otherwise 0 mph (potential stop). Clause text taken from the MUTCD 11th Ed. PDF text layer.
+- id: MUTCD.8B.06.W10-1
+  trigger: HAZ-RAIL_CROSSING
+  device: W10-1
+  kind: sign
+  provision: Standard
+  placement: &haz_adv {kind: advance, condition: B, advisory_mph: "mph(t['advisory_kmh']) if t.get('advisory_kmh') else 0", from: point, side: right}
+  clause: "8B.06-01 (Standard): a W10-1 sign shall be used on each highway in advance of every grade crossing, except A. approach from a parallel highway < 100 ft away with W10-2/3/4 used; B. low-volume low-speed roads over infrequently used tracks with flagging; C. business areas with active crossing control; D. no effective display possible; E. LRT crossings without Crossbucks. 8B.06-02 (Standard): placed per 2C.04 and Table 2C-3. Manual p.1001. Remove it by hand where an exception applies"
+  verify: false
+
+- id: MUTCD.8B.06.W10-1-LEFT
+  trigger: HAZ-RAIL_CROSSING
+  device: W10-1
+  kind: sign
+  provision: Option
+  when: "t['oneway'] or t['divided']"
+  placement: {<<: *haz_adv, side: left}
+  clause: "8B.06-04 (Option): on divided highways and one-way streets, an additional W10-1 sign may be installed on the left-hand side of the roadway. Manual p.1001"
+  verify: false
+
+- id: MUTCD.8B.03.CROSSBUCK
+  trigger: HAZ-RAIL_CROSSING
+  device: R15-1
+  kind: sign
+  provision: Standard
+  companions:
+    - device: R15-2P
+      provision: Standard
+      when: "t['tracks'] >= 2"
+      legend: "{str(int(t['tracks']))}"
+      clause: "8B.03-06 (Standard): if there are two or more tracks, the number of tracks shall be indicated on a supplemental Number of Tracks (R15-2P) plaque mounted below the Crossbuck sign. Manual p.993"
+  placement: {kind: at_point, side: right, back_add_m: 5.4, confidence: Medium,
+              note: "placed 15 ft (4.6 m) before the nearest rail (stopping point, 8B.03-16) plus half the track gauge; railroad clearance per 8B.03-10; centre about 9 ft (2.7 m) high (8B.03-11)"}
+  clause: "8B.03-03 (Standard): as a minimum, one Crossbuck sign shall be used on each highway approach to every highway-rail grade crossing. 8B.03-07 (Standard): installed on the right-hand side of the highway on each approach. Manual p.993"
+  verify: false
+
+- id: MUTCD.8C.02.RXR
+  trigger: HAZ-RAIL_CROSSING
+  device: RXR
+  kind: marking
+  provision: Option
+  provision_if:
+    - {when: "t.get('signals_gates') or t['speed_kmh'] >= 60", provision: Standard}
+  placement: {kind: lane_symbol, condition: B, advisory_mph: 0, note: "a portion of the X opposite the W10-1 sign (8C.02-08); no-passing marking on two-lane two-way roads with centre lines (8C.02-01)"}
+  clause: "8C.02-02 (Standard): grade crossing pavement markings shall be placed in each approach lane on all paved approaches where signals or automatic gates are located, and at all other grade crossings where the posted or statutory speed is 40 mph (60 km/h) or higher. 8C.02-03/04: not required below 40 mph or in urban areas if the Diagnostic Team finds other devices suitable. Manual p.1009"
+  verify: false
+
+- id: MUTCD.2C.19.ONE-LANE-STRUCTURE
+  trigger: HAZ-NARROW_STRUCTURE
+  device: "{'W5-3a' if t['structure'] == 'underpass' else 'W5-3'}"
+  kind: sign
+  provision: Guidance
+  when: "not t['oneway'] and (t['clear_width_m'] < 4.88 or (t['clear_width_m'] < 5.49 and t.get('heavy_commercial')))"
+  placement: *haz_adv
+  clause: "2C.19-01 (Guidance): a ONE LANE BRIDGE (W5-3) sign should be used on two-way roadways in advance of any bridge or culvert with a roadway horizontal clearance A. less than 16 ft (4.88 m), B. less than 18 ft (5.49 m) when commercial vehicles are a high proportion of traffic, or C. 18 ft or less where approach sight distance is below Table 2C-3 Condition A (check C by hand). 2C.19-02: W5-3a for an underpass. 2C.19-04 (Option): may be omitted on low-volume rural roads with adequate sight distance. Manual p.170"
+  verify: false
+
+- id: MUTCD.2C.18.NARROW-STRUCTURE
+  trigger: HAZ-NARROW_STRUCTURE
+  device: "{'W5-2a' if t['structure'] == 'underpass' else 'W5-2'}"
+  kind: sign
+  provision: Guidance
+  when: "not (not t['oneway'] and (t['clear_width_m'] < 4.88 or (t['clear_width_m'] < 5.49 and t.get('heavy_commercial')))) and ((not t['oneway'] and t['clear_width_m'] <= 5.49) or t['clear_width_m'] < t['lanes_total'] * t['lane_width_m'])"
+  placement: *haz_adv
+  clause: "2C.18-01 (Guidance): a NARROW BRIDGE (W5-2) sign should be used in advance of any bridge or culvert with a two-way roadway horizontal clearance of 16 to 18 ft (4.88-5.49 m), or a clearance less than the width of the approach travel lanes; W5-2a for an underpass. 2C.18-02: add object markers, delineators and/or markings. 2C.18-04 (Option): may be omitted on low-volume rural roads with adequate sight distance. Manual p.170"
+  verify: false
+
+- id: MUTCD.2C.17.ROAD-NARROWS
+  trigger: HAZ-ROAD_NARROWS
+  device: W5-1
+  kind: sign
+  provision: Guidance
+  provision_if:
+    - {when: "t['class'] == 'local' and t['speed_kmh'] <= 50", provision: Option}
+  placement: *haz_adv
+  clause: "2C.17-01 (Guidance): a ROAD NARROWS (W5-1) sign should be used in advance of a transition on two-lane roads where the pavement width is reduced abruptly so that opposing vehicles cannot travel through the narrow portion together. 2C.17-02 (Option): may be omitted on low-volume local streets with speed limits of 30 mph (50 km/h) or less. Manual pp.169-170"
+  verify: false
+
+- id: MUTCD.2C.25.LOW-CLEARANCE
+  trigger: HAZ-LOW_CLEARANCE
+  device: W12-2
+  kind: sign
+  provision: Standard
+  when: "t['clearance_m'] < 4.42 or (t.get('statutory_height_m') and t['clearance_m'] < t['statutory_height_m'] + 0.305)"
+  legend: "{'%.2f m (%d ft %d in)' % (int(t['clearance_m'] * 100) / 100.0, int(t['clearance_m'] / 0.0254) // 12, int(t['clearance_m'] / 0.0254) % 12)}"
+  placement: {<<: *haz_adv, note: "legend = measured clearance rounded down (2C.25-02); reduce up to 3 in (75 mm) where frost action occurs; add a W12-2 with distance plaque at the last detour point (2C.25-04)"}
+  clause: "2C.25-01 (Standard): the W12-2 sign shall be used to warn of vertical clearances less than 14 ft 6 in (4.42 m), or less than 12 in above the statutory maximum vehicle height, whichever is greater (set statutory_height_m on the point). 2C.25-02 (Guidance): display the actual clearance to the nearest inch not exceeding it. Manual p.172"
+  verify: false
+
+- id: MUTCD.2C.27.SPEED-HUMP
+  trigger: HAZ-SPEED_HUMP
+  device: W17-1
+  kind: sign
+  provision: Guidance
+  companions:
+    - device: W13-1P
+      provision: Guidance
+      legend: "{'%d km/h' % int(t['advisory_kmh'])}"
+      clause: "2C.27-02 (Guidance): if used, the SPEED HUMP sign should be supplemented by an Advisory Speed plaque. 2C.27-03 (Option): in a series, the plaque may be left off all but the first sign. Manual p.173"
+  placement: *haz_adv
+  clause: "2C.27-01 (Guidance): the SPEED HUMP (W17-1) sign should be used in advance of a vertical deflection in the roadway designed to limit the speed of traffic. 2C.27-04 (Option): legend SPEED BUMP may be used. Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.26.BUMP
+  trigger: HAZ-BUMP
+  device: W8-1
+  kind: sign
+  provision: Guidance
+  companions:
+    - {device: W13-1P, provision: Option, when: "t.get('advisory_kmh')", legend: "{'%d km/h' % int(t['advisory_kmh'])}",
+       clause: "2C.26-02 (Option): may be supplemented with an Advisory Speed plaque. Manual p.173"}
+  placement: *haz_adv
+  clause: "2C.26-01 (Guidance): BUMP (W8-1) and DIP (W8-2) signs should be used in advance of a sharp rise or depression in the profile of the road. Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.26.DIP
+  trigger: HAZ-DIP
+  device: W8-2
+  kind: sign
+  provision: Guidance
+  companions:
+    - {device: W13-1P, provision: Option, when: "t.get('advisory_kmh')", legend: "{'%d km/h' % int(t['advisory_kmh'])}",
+       clause: "2C.26-02 (Option): may be supplemented with an Advisory Speed plaque. Manual p.173"}
+  placement: *haz_adv
+  clause: "2C.26-01 (Guidance): BUMP (W8-1) and DIP (W8-2) signs should be used in advance of a sharp rise or depression in the profile of the road. 2C.26-03 (Guidance): the DIP sign should not be used for a short depression that might momentarily hide a vehicle; treat that as a no-passing zone (2C.26-04). Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.28.PAVEMENT-ENDS
+  trigger: HAZ-PAVEMENT_ENDS
+  device: W8-3
+  kind: sign
+  provision: Guidance
+  companions:
+    - {device: W13-1P, provision: Option, when: "t.get('advisory_kmh')", legend: "{'%d km/h' % int(t['advisory_kmh'])}",
+       clause: "2C.28-02 (Option): an Advisory Speed plaque may be used when the change requires a reduced speed. Manual p.173"}
+  placement: *haz_adv
+  clause: "2C.28-01 (Guidance): a PAVEMENT ENDS (W8-3) sign should be used where a paved surface changes to either a gravel treated surface or an earth road surface. Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.14.HILL
+  trigger: HAZ-DOWNGRADE
+  device: W7-1
+  kind: sign
+  provision: Study
+  provision_if:
+    - {when: "(t['grade_pct'] >= 5 and t['length_m'] > 914) or (t['grade_pct'] >= 6 and t['length_m'] > 610) or (t['grade_pct'] >= 7 and t['length_m'] > 305) or (t['grade_pct'] >= 8 and t['length_m'] > 229) or (t['grade_pct'] >= 9 and t['length_m'] > 152)", provision: Guidance}
+  study: "Do the grade, length, curvature or crash history require special precautions (2C.14-01, 2C.14-03)? If yes, W7-1 with W7-3P is Recommended."
+  companions:
+    - {device: W7-3P, legend: "{'%d%%' % int(round(t['grade_pct']))}",
+       clause: "2C.14-02 (Guidance): the Hill sign and grade (W7-3P) plaque used in combination, or W7-1a alone. Manual p.167"}
+  placement: *haz_adv
+  clause: "2C.14-02 (Guidance): the Hill sign with W7-3P plaque should be installed in advance of downgrades of A. 5% longer than 3,000 ft (914 m), B. 6% > 2,000 ft (610 m), C. 7% > 1,000 ft (305 m), D. 8% > 750 ft (229 m), or E. 9% > 500 ft (152 m); 2C.14-03 also for steeper grades or where crashes show a need. 2C.14-04: repeat with W7-3aP/W7-3bP about every mile on long grades. Manual p.167"
+  verify: false
+
+- id: MUTCD.7B.04.SCHOOL-BUS-STOP
+  trigger: HAZ-SCHOOL_BUS_STOP
+  device: S3-1
+  kind: sign
+  provision: Study
+  provision_if:
+    - {when: "t.get('bus_not_visible') is True", provision: Guidance}
+  study: "Is a stopped school bus not visible to road users for an adequate distance, with no chance to relocate the stop (7B.04-01)?"
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: point, side: right}
+  clause: "7B.04-01 (Guidance): the School Bus Stop Ahead (S3-1) sign should be installed in advance of locations where a stopped school bus is not visible to road users for an adequate distance and there is no opportunity to relocate the stop. Manual p.978"
+  verify: false
+
+- id: MUTCD.2C.54.TRUCK
+  trigger: HAZ-TRUCK_CROSSING
+  device: W11-10
+  kind: sign
+  provision: Option
+  companions: [{device: W16-9P, provision: Option, clause: "2C.54-07 (Option): AHEAD / XX FEET plaques may be mounted below. Manual p.191"}]
+  placement: *haz_adv
+  clause: &veh "2C.54-01 (Option): Vehicular Traffic Warning signs may be used to alert road users to locations where unexpected entries into the roadway by trucks, bicycles, farm vehicles, emergency vehicles or other vehicles might occur. 2C.54-03 (Guidance): only where sight distance is restricted or the entry is unexpected. 2C.54-10 (Standard): not on an approach controlled by STOP or YIELD. Manual pp.191-192"
+  verify: false
+
+- id: MUTCD.2C.54.FARM
+  trigger: HAZ-FARM_VEHICLES
+  device: W11-5
+  kind: sign
+  provision: Option
+  companions: [{device: W16-9P, provision: Option, clause: "2C.54-07 (Option): AHEAD / XX FEET plaques may be mounted below. Manual p.191"}]
+  placement: *haz_adv
+  clause: *veh
+  verify: false
+
+- id: MUTCD.2C.54.BICYCLE
+  trigger: HAZ-BICYCLE_CROSSING
+  device: W11-1
+  kind: sign
+  provision: Option
+  companions: [{device: W16-9P, provision: Option, clause: "2C.54-07 (Option): AHEAD / XX FEET plaques may be mounted below. Manual p.191"}]
+  placement: *haz_adv
+  clause: *veh
+  verify: false
+
+- id: MUTCD.2C.54.EMERGENCY
+  trigger: HAZ-EMERGENCY_STATION
+  device: W11-8
+  kind: sign
+  provision: Option
+  provision_if:
+    - {when: "t.get('emergency_signal') is True", provision: Standard}
+  companions:
+    - {device: W11-12P, provision: Standard, when: "t.get('emergency_signal') is True",
+       clause: "2C.54-14 (Standard): the W11-8 sign with the EMERGENCY SIGNAL AHEAD (W11-12P) plaque shall be placed in advance of all emergency-vehicle traffic control signals. Manual p.192"}
+  placement: *haz_adv
+  clause: "2C.54-14 (Standard): W11-8 with W11-12P shall be placed in advance of all emergency-vehicle traffic control signals. 2C.54-15 (Option): W11-8 may be used in advance of an emergency-vehicle station with no such signal. Manual p.192"
+  verify: false
+
+- id: MUTCD.2C.55.DEER
+  trigger: HAZ-DEER_CROSSING
+  device: W11-3
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: &nonveh "2C.55-01 (Option): Non-Vehicular Warning signs may be used to alert road users in advance of locations where unexpected entries into the roadway might occur. 2C.55-05 (Standard): not on an approach controlled by STOP or YIELD. Manual p.192"
+  verify: false
+
+- id: MUTCD.2C.55.CATTLE
+  trigger: HAZ-CATTLE_CROSSING
+  device: W11-4
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: *nonveh
+  verify: false
+
+- id: MUTCD.2C.55.EQUESTRIAN
+  trigger: HAZ-EQUESTRIAN_CROSSING
+  device: W11-7
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: *nonveh
+  verify: false
+
+- id: MUTCD.2C.56.PLAYGROUND
+  trigger: HAZ-PLAYGROUND
+  device: W15-1
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: "2C.56-01 (Option): the Playground (W15-1) sign may be used to give advance warning of a designated children's playground next to the road. 2C.56-03 (Guidance): if access needs a road crossing, consider crosswalk markings and a Non-Vehicular Warning sign. Manual p.194"
+  verify: false
+
+- id: MUTCD.2C.30.SLIPPERY
+  trigger: HAZ-SLIPPERY
+  device: W8-5
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: &surf "repeat at intervals along the affected section (2C.30-07)"}
+  clause: &surfc "2C.30-01 to 06 (Option): Surface Condition signs (W8-5 Slippery When Wet, W8-7 Loose Gravel, W8-8 Rough Road, W8-13 Bridge Ices Before Road, W8-14 Fallen Rocks) may be used to warn of the condition. 2C.30-07 (Guidance): when used, place in advance of the affected section (Table 2C-3) and repeat at intervals where the condition exists. Manual p.175"
+  verify: false
+
+- id: MUTCD.2C.30.BRIDGE-ICES
+  trigger: HAZ-BRIDGE_ICES
+  device: W8-13
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: "may be removed or covered in seasons when not relevant (2C.30-05)"}
+  clause: *surfc
+  verify: false
+
+- id: MUTCD.2C.30.FALLEN-ROCKS
+  trigger: HAZ-FALLEN_ROCKS
+  device: W8-14
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: *surf}
+  clause: *surfc
+  verify: false
+
+- id: MUTCD.2C.30.LOOSE-GRAVEL
+  trigger: HAZ-LOOSE_GRAVEL
+  device: W8-7
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: *surf}
+  clause: *surfc
+  verify: false
+
+- id: MUTCD.2C.30.ROUGH-ROAD
+  trigger: HAZ-ROUGH_ROAD
+  device: W8-8
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: *surf}
+  clause: *surfc
+  verify: false
+
+- id: MUTCD.2C.34.FLOOD
+  trigger: HAZ-FLOODING
+  device: W8-18
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: "2C.34-01 (Option): the ROAD MAY FLOOD (W8-18) sign may be used where a section of roadway is subject to frequent flooding; a Depth Gauge (W8-19) may also be installed in the section (2C.34-02 Guidance: at the deepest point, in addition to W8-18). Manual p.176"
+  verify: false
+
+- id: MUTCD.2C.34.GUSTY-WINDS
+  trigger: HAZ-GUSTY_WINDS
+  device: W8-21
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: "2C.34-03 (Option): the GUSTY WINDS AREA (W8-21) sign may be used where wind gusts strong enough to affect trucks and high vehicles frequently occur. Manual p.176"
+  verify: false
+
+- id: MUTCD.2C.34.FOG
+  trigger: HAZ-FOG
+  device: W8-22
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: "2C.34-04 (Option): the FOG AREA (W8-22) sign may be used where fog frequently reduces visibility; a NEXT XX MILES (W7-3aP) plaque may be mounted below. Manual p.176"
+  verify: false
+
+- id: MUTCD.2C.29.SOFT-SHOULDER
+  trigger: HAZ-SOFT_SHOULDER
+  device: W8-4
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: &shl "repeat at intervals where the condition continues (2C.29-07)"}
+  clause: "2C.29-01 (Option): the SOFT SHOULDER (W8-4) sign may be used to warn of a soft shoulder. 2C.29-07 (Guidance): repeat at intervals where the condition continually exists. Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.29.LOW-SHOULDER
+  trigger: HAZ-LOW_SHOULDER
+  device: W8-9
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: *shl}
+  clause: "2C.29-02 (Option): the LOW SHOULDER (W8-9) sign may be used where the shoulder is lower than the travel lane by 3 in (75 mm) or less. Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.29.DROP-OFF
+  trigger: HAZ-SHOULDER_DROPOFF
+  device: W8-17
+  kind: sign
+  provision: Guidance
+  companions: [{device: W8-17P, provision: Option, clause: "2C.29-04 (Option): a SHOULDER DROP-OFF (W8-17P) plaque may be mounted below the W8-17 sign. Manual p.173"}]
+  placement: {<<: *haz_adv, note: *shl}
+  clause: "2C.29-03 (Guidance): the Shoulder Drop Off (W8-17) sign should be used where an unprotected shoulder drop-off next to the travel lane exceeds 3 in (75 mm) for a significant continuous length, based on engineering judgment. Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.29.NO-SHOULDER
+  trigger: HAZ-NO_SHOULDER
+  device: W8-23
+  kind: sign
+  provision: Option
+  placement: {<<: *haz_adv, note: *shl}
+  clause: "2C.29-05 (Option): the NO SHOULDER (W8-23) sign may be used to warn that a shoulder does not exist along a portion of the roadway. Manual p.173"
+  verify: false
+
+- id: MUTCD.2C.29.SHOULDER-ENDS
+  trigger: HAZ-SHOULDER_ENDS
+  device: W8-25
+  kind: sign
+  provision: Option
+  placement: *haz_adv
+  clause: "2C.29-06 (Option): the SHOULDER ENDS (W8-25) sign may be used to warn that a shoulder is ending. Manual p.175"
+  verify: false
+
+- id: MUTCD.2C.53.NO-PASSING-ZONE
+  trigger: HAZ-NO_PASSING_START
+  device: W14-3
+  kind: sign
+  provision: Option
+  placement: {kind: at_point, side: left}
+  clause: "2C.53-01 (Standard): when used, the NO PASSING ZONE (W14-3) pennant shall be installed on the left-hand side of the roadway at the beginning of no-passing zones identified by pavement markings or DO NOT PASS signs or both. Use itself is optional. Manual p.190"
+  verify: false
+
+- id: MUTCD.2C.24.DEAD-END
+  trigger: HAZ-DEAD_END
+  device: W14-1
+  kind: sign
+  provision: Option
+  placement: {kind: at_point, side: right, note: "post as near as practicable to the entry point, or far enough ahead to let drivers turn at the nearest street (2C.24-04)"}
+  clause: "2C.24-01 (Option): the DEAD END (W14-1) sign may be used at the entrance to a single road or street that terminates without intersecting another street. 2C.24-04 (Guidance): post as near as practicable to the entry point. 2C.24-08 (Standard): W8-26/W8-26a shall not replace it. Manual p.171"
+  verify: false
+
+- id: MUTCD.2C.24.NO-OUTLET
+  trigger: HAZ-NO_OUTLET
+  device: W14-2
+  kind: sign
+  provision: Option
+  placement: {kind: at_point, side: right, note: "post as near as practicable to the entry point, or far enough ahead to let drivers turn at the nearest street (2C.24-04)"}
+  clause: "2C.24-01 (Option): the NO OUTLET (W14-2) sign may be used at the entrance to a road or road network from which there is no other exit. 2C.24-04 (Guidance): post as near as practicable to the entry point. Manual p.171"
+  verify: false
+
+# ---------------------------------------------------------------- cross-section changes found in the network
+- id: MUTCD.2C.20.DIVIDED-HIGHWAY
+  trigger: DIVIDED-BEGIN
+  device: W6-1
+  kind: sign
+  provision: Guidance
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: node, side: right}
+  clause: "2C.20-01 (Guidance): a Divided Highway (W6-1) sign should be used on the approaches to a section of highway (not an intersection or junction) where the opposing flows of traffic are separated by a median or other physical barrier. 2C.20-02 (Standard): not instead of a Keep Right sign on the median nose. Manual p.170"
+  verify: false
+
+- id: MUTCD.2B.39.KEEP-RIGHT-NOSE
+  trigger: DIVIDED-BEGIN
+  device: R4-7
+  kind: sign
+  provision: Option
+  placement: {kind: at_point, side: left, confidence: Medium, note: "on the face of or just in front of the median nose so traffic passes to its right (2B.39-04); R4-7c only on noses narrower than 4 ft / 1.2 m (2B.39-10/11)"}
+  clause: "2B.39-01 (Option): the Keep Right (R4-7) sign may be used where traffic must pass only to the right of a roadway feature or obstruction. 2B.39-02 (Guidance): where it is not readily apparent that traffic must keep right, it should be used. 2B.39-03 (Standard): at the start of a median, as close as practicable to the approach end. Manual pp.102-104"
+  verify: false
+
+- id: MUTCD.2C.21.DIVIDED-ENDS
+  trigger: DIVIDED-END
+  device: W6-2
+  kind: sign
+  provision: Guidance
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: node, side: right}
+  clause: "2C.21-01 (Guidance): a Divided Highway Ends (W6-2) sign should be used in advance of the end of a section of physically divided highway (not an intersection or junction) as a warning of two-way traffic ahead. Manual p.170"
+  verify: false
+
+- id: MUTCD.2C.51.TWO-WAY-TRAFFIC
+  trigger: DIVIDED-END
+  device: W6-3
+  kind: sign
+  provision: Guidance
+  when: "t.get('to_two_lane')"
+  placement: {kind: at_point, side: right, back_add_m: 30, note: "near the transition, downstream of the W6-2 sign"}
+  clause: "2C.21-02 (Guidance): the Two-Way Traffic (W6-3) sign should be used to give warning and notice of the transition to a two-lane, two-way section. 2C.51-01 (Guidance): W6-3 should be used to warn of a transition from a multi-lane divided section to a two-lane, two-way section. Manual pp.170, 189"
+  verify: false
+
+- id: MUTCD.2C.51.ONEWAY-TO-TWOWAY
+  trigger: ONEWAY-TO-TWOWAY
+  device: W6-3
+  kind: sign
+  provision: Guidance
+  when: "t.get('to_two_lane')"
+  companions:
+    - {device: W16-9P, provision: Guidance, clause: "2C.51-02 (Guidance): W6-3 with an AHEAD (W16-9P) plaque. Manual p.189"}
+  placement: {kind: advance, condition: B, advisory_mph: 0, from: node, side: right}
+  clause: "2C.51-02 (Guidance): a Two-Way Traffic (W6-3) sign with an AHEAD (W16-9P) plaque should be used to warn road users of a transition from a one-way street to a two-lane, two-way section (Figure 2B-18). Manual p.189"
+  verify: false
+
+- id: MUTCD.2C.45.MERGE-MAJOR
+  trigger: MERGE
+  device: W4-1
+  kind: sign
+  provision: Option
+  when: "t['role'] == 'major'"
+  provision_if:
+    - {when: "t['equal']", provision: Guidance}
+  placement: {kind: advance, condition: A, from: node, side: "{t['merge_side']}"}
+  clause: "2C.45-01 (Option): a Merge (W4-1) sign may be used to warn road users on the major roadway of merging movements where lanes from two roadways converge as a single lane. 2C.45-03/04 (Guidance): on the side where merging traffic will be met, symbol oriented to that side. 2C.45-06 (Guidance): on each roadway where two roadways of about equal importance converge. 2C.45-08 (Standard): not instead of a Lane Ends (W4-2) sign. Table 2C-3 Condition A (typical sign: Merge). Manual pp.182-183"
+  verify: false
+
+- id: MUTCD.2C.45.MERGE-ENTERING
+  trigger: MERGE
+  device: W4-1
+  kind: sign
+  provision: Option
+  when: "t['role'] == 'entering'"
+  provision_if:
+    - {when: "t['equal']", provision: Guidance}
+  placement: {kind: advance, condition: A, from: node, side: right, note: "use W4-5 (Entering Roadway Merge) if the entering roadway curves before the merge (2C.45-05)"}
+  clause: "2C.45-02 (Option): a Merge sign may also be installed on the entering roadway. 2C.45-06 (Guidance): on each roadway where two roadways of about equal importance converge. Manual p.183"
+  verify: false
+
+- id: MUTCD.2C.46.ADDED-LANE-MAJOR
+  trigger: ADDED-LANE
+  device: W4-3
+  kind: sign
+  provision: Guidance
+  when: "t['role'] == 'major'"
+  placement: {kind: advance, condition: A, from: node, side: "{t['merge_side']}"}
+  clause: "2C.46-01 (Guidance): the Added Lane (W4-3) sign should be installed in advance of a point where two roadways converge and merging movements are not required. 2C.46-02 (Guidance): on the major roadway, on the side from which the entering roadway converges, symbol oriented to that side. Manual p.183"
+  verify: false
+
+- id: MUTCD.2C.46.ADDED-LANE-ENTERING
+  trigger: ADDED-LANE
+  device: W4-3
+  kind: sign
+  provision: Study
+  when: "t['role'] == 'entering'"
+  study: "Is the Added Lane sign on the major roadway visible from the entering roadway? If not, a second W4-3 should be placed on the entering roadway (2C.46-01)."
+  placement: {kind: advance, condition: A, from: node, side: right, note: "use W4-6 (Entering Roadway Added Lane) if the entering roadway curves before converging (2C.46-03)"}
+  clause: "2C.46-01 (Guidance): when possible the Added Lane sign should be visible from both roadways; if not, an Added Lane sign should be placed on the side of each roadway. Manual p.183"
+  verify: false
+
+- id: MUTCD.2C.10.LARGE-ARROW
+  trigger: CURVE
+  device: W1-6
+  kind: sign
+  provision: Option
+  when: "t['curve_sign'] in ('W1-1', 'W1-3') and not t.get('suppress_sign')"
+  placement: {kind: curve_outside}
+  clause: "2C.10-02 (Option): a One-Direction Large Arrow (W1-6) sign may be used to supplement a Turn (W1-1) or Reverse Turn (W1-3) sign to emphasize the abrupt curvature. 2C.10-04 (Standard): if used, installed on the outside of the turn in line with and about at right angles to approaching traffic. 2C.10-05 (Standard): not where there is no alignment change. Manual p.159"
+  verify: false

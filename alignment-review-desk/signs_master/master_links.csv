@@ -1,0 +1,52 @@
+# Master link table: which sign in one code is the same device as a sign in another. Facts (names, clauses, sizes) live in each code's own catalog.
+# match: same | check | none. approved = yes only when a T&I engineer has approved the pairing. Never match by look-alike; SHC links need the SHC source.
+master_id,mutcd_code,when,egypt_code,shc_code,ti_block,match,approved,approved_by,approved_date,egypt_code_verified,note
+M0001,R1-1,,301,,TI-301,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0002,R1-2,,302,,TI-302,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0003,R2-1,legend=SPEED LIMIT 60 km/h,342,,TI-342-60 km,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0004,R2-1,legend=SPEED LIMIT 100 km/h,342,,TI-342-100 km,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0005,R3-1,,346,,TI-346,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0006,R3-2,,347,,TI-347,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0007,R3-4,,348,,TI-348 L,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0008,R4-7,,327,,TI-327,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0009,R4-8,,328,,TI-328,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0010,W1-6,orient=right,454,,TI-454,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0011,W1-6,orient=left,455,,TI-455,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0012,W11-2,,,,PEDESTRIAN SIGN,same,yes,T&I block map ('for now'),2026-10-28,,T&I block has no Egyptian sign number
+M0013,W17-1,,,,speed hump,same,yes,T&I block map ('for now'),2026-10-28,,T&I block has no Egyptian sign number
+M0014,W6-3,,416,,TI-416,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0015,W5-1,,424,,TI-424,same,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0016,W1-1,orient=right,410,,TI-410 R,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0017,W1-2,orient=right,411,,TI-411 R,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0018,W1-2,orient=left,411,,TI-411 L,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0019,W1-3,orient=left,412,,TI-412 L,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0020,W1-4,,413,,TI-413,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0021,W1-5,,414,,TI-414,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0022,W2-1,,401,,TI-401,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0023,W2-2,orient=right,402,,TI-402,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0024,W2-2,orient=left,404,,TI-404,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0025,W2-4,,403,,TI-403,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0026,W7-1,,415,,TI-415,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0027,W1-8,orient=right,456,,TI-456,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0028,W1-8,orient=left,457,,TI-457,check,yes,T&I block map ('for now'),2026-10-28,no,Egyptian number taken from the T&I block name; not checked against the printed code
+M0029,,,204,,,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code; no TI block in the template for this number
+M0030,,,302+329,,TI-302+329,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0031,,,305,,TI-305,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0032,,,306,,TI-306,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0033,,,307,,TI-307,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0034,,,321,,TI-321,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0035,,,322,,TI-322,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0036,,,323,,TI-323,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0037,,,324,,TI-324,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0038,,,325,,TI-325,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0039,,,326,,TI-326,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0040,,,329,,TI-329,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0041,,,330,,TI-330 L,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0042,,,348,,TI-348 R,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0043,,,405,,TI-405,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0044,,,406,,TI-406,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0045,,,421,,TI-421,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0046,,,422,,TI-422,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0047,,,439,,TI-439,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0048,,,445,,TI-445,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code
+M0049,,,458,,TI-458,none,no,,,no,Egyptian label only: no MUTCD or SHC match given; names not yet read from the printed code

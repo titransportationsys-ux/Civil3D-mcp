@@ -1,0 +1,154 @@
+# Hazard points: a point in the input with `type: <hazard>` makes the engine place the signs in rules.yaml
+# whose trigger is HAZ-<HAZARD> (upper case). Each hazard lists the point attributes the engine needs; a missing
+# one becomes a data question (the engine never assumes it).
+#   facing: both = signs for traffic in both directions (one-way links: drawn direction only);
+#           ask  = the user must give `facing` (fwd | rev | both, relative to the nearest link's drawn direction).
+# Advance distances: Table 2C-3 Condition B. Column = the point's advisory speed when given (advisory_kmh),
+# otherwise the 0 mph (potential stop) column. This is an engine assumption; 2C.04-03 says apply with judgment.
+hazards:
+  rail_crossing:
+    label: Highway-rail grade crossing (point on the track centre)
+    facing: both
+    props:
+      tracks: "How many tracks cross the road at this grade crossing? (2 or more needs the R15-2P plaque, 8B.03-06)"
+      signals_gates: "Does this grade crossing have flashing-light signals or automatic gates (true/false)?"
+  narrow_structure:
+    label: Bridge, culvert or underpass narrower than the approach
+    facing: both
+    props:
+      structure: "Is it a bridge, culvert or underpass?"
+      clear_width_m: "What is the roadway horizontal clearance (kerb to kerb or rail to rail, m) on the structure?"
+  road_narrows:
+    label: Abrupt pavement narrowing where opposing vehicles cannot pass together
+    facing: both
+    props: {}
+  low_clearance:
+    label: Structure with low vertical clearance
+    facing: both
+    props:
+      clearance_m: "What is the measured vertical clearance (m) under the structure (lowest point over the travel lanes)?"
+  speed_hump:
+    label: Speed hump or speed table
+    facing: both
+    props:
+      advisory_kmh: "What advisory speed (km/h) is set for the speed hump? (W13-1P plaque, 2C.27-02; set by engineering study)"
+  bump:
+    label: Sharp rise in the road profile
+    facing: both
+    props: {}
+  dip:
+    label: Sharp depression in the road profile
+    facing: both
+    props: {}
+  pavement_ends:
+    label: Paved surface changes to gravel or earth (point at the change)
+    facing: ask
+    props: {}
+  downgrade:
+    label: Start of a steep downgrade (point at the top)
+    facing: ask
+    props:
+      grade_pct: "What is the downgrade (%)?"
+      length_m: "How long is the downgrade (m)?"
+  school_bus_stop:
+    label: School bus stop
+    facing: both
+    props:
+      bus_not_visible: "Is a stopped school bus here not visible to approaching drivers for an adequate distance, with no chance to move the stop (true/false)? (7B.04-01)"
+  truck_crossing:
+    label: Truck entrance or crossing
+    facing: both
+    props: {}
+  farm_vehicles:
+    label: Farm vehicle entrance or crossing
+    facing: both
+    props: {}
+  emergency_station:
+    label: Emergency vehicle station (fire, ambulance)
+    facing: both
+    props:
+      emergency_signal: "Is there an emergency-vehicle traffic control signal at this station (true/false)? (2C.54-14)"
+  bicycle_crossing:
+    label: Unexpected bicycle entry or crossing
+    facing: both
+    props: {}
+  deer_crossing:
+    label: Deer or wild animal crossing area
+    facing: both
+    props: {}
+  cattle_crossing:
+    label: Cattle or livestock crossing
+    facing: both
+    props: {}
+  equestrian_crossing:
+    label: Horse riders crossing
+    facing: both
+    props: {}
+  playground:
+    label: Designated children's playground next to the road
+    facing: both
+    props: {}
+  slippery:
+    label: Start of an unexpectedly slippery section
+    facing: both
+    props: {}
+  bridge_ices:
+    label: Bridge that ices before the road
+    facing: both
+    props: {}
+  fallen_rocks:
+    label: Area where rocks often fall onto the road
+    facing: both
+    props: {}
+  loose_gravel:
+    label: Loose gravel on the road surface
+    facing: both
+    props: {}
+  rough_road:
+    label: Rough road surface
+    facing: both
+    props: {}
+  flooding:
+    label: Section that often floods
+    facing: both
+    props: {}
+  gusty_winds:
+    label: Section with strong wind gusts
+    facing: both
+    props: {}
+  fog:
+    label: Section where fog often reduces visibility
+    facing: both
+    props: {}
+  soft_shoulder:
+    label: Soft shoulder
+    facing: both
+    props: {}
+  low_shoulder:
+    label: Shoulder lower than the travel lane (3 in / 75 mm or less)
+    facing: both
+    props: {}
+  shoulder_dropoff:
+    label: Unprotected shoulder drop-off deeper than 3 in (75 mm)
+    facing: both
+    props: {}
+  no_shoulder:
+    label: Road section with no shoulder
+    facing: both
+    props: {}
+  shoulder_ends:
+    label: Shoulder ends
+    facing: ask
+    props: {}
+  no_passing_start:
+    label: Start of a no-passing zone (two-lane road)
+    facing: ask
+    props: {}
+  dead_end:
+    label: Entrance to a street that ends without meeting another street
+    facing: ask
+    props: {}
+  no_outlet:
+    label: Entrance to a road network with no other exit
+    facing: ask
+    props: {}

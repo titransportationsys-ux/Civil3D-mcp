@@ -1,0 +1,7 @@
+# MUTCD 11th Ed. Table 2C-4 Chart B: devices by speed differential (posted/85th minus advisory, mph). Chart A (roadway type, AADT) decides whether devices are required.
+# Verified from the MUTCD 11th Ed. PDF (Table 2C-4 Charts A and B, manual p.155) on 30 Sep 2026.
+diff_min_mph,devices
+5,markings_or_sign
+10,sign
+15,sign+delineators
+20,sign+chevrons

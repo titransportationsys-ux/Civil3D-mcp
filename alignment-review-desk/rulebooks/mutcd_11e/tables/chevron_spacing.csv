@@ -1,0 +1,9 @@
+# MUTCD 11th Ed. Table 2C-5 Typical Spacing of Chevron Alignment Signs on Horizontal Curves (2C.08-05). Verified from the MUTCD 11th Ed. PDF, manual p.158, 30 Sep 2026. (T&I's earlier screenshot labelled it 2C-6: that is the 2009 edition numbering.)
+# Note in the table: the radius-advisory speed relationship shown should NOT be used to determine the advisory speed.
+# advisory_max_kmh: AASHTO-style metric bands (15 mph ~ 20 km/h, 30 mph ~ 50 km/h, 45 mph ~ 70 km/h, 60 mph ~ 100 km/h). Advisory speeds are multiples of 10 km/h.
+advisory_max_mph,advisory_max_kmh,radius_max_ft,spacing_ft
+15,20,200,40
+30,50,400,80
+45,70,700,120
+60,100,1250,160
+999,999,99999,200
