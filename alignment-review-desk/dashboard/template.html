@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <title>Alignment Review Desk</title>
 <style>
 /* Layout: one working surface. Header (T&I logo, file, run) + seven tabs: Overview, Map, Signs, Catalogue, Setup, Export, Methods.
@@ -12,7 +14,7 @@
   --accent:#019945; --accent-ink:#FFFFFF; --accent2:#40B273; --wrong:#C4262E; --check:#B96A00; --okc:#3C6E8F;
   --map-bg:#FAFBFA; --map-kerb:#2C3733; --map-park:#C9D0CC; --map-cl:#B8505A; --map-bld:#9AA5A0; --map-node:#019945;
   --pal0:#0050E6; --pal1:#0A9A3E; --pal2:#E0007A; --pal3:#E85A00; --pal4:#7A2CF0; --pal5:#008FA6; --pal6:#7A4A12; --pal7:#9A7D00;
-  --f-body:Arial,"Helvetica Neue",Helvetica,sans-serif; --f-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif; --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0F1512; --panel:#172019; --ink:#E8EEEA; --head:#D6DDD9; --muted:#9AA8A1; --line:#2A3630; --soft:#1F2A24;
@@ -29,12 +31,11 @@ html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font:14px/1.45 var(--f-body);padding:0 max(16px,env(safe-area-inset-right)) 28px max(16px,env(safe-area-inset-left))}
 .wrap{max-width:1280px;margin:0 auto}
 header{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding:16px 0 10px}
-.brand{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.logoTile{background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 12px;display:flex}
-.logoTile img{height:40px;width:auto;display:block}
-h1{font:700 24px/1.05 var(--f-body);letter-spacing:.03em;text-transform:uppercase;margin:0;color:var(--head)}
+.logoBox{display:block;margin:0 0 8px}
+.logo{height:56px;width:auto;background:#fff;border-radius:6px;padding:2px 6px;display:block}
+h1{font:600 30px/1 var(--f-display);letter-spacing:.02em;text-transform:uppercase;margin:0;color:var(--head)}
 h1 small{display:block;font:400 12px/1.4 var(--f-body);letter-spacing:0;text-transform:none;color:var(--muted);margin-top:4px}
-h2{font:700 17px/1.15 var(--f-body);letter-spacing:.03em;text-transform:uppercase;margin:0 0 8px;color:var(--head)}
+h2{font:600 20px/1.1 var(--f-display);letter-spacing:.03em;text-transform:uppercase;margin:0 0 8px;color:var(--head)}
 h3{font:700 11px/1.2 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
 .hbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 button,select,input,textarea{font:inherit;color:inherit}
@@ -46,10 +47,14 @@ button.primary:hover{filter:brightness(1.07)}
 input[type=text],input[type=search],select,textarea{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:5px 8px;min-height:32px;max-width:100%}
 input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip b{font-weight:500}
+.dot{display:inline-block;width:9px;height:9px;border-radius:1px;margin-right:6px;vertical-align:-1px}
+.dot.wrong{background:var(--wrong)} .dot.check{background:var(--check);transform:rotate(45deg)} .dot.ok{background:var(--okc);border-radius:50%}
+.prog{display:flex;align-items:center;gap:10px;min-width:260px} .prog .pb{flex:1;height:8px;min-width:110px;background:var(--soft);border-radius:4px;overflow:hidden} .prog .pb i{display:block;height:100%;width:0;background:var(--accent);transition:width .15s}
 .chip{font:500 12px/1 var(--f-mono);padding:6px 9px;border:1px solid var(--line);border-radius:3px;background:var(--panel);white-space:nowrap}
 .draft{border-left:4px solid var(--check);background:var(--soft);padding:8px 12px;margin:0 0 12px;font-size:13px}
 nav.tabs{display:flex;gap:2px;border-bottom:2px solid var(--line);overflow-x:auto;margin-bottom:16px}
-nav.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:10px 15px;font:700 14px/1 var(--f-body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:-2px}
+nav.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:10px 16px;font:600 17px/1 var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:-2px}
 nav.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent)}
 nav.tabs .n{font:500 11px var(--f-mono);margin-left:6px;color:var(--muted)}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;margin-bottom:16px;min-width:0}
@@ -63,7 +68,7 @@ td{padding:5px 8px;border-bottom:1px solid var(--soft);vertical-align:middle}
 tr.pick{cursor:pointer} tr.pick:hover td{background:var(--soft)} tr.sel td{background:var(--soft);font-weight:700}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px;margin-bottom:16px}
 .kpi{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:6px;padding:12px 14px}
-.kpi b{display:block;font:700 32px/1 var(--f-body);font-variant-numeric:tabular-nums} .kpi span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.kpi b{display:block;font:600 34px/1 var(--f-display);font-variant-numeric:tabular-nums} .kpi span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
 .kpi.wrong{border-left-color:var(--wrong)} .kpi.check{border-left-color:var(--check)} .kpi.ok{border-left-color:var(--okc)} .kpi.acc{border-left-color:var(--accent)}
 .pill{font:700 10px/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;border-radius:3px;border:1px solid currentColor;white-space:nowrap}
 .pill.wrong{color:var(--wrong)} .pill.check{color:var(--check)} .pill.ok{color:var(--okc)} .pill.acc{color:var(--accent)}
@@ -87,7 +92,7 @@ tr.pick{cursor:pointer} tr.pick:hover td{background:var(--soft)} tr.sel td{backg
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);padding:4px 8px;border-radius:3px;font-size:12px;max-width:280px;display:none;z-index:3}
 .coord{position:absolute;right:10px;bottom:8px;font:11px var(--f-mono);color:var(--muted);background:color-mix(in srgb,var(--panel) 85%,transparent);padding:2px 6px;border-radius:3px;pointer-events:none}
 .mapwrap:fullscreen{height:100vh;border:0;border-radius:0}
-.sel .t{font:700 20px/1.15 var(--f-body)}
+.sel .t{font:600 22px/1.15 var(--f-display);letter-spacing:.02em}
 .dec{display:inline-flex} .dec button{border-radius:0;margin-left:-1px;min-height:30px;padding:4px 10px} .dec button:first-child{border-radius:4px 0 0 4px;margin-left:0} .dec button:last-child{border-radius:0 4px 4px 0}
 .dec button[aria-pressed=true].keep{background:var(--okc);color:#fff;border-color:var(--okc)}
 .dec button[aria-pressed=true].fix{background:var(--check);color:#fff;border-color:var(--check)}
@@ -115,28 +120,27 @@ textarea.out{width:100%;min-height:150px;font:12px/1.4 var(--f-mono)}
 <body>
 <div class="wrap">
 <header>
-  <div class="brand">
-    <div class="logoTile"><img id="logo" alt="Talaat &amp; Imam Consulting Engineers"></div>
-    <h1>Alignment Review Desk<small id="sub">Check the signs in a signing DXF against the MUTCD, Egyptian and SHC catalogue. Only problem areas are marked.</small></h1>
-  </div>
+  <h1><span class="logoBox"><img id="logo" class="logo" alt="Talaat &amp; Imam Consulting Engineers"></span>Alignment Review Desk<small id="sub">Check the signs in a signing DXF against the MUTCD, Egyptian and SHC catalogue. Only problem areas are marked.</small></h1>
   <div class="hbar">
     <span class="chip" id="fileChip">no drawing</span>
     <input type="file" id="file" accept=".dxf" hidden>
     <button id="btnLoad">Load DXF</button>
-    <button id="btnDemo">Load Wyte demo</button>
+    <button id="btnDemo">Load demo</button>
     <button id="btnRun" class="primary">Run checks</button>
+    <div class="prog" id="prog" hidden role="status"><div class="pb"><i id="progBar"></i></div><span class="small" id="progTxt">Working</span></div>
   </div>
 </header>
+<div class="chips" id="summary" aria-live="polite" style="margin-bottom:12px"></div>
 <div class="draft" id="draft"></div>
 <div id="notices"></div>
 <nav class="tabs" role="tablist" id="tabs">
   <button role="tab" data-v="overview">Overview</button>
   <button role="tab" data-v="map">Map</button>
   <button role="tab" data-v="signs">Signs<span class="n" id="nSigns"></span></button>
-  <button role="tab" data-v="cat">Catalogue</button>
   <button role="tab" data-v="setup">Setup</button>
   <button role="tab" data-v="export">Export</button>
   <button role="tab" data-v="method">Methods</button>
+  <button role="tab" data-v="cat">Catalogue</button>
 </nav>
 
 <section id="v-overview"></section>
@@ -407,11 +411,13 @@ function notices() {
 }
 
 /* ================= tabs ================= */
-const VIEWS = ['overview', 'map', 'signs', 'cat', 'setup', 'export', 'method'];
+const VIEWS = ['overview', 'map', 'signs', 'setup', 'export', 'method', 'cat'];
+let CUR = 'overview';
 function showTab(v) {
-  if (!VIEWS.includes(v)) v = 'overview';
+  if (!VIEWS.includes(v)) v = 'overview'; CUR = v;
   $$('#tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.v === v));
   VIEWS.forEach(x => $('#v-' + x).hidden = x !== v);
+  if (v === 'export') renderExport();
   if (v === 'map') { sizeCanvas(); if (NEEDFIT) { NEEDFIT = false; fit(); } draw(); } try { history.replaceState(null, '', '#' + v); } catch (e) { }
 }
 $('#tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) showTab(b.dataset.v); });
@@ -448,7 +454,7 @@ function renderOverview() {
       ${RES.gaps.length ? `<p class="small muted" style="margin-top:10px">Missing numbers: <span class="mono">${RES.gaps.slice(0, 40).map(g => 'S' + String(g).padStart(4, '0')).join(', ')}${RES.gaps.length > 40 ? ' …' : ''}</span></p>` : ''}
     </div>
   </div>
-  <div class="card"><h3>Next</h3><p style="margin:0">Open <b>Map</b> to see each finding in place, or <b>Signs</b> to mark every sign Keep, Fix or Remove. <b>Export</b> copies your decisions so they can go back to the engine. Findings are read from the drawing only; no sign was added, moved or classed.</p></div>`;
+  <div class="card"><h3>Next</h3><p style="margin:0">Open <b>Map</b> to see each finding in place, or <b>Signs</b> to mark every sign Keep, Fix or Remove. <b>Export</b> saves the findings and your decisions as a file so they can go back to the engine. Findings are read from the drawing only; no sign was added, moved or classed.</p></div>`;
 }
 
 /* ================= signs table ================= */
@@ -477,7 +483,7 @@ function renderSigns() {
     <td><input type="text" data-note="${esc(s.key)}" value="${esc(d.note || '')}" size="18" aria-label="Note for ${esc(s.id)}"></td></tr>`; }).join('')}</tbody></table>
   ${rows.length ? '' : '<div class="empty">No signs match these filters.</div>'}</div>`;
 }
-function setDec(key, patch) { DEC[key] = { ...(DEC[key] || {}), ...patch }; store.set(decKey, DEC); renderOverview(); }
+function setDec(key, patch) { DEC[key] = { ...(DEC[key] || {}), ...patch }; store.set(decKey, DEC); renderOverview(); renderSummary(); }
 
 /* ================= catalogue ================= */
 let CF = { q: '', mode: 'linked', more: 250 };
@@ -526,13 +532,111 @@ function signCsv() { return toCsv([['ID', 'Code', 'Name', 'E', 'N', 'Link', 'Jun
   ...RES.signs.map(s => [s.id, s.code, s.name, f1(s.x), f1(s.y), s.link, s.node, s.off == null ? '' : f1(s.off), s.side, s.uniq.join('; '), s.n, s.sugg, s.flags.map(f => f.txt).join('; ') || 'OK', (DEC[s.key] || {}).d || '', (DEC[s.key] || {}).note || ''])]); }
 function decCsv() { return toCsv([['ID', 'Code', 'Decision', 'Note'], ...RES.signs.filter(s => DEC[s.key] && (DEC[s.key].d || DEC[s.key].note)).map(s => [s.id, s.code, DEC[s.key].d || '', DEC[s.key].note || ''])]); }
 function flagCsv() { return toCsv([['ID', 'Code', 'Severity', 'Finding'], ...RES.signs.flatMap(s => s.flags.map(f => [s.id, s.code, f.sev, f.txt])), ...RES.gaps.map(g => ['S' + String(g).padStart(4, '0'), '', 'report', 'Number missing from the sequence'])]); }
-function renderExport() {
-  $('#v-export').innerHTML = `<div class="card"><h3>Copy for review</h3><p class="muted" style="margin-top:0">Downloads are not available on this page, so each button copies text you can paste into Excel or a message. Nothing leaves this page.</p>
-  <div class="hbar"><button class="primary" data-copy="sign">Copy sign list</button><button data-copy="flag">Copy findings</button><button data-copy="dec">Copy my decisions</button><span class="small muted" id="copyMsg" role="status"></span></div>
-  <p class="small muted">Decisions are saved in this browser only. Copy them to keep or share them.</p><textarea class="out" id="copyOut" readonly aria-label="Text to copy" placeholder="The copied text appears here."></textarea></div>
-  <div class="card"><h3>Run summary</h3><div class="eq" id="sumTxt">${esc(summaryTxt())}</div></div>`;
+/* ---------- export (same behaviour as Circulation Check: viewer-confirmed saves through the downloads capability) ---------- */
+let downloads = null;
+try { if (window.claude && claude.use) claude.use('downloads').then(d => { downloads = d; if (CUR === 'export') renderExport(); }).catch(() => {}); } catch (e) { }
+const EX = { name: '', fmt: 'csv', msg: '' };
+const shownSigns = () => RES.signs.filter(visible);
+const sevOf = s => s.sev === 'ok' ? 'no finding' : s.sev;
+function csvOut() {
+  return toCsv([['id', 'code', 'name', 'severity', 'findings', 'E', 'N', 'link', 'junction', 'offset_from_centreline_m', 'beyond_kerb_m', 'side', 'block', 'signs_at_point', 'suggested_block', 'decision', 'note'],
+    ...shownSigns().map(s => [s.id, s.code, s.name, sevOf(s), s.flags.map(f => f.txt).join('; '), s.x.toFixed(3), s.y.toFixed(3), s.link, s.node, s.off == null ? '' : f1(s.off), s.gap == null ? '' : (Math.round(s.gap * 100) / 100), s.side, s.uniq.join('; '), s.n, s.sugg, (DEC[s.key] || {}).d || '', (DEC[s.key] || {}).note || ''])]).replace(/\n/g, '\r\n');
 }
-function summaryTxt() { const c = counts(); return `Alignment Review Desk - DRAFT\nFile: ${$('#fileChip').textContent}\nSigns: ${c.n}   Wrong: ${c.wrong}   To check: ${c.check}   No finding: ${c.ok}   Missing numbers: ${RES.gaps.length}\nRulebook ${DATA.rb.code}: status ${DATA.rb.status} (not signed off)\nChecks run: ${CHECKS.filter(k => k.id !== 'gaps').map(k => k.id).join(', ')}, gaps`; }
+function summaryTxt() {
+  const v = shownSigns(), cnt = k => v.filter(s => s.sev === k).length, rank = { wrong: 0, check: 1, ok: 2 };
+  let t = 'Alignment Review Desk summary (DRAFT)\r\nDrawing: ' + (RAW.file || '') + '\r\nRulebook ' + DATA.rb.code + ': status ' + DATA.rb.status + ' (not signed off)\r\nSigns shown: ' + v.length + ' (' + cnt('wrong') + ' wrong, ' + cnt('check') + ' to check, ' + cnt('ok') + ' no finding)\r\nMissing numbers: ' + RES.gaps.length + '\r\n\r\n';
+  v.filter(s => s.flags.length).sort((a, b) => rank[a.sev] - rank[b.sev]).forEach(s => { t += s.id + ' ' + s.code + ' [' + s.sev.toUpperCase() + '] ' + s.name + '\r\n' + s.flags.map(f => '    ' + f.txt).join('\r\n') + '\r\n'; });
+  return t;
+}
+function jsonOut() {
+  const v = shownSigns(), cnt = k => v.filter(s => s.sev === k).length;
+  return JSON.stringify({ tool: 'Alignment Review Desk', status: 'DRAFT', file: RAW.file, generated: new Date().toISOString(),
+    settings: { labelPattern: P.labelRx, labelRadiusM: P.labelR, trafficSide: 'right', rulebook: DATA.rb, layerRoles: UPLOAD ? Object.fromEntries(Object.entries(UPLOAD.layers).map(([n, l]) => [n, l.role])) : { demo: 'Wyte layers: TI-Signs, TI-Text, TI - CL, TI - CW, TI - Parking, TI - BM' } },
+    summary: { shown: v.length, wrong: cnt('wrong'), check: cnt('check'), noFinding: cnt('ok'), missingIds: RES.gaps.map(g => 'S' + String(g).padStart(4, '0')) },
+    signs: v.map(s => ({ id: s.id, code: s.code, name: s.name, severity: s.sev, findings: s.flags.map(f => ({ check: f.id, severity: f.sev, text: f.txt })), location: [+s.x.toFixed(3), +s.y.toFixed(3)], link: s.link, junction: s.node,
+      offsetFromCentreM: s.off == null ? null : +s.off.toFixed(2), beyondKerbM: s.gap == null ? null : +s.gap.toFixed(2), side: s.side, block: s.uniq, signsAtPoint: s.n, suggestedBlock: s.sugg, decision: (DEC[s.key] || {}).d || '', note: (DEC[s.key] || {}).note || '' })) }, null, 2);
+}
+function mdOut() {
+  const rank = { wrong: 0, check: 1, ok: 2 }, v = shownSigns().slice().sort((a, b) => rank[a.sev] - rank[b.sev] || a.id.localeCompare(b.id)), cnt = k => v.filter(s => s.sev === k).length, cell = t => String(t).replace(/\|/g, '/').replace(/\r?\n/g, ' ');
+  let t = '# Alignment Review Desk report (DRAFT)\n\n- Drawing: ' + RAW.file + '\n- Rulebook: ' + DATA.rb.code + ', status ' + DATA.rb.status + ' (not signed off)\n- Signs shown: ' + v.length + ' (' + cnt('wrong') + ' wrong, ' + cnt('check') + ' to check, ' + cnt('ok') + ' no finding)\n- Missing numbers: ' + (RES.gaps.length ? RES.gaps.map(g => 'S' + String(g).padStart(4, '0')).join(', ') : 'none') + '\n\n';
+  t += '| ID | Code | Severity | Findings | Link | Decision | Note |\n|---|---|---|---|---|---|---|\n';
+  v.forEach(s => { t += '| ' + s.id + ' | ' + s.code + ' | ' + sevOf(s) + ' | ' + cell(s.flags.map(f => f.txt).join('; ')) + ' | ' + cell(s.link) + ' | ' + ((DEC[s.key] || {}).d || '') + ' | ' + cell((DEC[s.key] || {}).note || '') + ' |\n'; });
+  return t + '\nScreening only, not design approval.\n';
+}
+function dxfOut() {
+  const g = (c, v) => c + '\r\n' + v + '\r\n', LAY = { wrong: 'SIGNS-WRONG', check: 'SIGNS-CHECK', ok: 'SIGNS-OK' }, perPoint = {}; let e = '';
+  shownSigns().forEach(s => { const L = LAY[s.sev], k = f1(s.x) + ',' + f1(s.y), j = perPoint[k] = (perPoint[k] || 0) + 1;
+    e += g(0, 'CIRCLE') + g(8, L) + g(10, s.x.toFixed(4)) + g(20, s.y.toFixed(4)) + g(40, (1.2 + 0.4 * (j - 1)).toFixed(3)) +
+      g(0, 'TEXT') + g(8, L) + g(10, (s.x + 2).toFixed(4)) + g(20, (s.y + 2 - (j - 1) * 1.8).toFixed(4)) + g(40, '1.2') + g(1, s.id + ' ' + s.code + (s.flags.length ? ' ' + s.flags[0].id : '')); });
+  const lay = [['SIGNS-WRONG', 1], ['SIGNS-CHECK', 30], ['SIGNS-OK', 5]];
+  return g(0, 'SECTION') + g(2, 'HEADER') + g(9, '$ACADVER') + g(1, 'AC1009') + g(0, 'ENDSEC') + g(0, 'SECTION') + g(2, 'TABLES') + g(0, 'TABLE') + g(2, 'LAYER') + g(70, lay.length) +
+    lay.map(l => g(0, 'LAYER') + g(2, l[0]) + g(70, 0) + g(62, l[1]) + g(6, 'CONTINUOUS')).join('') + g(0, 'ENDTAB') + g(0, 'ENDSEC') + g(0, 'SECTION') + g(2, 'ENTITIES') + e + g(0, 'ENDSEC') + g(0, 'EOF');
+}
+const EX_FMT = {
+  csv: ['CSV table (.csv)', 'csv', 'One row per sign: severity, findings, coordinates, link, offsets, block, suggested block, and your decision and note.'],
+  json: ['JSON data (.json)', 'json', 'Signs with their findings plus the settings used (label pattern, rulebook status, layer roles), for another tool or a record of the run.'],
+  md: ['Markdown report (.md)', 'md', 'A readable report: settings, counts and a sign table, ready to paste into a document.'],
+  txt: ['Summary text (.txt)', 'txt', 'Plain-text list of the findings for an email.'],
+  dxf: ['DXF drawing (.dxf)', 'dxf', 'DXF in your drawing coordinates: a circle and label at each sign shown, on the SIGNS-WRONG, SIGNS-CHECK and SIGNS-OK layers. Units are taken as metres. The viewer may refuse .dxf files. If so, it is saved as a .zip with the .dxf inside.'],
+  png: ['Map image (.png)', 'png', 'The map as it looks now, with the current colours and filters. The app switches to the Map tab for a moment to capture it.']
+};
+const CRC = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+function zipStore(name, text) {
+  const enc = new TextEncoder(), nb = enc.encode(name), data = enc.encode(text); let crc = 0xFFFFFFFF; for (let i = 0; i < data.length; i++) crc = CRC[(crc ^ data[i]) & 255] ^ (crc >>> 8); crc = (crc ^ 0xFFFFFFFF) >>> 0;
+  const d = new Date(), tm = (d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1), dt = ((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate();
+  const lh = new DataView(new ArrayBuffer(30)); lh.setUint32(0, 0x04034b50, true); lh.setUint16(4, 20, true); lh.setUint16(6, 0x0800, true); lh.setUint16(8, 0, true); lh.setUint16(10, tm, true); lh.setUint16(12, dt, true); lh.setUint32(14, crc, true); lh.setUint32(18, data.length, true); lh.setUint32(22, data.length, true); lh.setUint16(26, nb.length, true); lh.setUint16(28, 0, true);
+  const ch = new DataView(new ArrayBuffer(46)); ch.setUint32(0, 0x02014b50, true); ch.setUint16(4, 20, true); ch.setUint16(6, 20, true); ch.setUint16(8, 0x0800, true); ch.setUint16(12, tm, true); ch.setUint16(14, dt, true); ch.setUint32(16, crc, true); ch.setUint32(20, data.length, true); ch.setUint32(24, data.length, true); ch.setUint16(28, nb.length, true); ch.setUint32(42, 0, true);
+  const off = 30 + nb.length + data.length, cdSize = 46 + nb.length, end = new DataView(new ArrayBuffer(22)); end.setUint32(0, 0x06054b50, true); end.setUint16(8, 1, true); end.setUint16(10, 1, true); end.setUint32(12, cdSize, true); end.setUint32(16, off, true);
+  return new Blob([lh, nb, data, ch, nb, end], { type: 'application/zip' });
+}
+// the viewer saves only an allow-listed set of extensions: try .dxf, fall back to a .zip that holds the .dxf
+async function saveDxf(name) {
+  const text = dxfOut();
+  try { await downloads.save({ filename: name + '.dxf', data: text }); return name + '.dxf'; }
+  catch (err) { if (!err || err.code !== 'rejected_extension') throw err; await downloads.save({ filename: name + '.zip', data: zipStore(name + '.dxf', text) }); return name + '.zip (contains ' + name + '.dxf)'; }
+}
+async function mapPng() {
+  const prev = CUR; showTab('map'); await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))); draw();
+  const blob = await new Promise(res => cv.toBlob(res, 'image/png')); showTab(prev); return blob;
+}
+function renderExport() {
+  const el = $('#v-export'); if (!RES) { el.innerHTML = '<div class="card muted">Run the checks first.</div>'; return; }
+  const n = shownSigns().length, base = (RAW.file || 'drawing').replace(/\.dxf$/i, '').replace(/[^\w.-]+/g, '_');
+  el.innerHTML = `<div class="card"><h2>Export</h2><p class="muted small" style="margin:0 0 14px">Exports include the ${n} signs currently shown (see the filters on the Map and Signs tabs). Nothing is saved until you choose a button and accept the prompt.</p>
+    ${downloads ? `<div class="card" style="margin:0 0 12px"><h3>Save as</h3>
+      <div class="row" style="align-items:flex-end;gap:12px">
+        <label class="small">File name<br><input type="text" id="exName" value="${esc(EX.name || base + '_signs')}" size="30" autocomplete="off"></label>
+        <label class="small">Format<br><select id="exFmt">${Object.keys(EX_FMT).map(k => `<option value="${k}"${EX.fmt === k ? ' selected' : ''}>${EX_FMT[k][0]}</option>`).join('')}</select></label>
+        <button class="primary" id="exSaveAs">Save as…</button></div>
+      <p class="small muted" id="exFmtNote" style="margin:10px 0 0">${EX_FMT[EX.fmt][2]}</p></div>
+    <div class="grid2" style="gap:12px">
+      <div class="card" style="margin:0"><h3>Sign table</h3><p class="small muted" style="margin-top:0">CSV with severity, findings, coordinates, offsets, block and your decisions.</p><button data-ex="csv">Save CSV</button></div>
+      <div class="card" style="margin:0"><h3>Highlight markers</h3><p class="small muted" style="margin-top:0">DXF with a circle and label at each sign, in your drawing coordinates. If the viewer refuses .dxf files, it is saved as a .zip with the .dxf inside.</p><button data-ex="dxf">Save markers</button></div>
+      <div class="card" style="margin:0"><h3>Summary</h3><p class="small muted" style="margin-top:0">Plain-text list of the findings for a report or email.</p><button data-ex="txt">Save summary</button></div></div>
+    <p class="small muted" id="exMsg" aria-live="polite" style="margin-bottom:0">${esc(EX.msg || '')}</p>` : `<div class="notice">Saving files is not available in this view. Open the artifact in claude.ai to export. You can still copy the text below.</div>
+    <div class="hbar"><button class="primary" data-copy="sign">Copy sign list</button><button data-copy="flag">Copy findings</button><button data-copy="dec">Copy my decisions</button><span class="small muted" id="copyMsg" role="status"></span></div>
+    <textarea class="out" id="copyOut" readonly aria-label="Text to copy" placeholder="The copied text appears here." style="margin-top:10px"></textarea>`}</div>`;
+  el.dataset.base = base;
+}
+$('#v-export').addEventListener('click', async (e) => {
+  const b = e.target.closest('button[data-ex]'); if (!b || !downloads) return;
+  const base = $('#v-export').dataset.base, k = b.dataset.ex, m = $('#exMsg');
+  try { if (k === 'dxf') { m.textContent = 'Saved ' + await saveDxf(base + '_markers'); return; } const f = { csv: [base + '_signs.csv', csvOut()], txt: [base + '_summary.txt', summaryTxt()] }[k]; await downloads.save({ filename: f[0], data: f[1] }); m.textContent = 'Saved ' + f[0]; }
+  catch (err) { m.textContent = err && err.code === 'declined' ? 'Save cancelled.' : 'Could not save (' + ((err && err.code) || 'error') + ').'; }
+});
+$('#v-export').addEventListener('input', (e) => { if (e.target.id === 'exName') EX.name = e.target.value; });
+$('#v-export').addEventListener('change', (e) => { if (e.target.id === 'exFmt') { EX.fmt = e.target.value; $('#exFmtNote').textContent = EX_FMT[EX.fmt][2]; } });
+$('#v-export').addEventListener('click', async (e) => {
+  if (e.target.id !== 'exSaveAs' || !downloads) return;
+  const fmt = EX.fmt, base = $('#v-export').dataset.base;
+  let name = (EX.name || base + '_signs').replace(/[\\/:*?"<>|]+/g, '_').trim().replace(/\.(csv|json|md|txt|png|dxf)$/i, ''); if (!name) name = base + '_signs';
+  const fname = name + '.' + EX_FMT[fmt][1], msg = (t) => { EX.msg = t; const m = $('#exMsg'); if (m) m.textContent = t; };
+  try {
+    if (fmt === 'dxf') { msg('Saved ' + await saveDxf(name)); return; }
+    const data = fmt === 'csv' ? csvOut() : fmt === 'json' ? jsonOut() : fmt === 'md' ? mdOut() : fmt === 'txt' ? summaryTxt() : await mapPng();
+    await downloads.save({ filename: fname, data }); msg('Saved ' + fname);
+  } catch (err) { msg(err && err.code === 'declined' ? 'Save cancelled.' : 'Could not save (' + ((err && err.code) || (err && err.message) || 'error') + ').'); }
+});
 
 /* ================= map ================= */
 const cv = $('#cv'), ctx = cv.getContext('2d');
@@ -717,7 +821,7 @@ function renderMethods() {
       <li><span class="who">Claude</span>Write settings and overrides from your answers only, then run. Exit 2 lists the missing data (links shown node-to-node); answer and re-run. A question is skipped only when you say so, and the skip is recorded.</li>
       <li><span class="who">Claude</span>Report counts by class, Conditional items (studies needed), Low-confidence devices, spacing moves and the DRAFT status.</li>
       <li><span class="who you">You</span>Load the signing DXF on this page and work through the Map and Signs tabs. Start with the red findings.</li>
-      <li><span class="who you">You</span>Mark each sign Keep, Fix or Remove with a note, then copy the decisions (Export). Claude applies them as overrides or sign points, and the checks are re-run.</li>
+      <li><span class="who you">You</span>Mark each sign Keep, Fix or Remove with a note, then save the decisions from the Export tab. Claude applies them as overrides or sign points, and the checks are re-run.</li>
       <li><span class="who you">You</span>Approve cross-code links in the Catalogue. Egyptian and SHC names are read only from their own sources.</li>
       <li><span class="who">Claude</span>Write the sign schedule, GeoJSON, DXF and report only when you ask, after one confirmation. Every file carries DRAFT in its name.</li>
       <li><span class="who you">You</span>A T&amp;I engineer signs the rulebook off; until then everything stays DRAFT. Each chat ends with a handoff: decisions, current state, next steps.</li>
@@ -777,7 +881,8 @@ side = right if c &lt; 0, left if c ≥ 0</div>
 }
 
 /* ================= wiring ================= */
-function renderAll() { renderOverview(); renderMapFilters(); renderSigns(); renderCat(); renderSetup(); renderExport(); renderMethods(); renderSel(); }
+function renderSummary() { const c = counts(); $('#summary').innerHTML = `<span class="chip"><b>${c.n}</b> signs</span><span class="chip"><span class="dot wrong"></span><b>${c.wrong}</b> wrong</span><span class="chip"><span class="dot check"></span><b>${c.check}</b> to check</span><span class="chip"><span class="dot ok"></span><b>${c.ok}</b> no finding</span><span class="chip"><b>${RES.gaps.length}</b> missing numbers</span><span class="chip"><b>${RES.signs.filter(x => DEC[x.key] && DEC[x.key].d).length}</b> of ${c.n} reviewed</span>`; }
+function renderAll() { renderSummary(); renderOverview(); renderMapFilters(); renderSigns(); renderCat(); renderSetup(); renderExport(); renderMethods(); renderSel(); }
 document.addEventListener('click', e => {
   const t = e.target;
   let b = t.closest('.barrow[data-code]'); if (b) { FILTERS.codes = new Set([b.dataset.code]); renderMapFilters(); showTab('map'); draw(); return; }
@@ -813,14 +918,18 @@ document.addEventListener('change', e => {
 $('#btnLoad').onclick = () => $('#file').click(); $('#btnDemo').onclick = loadDemo; $('#btnRun').onclick = () => { if (UPLOAD) applyUpload(); run(); };
 $('#file').addEventListener('change', e => {
   const f = e.target.files[0]; if (!f) return; $('#notices').innerHTML = '<div class="notice">Reading ' + esc(f.name) + '…</div>';
-  const rd = new FileReader(); rd.onload = () => {
+  const tick = () => new Promise(r => setTimeout(r, 30)), prog = (on, txt, pct) => { $('#prog').hidden = !on; if (on) { $('#progTxt').textContent = txt; $('#progBar').style.width = pct + '%'; } };
+  prog(true, 'Reading ' + f.name, 15);
+  const rd = new FileReader(); rd.onload = async () => {
     try {
+      prog(true, 'Reading entities', 40); await tick();
       const { ents, skipped } = parseDxf(rd.result), layers = {};
       ents.forEach(en => { const l = layers[en.layer] = layers[en.layer] || { types: {}, role: 'ignore' }; l.types[en.type] = (l.types[en.type] || 0) + 1; });
       Object.entries(layers).forEach(([n, l]) => l.role = guessRole(n, l));
-      UPLOAD = { file: f.name, ents, layers }; setFile(f.name); applyUpload(); run(); showTab('overview');
+      prog(true, 'Building network', 70); await tick();
+      UPLOAD = { file: f.name, ents, layers }; setFile(f.name); applyUpload(); prog(true, 'Running checks', 90); await tick(); run(); showTab('overview'); prog(false);
       if (!ents.length) $('#notices').innerHTML = '<div class="notice err">No drawing entities were read from this file. Check that it is an ASCII DXF (not DWG or binary DXF).</div>';
-    } catch (er) { $('#notices').innerHTML = '<div class="notice err">This file could not be read: ' + esc(er.message) + '. Save it as an ASCII DXF and try again.</div>'; }
+    } catch (er) { prog(false); $('#notices').innerHTML = '<div class="notice err">This file could not be read: ' + esc(er.message) + '. Save it as an ASCII DXF and try again.</div>'; }
   }; rd.readAsText(f); e.target.value = '';
 });
 function guessRole(n, l) {
